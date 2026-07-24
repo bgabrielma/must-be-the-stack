@@ -1,13 +1,13 @@
 {
   ".claude/settings.json": {
-    "mtime": 1784846809.07638,
-    "ast_hash": "3eacd93ac857d7be33f05fa44a79ab83",
-    "semantic_hash": "3eacd93ac857d7be33f05fa44a79ab83"
+    "mtime": 1784899644.3763862,
+    "ast_hash": "dbe039a15c5c2eb60e34dccc1af0cbb5",
+    "semantic_hash": ""
   },
   ".devcontainer/devcontainer.json": {
-    "mtime": 1784846809.0796957,
-    "ast_hash": "189b95e2eb7bd0414fd83f064a281c14",
-    "semantic_hash": "189b95e2eb7bd0414fd83f064a281c14"
+    "mtime": 1784900037.825061,
+    "ast_hash": "1c53f0bf159e6611d472e3fa009e1446",
+    "semantic_hash": ""
   },
   ".claude/CLAUDE.md": {
     "mtime": 1784846809.0761852,
@@ -157,6 +157,11 @@
   "docs/adr/0011-lefthook-post-checkout-hook-for-worktree-setup.md": {
     "mtime": 1784897870.2694063,
     "ast_hash": "3c1edaa683bce73e7faa0ee7d2d8bf54",
+    "semantic_hash": ""
+  },
+  ".devcontainer/devcontainer-lock.json": {
+    "mtime": 1784898499.34983,
+    "ast_hash": "15e8b5f263ae7dbcc6e98ab64b66e152",
     "semantic_hash": ""
   }
 }
