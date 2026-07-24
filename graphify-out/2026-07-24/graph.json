@@ -271,6 +271,50 @@
       "norm_label": "consequences"
     },
     {
+      "label": "0010-lefthook-for-git-hook-backpressure.md",
+      "file_type": "document",
+      "source_file": "docs/adr/0010-lefthook-for-git-hook-backpressure.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_adr_0010_lefthook_for_git_hook_backpressure",
+      "community": 11,
+      "community_name": "Lefthook for git-hook backpressure across the split monorepo",
+      "norm_label": "0010-lefthook-for-git-hook-backpressure.md"
+    },
+    {
+      "label": "Lefthook for git-hook backpressure across the split monorepo",
+      "file_type": "document",
+      "source_file": "docs/adr/0010-lefthook-for-git-hook-backpressure.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "docs_adr_0010_lefthook_for_git_hook_backpressure_lefthook_for_git_hook_backpressure_across_the_split_monorepo",
+      "community": 11,
+      "community_name": "Lefthook for git-hook backpressure across the split monorepo",
+      "norm_label": "lefthook for git-hook backpressure across the split monorepo"
+    },
+    {
+      "label": "Considered Options",
+      "file_type": "document",
+      "source_file": "docs/adr/0010-lefthook-for-git-hook-backpressure.md",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "docs_adr_0010_lefthook_for_git_hook_backpressure_considered_options",
+      "community": 11,
+      "community_name": "Lefthook for git-hook backpressure across the split monorepo",
+      "norm_label": "considered options"
+    },
+    {
+      "label": "Consequences",
+      "file_type": "document",
+      "source_file": "docs/adr/0010-lefthook-for-git-hook-backpressure.md",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "docs_adr_0010_lefthook_for_git_hook_backpressure_consequences",
+      "community": 11,
+      "community_name": "Lefthook for git-hook backpressure across the split monorepo",
+      "norm_label": "consequences"
+    },
+    {
       "label": "graphify Skill Trigger Config (.claude/CLAUDE.md)",
       "file_type": "document",
       "source_file": ".claude/CLAUDE.md",
@@ -307,9 +351,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 0,
       "norm_label": "graphify reference: add-watch.md",
-      "community_name": "graphify (knowledge graph tool)",
+      "community_name": "/graphify Skill Definition (SKILL.md)",
       "id": "claude_skills_graphify_references_add_watch_doc"
     },
     {
@@ -321,9 +365,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 0,
+      "community": 3,
       "norm_label": "graphify reference: exports.md",
-      "community_name": "/graphify Skill Definition (SKILL.md)",
+      "community_name": "graphify (knowledge graph tool)",
       "id": "claude_skills_graphify_references_exports_doc"
     },
     {
@@ -377,9 +421,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 0,
       "norm_label": "graphify reference: query.md",
-      "community_name": "graphify (knowledge graph tool)",
+      "community_name": "/graphify Skill Definition (SKILL.md)",
       "id": "claude_skills_graphify_references_query_doc"
     },
     {
@@ -844,9 +888,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 0,
       "norm_label": "graphify (knowledge graph tool)",
-      "community_name": "graphify (knowledge graph tool)",
+      "community_name": "/graphify Skill Definition (SKILL.md)",
       "id": "claude_skills_graphify_skill_concept"
     },
     {
@@ -858,9 +902,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 0,
       "norm_label": "/graphify query",
-      "community_name": "graphify (knowledge graph tool)",
+      "community_name": "/graphify Skill Definition (SKILL.md)",
       "id": "graphify_query_concept"
     },
     {
@@ -872,9 +916,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 0,
       "norm_label": "/graphify path",
-      "community_name": "graphify (knowledge graph tool)",
+      "community_name": "/graphify Skill Definition (SKILL.md)",
       "id": "graphify_path_concept"
     },
     {
@@ -886,9 +930,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 0,
       "norm_label": "/graphify explain",
-      "community_name": "graphify (knowledge graph tool)",
+      "community_name": "/graphify Skill Definition (SKILL.md)",
       "id": "graphify_explain_concept"
     },
     {
@@ -900,9 +944,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 0,
       "norm_label": "/graphify add",
-      "community_name": "graphify (knowledge graph tool)",
+      "community_name": "/graphify Skill Definition (SKILL.md)",
       "id": "graphify_add_concept"
     },
     {
@@ -914,9 +958,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 3,
+      "community": 0,
       "norm_label": "--watch (auto-rebuild watcher)",
-      "community_name": "graphify (knowledge graph tool)",
+      "community_name": "/graphify Skill Definition (SKILL.md)",
       "id": "graphify_watch_concept"
     },
     {
@@ -1029,9 +1073,9 @@
       "author": null,
       "contributor": null,
       "rationale": "graphify query matches via case-folded substring + IDF with no stemming/synonyms/cross-language match, so a wording mismatch between the user's question and the graph's node-label vocabulary collapses the answer to zero hits; fixed by expanding the query against the graph's own extracted vocabulary before traversal, picking only tokens that already exist in that vocab (never inventing tokens).",
-      "community": 3,
+      "community": 0,
       "norm_label": "constrained query vocabulary expansion",
-      "community_name": "graphify (knowledge graph tool)",
+      "community_name": "/graphify Skill Definition (SKILL.md)",
       "id": "graphify_query_vocab_expansion_concept"
     },
     {
@@ -1044,9 +1088,9 @@
       "author": null,
       "contributor": null,
       "rationale": "save-result records each query/path/explain answer with an outcome (useful/dead_end/corrected); graphify reflect --if-stale regenerates LESSONS.md (preferred sources, dead ends, corrections) cheaply and deterministically so future sessions don't re-derive the same dead ends.",
-      "community": 3,
+      "community": 0,
       "norm_label": "reflect / lessons.md work-memory loop",
-      "community_name": "graphify (knowledge graph tool)",
+      "community_name": "/graphify Skill Definition (SKILL.md)",
       "id": "graphify_reflect_lessons_concept"
     },
     {
@@ -1118,9 +1162,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 0,
+      "community": 3,
       "norm_label": "graphify mcp stdio server",
-      "community_name": "/graphify Skill Definition (SKILL.md)",
+      "community_name": "graphify (knowledge graph tool)",
       "id": "graphify_mcp_server_concept"
     },
     {
@@ -1132,9 +1176,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 0,
+      "community": 3,
       "norm_label": "neo4j export",
-      "community_name": "/graphify Skill Definition (SKILL.md)",
+      "community_name": "graphify (knowledge graph tool)",
       "id": "graphify_neo4j_export_concept"
     },
     {
@@ -1146,9 +1190,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 0,
+      "community": 3,
       "norm_label": "falkordb export",
-      "community_name": "/graphify Skill Definition (SKILL.md)",
+      "community_name": "graphify (knowledge graph tool)",
       "id": "graphify_falkordb_export_concept"
     },
     {
@@ -1160,9 +1204,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 0,
+      "community": 3,
       "norm_label": "wiki export (--wiki)",
-      "community_name": "/graphify Skill Definition (SKILL.md)",
+      "community_name": "graphify (knowledge graph tool)",
       "id": "graphify_wiki_export_concept"
     },
     {
@@ -1233,9 +1277,9 @@
       "author": null,
       "contributor": null,
       "rationale": "Single-context layout keeps domain knowledge co-located: CONTEXT.md plus docs/adr/ at the repo root.",
-      "community": 2,
+      "community": 4,
       "norm_label": "domain docs",
-      "community_name": "AGENTS.md (agent instructions)",
+      "community_name": "docs/adr (Architecture Decision Records)",
       "id": "agents_domain_docs"
     },
     {
@@ -1778,6 +1822,39 @@
       "_origin": "ast",
       "source": "docs_adr_0009_vps_hosting_with_split_frontend_deploy_self_hosted_vps_for_rails_postgres_cloudflare_pages_for_the_frontend_github_actions_ci_cd_with_ordered_deploy",
       "target": "docs_adr_0009_vps_hosting_with_split_frontend_deploy_considered_options",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/adr/0010-lefthook-for-git-hook-backpressure.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_adr_0010_lefthook_for_git_hook_backpressure",
+      "target": "docs_adr_0010_lefthook_for_git_hook_backpressure_lefthook_for_git_hook_backpressure_across_the_split_monorepo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/adr/0010-lefthook-for-git-hook-backpressure.md",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_adr_0010_lefthook_for_git_hook_backpressure_lefthook_for_git_hook_backpressure_across_the_split_monorepo",
+      "target": "docs_adr_0010_lefthook_for_git_hook_backpressure_consequences",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/adr/0010-lefthook-for-git-hook-backpressure.md",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_adr_0010_lefthook_for_git_hook_backpressure_lefthook_for_git_hook_backpressure_across_the_split_monorepo",
+      "target": "docs_adr_0010_lefthook_for_git_hook_backpressure_considered_options",
       "confidence_score": 1.0
     },
     {
@@ -3321,5 +3398,5 @@
       "source_file": "docs/adr/0005-solid-queue-for-background-jobs.md"
     }
   ],
-  "built_at_commit": "e04422ce9a440548413877869c7ff0a33a5a49fb"
+  "built_at_commit": "f9147d3a1e09c3769cf2052bf5348896cc4f716e"
 }

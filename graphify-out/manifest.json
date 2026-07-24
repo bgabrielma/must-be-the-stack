@@ -65,13 +65,13 @@
     "semantic_hash": "24efcdf470ab04941a871f7ab7fb1b7c"
   },
   "AGENTS.md": {
-    "mtime": 1784896160.1925972,
-    "ast_hash": "244e56d37859fc0f77e6f2a809bcdd61",
+    "mtime": 1784897595.8385146,
+    "ast_hash": "e5fe106d731610a26f11be2f8c3585a8",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1784896160.1925972,
-    "ast_hash": "244e56d37859fc0f77e6f2a809bcdd61",
+    "mtime": 1784897595.8385146,
+    "ast_hash": "e5fe106d731610a26f11be2f8c3585a8",
     "semantic_hash": ""
   },
   "CONTEXT.md": {
@@ -147,6 +147,11 @@
   "docs/adr/0010-lefthook-for-git-hook-backpressure.md": {
     "mtime": 1784896506.942674,
     "ast_hash": "1ce7b8dd730975c5b5962a38bf3d6c17",
+    "semantic_hash": ""
+  },
+  "CONTRIBUTING.md": {
+    "mtime": 1784897587.2225316,
+    "ast_hash": "e3a487cba5cc9c8aa502f3e014966bb5",
     "semantic_hash": ""
   }
 }

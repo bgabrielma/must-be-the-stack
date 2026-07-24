@@ -95,15 +95,59 @@
   },
   "nodes": [
     {
+      "label": "CONTRIBUTING.md",
+      "file_type": "document",
+      "source_file": "CONTRIBUTING.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "contributing",
+      "community": 14,
+      "community_name": "Contributing",
+      "norm_label": "contributing.md"
+    },
+    {
+      "label": "Contributing",
+      "file_type": "document",
+      "source_file": "CONTRIBUTING.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "contributing_contributing",
+      "community": 14,
+      "community_name": "Contributing",
+      "norm_label": "contributing"
+    },
+    {
+      "label": "Principles",
+      "file_type": "document",
+      "source_file": "CONTRIBUTING.md",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "contributing_principles",
+      "community": 14,
+      "community_name": "Contributing",
+      "norm_label": "principles"
+    },
+    {
+      "label": "Parallel agent work",
+      "file_type": "document",
+      "source_file": "CONTRIBUTING.md",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "contributing_parallel_agent_work",
+      "community": 14,
+      "community_name": "Contributing",
+      "norm_label": "parallel agent work"
+    },
+    {
       "label": "0006-gemini-as-llm-provider.md",
       "file_type": "document",
       "source_file": "docs/adr/0006-gemini-as-llm-provider.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "docs_adr_0006_gemini_as_llm_provider",
       "community": 8,
       "community_name": "graphify reference: exports.md",
-      "norm_label": "0006-gemini-as-llm-provider.md"
+      "norm_label": "0006-gemini-as-llm-provider.md",
+      "id": "docs_adr_0006_gemini_as_llm_provider"
     },
     {
       "label": "Gemini 3.6 Flash as the runtime LLM provider",
@@ -111,10 +155,10 @@
       "source_file": "docs/adr/0006-gemini-as-llm-provider.md",
       "source_location": "L7",
       "_origin": "ast",
-      "id": "docs_adr_0006_gemini_as_llm_provider_gemini_3_6_flash_as_the_runtime_llm_provider",
       "community": 8,
       "community_name": "graphify reference: exports.md",
-      "norm_label": "gemini 3.6 flash as the runtime llm provider"
+      "norm_label": "gemini 3.6 flash as the runtime llm provider",
+      "id": "docs_adr_0006_gemini_as_llm_provider_gemini_3_6_flash_as_the_runtime_llm_provider"
     },
     {
       "label": "Considered Options",
@@ -122,10 +166,10 @@
       "source_file": "docs/adr/0006-gemini-as-llm-provider.md",
       "source_location": "L11",
       "_origin": "ast",
-      "id": "docs_adr_0006_gemini_as_llm_provider_considered_options",
       "community": 8,
       "community_name": "graphify reference: exports.md",
-      "norm_label": "considered options"
+      "norm_label": "considered options",
+      "id": "docs_adr_0006_gemini_as_llm_provider_considered_options"
     },
     {
       "label": "Consequences",
@@ -133,10 +177,10 @@
       "source_file": "docs/adr/0006-gemini-as-llm-provider.md",
       "source_location": "L16",
       "_origin": "ast",
-      "id": "docs_adr_0006_gemini_as_llm_provider_consequences",
       "community": 8,
       "community_name": "graphify reference: exports.md",
-      "norm_label": "consequences"
+      "norm_label": "consequences",
+      "id": "docs_adr_0006_gemini_as_llm_provider_consequences"
     },
     {
       "label": "0007-jwt-auth-with-refresh-tokens.md",
@@ -144,10 +188,10 @@
       "source_file": "docs/adr/0007-jwt-auth-with-refresh-tokens.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "docs_adr_0007_jwt_auth_with_refresh_tokens",
       "community": 7,
       "community_name": "graphify reference: update.md",
-      "norm_label": "0007-jwt-auth-with-refresh-tokens.md"
+      "norm_label": "0007-jwt-auth-with-refresh-tokens.md",
+      "id": "docs_adr_0007_jwt_auth_with_refresh_tokens"
     },
     {
       "label": "JWT access tokens + opaque refresh tokens, hand-rolled on Rails 8's built-in auth",
@@ -155,10 +199,10 @@
       "source_file": "docs/adr/0007-jwt-auth-with-refresh-tokens.md",
       "source_location": "L7",
       "_origin": "ast",
-      "id": "docs_adr_0007_jwt_auth_with_refresh_tokens_jwt_access_tokens_opaque_refresh_tokens_hand_rolled_on_rails_8_s_built_in_auth",
       "community": 7,
       "community_name": "graphify reference: update.md",
-      "norm_label": "jwt access tokens + opaque refresh tokens, hand-rolled on rails 8's built-in auth"
+      "norm_label": "jwt access tokens + opaque refresh tokens, hand-rolled on rails 8's built-in auth",
+      "id": "docs_adr_0007_jwt_auth_with_refresh_tokens_jwt_access_tokens_opaque_refresh_tokens_hand_rolled_on_rails_8_s_built_in_auth"
     },
     {
       "label": "Considered Options",
@@ -166,10 +210,10 @@
       "source_file": "docs/adr/0007-jwt-auth-with-refresh-tokens.md",
       "source_location": "L11",
       "_origin": "ast",
-      "id": "docs_adr_0007_jwt_auth_with_refresh_tokens_considered_options",
       "community": 7,
       "community_name": "graphify reference: update.md",
-      "norm_label": "considered options"
+      "norm_label": "considered options",
+      "id": "docs_adr_0007_jwt_auth_with_refresh_tokens_considered_options"
     },
     {
       "label": "Consequences",
@@ -177,10 +221,10 @@
       "source_file": "docs/adr/0007-jwt-auth-with-refresh-tokens.md",
       "source_location": "L16",
       "_origin": "ast",
-      "id": "docs_adr_0007_jwt_auth_with_refresh_tokens_consequences",
       "community": 7,
       "community_name": "graphify reference: update.md",
-      "norm_label": "consequences"
+      "norm_label": "consequences",
+      "id": "docs_adr_0007_jwt_auth_with_refresh_tokens_consequences"
     },
     {
       "label": "0008-rest-json-api-with-active-model-serializers.md",
@@ -188,10 +232,10 @@
       "source_file": "docs/adr/0008-rest-json-api-with-active-model-serializers.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "docs_adr_0008_rest_json_api_with_active_model_serializers",
       "community": 10,
       "community_name": "graphify reference: add-watch.md",
-      "norm_label": "0008-rest-json-api-with-active-model-serializers.md"
+      "norm_label": "0008-rest-json-api-with-active-model-serializers.md",
+      "id": "docs_adr_0008_rest_json_api_with_active_model_serializers"
     },
     {
       "label": "REST + JSON:API response format via active_model_serializers",
@@ -199,10 +243,10 @@
       "source_file": "docs/adr/0008-rest-json-api-with-active-model-serializers.md",
       "source_location": "L7",
       "_origin": "ast",
-      "id": "docs_adr_0008_rest_json_api_with_active_model_serializers_rest_json_api_response_format_via_active_model_serializers",
       "community": 10,
       "community_name": "graphify reference: add-watch.md",
-      "norm_label": "rest + json:api response format via active_model_serializers"
+      "norm_label": "rest + json:api response format via active_model_serializers",
+      "id": "docs_adr_0008_rest_json_api_with_active_model_serializers_rest_json_api_response_format_via_active_model_serializers"
     },
     {
       "label": "Considered Options",
@@ -210,10 +254,10 @@
       "source_file": "docs/adr/0008-rest-json-api-with-active-model-serializers.md",
       "source_location": "L11",
       "_origin": "ast",
-      "id": "docs_adr_0008_rest_json_api_with_active_model_serializers_considered_options",
       "community": 10,
       "community_name": "graphify reference: add-watch.md",
-      "norm_label": "considered options"
+      "norm_label": "considered options",
+      "id": "docs_adr_0008_rest_json_api_with_active_model_serializers_considered_options"
     },
     {
       "label": "Consequences",
@@ -221,10 +265,10 @@
       "source_file": "docs/adr/0008-rest-json-api-with-active-model-serializers.md",
       "source_location": "L17",
       "_origin": "ast",
-      "id": "docs_adr_0008_rest_json_api_with_active_model_serializers_consequences",
       "community": 10,
       "community_name": "graphify reference: add-watch.md",
-      "norm_label": "consequences"
+      "norm_label": "consequences",
+      "id": "docs_adr_0008_rest_json_api_with_active_model_serializers_consequences"
     },
     {
       "label": "0009-vps-hosting-with-split-frontend-deploy.md",
@@ -232,10 +276,10 @@
       "source_file": "docs/adr/0009-vps-hosting-with-split-frontend-deploy.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "docs_adr_0009_vps_hosting_with_split_frontend_deploy",
       "community": 7,
       "community_name": "graphify reference: update.md",
-      "norm_label": "0009-vps-hosting-with-split-frontend-deploy.md"
+      "norm_label": "0009-vps-hosting-with-split-frontend-deploy.md",
+      "id": "docs_adr_0009_vps_hosting_with_split_frontend_deploy"
     },
     {
       "label": "Self-hosted VPS for Rails + Postgres, Cloudflare Pages for the frontend, GitHub Actions CI/CD with ordered deploy",
@@ -243,10 +287,10 @@
       "source_file": "docs/adr/0009-vps-hosting-with-split-frontend-deploy.md",
       "source_location": "L7",
       "_origin": "ast",
-      "id": "docs_adr_0009_vps_hosting_with_split_frontend_deploy_self_hosted_vps_for_rails_postgres_cloudflare_pages_for_the_frontend_github_actions_ci_cd_with_ordered_deploy",
       "community": 7,
       "community_name": "graphify reference: update.md",
-      "norm_label": "self-hosted vps for rails + postgres, cloudflare pages for the frontend, github actions ci/cd with ordered deploy"
+      "norm_label": "self-hosted vps for rails + postgres, cloudflare pages for the frontend, github actions ci/cd with ordered deploy",
+      "id": "docs_adr_0009_vps_hosting_with_split_frontend_deploy_self_hosted_vps_for_rails_postgres_cloudflare_pages_for_the_frontend_github_actions_ci_cd_with_ordered_deploy"
     },
     {
       "label": "Considered Options",
@@ -254,10 +298,10 @@
       "source_file": "docs/adr/0009-vps-hosting-with-split-frontend-deploy.md",
       "source_location": "L13",
       "_origin": "ast",
-      "id": "docs_adr_0009_vps_hosting_with_split_frontend_deploy_considered_options",
       "community": 7,
       "community_name": "graphify reference: update.md",
-      "norm_label": "considered options"
+      "norm_label": "considered options",
+      "id": "docs_adr_0009_vps_hosting_with_split_frontend_deploy_considered_options"
     },
     {
       "label": "Consequences",
@@ -265,10 +309,10 @@
       "source_file": "docs/adr/0009-vps-hosting-with-split-frontend-deploy.md",
       "source_location": "L18",
       "_origin": "ast",
-      "id": "docs_adr_0009_vps_hosting_with_split_frontend_deploy_consequences",
       "community": 7,
       "community_name": "graphify reference: update.md",
-      "norm_label": "consequences"
+      "norm_label": "consequences",
+      "id": "docs_adr_0009_vps_hosting_with_split_frontend_deploy_consequences"
     },
     {
       "label": "0010-lefthook-for-git-hook-backpressure.md",
@@ -276,10 +320,10 @@
       "source_file": "docs/adr/0010-lefthook-for-git-hook-backpressure.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "docs_adr_0010_lefthook_for_git_hook_backpressure",
       "community": 11,
       "community_name": "Lefthook for git-hook backpressure across the split monorepo",
-      "norm_label": "0010-lefthook-for-git-hook-backpressure.md"
+      "norm_label": "0010-lefthook-for-git-hook-backpressure.md",
+      "id": "docs_adr_0010_lefthook_for_git_hook_backpressure"
     },
     {
       "label": "Lefthook for git-hook backpressure across the split monorepo",
@@ -287,10 +331,10 @@
       "source_file": "docs/adr/0010-lefthook-for-git-hook-backpressure.md",
       "source_location": "L7",
       "_origin": "ast",
-      "id": "docs_adr_0010_lefthook_for_git_hook_backpressure_lefthook_for_git_hook_backpressure_across_the_split_monorepo",
       "community": 11,
       "community_name": "Lefthook for git-hook backpressure across the split monorepo",
-      "norm_label": "lefthook for git-hook backpressure across the split monorepo"
+      "norm_label": "lefthook for git-hook backpressure across the split monorepo",
+      "id": "docs_adr_0010_lefthook_for_git_hook_backpressure_lefthook_for_git_hook_backpressure_across_the_split_monorepo"
     },
     {
       "label": "Considered Options",
@@ -298,10 +342,10 @@
       "source_file": "docs/adr/0010-lefthook-for-git-hook-backpressure.md",
       "source_location": "L11",
       "_origin": "ast",
-      "id": "docs_adr_0010_lefthook_for_git_hook_backpressure_considered_options",
       "community": 11,
       "community_name": "Lefthook for git-hook backpressure across the split monorepo",
-      "norm_label": "considered options"
+      "norm_label": "considered options",
+      "id": "docs_adr_0010_lefthook_for_git_hook_backpressure_considered_options"
     },
     {
       "label": "Consequences",
@@ -309,10 +353,10 @@
       "source_file": "docs/adr/0010-lefthook-for-git-hook-backpressure.md",
       "source_location": "L14",
       "_origin": "ast",
-      "id": "docs_adr_0010_lefthook_for_git_hook_backpressure_consequences",
       "community": 11,
       "community_name": "Lefthook for git-hook backpressure across the split monorepo",
-      "norm_label": "consequences"
+      "norm_label": "consequences",
+      "id": "docs_adr_0010_lefthook_for_git_hook_backpressure_consequences"
     },
     {
       "label": "graphify Skill Trigger Config (.claude/CLAUDE.md)",
@@ -323,7 +367,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 0,
+      "community": 12,
       "norm_label": "graphify skill trigger config (.claude/claude.md)",
       "community_name": "/graphify Skill Definition (SKILL.md)",
       "id": "claude_claude_config"
@@ -337,7 +381,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 0,
+      "community": 12,
       "norm_label": "/graphify skill definition (skill.md)",
       "community_name": "/graphify Skill Definition (SKILL.md)",
       "id": "claude_skills_graphify_skill_doc"
@@ -379,7 +423,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 0,
+      "community": 12,
       "norm_label": "graphify reference: extraction-spec.md",
       "community_name": "/graphify Skill Definition (SKILL.md)",
       "id": "claude_skills_graphify_references_extraction_spec_doc"
@@ -393,7 +437,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 0,
+      "community": 12,
       "norm_label": "graphify reference: github-and-merge.md",
       "community_name": "/graphify Skill Definition (SKILL.md)",
       "id": "claude_skills_graphify_references_github_and_merge_doc"
@@ -407,9 +451,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 0,
+      "community": 15,
       "norm_label": "graphify reference: hooks.md",
-      "community_name": "/graphify Skill Definition (SKILL.md)",
+      "community_name": "graphify reference: hooks.md",
       "id": "claude_skills_graphify_references_hooks_doc"
     },
     {
@@ -435,7 +479,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 0,
+      "community": 12,
       "norm_label": "graphify reference: transcribe.md",
       "community_name": "/graphify Skill Definition (SKILL.md)",
       "id": "claude_skills_graphify_references_transcribe_doc"
@@ -449,9 +493,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 0,
+      "community": 13,
       "norm_label": "graphify reference: update.md",
-      "community_name": "/graphify Skill Definition (SKILL.md)",
+      "community_name": "graphify reference: update.md",
       "id": "claude_skills_graphify_references_update_doc"
     },
     {
@@ -972,9 +1016,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 0,
+      "community": 13,
       "norm_label": "--update (incremental re-extraction)",
-      "community_name": "/graphify Skill Definition (SKILL.md)",
+      "community_name": "graphify reference: update.md",
       "id": "graphify_update_concept"
     },
     {
@@ -986,9 +1030,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 0,
+      "community": 13,
       "norm_label": "--cluster-only",
-      "community_name": "/graphify Skill Definition (SKILL.md)",
+      "community_name": "graphify reference: update.md",
       "id": "graphify_cluster_only_concept"
     },
     {
@@ -1000,9 +1044,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 0,
+      "community": 15,
       "norm_label": "graphify post-commit hook",
-      "community_name": "/graphify Skill Definition (SKILL.md)",
+      "community_name": "graphify reference: hooks.md",
       "id": "graphify_hook_install_concept"
     },
     {
@@ -1014,9 +1058,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 0,
+      "community": 15,
       "norm_label": "graphify claude install (native claude.md integration)",
-      "community_name": "/graphify Skill Definition (SKILL.md)",
+      "community_name": "graphify reference: hooks.md",
       "id": "graphify_claude_md_integration_concept"
     },
     {
@@ -1029,7 +1073,7 @@
       "author": null,
       "contributor": null,
       "rationale": "IDs must use the full repo-relative path (every directory level) joined with the entity name so the LLM-generated ID matches the AST extractor's ID exactly; using only the filename or immediate parent creates orphan ghost-duplicate nodes, and IDs must never carry chunk-number suffixes so they stay deterministic.",
-      "community": 0,
+      "community": 12,
       "norm_label": "node id format spec ({stem}_{entity})",
       "community_name": "/graphify Skill Definition (SKILL.md)",
       "id": "graphify_node_id_format_concept"
@@ -1044,7 +1088,7 @@
       "author": null,
       "contributor": null,
       "rationale": "Requires picking one of five fixed values (0.95/0.85/0.75/0.65/0.55) for INFERRED edges instead of a free continuous range, because production data showed models collapse a continuous 0-1 range into a bimodal split (>50% at 0.5, >40% at 0.85+); discrete rubrics are followed more faithfully.",
-      "community": 0,
+      "community": 12,
       "norm_label": "confidence-score rubric (discrete values)",
       "community_name": "/graphify Skill Definition (SKILL.md)",
       "id": "graphify_confidence_rubric_concept"
@@ -1058,7 +1102,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 0,
+      "community": 12,
       "norm_label": "semantic extraction subagent prompt",
       "community_name": "/graphify Skill Definition (SKILL.md)",
       "id": "graphify_extraction_subagent_prompt_concept"
@@ -1103,9 +1147,9 @@
       "author": null,
       "contributor": null,
       "rationale": "Cache entries are attributed to the extraction-spec.md prompt file that produced them; when the prompt changes on a graphify upgrade, old-prompt entries are re-extracted instead of replayed, while unchanged-prompt entries keep being served from cache, avoiding redundant LLM calls on unchanged files.",
-      "community": 0,
+      "community": 13,
       "norm_label": "semantic extraction cache (per-file, prompt-stamped)",
-      "community_name": "/graphify Skill Definition (SKILL.md)",
+      "community_name": "graphify reference: update.md",
       "id": "graphify_semantic_cache_concept"
     },
     {
@@ -1118,9 +1162,9 @@
       "author": null,
       "contributor": null,
       "rationale": "Only semantic files (docs/papers/images) that actually produced output this run are stamped in the manifest; a changed file whose chunk failed or was omitted stays unstamped so the next --update re-queues it, and dispatched-but-unstamped files have their stale semantic_hash cleared so they aren't mistaken for unchanged - otherwise their content would be permanently lost.",
-      "community": 0,
+      "community": 13,
       "norm_label": "manifest stamping (only-on-output rule)",
-      "community_name": "/graphify Skill Definition (SKILL.md)",
+      "community_name": "graphify reference: update.md",
       "id": "graphify_manifest_stamping_concept"
     },
     {
@@ -1133,9 +1177,9 @@
       "author": null,
       "contributor": null,
       "rationale": "Reads graph.json directly (no NetworkX round-trip) so directed edge relations survive merges; prune_sources is applied only to genuinely deleted files (never changed files) because replace-on-re-extract already drops every source_file present in the new chunk from the base before merging in the fresh version.",
-      "community": 0,
+      "community": 13,
       "norm_label": "build_merge (incremental graph merge)",
-      "community_name": "/graphify Skill Definition (SKILL.md)",
+      "community_name": "graphify reference: update.md",
       "id": "graphify_build_merge_concept"
     },
     {
@@ -1148,9 +1192,9 @@
       "author": null,
       "contributor": null,
       "rationale": "to_json() refuses to write graph.json if the new graph has fewer nodes than the existing one, and downstream report/analysis files are only written when the write actually happened - so a broken or partial extraction can never silently overwrite a good graph.",
-      "community": 0,
+      "community": 13,
       "norm_label": "graph.json shrink guard",
-      "community_name": "/graphify Skill Definition (SKILL.md)",
+      "community_name": "graphify reference: update.md",
       "id": "graphify_shrink_guard_concept"
     },
     {
@@ -1218,7 +1262,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 0,
+      "community": 12,
       "norm_label": "whisper video/audio transcription",
       "community_name": "/graphify Skill Definition (SKILL.md)",
       "id": "graphify_whisper_transcription_concept"
@@ -1684,13 +1728,46 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "CONTRIBUTING.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "contributing",
+      "target": "contributing_contributing",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CONTRIBUTING.md",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "contributing_contributing",
+      "target": "contributing_parallel_agent_work",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CONTRIBUTING.md",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "contributing_contributing",
+      "target": "contributing_principles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "docs/adr/0006-gemini-as-llm-provider.md",
       "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "docs_adr_0006_gemini_as_llm_provider",
-      "target": "docs_adr_0006_gemini_as_llm_provider_gemini_3_6_flash_as_the_runtime_llm_provider",
-      "confidence_score": 1.0
+      "target": "docs_adr_0006_gemini_as_llm_provider_gemini_3_6_flash_as_the_runtime_llm_provider"
     },
     {
       "relation": "contains",
@@ -1699,9 +1776,9 @@
       "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "docs_adr_0006_gemini_as_llm_provider_gemini_3_6_flash_as_the_runtime_llm_provider",
-      "target": "docs_adr_0006_gemini_as_llm_provider_consequences",
-      "confidence_score": 1.0
+      "target": "docs_adr_0006_gemini_as_llm_provider_consequences"
     },
     {
       "relation": "contains",
@@ -1710,9 +1787,9 @@
       "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "docs_adr_0006_gemini_as_llm_provider_gemini_3_6_flash_as_the_runtime_llm_provider",
-      "target": "docs_adr_0006_gemini_as_llm_provider_considered_options",
-      "confidence_score": 1.0
+      "target": "docs_adr_0006_gemini_as_llm_provider_considered_options"
     },
     {
       "relation": "contains",
@@ -1721,9 +1798,9 @@
       "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "docs_adr_0007_jwt_auth_with_refresh_tokens",
-      "target": "docs_adr_0007_jwt_auth_with_refresh_tokens_jwt_access_tokens_opaque_refresh_tokens_hand_rolled_on_rails_8_s_built_in_auth",
-      "confidence_score": 1.0
+      "target": "docs_adr_0007_jwt_auth_with_refresh_tokens_jwt_access_tokens_opaque_refresh_tokens_hand_rolled_on_rails_8_s_built_in_auth"
     },
     {
       "relation": "references",
@@ -1732,9 +1809,9 @@
       "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "docs_adr_0009_vps_hosting_with_split_frontend_deploy",
-      "target": "docs_adr_0007_jwt_auth_with_refresh_tokens",
-      "confidence_score": 1.0
+      "target": "docs_adr_0007_jwt_auth_with_refresh_tokens"
     },
     {
       "relation": "contains",
@@ -1743,9 +1820,9 @@
       "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "docs_adr_0007_jwt_auth_with_refresh_tokens_jwt_access_tokens_opaque_refresh_tokens_hand_rolled_on_rails_8_s_built_in_auth",
-      "target": "docs_adr_0007_jwt_auth_with_refresh_tokens_consequences",
-      "confidence_score": 1.0
+      "target": "docs_adr_0007_jwt_auth_with_refresh_tokens_consequences"
     },
     {
       "relation": "contains",
@@ -1754,9 +1831,9 @@
       "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "docs_adr_0007_jwt_auth_with_refresh_tokens_jwt_access_tokens_opaque_refresh_tokens_hand_rolled_on_rails_8_s_built_in_auth",
-      "target": "docs_adr_0007_jwt_auth_with_refresh_tokens_considered_options",
-      "confidence_score": 1.0
+      "target": "docs_adr_0007_jwt_auth_with_refresh_tokens_considered_options"
     },
     {
       "relation": "contains",
@@ -1765,9 +1842,9 @@
       "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "docs_adr_0008_rest_json_api_with_active_model_serializers",
-      "target": "docs_adr_0008_rest_json_api_with_active_model_serializers_rest_json_api_response_format_via_active_model_serializers",
-      "confidence_score": 1.0
+      "target": "docs_adr_0008_rest_json_api_with_active_model_serializers_rest_json_api_response_format_via_active_model_serializers"
     },
     {
       "relation": "contains",
@@ -1776,9 +1853,9 @@
       "source_location": "L17",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "docs_adr_0008_rest_json_api_with_active_model_serializers_rest_json_api_response_format_via_active_model_serializers",
-      "target": "docs_adr_0008_rest_json_api_with_active_model_serializers_consequences",
-      "confidence_score": 1.0
+      "target": "docs_adr_0008_rest_json_api_with_active_model_serializers_consequences"
     },
     {
       "relation": "contains",
@@ -1787,9 +1864,9 @@
       "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "docs_adr_0008_rest_json_api_with_active_model_serializers_rest_json_api_response_format_via_active_model_serializers",
-      "target": "docs_adr_0008_rest_json_api_with_active_model_serializers_considered_options",
-      "confidence_score": 1.0
+      "target": "docs_adr_0008_rest_json_api_with_active_model_serializers_considered_options"
     },
     {
       "relation": "contains",
@@ -1798,9 +1875,9 @@
       "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "docs_adr_0009_vps_hosting_with_split_frontend_deploy",
-      "target": "docs_adr_0009_vps_hosting_with_split_frontend_deploy_self_hosted_vps_for_rails_postgres_cloudflare_pages_for_the_frontend_github_actions_ci_cd_with_ordered_deploy",
-      "confidence_score": 1.0
+      "target": "docs_adr_0009_vps_hosting_with_split_frontend_deploy_self_hosted_vps_for_rails_postgres_cloudflare_pages_for_the_frontend_github_actions_ci_cd_with_ordered_deploy"
     },
     {
       "relation": "contains",
@@ -1809,9 +1886,9 @@
       "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "docs_adr_0009_vps_hosting_with_split_frontend_deploy_self_hosted_vps_for_rails_postgres_cloudflare_pages_for_the_frontend_github_actions_ci_cd_with_ordered_deploy",
-      "target": "docs_adr_0009_vps_hosting_with_split_frontend_deploy_consequences",
-      "confidence_score": 1.0
+      "target": "docs_adr_0009_vps_hosting_with_split_frontend_deploy_consequences"
     },
     {
       "relation": "contains",
@@ -1820,9 +1897,9 @@
       "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "docs_adr_0009_vps_hosting_with_split_frontend_deploy_self_hosted_vps_for_rails_postgres_cloudflare_pages_for_the_frontend_github_actions_ci_cd_with_ordered_deploy",
-      "target": "docs_adr_0009_vps_hosting_with_split_frontend_deploy_considered_options",
-      "confidence_score": 1.0
+      "target": "docs_adr_0009_vps_hosting_with_split_frontend_deploy_considered_options"
     },
     {
       "relation": "contains",
@@ -1831,9 +1908,9 @@
       "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "docs_adr_0010_lefthook_for_git_hook_backpressure",
-      "target": "docs_adr_0010_lefthook_for_git_hook_backpressure_lefthook_for_git_hook_backpressure_across_the_split_monorepo",
-      "confidence_score": 1.0
+      "target": "docs_adr_0010_lefthook_for_git_hook_backpressure_lefthook_for_git_hook_backpressure_across_the_split_monorepo"
     },
     {
       "relation": "contains",
@@ -1842,9 +1919,9 @@
       "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "docs_adr_0010_lefthook_for_git_hook_backpressure_lefthook_for_git_hook_backpressure_across_the_split_monorepo",
-      "target": "docs_adr_0010_lefthook_for_git_hook_backpressure_consequences",
-      "confidence_score": 1.0
+      "target": "docs_adr_0010_lefthook_for_git_hook_backpressure_consequences"
     },
     {
       "relation": "contains",
@@ -1853,9 +1930,9 @@
       "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "docs_adr_0010_lefthook_for_git_hook_backpressure_lefthook_for_git_hook_backpressure_across_the_split_monorepo",
-      "target": "docs_adr_0010_lefthook_for_git_hook_backpressure_considered_options",
-      "confidence_score": 1.0
+      "target": "docs_adr_0010_lefthook_for_git_hook_backpressure_considered_options"
     },
     {
       "relation": "references",
@@ -3398,5 +3475,5 @@
       "source_file": "docs/adr/0005-solid-queue-for-background-jobs.md"
     }
   ],
-  "built_at_commit": "f9147d3a1e09c3769cf2052bf5348896cc4f716e"
+  "built_at_commit": "5c57d7f7fa105f4199e2fcf641cb59cf49d9190b"
 }

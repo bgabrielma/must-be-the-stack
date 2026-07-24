@@ -65,18 +65,18 @@
     "semantic_hash": "24efcdf470ab04941a871f7ab7fb1b7c"
   },
   "AGENTS.md": {
-    "mtime": 1784846822.0803564,
-    "ast_hash": "2b1fa6f35671377a043f694aa773af13",
-    "semantic_hash": "2b1fa6f35671377a043f694aa773af13"
+    "mtime": 1784896160.1925972,
+    "ast_hash": "244e56d37859fc0f77e6f2a809bcdd61",
+    "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1784846822.0803564,
-    "ast_hash": "2b1fa6f35671377a043f694aa773af13",
-    "semantic_hash": "2b1fa6f35671377a043f694aa773af13"
+    "mtime": 1784896160.1925972,
+    "ast_hash": "244e56d37859fc0f77e6f2a809bcdd61",
+    "semantic_hash": ""
   },
   "CONTEXT.md": {
-    "mtime": 1784893276.385284,
-    "ast_hash": "c9aa758d2cbb35829b96c65fadb99172",
+    "mtime": 1784897246.0497613,
+    "ast_hash": "24a1fd4763dac85d9540654b06d1bb68",
     "semantic_hash": ""
   },
   "docs/adr/0001-shared-curriculum-per-subject.md": {
@@ -142,6 +142,11 @@
   "docs/adr/0009-vps-hosting-with-split-frontend-deploy.md": {
     "mtime": 1784894888.386717,
     "ast_hash": "055efac830b2439fb34fa951f11fcc28",
+    "semantic_hash": ""
+  },
+  "docs/adr/0010-lefthook-for-git-hook-backpressure.md": {
+    "mtime": 1784896506.942674,
+    "ast_hash": "1ce7b8dd730975c5b5962a38bf3d6c17",
     "semantic_hash": ""
   }
 }
