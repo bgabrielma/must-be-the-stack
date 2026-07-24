@@ -1,7 +1,7 @@
 # Graph Report - 3-background-jobs-infra  (2026-07-24)
 
 ## Corpus Check
-- 88 files · ~26,331 words
+- 88 files · ~26,417 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `6ce7cef0`
+- Built from commit: `3e70bf77`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
