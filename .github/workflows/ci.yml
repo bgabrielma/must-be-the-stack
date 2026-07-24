@@ -68,8 +68,8 @@ jobs:
       - name: Lint
         run: pnpm lint
 
-      - name: Typecheck
-        run: pnpm exec tsc -b
+      - name: Build & typecheck
+        run: pnpm run build
 
       - name: Vitest
         run: pnpm test
