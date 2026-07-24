@@ -4,14 +4,13 @@ class PingsController < ApplicationController
   end
 
   def create
-    ping = nil
-
     # PingNotificationJob sets enqueue_after_transaction_commit, so calling
     # perform_later here is safe even though we're inside a transaction: the
     # job is only handed to Solid Queue once this transaction commits.
-    ActiveRecord::Base.transaction do
-      ping = Ping.create!(message: params[:message])
-      PingNotificationJob.perform_later(ping.id)
+    ping = ActiveRecord::Base.transaction do
+      Ping.create!(message: params[:message]).tap do |created|
+        PingNotificationJob.perform_later(created.id)
+      end
     end
 
     render json: ping, content_type: "application/vnd.api+json", status: :created

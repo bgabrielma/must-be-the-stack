@@ -1,3 +1,5 @@
+require "net/http"
+
 # Delivers a notification about a newly created Ping to an external endpoint.
 #
 # Demonstrates the async job pattern later grading/notification jobs (Quiz,
@@ -12,10 +14,12 @@ class PingNotificationJob < ApplicationJob
   # Ping row is actually visible to other connections.
   self.enqueue_after_transaction_commit = true
 
-  # Net::HTTP raises Net::OpenTimeout/Net::ReadTimeout (both Timeout::Error)
-  # on a slow/unresponsive endpoint; Solid Queue does not retry jobs
-  # automatically, so this has to be explicit.
-  retry_on Timeout::Error, wait: :polynomially_longer, attempts: 5
+  # Net::HTTP.post can raise on a slow/unresponsive endpoint
+  # (Net::OpenTimeout/Net::ReadTimeout, both Timeout::Error), a refused
+  # connection (Errno::ECONNREFUSED), or a DNS failure (SocketError) — all
+  # transient. Solid Queue does not retry jobs automatically, so this has to
+  # be explicit.
+  retry_on Timeout::Error, Errno::ECONNREFUSED, SocketError, wait: :polynomially_longer, attempts: 5
 
   def perform(ping_id)
     ping = Ping.find(ping_id)
