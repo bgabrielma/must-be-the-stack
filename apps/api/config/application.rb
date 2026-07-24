@@ -40,5 +40,9 @@ module Api
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    # Refresh tokens are delivered via an httpOnly cookie (ADR-0007), which
+    # needs the Cookies middleware that api_only mode skips by default.
+    config.middleware.use ActionDispatch::Cookies
   end
 end

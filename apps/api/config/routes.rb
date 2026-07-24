@@ -7,6 +7,11 @@ Rails.application.routes.draw do
 
   resources :pings, only: [ :index, :create ]
 
+  post "signup" => "signups#create"
+  post "login" => "sessions#create"
+  post "refresh" => "sessions#refresh"
+  delete "logout" => "sessions#destroy"
+
   # Defines the root path route ("/")
   # root "posts#index"
 end

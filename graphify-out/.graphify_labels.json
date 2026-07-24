@@ -59,5 +59,17 @@
   "57": "pings_spec.rb",
   "58": "spec_helper.rb",
   "59": "setupTests.ts",
-  "60": "vite.config.ts"
+  "60": "vite.config.ts",
+  "61": "cors.rb",
+  "62": "filter_parameter_logging.rb",
+  "63": "inflections.rb",
+  "64": "puma.rb",
+  "65": "cable_schema.rb",
+  "66": "cache_schema.rb",
+  "67": "queue_schema.rb",
+  "68": "seeds.rb",
+  "69": "ping_notification_job_spec.rb",
+  "70": "pings_create_spec.rb",
+  "71": "pings_spec.rb",
+  "72": "spec_helper.rb"
 }

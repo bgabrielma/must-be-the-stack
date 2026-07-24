@@ -165,8 +165,8 @@
     "semantic_hash": ""
   },
   "apps/api/app/controllers/pings_controller.rb": {
-    "mtime": 1784912499.5485537,
-    "ast_hash": "880d754018a25769863ff1e7ec6fcee0",
+    "mtime": 1784914054.4370303,
+    "ast_hash": "d82cb660ec51993e6c3ed58e374b7c93",
     "semantic_hash": ""
   },
   "apps/api/app/jobs/application_job.rb": {
@@ -175,8 +175,8 @@
     "semantic_hash": ""
   },
   "apps/api/app/jobs/ping_notification_job.rb": {
-    "mtime": 1784912885.0427194,
-    "ast_hash": "0f891cbacd29d210c7774d0383f735b4",
+    "mtime": 1784914106.0165524,
+    "ast_hash": "2ac20b5852a55788c67624cd29c3f95a",
     "semantic_hash": ""
   },
   "apps/api/app/mailers/application_mailer.rb": {
@@ -345,8 +345,8 @@
     "semantic_hash": ""
   },
   "apps/api/spec/jobs/ping_notification_job_spec.rb": {
-    "mtime": 1784912433.3571455,
-    "ast_hash": "78e4d042b2719694aab26f3db16381dd",
+    "mtime": 1784914117.9487343,
+    "ast_hash": "83d8950dbb724b84510b0fe2734720d5",
     "semantic_hash": ""
   },
   "apps/api/spec/rails_helper.rb": {
