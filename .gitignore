@@ -5,4 +5,9 @@ tmp/
 # covered by its own .gitignore, this catches the workspace root's).
 node_modules/
 
+# pnpm's content-addressable store. Defaults to the filesystem root (not
+# ~/.local/share/pnpm) when the repo lives on its own mount, so it can land
+# inside the repo root here.
+.pnpm-store/
+
 .DS_Store
