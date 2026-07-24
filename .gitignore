@@ -1,2 +1,8 @@
 tmp/
 .worktrees/
+
+# Node (pnpm workspace root store/symlinks; each app's own node_modules is
+# covered by its own .gitignore, this catches the workspace root's).
+node_modules/
+
+.DS_Store
