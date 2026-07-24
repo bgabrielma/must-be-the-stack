@@ -165,23 +165,18 @@
     "semantic_hash": ""
   },
   "apps/api/app/controllers/pings_controller.rb": {
-    "mtime": 1784912175.5334074,
-    "ast_hash": "1c3f3149cd584fb5328b342491ce6037",
-    "semantic_hash": ""
-  },
-  "apps/api/app/controllers/sessions_controller.rb": {
-    "mtime": 1784912781.414339,
-    "ast_hash": "535e962b691881fb2996db629dc7d4e2",
-    "semantic_hash": ""
-  },
-  "apps/api/app/controllers/signups_controller.rb": {
-    "mtime": 1784912774.6547155,
-    "ast_hash": "f619fe452c33e1ecf5cd94fa3df1f9fa",
+    "mtime": 1784914268.3561711,
+    "ast_hash": "d82cb660ec51993e6c3ed58e374b7c93",
     "semantic_hash": ""
   },
   "apps/api/app/jobs/application_job.rb": {
     "mtime": 1784912175.5339093,
     "ast_hash": "bdecd79f2c18f1519c7d39f08ba41ea9",
+    "semantic_hash": ""
+  },
+  "apps/api/app/jobs/ping_notification_job.rb": {
+    "mtime": 1784914268.3566036,
+    "ast_hash": "2ac20b5852a55788c67624cd29c3f95a",
     "semantic_hash": ""
   },
   "apps/api/app/mailers/application_mailer.rb": {
@@ -199,29 +194,9 @@
     "ast_hash": "c69abec21e3ea39b2c2ee4980e55b903",
     "semantic_hash": ""
   },
-  "apps/api/app/models/refresh_token.rb": {
-    "mtime": 1784912604.1142514,
-    "ast_hash": "e738e2b7b1144cb904ad1d593ca9224d",
-    "semantic_hash": ""
-  },
-  "apps/api/app/models/user.rb": {
-    "mtime": 1784912435.3379734,
-    "ast_hash": "7b14909b483b264c80f8bf8b9653a456",
-    "semantic_hash": ""
-  },
   "apps/api/app/serializers/ping_serializer.rb": {
     "mtime": 1784912175.5357435,
     "ast_hash": "b1fc9b51345eecb4b78207f78495cd01",
-    "semantic_hash": ""
-  },
-  "apps/api/app/serializers/user_serializer.rb": {
-    "mtime": 1784912437.8580317,
-    "ast_hash": "34fd5377574e34f11c4409527ac982bc",
-    "semantic_hash": ""
-  },
-  "apps/api/app/services/access_token.rb": {
-    "mtime": 1784912539.6790776,
-    "ast_hash": "c328141ef03a001a40cd029d93b5f640",
     "semantic_hash": ""
   },
   "apps/api/bin/brakeman": {
@@ -295,8 +270,8 @@
     "semantic_hash": ""
   },
   "apps/api/config/environments/development.rb": {
-    "mtime": 1784912175.5448537,
-    "ast_hash": "66f43a429d71bb5c76c909595774814f",
+    "mtime": 1784914268.3576832,
+    "ast_hash": "d3ae75dfad0b2a4a6f4977a847f506d3",
     "semantic_hash": ""
   },
   "apps/api/config/environments/production.rb": {
@@ -335,8 +310,8 @@
     "semantic_hash": ""
   },
   "apps/api/config/routes.rb": {
-    "mtime": 1784912443.9253936,
-    "ast_hash": "dd4c8d5accace143edf0e64ebfb85ee5",
+    "mtime": 1784914268.3584955,
+    "ast_hash": "904b1eb63c4650191529f84cd17cf23a",
     "semantic_hash": ""
   },
   "apps/api/db/cable_schema.rb": {
@@ -354,16 +329,6 @@
     "ast_hash": "4c62d1b3d02c9e62a8431eb42247a2be",
     "semantic_hash": ""
   },
-  "apps/api/db/migrate/20260724170020_create_users.rb": {
-    "mtime": 1784912433.002082,
-    "ast_hash": "a240f4bcc00accecd0513288914ce9b4",
-    "semantic_hash": ""
-  },
-  "apps/api/db/migrate/20260724170117_create_refresh_tokens.rb": {
-    "mtime": 1784912481.7264616,
-    "ast_hash": "4a7d7d6184a7af24a1dea108107e738c",
-    "semantic_hash": ""
-  },
   "apps/api/db/queue_schema.rb": {
     "mtime": 1784912175.553809,
     "ast_hash": "37121f2e5f9ecb933fc1babcf03043a1",
@@ -379,9 +344,9 @@
     "ast_hash": "01b3c1fa641c6992b4b850b28ab3c976",
     "semantic_hash": ""
   },
-  "apps/api/spec/models/refresh_token_spec.rb": {
-    "mtime": 1784912495.886691,
-    "ast_hash": "a6c08593daea77c09d92ca7fbda7f42c",
+  "apps/api/spec/jobs/ping_notification_job_spec.rb": {
+    "mtime": 1784914268.3592672,
+    "ast_hash": "83d8950dbb724b84510b0fe2734720d5",
     "semantic_hash": ""
   },
   "apps/api/spec/rails_helper.rb": {
@@ -389,24 +354,14 @@
     "ast_hash": "0e7f5cf50bcca6f31cfccaba4cf3aab4",
     "semantic_hash": ""
   },
+  "apps/api/spec/requests/pings_create_spec.rb": {
+    "mtime": 1784914268.3596706,
+    "ast_hash": "cfa2b081afefaacc005f0fc8ed5c4664",
+    "semantic_hash": ""
+  },
   "apps/api/spec/requests/pings_spec.rb": {
     "mtime": 1784912175.5572963,
     "ast_hash": "57c80e86508365dc203a62993cc186b7",
-    "semantic_hash": ""
-  },
-  "apps/api/spec/requests/sessions_spec.rb": {
-    "mtime": 1784912571.514541,
-    "ast_hash": "373b644c6f82a5867db7141b7c0e3e37",
-    "semantic_hash": ""
-  },
-  "apps/api/spec/requests/signups_spec.rb": {
-    "mtime": 1784912411.028785,
-    "ast_hash": "bb8c141cdccf72a438e17911b563ccf5",
-    "semantic_hash": ""
-  },
-  "apps/api/spec/services/access_token_spec.rb": {
-    "mtime": 1784912516.7407956,
-    "ast_hash": "173682278d14e00a3ad6128b85c056d2",
     "semantic_hash": ""
   },
   "apps/api/spec/spec_helper.rb": {
@@ -510,8 +465,8 @@
     "semantic_hash": ""
   },
   "apps/api/config/database.yml": {
-    "mtime": 1784912175.5441809,
-    "ast_hash": "98df8983a70e2b70bee97b8f7f931415",
+    "mtime": 1784914268.3570385,
+    "ast_hash": "1dd191ae071f2a0db0cb033bd6fdcaa3",
     "semantic_hash": ""
   },
   "apps/api/config/locales/en.yml": {
@@ -577,6 +532,66 @@
   "apps/web/src/assets/vite.svg": {
     "mtime": 1784912175.5660834,
     "ast_hash": "9960a24288958394ac50e57ff638b036",
+    "semantic_hash": ""
+  },
+  "apps/api/app/controllers/sessions_controller.rb": {
+    "mtime": 1784912781.414339,
+    "ast_hash": "535e962b691881fb2996db629dc7d4e2",
+    "semantic_hash": ""
+  },
+  "apps/api/app/controllers/signups_controller.rb": {
+    "mtime": 1784912774.6547155,
+    "ast_hash": "f619fe452c33e1ecf5cd94fa3df1f9fa",
+    "semantic_hash": ""
+  },
+  "apps/api/app/models/refresh_token.rb": {
+    "mtime": 1784912604.1142514,
+    "ast_hash": "e738e2b7b1144cb904ad1d593ca9224d",
+    "semantic_hash": ""
+  },
+  "apps/api/app/models/user.rb": {
+    "mtime": 1784912435.3379734,
+    "ast_hash": "7b14909b483b264c80f8bf8b9653a456",
+    "semantic_hash": ""
+  },
+  "apps/api/app/serializers/user_serializer.rb": {
+    "mtime": 1784912437.8580317,
+    "ast_hash": "34fd5377574e34f11c4409527ac982bc",
+    "semantic_hash": ""
+  },
+  "apps/api/app/services/access_token.rb": {
+    "mtime": 1784912539.6790776,
+    "ast_hash": "c328141ef03a001a40cd029d93b5f640",
+    "semantic_hash": ""
+  },
+  "apps/api/db/migrate/20260724170020_create_users.rb": {
+    "mtime": 1784912433.002082,
+    "ast_hash": "a240f4bcc00accecd0513288914ce9b4",
+    "semantic_hash": ""
+  },
+  "apps/api/db/migrate/20260724170117_create_refresh_tokens.rb": {
+    "mtime": 1784912481.7264616,
+    "ast_hash": "4a7d7d6184a7af24a1dea108107e738c",
+    "semantic_hash": ""
+  },
+  "apps/api/spec/models/refresh_token_spec.rb": {
+    "mtime": 1784912495.886691,
+    "ast_hash": "a6c08593daea77c09d92ca7fbda7f42c",
+    "semantic_hash": ""
+  },
+  "apps/api/spec/requests/sessions_spec.rb": {
+    "mtime": 1784912571.514541,
+    "ast_hash": "373b644c6f82a5867db7141b7c0e3e37",
+    "semantic_hash": ""
+  },
+  "apps/api/spec/requests/signups_spec.rb": {
+    "mtime": 1784912411.028785,
+    "ast_hash": "bb8c141cdccf72a438e17911b563ccf5",
+    "semantic_hash": ""
+  },
+  "apps/api/spec/services/access_token_spec.rb": {
+    "mtime": 1784912516.7407956,
+    "ast_hash": "173682278d14e00a3ad6128b85c056d2",
     "semantic_hash": ""
   }
 }
