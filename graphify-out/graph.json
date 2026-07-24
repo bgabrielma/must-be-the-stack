@@ -139,6 +139,50 @@
       "norm_label": "parallel agent work"
     },
     {
+      "label": "0011-lefthook-post-checkout-hook-for-worktree-setup.md",
+      "file_type": "document",
+      "source_file": "docs/adr/0011-lefthook-post-checkout-hook-for-worktree-setup.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_adr_0011_lefthook_post_checkout_hook_for_worktree_setup",
+      "community": 14,
+      "community_name": "Contributing",
+      "norm_label": "0011-lefthook-post-checkout-hook-for-worktree-setup.md"
+    },
+    {
+      "label": "Lefthook post-checkout hook for git worktree environment setup",
+      "file_type": "document",
+      "source_file": "docs/adr/0011-lefthook-post-checkout-hook-for-worktree-setup.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "docs_adr_0011_lefthook_post_checkout_hook_for_worktree_setup_lefthook_post_checkout_hook_for_git_worktree_environment_setup",
+      "community": 14,
+      "community_name": "Contributing",
+      "norm_label": "lefthook post-checkout hook for git worktree environment setup"
+    },
+    {
+      "label": "Considered Options",
+      "file_type": "document",
+      "source_file": "docs/adr/0011-lefthook-post-checkout-hook-for-worktree-setup.md",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "docs_adr_0011_lefthook_post_checkout_hook_for_worktree_setup_considered_options",
+      "community": 14,
+      "community_name": "Contributing",
+      "norm_label": "considered options"
+    },
+    {
+      "label": "Consequences",
+      "file_type": "document",
+      "source_file": "docs/adr/0011-lefthook-post-checkout-hook-for-worktree-setup.md",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "docs_adr_0011_lefthook_post_checkout_hook_for_worktree_setup_consequences",
+      "community": 14,
+      "community_name": "Contributing",
+      "norm_label": "consequences"
+    },
+    {
       "label": "0006-gemini-as-llm-provider.md",
       "file_type": "document",
       "source_file": "docs/adr/0006-gemini-as-llm-provider.md",
@@ -367,7 +411,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 12,
+      "community": 0,
       "norm_label": "graphify skill trigger config (.claude/claude.md)",
       "community_name": "/graphify Skill Definition (SKILL.md)",
       "id": "claude_claude_config"
@@ -381,7 +425,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 12,
+      "community": 0,
       "norm_label": "/graphify skill definition (skill.md)",
       "community_name": "/graphify Skill Definition (SKILL.md)",
       "id": "claude_skills_graphify_skill_doc"
@@ -423,7 +467,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 12,
+      "community": 0,
       "norm_label": "graphify reference: extraction-spec.md",
       "community_name": "/graphify Skill Definition (SKILL.md)",
       "id": "claude_skills_graphify_references_extraction_spec_doc"
@@ -437,7 +481,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 12,
+      "community": 0,
       "norm_label": "graphify reference: github-and-merge.md",
       "community_name": "/graphify Skill Definition (SKILL.md)",
       "id": "claude_skills_graphify_references_github_and_merge_doc"
@@ -451,9 +495,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 15,
+      "community": 0,
       "norm_label": "graphify reference: hooks.md",
-      "community_name": "graphify reference: hooks.md",
+      "community_name": "/graphify Skill Definition (SKILL.md)",
       "id": "claude_skills_graphify_references_hooks_doc"
     },
     {
@@ -479,7 +523,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 12,
+      "community": 0,
       "norm_label": "graphify reference: transcribe.md",
       "community_name": "/graphify Skill Definition (SKILL.md)",
       "id": "claude_skills_graphify_references_transcribe_doc"
@@ -493,9 +537,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 13,
+      "community": 0,
       "norm_label": "graphify reference: update.md",
-      "community_name": "graphify reference: update.md",
+      "community_name": "/graphify Skill Definition (SKILL.md)",
       "id": "claude_skills_graphify_references_update_doc"
     },
     {
@@ -1016,9 +1060,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 13,
+      "community": 0,
       "norm_label": "--update (incremental re-extraction)",
-      "community_name": "graphify reference: update.md",
+      "community_name": "/graphify Skill Definition (SKILL.md)",
       "id": "graphify_update_concept"
     },
     {
@@ -1030,9 +1074,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 13,
+      "community": 0,
       "norm_label": "--cluster-only",
-      "community_name": "graphify reference: update.md",
+      "community_name": "/graphify Skill Definition (SKILL.md)",
       "id": "graphify_cluster_only_concept"
     },
     {
@@ -1044,9 +1088,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 15,
+      "community": 0,
       "norm_label": "graphify post-commit hook",
-      "community_name": "graphify reference: hooks.md",
+      "community_name": "/graphify Skill Definition (SKILL.md)",
       "id": "graphify_hook_install_concept"
     },
     {
@@ -1058,9 +1102,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 15,
+      "community": 0,
       "norm_label": "graphify claude install (native claude.md integration)",
-      "community_name": "graphify reference: hooks.md",
+      "community_name": "/graphify Skill Definition (SKILL.md)",
       "id": "graphify_claude_md_integration_concept"
     },
     {
@@ -1073,7 +1117,7 @@
       "author": null,
       "contributor": null,
       "rationale": "IDs must use the full repo-relative path (every directory level) joined with the entity name so the LLM-generated ID matches the AST extractor's ID exactly; using only the filename or immediate parent creates orphan ghost-duplicate nodes, and IDs must never carry chunk-number suffixes so they stay deterministic.",
-      "community": 12,
+      "community": 0,
       "norm_label": "node id format spec ({stem}_{entity})",
       "community_name": "/graphify Skill Definition (SKILL.md)",
       "id": "graphify_node_id_format_concept"
@@ -1088,7 +1132,7 @@
       "author": null,
       "contributor": null,
       "rationale": "Requires picking one of five fixed values (0.95/0.85/0.75/0.65/0.55) for INFERRED edges instead of a free continuous range, because production data showed models collapse a continuous 0-1 range into a bimodal split (>50% at 0.5, >40% at 0.85+); discrete rubrics are followed more faithfully.",
-      "community": 12,
+      "community": 0,
       "norm_label": "confidence-score rubric (discrete values)",
       "community_name": "/graphify Skill Definition (SKILL.md)",
       "id": "graphify_confidence_rubric_concept"
@@ -1102,7 +1146,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 12,
+      "community": 0,
       "norm_label": "semantic extraction subagent prompt",
       "community_name": "/graphify Skill Definition (SKILL.md)",
       "id": "graphify_extraction_subagent_prompt_concept"
@@ -1147,9 +1191,9 @@
       "author": null,
       "contributor": null,
       "rationale": "Cache entries are attributed to the extraction-spec.md prompt file that produced them; when the prompt changes on a graphify upgrade, old-prompt entries are re-extracted instead of replayed, while unchanged-prompt entries keep being served from cache, avoiding redundant LLM calls on unchanged files.",
-      "community": 13,
+      "community": 0,
       "norm_label": "semantic extraction cache (per-file, prompt-stamped)",
-      "community_name": "graphify reference: update.md",
+      "community_name": "/graphify Skill Definition (SKILL.md)",
       "id": "graphify_semantic_cache_concept"
     },
     {
@@ -1162,9 +1206,9 @@
       "author": null,
       "contributor": null,
       "rationale": "Only semantic files (docs/papers/images) that actually produced output this run are stamped in the manifest; a changed file whose chunk failed or was omitted stays unstamped so the next --update re-queues it, and dispatched-but-unstamped files have their stale semantic_hash cleared so they aren't mistaken for unchanged - otherwise their content would be permanently lost.",
-      "community": 13,
+      "community": 0,
       "norm_label": "manifest stamping (only-on-output rule)",
-      "community_name": "graphify reference: update.md",
+      "community_name": "/graphify Skill Definition (SKILL.md)",
       "id": "graphify_manifest_stamping_concept"
     },
     {
@@ -1177,9 +1221,9 @@
       "author": null,
       "contributor": null,
       "rationale": "Reads graph.json directly (no NetworkX round-trip) so directed edge relations survive merges; prune_sources is applied only to genuinely deleted files (never changed files) because replace-on-re-extract already drops every source_file present in the new chunk from the base before merging in the fresh version.",
-      "community": 13,
+      "community": 0,
       "norm_label": "build_merge (incremental graph merge)",
-      "community_name": "graphify reference: update.md",
+      "community_name": "/graphify Skill Definition (SKILL.md)",
       "id": "graphify_build_merge_concept"
     },
     {
@@ -1192,9 +1236,9 @@
       "author": null,
       "contributor": null,
       "rationale": "to_json() refuses to write graph.json if the new graph has fewer nodes than the existing one, and downstream report/analysis files are only written when the write actually happened - so a broken or partial extraction can never silently overwrite a good graph.",
-      "community": 13,
+      "community": 0,
       "norm_label": "graph.json shrink guard",
-      "community_name": "graphify reference: update.md",
+      "community_name": "/graphify Skill Definition (SKILL.md)",
       "id": "graphify_shrink_guard_concept"
     },
     {
@@ -1262,7 +1306,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 12,
+      "community": 0,
       "norm_label": "whisper video/audio transcription",
       "community_name": "/graphify Skill Definition (SKILL.md)",
       "id": "graphify_whisper_transcription_concept"
@@ -1737,6 +1781,17 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "CONTRIBUTING.md",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "contributing",
+      "target": "docs_adr_0011_lefthook_post_checkout_hook_for_worktree_setup",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CONTRIBUTING.md",
@@ -1756,6 +1811,39 @@
       "_origin": "ast",
       "source": "contributing_contributing",
       "target": "contributing_principles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/adr/0011-lefthook-post-checkout-hook-for-worktree-setup.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_adr_0011_lefthook_post_checkout_hook_for_worktree_setup",
+      "target": "docs_adr_0011_lefthook_post_checkout_hook_for_worktree_setup_lefthook_post_checkout_hook_for_git_worktree_environment_setup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/adr/0011-lefthook-post-checkout-hook-for-worktree-setup.md",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_adr_0011_lefthook_post_checkout_hook_for_worktree_setup_lefthook_post_checkout_hook_for_git_worktree_environment_setup",
+      "target": "docs_adr_0011_lefthook_post_checkout_hook_for_worktree_setup_consequences",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/adr/0011-lefthook-post-checkout-hook-for-worktree-setup.md",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_adr_0011_lefthook_post_checkout_hook_for_worktree_setup_lefthook_post_checkout_hook_for_git_worktree_environment_setup",
+      "target": "docs_adr_0011_lefthook_post_checkout_hook_for_worktree_setup_considered_options",
       "confidence_score": 1.0
     },
     {
@@ -3475,5 +3563,5 @@
       "source_file": "docs/adr/0005-solid-queue-for-background-jobs.md"
     }
   ],
-  "built_at_commit": "5c57d7f7fa105f4199e2fcf641cb59cf49d9190b"
+  "built_at_commit": "3c70f200405d02246b5560542dad0d4b3f6efb86"
 }
