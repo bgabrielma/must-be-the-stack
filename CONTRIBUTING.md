@@ -12,6 +12,14 @@ Code-level standards for this repo. For process (issue tracking, triage, the fea
 
 **YAGNI** (You Aren't Gonna Need It): don't build for a requirement that doesn't exist yet. Anti-pattern this rules out: adding a strategy pattern for "future" Exercise types before a second type actually exists, or a config flag for a second LLM provider before ADR-0006's Gemini choice is revisited.
 
+## Testing (apps/api)
+
+RSpec files under `spec/` mirror the path of the `app/` file they cover, e.g. `app/models/ping.rb` -> `spec/models/ping_spec.rb`, `app/jobs/foo_job.rb` -> `spec/jobs/foo_job_spec.rb`. **Exception**: controllers are covered by request specs, not controller specs — `app/controllers/pings_controller.rb` is tested via `spec/requests/pings_spec.rb`, matching Rails' own convention rather than a literal path mirror.
+
+Test data is built with [FactoryBot](https://github.com/thoughtbot/factory_bot) + [Faker](https://github.com/faker-ruby/faker), not hand-rolled fixtures. Factories live in a flat `spec/factories/*.rb` (one file per model, FactoryBot's default autoload path) — they are not mirrored into `app/`'s subfolders. See `spec/factories/pings.rb` and `spec/models/ping_spec.rb` for the reference example.
+
+This convention is enforced by code review, not CI.
+
 ## Parallel agent work
 
 Every ticket — solo or parallel — is implemented in its own git worktree, not in the main checkout. This applies even when only one agent is working: it keeps the main checkout clean and means running a second ticket in parallel later needs no special-casing.

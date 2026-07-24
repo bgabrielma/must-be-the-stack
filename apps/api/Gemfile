@@ -48,4 +48,10 @@ group :development, :test do
 
   # RSpec request specs [testing seam established by this ticket]
   gem "rspec-rails"
+
+  # Test data factories, replacing hand-rolled fixtures
+  gem "factory_bot_rails"
+
+  # Realistic fake attribute values for factories
+  gem "faker"
 end
