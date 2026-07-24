@@ -1,13 +1,13 @@
 {
   ".claude/settings.json": {
-    "mtime": 1784846809.07638,
-    "ast_hash": "3eacd93ac857d7be33f05fa44a79ab83",
-    "semantic_hash": "3eacd93ac857d7be33f05fa44a79ab83"
+    "mtime": 1784899644.3763862,
+    "ast_hash": "dbe039a15c5c2eb60e34dccc1af0cbb5",
+    "semantic_hash": ""
   },
   ".devcontainer/devcontainer.json": {
-    "mtime": 1784846809.0796957,
-    "ast_hash": "189b95e2eb7bd0414fd83f064a281c14",
-    "semantic_hash": "189b95e2eb7bd0414fd83f064a281c14"
+    "mtime": 1784900983.021543,
+    "ast_hash": "6d506b5e6fa2f4c7b7bd644ec44990a7",
+    "semantic_hash": ""
   },
   ".claude/CLAUDE.md": {
     "mtime": 1784846809.0761852,
@@ -65,13 +65,13 @@
     "semantic_hash": "24efcdf470ab04941a871f7ab7fb1b7c"
   },
   "AGENTS.md": {
-    "mtime": 1784897595.8385146,
-    "ast_hash": "e5fe106d731610a26f11be2f8c3585a8",
+    "mtime": 1784897845.8784149,
+    "ast_hash": "702d418c6ad9f49aaecda85228fcb728",
     "semantic_hash": ""
   },
   "CLAUDE.md": {
-    "mtime": 1784897595.8385146,
-    "ast_hash": "e5fe106d731610a26f11be2f8c3585a8",
+    "mtime": 1784897845.8784149,
+    "ast_hash": "702d418c6ad9f49aaecda85228fcb728",
     "semantic_hash": ""
   },
   "CONTEXT.md": {
@@ -150,8 +150,18 @@
     "semantic_hash": ""
   },
   "CONTRIBUTING.md": {
-    "mtime": 1784897587.2225316,
-    "ast_hash": "e3a487cba5cc9c8aa502f3e014966bb5",
+    "mtime": 1784897885.3608396,
+    "ast_hash": "89b8a9c4266895c41771106e6e9debd6",
+    "semantic_hash": ""
+  },
+  "docs/adr/0011-lefthook-post-checkout-hook-for-worktree-setup.md": {
+    "mtime": 1784897870.2694063,
+    "ast_hash": "3c1edaa683bce73e7faa0ee7d2d8bf54",
+    "semantic_hash": ""
+  },
+  ".devcontainer/devcontainer-lock.json": {
+    "mtime": 1784898499.34983,
+    "ast_hash": "15e8b5f263ae7dbcc6e98ab64b66e152",
     "semantic_hash": ""
   }
 }
