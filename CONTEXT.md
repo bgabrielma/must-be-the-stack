@@ -37,7 +37,7 @@ The AI-generated scoring criteria for a Project, produced alongside the Exercise
 _Avoid_: Grading criteria, Checklist.
 
 **Discovery phase**:
-The step where the system searches external sources (Reddit, GitHub repos, roadmap sites, articles) to inform a Subject's curriculum before Lesson generation.
+The manual, developer-driven step of researching external sources (Reddit, GitHub repos, roadmap sites, articles) to inform a Subject's curriculum before authoring its Lessons and Rubrics. Not an automated system step: the developer does this research and authoring themselves using their own Claude subscription, then commits the result as static seed data (see [ADR-0001](docs/adr/0001-shared-curriculum-per-subject.md)).
 _Avoid_: Research phase.
 
 **Template Repo**:
