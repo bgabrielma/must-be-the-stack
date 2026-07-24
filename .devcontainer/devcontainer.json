@@ -5,11 +5,11 @@
   "workspaceFolder": "/workspace",
   "features": {
     "ghcr.io/devcontainers/features/ruby:1": { "version": "3.3" },
-    "ghcr.io/devcontainers/features/node:1": { "version": "20" },
+    "ghcr.io/devcontainers/features/node:1": { "version": "22" },
     "ghcr.io/devcontainers/features/github-cli:1": {},
     "ghcr.io/anthropics/devcontainer-features/claude-code:1.0": {}
   },
-  "postCreateCommand": "gem install bundler && sudo apt-get update -qq && sudo apt-get install -y -qq pipx && pipx install graphifyy && sudo mkdir -p /home/vscode/.config/gh && sudo chown -R vscode:vscode /home/vscode/.config/gh",
+  "postCreateCommand": "gem install bundler && npm install -g pnpm lefthook && sudo apt-get update -qq && sudo apt-get install -y -qq pipx libpq-dev && pipx install graphifyy && sudo mkdir -p /home/vscode/.config/gh && sudo chown -R vscode:vscode /home/vscode/.config/gh && lefthook install",
   "remoteUser": "vscode",
   "mounts": [
     "source=${localEnv:HOME}/.claude,target=/home/vscode/.claude,type=bind,consistency=cached",

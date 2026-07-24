@@ -1,0 +1,46 @@
+# Gates both apps/api (Bundler) and apps/web (pnpm) from one config
+# [ADR-0010]. post-checkout auto-provisions fresh worktrees [ADR-0011].
+
+pre-commit:
+  parallel: true
+  jobs:
+    - name: rubocop
+      root: "apps/api/"
+      glob: "*.rb"
+      run: bundle exec rubocop --force-exclusion {staged_files}
+
+    - name: rspec
+      root: "apps/api/"
+      glob: "*.rb"
+      run: bundle exec rspec
+
+    - name: web lint
+      root: "apps/web/"
+      glob: "*.{ts,tsx}"
+      run: pnpm exec oxlint {staged_files}
+
+    - name: web typecheck
+      root: "apps/web/"
+      glob: "*.{ts,tsx}"
+      run: pnpm exec tsc -b
+
+pre-push:
+  parallel: true
+  jobs:
+    - name: rspec (full suite)
+      root: "apps/api/"
+      run: bundle exec rspec
+
+    - name: vitest (full suite)
+      root: "apps/web/"
+      run: pnpm test
+
+post-checkout:
+  jobs:
+    - name: provision worktree
+      run: script/setup-worktree.sh
+
+    # Preserves the graphify branch-switch rebuild hook that `lefthook install`
+    # would otherwise clobber (graphify installs it directly into .git/hooks).
+    - name: graphify rebuild
+      run: script/graphify-post-checkout.sh {0} {1} {2}
