@@ -1,16 +1,16 @@
-# Graph Report - 4-auth  (2026-07-24)
+# Graph Report - workspace  (2026-07-24)
 
 ## Corpus Check
-- 100 files · ~27,716 words
+- 103 files · ~27,890 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 359 nodes · 357 edges · 73 communities (56 shown, 17 thin omitted)
+- 362 nodes · 356 edges · 77 communities (60 shown, 17 thin omitted)
 - Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 9 edges (avg confidence: 0.76)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `0fcbed93`
+- Built from commit: `8ac701c8`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -50,6 +50,8 @@
 - ci.rb
 - environment.rb
 - development.rb
+- Stack (README section)
+- Contributing
 
 ## God Nodes (most connected - your core abstractions)
 1. `compilerOptions` - 18 edges
@@ -86,7 +88,7 @@
 - **Project Exercise grading flow (Template Repo, Evaluator, Rubric, Submission)** — context_md_project, context_md_template_repo, context_md_evaluator, context_md_rubric, context_md_submission [EXTRACTED 1.00]
 - **Free/minimal-infra architecture principle (GitHub Actions, PWA, Solid Queue)** — docs_adr_0002_decision, docs_adr_0003_decision, docs_adr_0005_decision [EXTRACTED 1.00]
 
-## Communities (73 total, 17 thin omitted)
+## Communities (77 total, 17 thin omitted)
 
 ### Community 0 - "/graphify Skill Definition (SKILL.md)"
 Cohesion: 0.08
@@ -97,8 +99,8 @@ Cohesion: 0.16
 Nodes (26): Domain docs, Discovery phase, CONTEXT.md (domain glossary), Evaluator, Exercise, Gating / Unlock, Journey, Lesson (+18 more)
 
 ### Community 2 - "AGENTS.md (agent instructions)"
-Cohesion: 0.10
-Nodes (24): /code-review step, Commit style, Dev environment (AGENTS.md), Feature workflow (Matt Pocock skills main flow), graphify (AGENTS.md), /grill-with-docs step, /implement step, Issue tracker (+16 more)
+Cohesion: 0.13
+Nodes (17): /code-review step, Commit style, Dev environment (AGENTS.md), Feature workflow (Matt Pocock skills main flow), graphify (AGENTS.md), /grill-with-docs step, /implement step, Issue tracker (+9 more)
 
 ### Community 3 - "graphify (knowledge graph tool)"
 Cohesion: 0.07
@@ -129,8 +131,8 @@ Cohesion: 0.13
 Nodes (13): queryClient, Register, router, @tanstack/react-router, oxc, react, typescript, warn (+5 more)
 
 ### Community 11 - "Lefthook for git-hook backpressure across the split monorepo"
-Cohesion: 0.18
-Nodes (9): Contributing, Parallel agent work, Principles, Consequences, Considered Options, Lefthook for git-hook backpressure across the split monorepo, Consequences, Considered Options (+1 more)
+Cohesion: 0.25
+Nodes (6): Consequences, Considered Options, Lefthook for git-hook backpressure across the split monorepo, Consequences, Considered Options, Lefthook post-checkout hook for git worktree environment setup
 
 ### Community 12 - "JWT access tokens + opaque refresh tokens, hand-rolled on Rails 8's built-in auth"
 Cohesion: 0.25
@@ -160,8 +162,16 @@ Nodes (3): Consequences, Considered Options, REST + JSON:API response format via
 Cohesion: 0.50
 Nodes (3): GRAPHIFY_REBUILD_LOG, PYTHONHASHSEED, graphify-post-checkout.sh script
 
+### Community 73 - "Stack (README section)"
+Cohesion: 0.38
+Nodes (7): Backend: Ruby on Rails, Background jobs: Solid Queue (Postgres-backed), Delivery: PWA (not native), Frontend: React (Vite, TanStack Query, TanStack Router, Vitest), Monorepo: pnpm-managed split-ecosystem (apps/api + apps/web), Project grading: GitHub Actions as Evaluator's execution sandbox, Stack (README section)
+
+### Community 74 - "Contributing"
+Cohesion: 0.40
+Nodes (4): Contributing, Parallel agent work, Principles, Testing (apps/api)
+
 ## Knowledge Gaps
-- **120 isolated node(s):** `ApplicationMailer`, `PingSerializer`, `$schema`, `typescript`, `oxc` (+115 more)
+- **121 isolated node(s):** `Principles`, `Testing (apps/api)`, `Parallel agent work`, `ApplicationMailer`, `PingSerializer` (+116 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **17 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -174,11 +184,11 @@ _Questions this graph is uniquely positioned to answer:_
   _High betweenness centrality (0.010) - this node is a cross-community bridge._
 - **Why does `Domain (README section)` connect `Domain (README section)` to `CONTEXT.md (domain glossary)`, `AGENTS.md (agent instructions)`?**
   _High betweenness centrality (0.008) - this node is a cross-community bridge._
-- **What connects `ApplicationMailer`, `PingSerializer`, `$schema` to the rest of the system?**
-  _120 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `Principles`, `Testing (apps/api)`, `Parallel agent work` to the rest of the system?**
+  _121 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `/graphify Skill Definition (SKILL.md)` be split into smaller, more focused modules?**
   _Cohesion score 0.0766488413547237 - nodes in this community are weakly interconnected._
 - **Should `AGENTS.md (agent instructions)` be split into smaller, more focused modules?**
-  _Cohesion score 0.09846153846153846 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.13450292397660818 - nodes in this community are weakly interconnected._
 - **Should `graphify (knowledge graph tool)` be split into smaller, more focused modules?**
   _Cohesion score 0.07407407407407407 - nodes in this community are weakly interconnected._
