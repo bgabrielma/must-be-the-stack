@@ -34,6 +34,8 @@ For any new feature or idea, always run the Matt Pocock skills main flow, in ord
 
 Keep steps 1–3 in one unbroken context window (don't compact/clear until after `/to-tickets`); `/implement` starts fresh per ticket.
 
+Each ticket is implemented on its own branch and merged via its own PR — never bundle multiple tickets into one PR. Branch name: `<issue-number>-<kebab-case-issue-title>` (e.g. `42-add-jwt-refresh-tokens`), matching the ticket's GitHub issue.
+
 ## Commit style
 
 All commits follow [Commitizen](https://commitizen-tools.github.io/commitizen/)/[Conventional Commits](https://www.conventionalcommits.org/): `<type>(<optional scope>): <description>`, imperative mood, description lowercase and no trailing period. Common types: `feat`, `fix`, `docs`, `chore`, `refactor`, `test`, `ci`, `build`. Add a body when the *why* isn't obvious from the subject alone.
