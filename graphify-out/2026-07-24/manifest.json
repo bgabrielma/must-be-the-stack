@@ -75,14 +75,14 @@
     "semantic_hash": "2b1fa6f35671377a043f694aa773af13"
   },
   "CONTEXT.md": {
-    "mtime": 1784846809.0804996,
-    "ast_hash": "630dd37148899f8a0b2efa2140cd6aae",
-    "semantic_hash": "630dd37148899f8a0b2efa2140cd6aae"
+    "mtime": 1784893276.385284,
+    "ast_hash": "c9aa758d2cbb35829b96c65fadb99172",
+    "semantic_hash": ""
   },
   "docs/adr/0001-shared-curriculum-per-subject.md": {
-    "mtime": 1784846809.0807023,
-    "ast_hash": "8835559ad6e3e8db6de57f59fcde18b8",
-    "semantic_hash": "8835559ad6e3e8db6de57f59fcde18b8"
+    "mtime": 1784893271.9196148,
+    "ast_hash": "edbbb1782adacc0aa899346cd0173418",
+    "semantic_hash": ""
   },
   "docs/adr/0002-github-actions-as-evaluator-sandbox.md": {
     "mtime": 1784846809.0808291,
@@ -123,5 +123,25 @@
     "mtime": 1784846822.0913002,
     "ast_hash": "5a93f3982743488406bdbf0a4b46ea36",
     "semantic_hash": "5a93f3982743488406bdbf0a4b46ea36"
+  },
+  "docs/adr/0006-gemini-as-llm-provider.md": {
+    "mtime": 1784893266.1315322,
+    "ast_hash": "0c037699766f9cfd6eba3a95f296b08a",
+    "semantic_hash": ""
+  },
+  "docs/adr/0007-jwt-auth-with-refresh-tokens.md": {
+    "mtime": 1784894166.8843753,
+    "ast_hash": "e7aef5cd4ae4db4a848832985814d276",
+    "semantic_hash": ""
+  },
+  "docs/adr/0008-rest-json-api-with-active-model-serializers.md": {
+    "mtime": 1784894178.9049015,
+    "ast_hash": "17e846e2be2f96b4970ffebec8d05bb8",
+    "semantic_hash": ""
+  },
+  "docs/adr/0009-vps-hosting-with-split-frontend-deploy.md": {
+    "mtime": 1784894888.386717,
+    "ast_hash": "055efac830b2439fb34fa951f11fcc28",
+    "semantic_hash": ""
   }
 }
