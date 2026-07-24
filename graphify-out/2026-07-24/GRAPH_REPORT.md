@@ -1,16 +1,16 @@
 # Graph Report - must-be-the-stack  (2026-07-24)
 
 ## Corpus Check
-- 30 files · ~16,518 words
+- 31 files · ~16,823 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 120 nodes · 164 edges · 16 communities (15 shown, 1 thin omitted)
+- 124 nodes · 168 edges · 13 communities (12 shown, 1 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 4 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `5c57d7f7`
+- Built from commit: `3c70f200`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -27,10 +27,7 @@
 - devcontainer app service
 - graphify reference: add-watch.md
 - Lefthook for git-hook backpressure across the split monorepo
-- /graphify Skill Definition (SKILL.md)
-- graphify reference: update.md
 - Contributing
-- graphify reference: hooks.md
 
 ## God Nodes (most connected - your core abstractions)
 1. `CONTEXT.md (domain glossary)` - 15 edges
@@ -67,11 +64,11 @@
 - **Project Exercise grading flow (Template Repo, Evaluator, Rubric, Submission)** — context_md_project, context_md_template_repo, context_md_evaluator, context_md_rubric, context_md_submission [EXTRACTED 1.00]
 - **Free/minimal-infra architecture principle (GitHub Actions, PWA, Solid Queue)** — docs_adr_0002_decision, docs_adr_0003_decision, docs_adr_0005_decision [EXTRACTED 1.00]
 
-## Communities (16 total, 1 thin omitted)
+## Communities (13 total, 1 thin omitted)
 
 ### Community 0 - "/graphify Skill Definition (SKILL.md)"
-Cohesion: 0.27
-Nodes (10): graphify reference: add-watch.md, graphify reference: query.md, graphify (knowledge graph tool), /graphify add, /graphify explain, /graphify path, /graphify query, Constrained query vocabulary expansion (+2 more)
+Cohesion: 0.09
+Nodes (29): graphify Skill Trigger Config (.claude/CLAUDE.md), graphify reference: add-watch.md, graphify reference: extraction-spec.md, graphify reference: github-and-merge.md, graphify reference: hooks.md, graphify reference: query.md, graphify reference: transcribe.md, graphify reference: update.md (+21 more)
 
 ### Community 1 - "CONTEXT.md (domain glossary)"
 Cohesion: 0.28
@@ -113,24 +110,12 @@ Nodes (3): Consequences, Considered Options, REST + JSON:API response format via
 Cohesion: 0.50
 Nodes (3): Consequences, Considered Options, Lefthook for git-hook backpressure across the split monorepo
 
-### Community 12 - "/graphify Skill Definition (SKILL.md)"
-Cohesion: 0.25
-Nodes (9): graphify Skill Trigger Config (.claude/CLAUDE.md), graphify reference: extraction-spec.md, graphify reference: github-and-merge.md, graphify reference: transcribe.md, /graphify Skill Definition (SKILL.md), Confidence-score rubric (discrete values), Semantic extraction subagent prompt, Node ID format spec ({stem}_{entity}) (+1 more)
-
-### Community 13 - "graphify reference: update.md"
-Cohesion: 0.29
-Nodes (7): graphify reference: update.md, build_merge (incremental graph merge), --cluster-only, Manifest stamping (only-on-output rule), Semantic extraction cache (per-file, prompt-stamped), graph.json shrink guard, --update (incremental re-extraction)
-
 ### Community 14 - "Contributing"
-Cohesion: 0.50
-Nodes (3): Contributing, Parallel agent work, Principles
-
-### Community 15 - "graphify reference: hooks.md"
-Cohesion: 0.67
-Nodes (3): graphify reference: hooks.md, graphify claude install (native CLAUDE.md integration), graphify post-commit hook
+Cohesion: 0.25
+Nodes (6): Contributing, Parallel agent work, Principles, Consequences, Considered Options, Lefthook post-checkout hook for git worktree environment setup
 
 ## Knowledge Gaps
-- **35 isolated node(s):** `Principles`, `Parallel agent work`, `Considered Options`, `Consequences`, `Considered Options` (+30 more)
+- **37 isolated node(s):** `Principles`, `Parallel agent work`, `Considered Options`, `Consequences`, `Considered Options` (+32 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **1 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -138,12 +123,14 @@ Nodes (3): graphify reference: hooks.md, graphify claude install (native CLAUDE.
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `CONTEXT.md (domain glossary)` connect `CONTEXT.md (domain glossary)` to `docs/adr (Architecture Decision Records)`, `Domain (README section)`?**
-  _High betweenness centrality (0.094) - this node is a cross-community bridge._
+  _High betweenness centrality (0.088) - this node is a cross-community bridge._
 - **Why does `Domain (README section)` connect `Domain (README section)` to `CONTEXT.md (domain glossary)`, `AGENTS.md (agent instructions)`?**
-  _High betweenness centrality (0.071) - this node is a cross-community bridge._
+  _High betweenness centrality (0.067) - this node is a cross-community bridge._
 - **Why does `must-be-the-stack (project overview)` connect `AGENTS.md (agent instructions)` to `Stack (README section)`, `Domain (README section)`?**
-  _High betweenness centrality (0.068) - this node is a cross-community bridge._
+  _High betweenness centrality (0.063) - this node is a cross-community bridge._
 - **What connects `Principles`, `Parallel agent work`, `Considered Options` to the rest of the system?**
-  _35 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _37 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `/graphify Skill Definition (SKILL.md)` be split into smaller, more focused modules?**
+  _Cohesion score 0.09359605911330049 - nodes in this community are weakly interconnected._
 - **Should `AGENTS.md (agent instructions)` be split into smaller, more focused modules?**
   _Cohesion score 0.13450292397660818 - nodes in this community are weakly interconnected._
