@@ -12,7 +12,8 @@
   "postCreateCommand": "gem install bundler && sudo apt-get update -qq && sudo apt-get install -y -qq pipx && pipx install graphifyy",
   "remoteUser": "vscode",
   "mounts": [
-    "source=${localEnv:HOME}/.claude,target=/home/vscode/.claude,type=bind,consistency=cached"
+    "source=${localEnv:HOME}/.claude,target=/home/vscode/.claude,type=bind,consistency=cached",
+    "source=${localEnv:HOME}/.agents,target=/home/vscode/.agents,type=bind,consistency=cached"
   ],
   "containerEnv": {
     "CLAUDE_CONFIG_DIR": "/home/vscode/.claude"
