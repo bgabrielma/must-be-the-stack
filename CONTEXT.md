@@ -48,6 +48,10 @@ _Avoid_: Starter repo, Boilerplate.
 The component that executes a Project Submission's grading workflow and scores the result against its Rubric.
 _Avoid_: Grader (reserve for the general grading concept — Evaluator is specifically the execution agent).
 
+**Socratic Guide**:
+A chat assistant scoped to a Lesson, offering guiding questions rather than answers when a user is stuck on its content or Exercise. History is persisted per Lesson (retained across visits) and fully isolated from grading — no chat content is ever passed to a Quiz or Project's scoring call.
+_Avoid_: Chatbot, Tutor, Hint system.
+
 **Streak**:
 The count of consecutive days with at least one completed Lesson. Drives notification tone.
 _Avoid_: Combo, Chain.
