@@ -9,10 +9,10 @@
     "ghcr.io/devcontainers/features/github-cli:1": {},
     "ghcr.io/anthropics/devcontainer-features/claude-code:1.0": {}
   },
-  "postCreateCommand": "gem install bundler",
+  "postCreateCommand": "gem install bundler && sudo apt-get update -qq && sudo apt-get install -y -qq pipx && pipx install graphifyy",
   "remoteUser": "vscode",
   "mounts": [
-    "source=claude-code-config-${devcontainerId},target=/home/vscode/.claude,type=volume"
+    "source=${localEnv:HOME}/.claude,target=/home/vscode/.claude,type=bind,consistency=cached"
   ],
   "containerEnv": {
     "CLAUDE_CONFIG_DIR": "/home/vscode/.claude"
