@@ -36,6 +36,8 @@ Keep steps 1–3 in one unbroken context window (don't compact/clear until after
 
 Each ticket is implemented on its own branch and merged via its own PR — never bundle multiple tickets into one PR. Branch name: `<issue-number>-<kebab-case-issue-title>` (e.g. `42-add-jwt-refresh-tokens`), matching the ticket's GitHub issue.
 
+Every ticket is implemented in its own git worktree, not the main checkout — see [CONTRIBUTING.md's "Parallel agent work"](CONTRIBUTING.md#parallel-agent-work) for the worktree location/naming and setup convention.
+
 ## Commit style
 
 All commits follow [Commitizen](https://commitizen-tools.github.io/commitizen/)/[Conventional Commits](https://www.conventionalcommits.org/): `<type>(<optional scope>): <description>`, imperative mood, description lowercase and no trailing period. Common types: `feat`, `fix`, `docs`, `chore`, `refactor`, `test`, `ci`, `build`. Add a body when the *why* isn't obvious from the subject alone.
