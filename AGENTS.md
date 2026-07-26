@@ -29,14 +29,23 @@ For any new feature or idea, always run the Matt Pocock skills main flow, in ord
 1. `/grill-with-docs` — sharpen the idea by interview, retaining decisions in `CONTEXT.md` / ADRs.
 2. `/to-spec` — collapse the grilled thread into a buildable spec.
 3. `/to-tickets` — split the spec into tracer-bullet tickets with blocking edges.
-4. `/implement` — build each ticket (drives `/tdd` internally, then `/code-review` before committing).
-5. `/code-review` — review the diff (Standards + Spec) before merging, if not already run by `/implement`.
+4. **Design** — for any ticket with user-facing UI, design it in Claude Design (`/design-sync`) before implementing. See "Design" below.
+5. `/implement` — build each ticket (drives `/tdd` internally, then `/code-review` before committing).
+6. `/code-review` — review the diff (Standards + Spec) before merging, if not already run by `/implement`.
 
 Keep steps 1–3 in one unbroken context window (don't compact/clear until after `/to-tickets`); `/implement` starts fresh per ticket.
 
 Each ticket is implemented on its own branch and merged via its own PR — never bundle multiple tickets into one PR. Branch name: `<issue-number>-<kebab-case-issue-title>` (e.g. `42-add-jwt-refresh-tokens`), matching the ticket's GitHub issue.
 
 Every ticket is implemented in its own git worktree, not the main checkout — see [CONTRIBUTING.md's "Parallel agent work"](CONTRIBUTING.md#parallel-agent-work) for the worktree location/naming and setup convention.
+
+## Design
+
+Any ticket with user-facing UI is designed in the **Claude Design** system project (`must-be-the-stack`, via `/design-sync`/`DesignSync`) before `/implement` starts on it — step 4 in the Feature workflow above, between `/to-tickets` and `/implement`.
+
+- **Deliverables are visual canvas files, never prose.** Follow the iPhone-mockup/Figma-board style already established by `flows.html` (device-frame screens) and `foundations.html` (component gallery): real rendered HTML/SVG a person looks at, not an explanatory markdown document describing what a design would look like. If a concept needs rationale (e.g. why a direction was chosen), keep it as a short caption inside the canvas itself — don't let a written spec substitute for the actual visual.
+- **Keep `flows.html` and `foundations.html` in sync.** Any new reusable component or state introduced in a flow screen (a new input type, icon, card variant, etc.) is added to `foundations.html`'s component gallery in the same pass — not left for someone to notice missing later.
+- **`DesignSync` operation ordering**: `list_files`/`get_file` → `finalize_plan` → `write_files`. `finalize_plan` only reserves the write, it does not persist content. Always follow through with `write_files`, and confirm via `list_files` that the file actually exists in the project before reporting design work as done.
 
 ## Commit style
 
