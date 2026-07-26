@@ -5,7 +5,7 @@ A gamified developer-learning app: delivers one concept at a time toward a study
 ## Language
 
 **Journey**:
-An open-ended career or study area a user pursues (e.g. "Software Design"). Contains Subjects and never itself "completes."
+A career or study area a user pursues (e.g. "Software Design"). Contains Subjects; completes once the user finishes every currently-authored Subject, but reopens (returns to in-progress) if new Subjects are later added to it.
 _Avoid_: Career, Path, Track, Course.
 
 **Subject**:
