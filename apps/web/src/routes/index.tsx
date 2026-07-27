@@ -1,32 +1,26 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { useQuery } from "@tanstack/react-query";
-
-interface PingsResponse {
-  data: { id: string; type: string; attributes: { message: string } }[];
-}
-
-async function fetchPings(): Promise<PingsResponse> {
-  const apiUrl = import.meta.env.VITE_API_URL ?? "http://localhost:3000";
-  const response = await fetch(`${apiUrl}/pings`);
-  return response.json();
-}
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { CompassIcon } from "../components/icons";
 
 export const Route = createFileRoute("/")({
-  component: Index,
+  component: Entry,
 });
 
-function Index() {
-  const { data, isPending, error } = useQuery({
-    queryKey: ["pings"],
-    queryFn: fetchPings,
-  });
-
+function Entry() {
   return (
-    <main>
-      <h1>must-be-the-stack</h1>
-      {isPending && <p>Loading...</p>}
-      {error && <p>Could not reach the API.</p>}
-      {data && <p>{data.data.length} ping(s) from the API</p>}
-    </main>
+    <div className="page">
+      <div className="hero-mark">
+        <CompassIcon size={20} />
+      </div>
+      <h1 className="hero-h1">Every step, earned.</h1>
+      <p className="hero-sub">No skipping ahead. No skipping the fun either.</p>
+      <div className="hero-cta">
+        <Link to="/onboarding" className="btn btn-primary btn-block">
+          Start your Journey
+        </Link>
+        <Link to="/login" className="link-muted">
+          Already have an account? Log in
+        </Link>
+      </div>
+    </div>
   );
 }

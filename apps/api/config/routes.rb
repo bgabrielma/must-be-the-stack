@@ -12,6 +12,12 @@ Rails.application.routes.draw do
   post "refresh" => "sessions#refresh"
   delete "logout" => "sessions#destroy"
 
+  resources :journeys, only: [ :index, :show ] do
+    post :start, on: :member
+  end
+  resources :subjects, only: [ :show ]
+  resources :lessons, only: [ :show ]
+
   # Defines the root path route ("/")
   # root "posts#index"
 end
