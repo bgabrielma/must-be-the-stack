@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   delete "logout" => "sessions#destroy"
 
   resources :journeys, only: [ :index, :show ] do
+    # POST /journeys/:id/start — marks a Journey as started for the current user.
     post :start, on: :member
   end
   resources :subjects, only: [ :show ]

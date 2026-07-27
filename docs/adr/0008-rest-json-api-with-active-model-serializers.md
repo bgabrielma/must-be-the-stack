@@ -16,3 +16,5 @@ The Rails↔React contract is REST, with responses shaped to the JSON:API spec (
 
 ## Consequences
 `active_model_serializers` is in maintenance mode (latest release Dec 2024, most original maintainers no longer active) — stable but not actively developed; a future migration to `jsonapi-serializer` or another gem is possible later since the adapter boundary keeps the model-facing serializer classes similar. JSON:API's `included`/relationship-following is prone to N+1 queries if the frontend requests arbitrary nested includes — association eager-loading needs to be deliberate per endpoint, not automatic.
+
+Responses are served with `Content-Type: application/json`, not the JSON:API-spec'd `application/vnd.api+json` — the contract this ADR cares about is the response *body* shape (`data`/`attributes`/`relationships`/`included`), not strict JSON:API content negotiation, and the plain media type avoids `fetch`/browser quirks around a non-standard `+json` suffix for no benefit to an internal-only API.

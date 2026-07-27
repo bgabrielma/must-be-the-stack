@@ -3,9 +3,9 @@ class SessionsController < ApplicationController
 
   # POST /login
   def create
-    user = User.find_by(email: params[:email])
+    user = User.find_by(email: login_params[:email])
 
-    if user&.authenticate(params[:password])
+    if user&.authenticate(login_params[:password])
       issue_session(user)
     else
       render_errors("Invalid email or password", status: :unauthorized)
@@ -33,6 +33,10 @@ class SessionsController < ApplicationController
   end
 
   private
+
+  def login_params
+    params.permit(:email, :password)
+  end
 
   def current_refresh_token
     RefreshToken.authenticate(cookies[REFRESH_TOKEN_COOKIE])
