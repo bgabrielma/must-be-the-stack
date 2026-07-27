@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { requireAuth } from "../lib/routeGuards";
 import { fetchLesson } from "../lib/curriculum";
+import { Button } from "../components/Button";
 
 export const Route = createFileRoute("/lessons/$lessonId")({
   beforeLoad: requireAuth,
@@ -30,12 +31,12 @@ function LessonPage() {
         ))}
       </div>
       <div className="cta-row">
-        <button type="button" className="btn btn-secondary btn-sm" disabled>
+        <Button variant="secondary" size="sm" disabled>
           Ask for a hint
-        </button>
-        <button type="button" className="btn btn-primary btn-sm" style={{ flex: 1 }} disabled>
+        </Button>
+        <Button variant="primary" size="sm" style={{ flex: 1 }} disabled>
           Start Exercise →
-        </button>
+        </Button>
       </div>
     </div>
   );

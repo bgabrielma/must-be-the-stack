@@ -4,7 +4,9 @@ import { useState } from "react";
 import { requireAuth } from "../lib/routeGuards";
 import { fetchJourneys, startJourney } from "../lib/curriculum";
 import { UnitCard } from "../components/UnitCard";
-import { CompassIcon, CheckIcon, SearchIcon } from "../components/icons";
+import { CompassIcon, CheckIcon } from "../components/icons";
+import { SearchField } from "../components/SearchField";
+import { Button } from "../components/Button";
 
 export const Route = createFileRoute("/home")({
   beforeLoad: requireAuth,
@@ -66,16 +68,13 @@ function Home() {
         <p className="eyebrow">Welcome</p>
         <h1 className="h1">Start your first Journey</h1>
         <p className="sub">Search or browse to begin.</p>
-        <div className="search-field" style={{ marginTop: "var(--space-4)" }}>
-          <SearchIcon size={15} />
-          <input
-            type="text"
-            placeholder="Search Journeys"
-            aria-label="Search Journeys"
-            value={query}
-            onChange={(event) => setQuery(event.target.value)}
-          />
-        </div>
+        <SearchField
+          wrapperStyle={{ marginTop: "var(--space-4)" }}
+          placeholder="Search Journeys"
+          aria-label="Search Journeys"
+          value={query}
+          onChange={(event) => setQuery(event.target.value)}
+        />
         <div className="list">
           {filtered.map((journey) => (
             <UnitCard
@@ -109,9 +108,9 @@ function Home() {
           ))}
         </div>
         <div className="hero-cta">
-          <button type="button" className="btn btn-secondary btn-block" disabled>
+          <Button variant="secondary" block disabled>
             Browse other Journeys
-          </button>
+          </Button>
         </div>
       </div>
     );
