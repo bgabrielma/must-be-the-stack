@@ -6,8 +6,16 @@ class Lesson < ApplicationRecord
   validates :content, presence: true
   validates :position, presence: true, uniqueness: { scope: :subject_id }
 
+  # Reusable at the collection level too, e.g. Lesson.passed_by(user) for a
+  # future "lessons a user has passed" query, not just this single-record check.
+  scope :passed_by, ->(user) {
+    joins(:submissions, :subject)
+      .where(submissions: { user_id: user.id })
+      .where("submissions.score >= subjects.minimum_passing_score")
+  }
+
   def passed_by?(user)
-    submissions.where(user: user).where("score >= ?", subject.minimum_passing_score).exists?
+    self.class.passed_by(user).exists?(id: id)
   end
 
   # :locked, :active, or :completed. Locked whenever the parent Subject isn't

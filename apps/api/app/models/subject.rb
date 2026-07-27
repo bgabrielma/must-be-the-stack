@@ -8,7 +8,9 @@ class Subject < ApplicationRecord
                                     numericality: { only_integer: true, in: 0..10 }
 
   def completed_for?(user)
-    lessons.any? && lessons.all? { |lesson| lesson.passed_by?(user) }
+    return false if lessons.none?
+
+    lessons.all? { |lesson| lesson.passed_by?(user) }
   end
 
   # A user works one Subject at a time per Journey: the first not-yet-completed

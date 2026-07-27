@@ -11,7 +11,9 @@ class Journey < ApplicationRecord
   # A Journey completes once every currently-authored Subject is finished,
   # and reopens automatically if a new Subject is later added (CONTEXT.md).
   def completed_for?(user)
-    subjects.any? && subjects.all? { |subject| subject.completed_for?(user) }
+    return false if subjects.none?
+
+    subjects.all? { |subject| subject.completed_for?(user) }
   end
 
   # :not_started, :in_progress, or :completed, for the Home screen.
