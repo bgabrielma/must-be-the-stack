@@ -69,6 +69,12 @@ describe("Subject route (/subjects/:subjectId)", () => {
     expect(
       screen.getByText('Pass the Exercise for "Replication & Failover" to unlock this Lesson.'),
     ).toBeInTheDocument();
+
+    // Regression: the active Lesson's icon slot must render an icon, not the
+    // bare position number (`lockStatusIcon` was once called with
+    // `lesson.position` instead of a `PlayIcon` for the active case).
+    const activeCard = screen.getByRole("button", { name: /Replication & Failover/ });
+    expect(activeCard.querySelector(".icon svg")).toBeInTheDocument();
   });
 
   it("shows a not-available message when the Subject itself is locked", async () => {

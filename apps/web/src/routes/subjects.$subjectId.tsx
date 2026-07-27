@@ -4,7 +4,7 @@ import { requireAuth } from "../lib/routeGuards";
 import { fetchSubject, toPercent } from "../lib/curriculum";
 import { UnitCard } from "../components/UnitCard";
 import { LockTooltip } from "../components/LockTooltip";
-import { InfoIcon } from "../components/icons";
+import { InfoIcon, PlayIcon } from "../components/icons";
 import { lockStatusIcon, lockStatusMeta } from "../components/lockStatus";
 import { Badge } from "../components/Badge";
 import { Banner } from "../components/Banner";
@@ -45,7 +45,7 @@ function SubjectPage() {
       <div className="list">
         {subject.lessons.map((lesson) => {
           const meta = lockStatusMeta(lesson.status, "Unlocked");
-          const icon = lockStatusIcon(lesson.status, lesson.position);
+          const icon = lockStatusIcon(lesson.status, <PlayIcon size={14} />);
 
           return (
             <div key={lesson.id}>
