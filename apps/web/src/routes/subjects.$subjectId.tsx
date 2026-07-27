@@ -8,13 +8,13 @@ import { InfoIcon, PlayIcon } from "../components/icons";
 import { lockStatusIcon, lockStatusMeta } from "../components/lockStatus";
 import { Badge } from "../components/Badge";
 import { Banner } from "../components/Banner";
+import { PageHeading } from "../components/PageHeading";
+import { STATUS_SCREEN_CLASSES } from "../lib/pageStyles";
 
 export const Route = createFileRoute("/subjects/$subjectId")({
   beforeLoad: requireAuth,
   component: SubjectPage,
 });
-
-const statusClasses = "flex min-h-[100svh] flex-col px-0 py-10 text-center";
 
 function SubjectPage() {
   const { subjectId } = Route.useParams();
@@ -24,17 +24,15 @@ function SubjectPage() {
     queryFn: () => fetchSubject(subjectId),
   });
 
-  if (isPending) return <div className={statusClasses}>Loading...</div>;
-  if (error) return <div className={statusClasses}>This Subject is locked, or could not be reached.</div>;
+  if (isPending) return <div className={STATUS_SCREEN_CLASSES}>Loading...</div>;
+  if (error) return <div className={STATUS_SCREEN_CLASSES}>This Subject is locked, or could not be reached.</div>;
 
   const activeLesson = subject.lessons.find((lesson) => lesson.status === "active");
 
   return (
     <div className="flex min-h-[100svh] flex-col px-5 pt-6 pb-5">
       <p className="mb-2 text-xs opacity-70">{subject.journeyTitle} · Subject</p>
-      <h1 className="font-heading text-2xl leading-[1.15] font-bold tracking-[-0.3px] text-text-h">
-        {subject.title}
-      </h1>
+      <PageHeading title={subject.title} />
       <p className="mt-1.5 mb-3 text-[13px]">
         <Badge icon={<InfoIcon size={12} />}>
           Min. passing score: {toPercent(subject.minimumPassingScore)}%

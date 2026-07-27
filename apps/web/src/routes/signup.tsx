@@ -3,6 +3,8 @@ import { useState, type FormEvent } from "react";
 import { signup, ApiError } from "../lib/api";
 import { Field } from "../components/Field";
 import { Button } from "../components/Button";
+import { PageHeading } from "../components/PageHeading";
+import { LINK_MUTED_CLASSES } from "../lib/pageStyles";
 
 export const Route = createFileRoute("/signup")({
   component: SignupPage,
@@ -32,12 +34,7 @@ function SignupPage() {
 
   return (
     <div className="flex min-h-[100svh] flex-col px-5 pt-6 pb-5">
-      <p className="mb-1 font-heading text-[11px] font-semibold tracking-[0.06em] text-accent uppercase">
-        Get started
-      </p>
-      <h1 className="font-heading text-2xl leading-[1.15] font-bold tracking-[-0.3px] text-text-h">
-        Create your account
-      </h1>
+      <PageHeading eyebrow="Get started" title="Create your account" />
       <p className="mt-1.5 text-[13px]">Start mastering one concept at a time.</p>
       <form className="mt-3 flex flex-col gap-4" onSubmit={handleSubmit}>
         <Field
@@ -61,7 +58,7 @@ function SignupPage() {
           Create account
         </Button>
       </form>
-      <Link to="/login" className="mt-4 block text-center text-[13px] text-accent no-underline">
+      <Link to="/login" className={LINK_MUTED_CLASSES}>
         Already have an account? Log in
       </Link>
     </div>

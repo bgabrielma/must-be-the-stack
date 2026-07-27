@@ -5,6 +5,8 @@ import { CheckIcon } from "../components/icons";
 import { Banner } from "../components/Banner";
 import { Field } from "../components/Field";
 import { Button } from "../components/Button";
+import { PageHeading } from "../components/PageHeading";
+import { LINK_MUTED_CLASSES } from "../lib/pageStyles";
 
 interface LoginSearch {
   created?: boolean;
@@ -50,7 +52,7 @@ function LoginPage() {
           description="Log in to continue your Journey."
         />
       )}
-      <h1 className="font-heading text-2xl leading-[1.15] font-bold tracking-[-0.3px] text-text-h">Log in</h1>
+      <PageHeading title="Log in" />
       <form className="mt-3 flex flex-col gap-4" onSubmit={handleSubmit}>
         <Field
           label="Email"
@@ -73,7 +75,7 @@ function LoginPage() {
           Log in
         </Button>
       </form>
-      <Link to="/signup" className="mt-4 block text-center text-[13px] text-accent no-underline">
+      <Link to="/signup" className={LINK_MUTED_CLASSES}>
         Need an account? Sign up
       </Link>
     </div>

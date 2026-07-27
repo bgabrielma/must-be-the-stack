@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { CompassIcon, PlayIcon, CheckIcon } from "../components/icons";
 import { buttonClasses } from "../components/Button";
+import { PageHeading } from "../components/PageHeading";
 
 export const Route = createFileRoute("/onboarding")({
   component: Onboarding,
@@ -15,12 +16,7 @@ const steps = [
 function Onboarding() {
   return (
     <div className="flex min-h-[100svh] flex-col px-5 pt-6 pb-5">
-      <p className="mb-1 font-heading text-[11px] font-semibold tracking-[0.06em] text-accent uppercase">
-        How it works
-      </p>
-      <h1 className="font-heading text-2xl leading-[1.15] font-bold tracking-[-0.3px] text-text-h">
-        One concept at a time
-      </h1>
+      <PageHeading eyebrow="How it works" title="One concept at a time" />
       <p className="mt-1.5 text-[13px]">No skipping ahead — every step is earned.</p>
       <div className="my-4 flex flex-col gap-2">
         {steps.map((step) => (

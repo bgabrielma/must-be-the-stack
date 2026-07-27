@@ -1,13 +1,15 @@
-import type { CSSProperties, InputHTMLAttributes } from "react";
+import type { InputHTMLAttributes } from "react";
 import { SearchIcon } from "./icons";
 
 interface SearchFieldProps extends InputHTMLAttributes<HTMLInputElement> {
-  wrapperStyle?: CSSProperties;
+  wrapperClassName?: string;
 }
 
-export function SearchField({ wrapperStyle, ...props }: SearchFieldProps) {
+export function SearchField({ wrapperClassName, ...props }: SearchFieldProps) {
+  const wrapperClasses = ["relative mb-3", wrapperClassName ?? ""].filter(Boolean).join(" ");
+
   return (
-    <div className="relative mb-3" style={wrapperStyle}>
+    <div className={wrapperClasses}>
       <span className="pointer-events-none absolute top-1/2 left-3 -translate-y-1/2 text-text-muted">
         <SearchIcon size={15} />
       </span>
