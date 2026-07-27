@@ -1,5 +1,5 @@
 class CreateLessons < ActiveRecord::Migration[8.1]
-  def change
+  def up
     create_table :lessons do |t|
       t.references :subject, null: false, foreign_key: true
       t.string :title, null: false
@@ -9,5 +9,9 @@ class CreateLessons < ActiveRecord::Migration[8.1]
       t.timestamps
     end
     add_index :lessons, [ :subject_id, :position ], unique: true
+  end
+
+  def down
+    drop_table :lessons
   end
 end

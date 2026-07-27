@@ -1,5 +1,5 @@
 class CreateSubjects < ActiveRecord::Migration[8.1]
-  def change
+  def up
     create_table :subjects do |t|
       t.references :journey, null: false, foreign_key: true
       t.string :title, null: false
@@ -9,5 +9,9 @@ class CreateSubjects < ActiveRecord::Migration[8.1]
       t.timestamps
     end
     add_index :subjects, [ :journey_id, :position ], unique: true
+  end
+
+  def down
+    drop_table :subjects
   end
 end
