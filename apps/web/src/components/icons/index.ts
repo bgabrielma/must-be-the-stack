@@ -7,3 +7,4 @@ export { CompassIcon } from "./CompassIcon";
 export { SearchIcon } from "./SearchIcon";
 export { InfoIcon } from "./InfoIcon";
 export { LockedStackMark } from "./LockedStackMark";
+export { EntryIllustration } from "./EntryIllustration";

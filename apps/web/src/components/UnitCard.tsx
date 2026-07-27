@@ -26,7 +26,7 @@ const iconStateClasses: Record<UnitCardStatus, string> = {
   active: "bg-accent text-white",
   completed: "bg-success-bg text-success",
   locked: "bg-surface-muted text-text-muted",
-  not_started: "bg-surface-muted text-text-muted",
+  not_started: "bg-accent-bg text-accent",
 };
 
 const titleStateClasses: Record<UnitCardStatus, string> = {
