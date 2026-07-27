@@ -7,6 +7,7 @@ import {
   CompassIcon,
   SearchIcon,
   InfoIcon,
+  LockedStackMark,
 } from ".";
 
 const icons = {
@@ -17,6 +18,7 @@ const icons = {
   CompassIcon,
   SearchIcon,
   InfoIcon,
+  LockedStackMark,
 };
 
 function Gallery() {
