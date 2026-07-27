@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, afterEach } from "vitest";
 import { screen, waitFor } from "@testing-library/react";
-import { renderRouteTree } from "../test/renderRoute";
-import { setAccessToken } from "../lib/accessToken";
+import { renderRouteTree } from "../../test/renderRoute";
+import { setAccessToken } from "../../lib/accessToken";
 
 describe("Home route (/home)", () => {
   afterEach(() => setAccessToken(null));

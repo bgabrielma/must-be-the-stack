@@ -1,7 +1,7 @@
 import { useNavigate } from "@tanstack/react-router";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useState } from "react";
-import { fetchJourneys, startJourney, type Journey } from "../lib/curriculum";
+import { fetchJourneys, startJourney, type Journey } from "../../lib/curriculum";
 
 export type HomeViewState =
   | { status: "loading" }
