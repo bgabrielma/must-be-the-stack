@@ -93,5 +93,14 @@
   "91": "pings_create_spec.rb",
   "92": "pings_spec.rb",
   "93": "subjects_spec.rb",
-  "94": "spec_helper.rb"
+  "94": "spec_helper.rb",
+  "95": "ApplicationRecord",
+  "96": "User",
+  "97": "RefreshToken",
+  "98": "SessionsController",
+  "99": "Subject",
+  "100": "main.ts",
+  "101": "preview.ts",
+  "102": "submission_spec.rb",
+  "103": "user_journey_spec.rb"
 }

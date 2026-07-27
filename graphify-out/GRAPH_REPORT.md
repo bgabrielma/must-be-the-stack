@@ -1,16 +1,16 @@
 # Graph Report - 5-curriculum-browse-gating  (2026-07-27)
 
 ## Corpus Check
-- 174 files · ~38,140 words
+- 174 files · ~38,187 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 620 nodes · 782 edges · 104 communities (76 shown, 28 thin omitted)
+- 620 nodes · 783 edges · 104 communities (76 shown, 28 thin omitted)
 - Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 22 edges (avg confidence: 0.69)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `27bb0445`
+- Built from commit: `3087c998`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
