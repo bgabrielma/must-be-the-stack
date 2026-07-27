@@ -35,13 +35,13 @@ function JourneyPage() {
       return (
         <div className="flex min-h-[100svh] flex-col px-5 pt-6 pb-5">
           <PageHeading eyebrow={t("journeyDetail.eyebrow")} title={journey.title} />
-          <p className="mt-1.5 text-[13px]">
+          <p className="mb-3 text-xs">
             {t("journeyDetail.subjectsCompleted", {
               completed: journey.completedSubjectsCount,
               total: journey.subjectsCount,
             })}
           </p>
-          <div className="my-4 flex flex-col gap-2">
+          <div className="mb-4 flex flex-col gap-2">
             {journey.subjects.map((subject) => {
               const meta = lockStatusMeta(
                 subject.status,

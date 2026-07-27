@@ -29,7 +29,7 @@ function Home() {
       return (
         <div className="flex min-h-[100svh] flex-col px-5 pt-6 pb-5">
           <PageHeading eyebrow={t("home.inProgressEyebrow")} title={t("home.inProgressTitle")} />
-          <div className="my-4 flex flex-col gap-2">
+          <div className="mb-4 flex flex-col gap-2">
             {state.journeys.map((journey) => (
               <UnitCard
                 key={journey.id}
@@ -51,15 +51,14 @@ function Home() {
       return (
         <div className="flex min-h-[100svh] flex-col px-5 pt-6 pb-5">
           <PageHeading eyebrow={t("home.notStartedEyebrow")} title={t("home.notStartedTitle")} />
-          <p className="mt-1.5 text-[13px]">{t("home.notStartedSubtitle")}</p>
+          <p className="mb-3 text-xs">{t("home.notStartedSubtitle")}</p>
           <SearchField
-            wrapperClassName="mt-4"
             placeholder={t("home.searchPlaceholder")}
             aria-label={t("home.searchPlaceholder")}
             value={state.query}
             onChange={(event) => state.onQueryChange(event.target.value)}
           />
-          <div className="my-4 flex flex-col gap-2">
+          <div className="mb-4 flex flex-col gap-2">
             {state.journeys.map((journey) => (
               <UnitCard
                 key={journey.id}
@@ -81,7 +80,7 @@ function Home() {
             eyebrow={t("home.completedEyebrow")}
             title={t("home.completedTitle", { title: state.journeys[0].title })}
           />
-          <div className="my-4 flex flex-col gap-2">
+          <div className="mb-4 flex flex-col gap-2">
             {state.journeys.map((journey) => (
               <UnitCard
                 key={journey.id}
