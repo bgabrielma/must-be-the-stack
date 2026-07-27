@@ -26,6 +26,34 @@ RSpec.describe "Journeys", type: :request do
       expect(attributes["subjects-count"]).to eq(1)
       expect(attributes["completed-subjects-count"]).to eq(0)
     end
+
+    it "paginates, defaulting to the first page" do
+      create_list(:journey, 3)
+
+      get "/journeys", headers: headers, params: { per_page: 2 }
+
+      expect(response).to have_http_status(:ok)
+      expect(JSON.parse(response.body)["data"].size).to eq(2)
+    end
+
+    it "returns the requested page" do
+      journeys = create_list(:journey, 3).sort_by(&:id)
+
+      get "/journeys", headers: headers, params: { per_page: 1, page: 2 }
+
+      expect(response).to have_http_status(:ok)
+      ids = JSON.parse(response.body)["data"].map { |resource| resource["id"].to_i }
+      expect(ids).to eq([ journeys.second.id ])
+    end
+
+    it "caps per_page instead of returning everything" do
+      create_list(:journey, JourneysController::MAX_PER_PAGE + 5)
+
+      get "/journeys", headers: headers, params: { per_page: 999999 }
+
+      expect(response).to have_http_status(:ok)
+      expect(JSON.parse(response.body)["data"].size).to eq(JourneysController::MAX_PER_PAGE)
+    end
   end
 
   describe "GET /journeys/:id" do

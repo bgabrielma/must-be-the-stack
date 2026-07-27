@@ -46,5 +46,11 @@ RSpec.describe "Lessons", type: :request do
 
       expect(response).to have_http_status(:unauthorized)
     end
+
+    it "404s for an unknown Lesson" do
+      get "/lessons/999999", headers: headers
+
+      expect(response).to have_http_status(:not_found)
+    end
   end
 end

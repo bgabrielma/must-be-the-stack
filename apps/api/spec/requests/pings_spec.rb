@@ -7,7 +7,7 @@ RSpec.describe "GET /pings", type: :request do
     get "/pings"
 
     expect(response).to have_http_status(:ok)
-    expect(response.media_type).to eq("application/vnd.api+json")
+    expect(response.media_type).to eq("application/json")
 
     body = JSON.parse(response.body)
     expect(body["data"]).to be_an(Array)

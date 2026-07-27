@@ -5,7 +5,7 @@ RSpec.describe "POST /pings", type: :request do
     post "/pings", params: { message: "hello" }
 
     expect(response).to have_http_status(:created)
-    expect(response.media_type).to eq("application/vnd.api+json")
+    expect(response.media_type).to eq("application/json")
 
     body = JSON.parse(response.body)
     expect(body["data"]["type"]).to eq("pings")
