@@ -1,27 +1,7 @@
-// Access token lives in memory only (ADR-0007): it's lost on reload by design,
-// and restored via a silent POST /refresh using the httpOnly refresh cookie
-// the browser already holds. Never persist the access token to storage.
+import { getAccessToken, setAccessToken } from "./accessToken";
+import { ApiError } from "./ApiError";
 
 const API_URL = import.meta.env.VITE_API_URL ?? "http://localhost:3000";
-
-let accessToken: string | null = null;
-
-export function setAccessToken(token: string | null) {
-  accessToken = token;
-}
-
-export function getAccessToken() {
-  return accessToken;
-}
-
-export class ApiError extends Error {
-  status: number;
-
-  constructor(status: number, message: string) {
-    super(message);
-    this.status = status;
-  }
-}
 
 async function errorDetail(response: Response): Promise<string> {
   const body = await response.json().catch(() => null);
@@ -51,6 +31,7 @@ async function request(
   allowRetry: boolean,
 ): Promise<Response> {
   const headers = new Headers(options.headers);
+  const accessToken = getAccessToken();
   if (accessToken) headers.set("Authorization", `Bearer ${accessToken}`);
   if (options.body) headers.set("Content-Type", "application/json");
 
@@ -77,21 +58,4 @@ export async function apiFetch<T>(path: string, options: RequestInit = {}): Prom
 
   if (response.status === 204) return undefined as T;
   return response.json();
-}
-
-export async function signup(email: string, password: string): Promise<void> {
-  await apiFetch("/signup", { method: "POST", body: JSON.stringify({ email, password }) });
-}
-
-export async function login(email: string, password: string): Promise<void> {
-  const body = await apiFetch<{ access_token: string }>("/login", {
-    method: "POST",
-    body: JSON.stringify({ email, password }),
-  });
-  setAccessToken(body.access_token);
-}
-
-export async function logout(): Promise<void> {
-  await apiFetch("/logout", { method: "DELETE" });
-  setAccessToken(null);
 }

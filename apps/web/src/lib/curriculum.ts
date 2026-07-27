@@ -1,19 +1,13 @@
-import { apiFetch } from "./api";
+import { apiFetch } from "./httpClient";
 import {
   camelizeAttributes,
   findManyIncluded,
   type JsonApiDocument,
   type JsonApiResource,
-} from "./jsonApi";
+} from "../helpers/jsonApi";
 
 export type JourneyStatus = "not_started" | "in_progress" | "completed";
 export type LockStatus = "locked" | "active" | "completed";
-
-// Subject.minimumPassingScore (and a Submission's score) are on a 0-10 scale;
-// screens display it as a percentage.
-export function toPercent(scoreOutOfTen: number): number {
-  return scoreOutOfTen * 10;
-}
 
 interface JourneyAttributes {
   title: string;
@@ -66,6 +60,12 @@ export interface SubjectDetail extends Subject {
 
 export interface LessonDetail extends LessonDetailAttributes {
   id: string;
+}
+
+// Subject.minimumPassingScore (and a Submission's score) are on a 0-10 scale;
+// screens display it as a percentage.
+export function toPercent(scoreOutOfTen: number): number {
+  return scoreOutOfTen * 10;
 }
 
 // `resource.attributes` is deliberately typed as `unknown` here rather than

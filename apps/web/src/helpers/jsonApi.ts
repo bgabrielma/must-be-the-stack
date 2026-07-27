@@ -23,6 +23,17 @@ export interface JsonApiDocument<Attributes = Record<string, unknown>> {
   included?: JsonApiResource[];
 }
 
+// Only ever needs `included`, so it's typed structurally rather than against
+// the full generic JsonApiDocument<Attributes> — that generic doesn't vary
+// covariantly against Record<string, unknown> for concrete Attributes shapes.
+interface HasIncluded {
+  included?: JsonApiResource[];
+}
+
+interface HasRelationships {
+  relationships?: JsonApiResource["relationships"];
+}
+
 function camelize(key: string): string {
   return key.replace(/-([a-z0-9])/g, (_, char: string) => char.toUpperCase());
 }
@@ -33,13 +44,6 @@ export function camelizeAttributes<T>(attributes: Record<string, unknown>): T {
   ) as T;
 }
 
-// Only ever needs `included`, so it's typed structurally rather than against
-// the full generic JsonApiDocument<Attributes> — that generic doesn't vary
-// covariantly against Record<string, unknown> for concrete Attributes shapes.
-interface HasIncluded {
-  included?: JsonApiResource[];
-}
-
 export function findIncluded(
   document: HasIncluded,
   ref: JsonApiResourceIdentifier | null | undefined,
@@ -48,10 +52,6 @@ export function findIncluded(
   return document.included?.find(
     (candidate) => candidate.id === ref.id && candidate.type === ref.type,
   );
-}
-
-interface HasRelationships {
-  relationships?: JsonApiResource["relationships"];
 }
 
 export function findManyIncluded(
