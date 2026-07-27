@@ -17,3 +17,5 @@ decision-makers: Bruno Martins
 ## Consequences
 
 The in-flight `5-curriculum-browse-gating` branch — the only frontend code that existed at the time of this decision — was migrated in full before merge rather than left on the old system.
+
+Tailwind v4's "CSS-first config" means there is deliberately no `tailwind.config.js`/`.ts` — the `@theme` block in `src/index.css` *is* the config file, and every design-system token (colors, fonts, and any future spacing/radius/shadow scale) is declared there so it's reusable via a generated utility class (e.g. `--color-accent` -> `bg-accent`/`text-accent`, `--radius-card` -> `rounded-card`) instead of repeated as an arbitrary value (`rounded-[10px]`) in each component. See CONTRIBUTING.md's Styling section.

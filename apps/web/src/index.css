@@ -5,6 +5,11 @@
   --font-sans: "DM Sans", system-ui, "Segoe UI", Roboto, sans-serif;
   --font-heading: "DM Sans", sans-serif;
 
+  /* Card-style containers (Banner, UnitCard, the onboarding step list) share
+     this radius — not part of Tailwind's default scale, so it's tokenized
+     here instead of repeating the arbitrary `rounded-[10px]` in each one. */
+  --radius-card: 0.625rem;
+
   --color-bg: #fff;
   --color-text: #6b6375;
   --color-text-h: #08060d;
