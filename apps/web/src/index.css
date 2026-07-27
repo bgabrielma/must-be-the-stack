@@ -67,6 +67,11 @@ body {
   margin: 0 auto;
 }
 
-a {
-  color: inherit;
+/* Layered explicitly so Tailwind's `@layer utilities` (e.g. `text-white` on a
+   buttonClasses-styled `<Link>`) can still override this — an unlayered rule
+   here would beat any utility class regardless of specificity. */
+@layer base {
+  a {
+    color: inherit;
+  }
 }

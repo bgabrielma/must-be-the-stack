@@ -40,7 +40,7 @@ function SubjectPage() {
             {t("subjectDetail.breadcrumb", { journeyTitle: subject.journeyTitle })}
           </p>
           <PageHeading title={subject.title} />
-          <p className="mt-1.5 mb-3 text-[13px]">
+          <p className="mb-3">
             <Badge icon={<InfoIcon size={12} />}>
               {t("subjectDetail.minPassingScore", { score: toPercent(subject.minimumPassingScore) })}
             </Badge>
@@ -51,7 +51,7 @@ function SubjectPage() {
             title={t("subjectDetail.retakesAllowedTitle")}
             description={t("subjectDetail.retakesAllowedDescription")}
           />
-          <div className="my-4 flex flex-col gap-2">
+          <div className="mb-4 flex flex-col gap-2">
             {subject.lessons.map((lesson) => {
               const meta = lockStatusMeta(lesson.status, t("subjectDetail.lessonMeta"));
               const icon = lockStatusIcon(lesson.status, <PlayIcon size={14} />);

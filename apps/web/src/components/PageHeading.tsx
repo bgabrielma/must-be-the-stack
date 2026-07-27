@@ -14,7 +14,9 @@ export function PageHeading({ eyebrow, title, testId = "page-heading" }: PageHea
           {eyebrow}
         </p>
       )}
-      <h1 className="font-heading text-2xl leading-[1.15] font-bold tracking-[-0.3px] text-text-h">{title}</h1>
+      <h1 className="mb-[5px] font-heading text-[22px] leading-[1.15] font-bold tracking-[-0.3px] text-text-h">
+        {title}
+      </h1>
     </div>
   );
 }

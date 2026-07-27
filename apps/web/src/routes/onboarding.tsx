@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
-import { CompassIcon, PlayIcon, CheckIcon, LockedStackMark } from "../components/icons";
+import { CompassIcon, PlayIcon, CheckIcon, BrandMark } from "../components/icons";
 import { buttonClasses } from "../components/Button";
 import { PageHeading } from "../components/PageHeading";
 
@@ -34,12 +34,12 @@ function Onboarding() {
 
   return (
     <div className="flex min-h-[100svh] flex-col px-5 pt-6 pb-5">
-      <div className="mb-4">
-        <LockedStackMark size={40} />
+      <div className="mx-auto mt-2 mb-3 w-fit">
+        <BrandMark size="md" />
       </div>
       <PageHeading eyebrow={t("onboarding.eyebrow")} title={t("onboarding.title")} />
-      <p className="mt-1.5 text-[13px]">{t("onboarding.subtitle")}</p>
-      <div className="my-4 flex flex-col gap-2">
+      <p className="mb-3 text-xs">{t("onboarding.subtitle")}</p>
+      <div className="mb-4 flex flex-col gap-2">
         {steps.map((step) => (
           <div
             key={step.title}
