@@ -1,0 +1,274 @@
+{
+  "communities": {
+    "0": [
+      "claude_claude_config",
+      "claude_skills_graphify_references_extraction_spec_doc",
+      "claude_skills_graphify_references_github_and_merge_doc",
+      "claude_skills_graphify_references_transcribe_doc",
+      "claude_skills_graphify_skill_doc",
+      "graphify_confidence_rubric_concept",
+      "graphify_extraction_subagent_prompt_concept",
+      "graphify_node_id_format_concept",
+      "graphify_whisper_transcription_concept"
+    ],
+    "1": [
+      "context_md_discovery_phase",
+      "context_md_doc",
+      "context_md_evaluator",
+      "context_md_exercise",
+      "context_md_gating_unlock",
+      "context_md_journey",
+      "context_md_lesson",
+      "context_md_project",
+      "context_md_quiz",
+      "context_md_rubric",
+      "context_md_streak",
+      "context_md_subject",
+      "context_md_submission",
+      "context_md_template_repo",
+      "docs_adr_0001_decision",
+      "docs_adr_0002_decision"
+    ],
+    "2": [
+      "agents_code_review",
+      "agents_commit_style",
+      "agents_dev_environment",
+      "agents_feature_workflow",
+      "agents_graphify",
+      "agents_grill_with_docs",
+      "agents_implement",
+      "agents_issue_tracker",
+      "agents_md_doc",
+      "agents_to_spec",
+      "agents_to_tickets",
+      "agents_triage_labels",
+      "claude_md_doc",
+      "docs_agents_issue_tracker_doc",
+      "docs_agents_issue_tracker_wayfinder_concept",
+      "docs_agents_triage_labels_doc",
+      "readme_dev_environment",
+      "readme_project",
+      "readme_working_with_this_repo"
+    ],
+    "3": [
+      "claude_skills_graphify_references_query_doc",
+      "claude_skills_graphify_skill_concept",
+      "graphify_explain_concept",
+      "graphify_path_concept",
+      "graphify_query_concept",
+      "graphify_query_vocab_expansion_concept",
+      "graphify_reflect_lessons_concept"
+    ],
+    "4": [
+      "agents_domain_docs",
+      "docs_adr_0001_doc",
+      "docs_adr_0002_doc",
+      "docs_adr_0003_decision",
+      "docs_adr_0003_doc",
+      "docs_adr_0004_decision",
+      "docs_adr_0004_doc",
+      "docs_adr_0005_decision",
+      "docs_adr_0005_doc",
+      "docs_adr_adr_directory",
+      "docs_agents_domain_doc"
+    ],
+    "5": [
+      "readme_backend",
+      "readme_background_jobs",
+      "readme_delivery",
+      "readme_frontend",
+      "readme_monorepo",
+      "readme_project_grading",
+      "readme_stack"
+    ],
+    "6": [
+      "readme_domain",
+      "readme_exercise",
+      "readme_journey",
+      "readme_lesson",
+      "readme_project_exercise",
+      "readme_quiz",
+      "readme_subject"
+    ],
+    "7": [
+      "claude_skills_graphify_references_update_doc",
+      "graphify_build_merge_concept",
+      "graphify_cluster_only_concept",
+      "graphify_manifest_stamping_concept",
+      "graphify_semantic_cache_concept",
+      "graphify_shrink_guard_concept",
+      "graphify_update_concept"
+    ],
+    "8": [
+      "claude_skills_graphify_references_exports_doc",
+      "graphify_falkordb_export_concept",
+      "graphify_mcp_server_concept",
+      "graphify_neo4j_export_concept",
+      "graphify_wiki_export_concept"
+    ],
+    "9": [
+      "devcontainer_docker_compose_app",
+      "devcontainer_docker_compose_postgres"
+    ],
+    "10": [
+      "claude_skills_graphify_references_add_watch_doc",
+      "graphify_add_concept",
+      "graphify_watch_concept"
+    ],
+    "11": [
+      "claude_skills_graphify_references_hooks_doc",
+      "graphify_claude_md_integration_concept",
+      "graphify_hook_install_concept"
+    ]
+  },
+  "cohesion": {
+    "0": 0.25,
+    "1": 0.275,
+    "2": 0.13450292397660818,
+    "3": 0.38095238095238093,
+    "4": 0.3090909090909091,
+    "5": 0.38095238095238093,
+    "6": 0.42857142857142855,
+    "7": 0.2857142857142857,
+    "8": 0.4,
+    "9": 1.0,
+    "10": 0.6666666666666666,
+    "11": 0.6666666666666666
+  },
+  "gods": [
+    {
+      "id": "context_md_doc",
+      "label": "CONTEXT.md (domain glossary)",
+      "degree": 15
+    },
+    {
+      "id": "claude_skills_graphify_skill_doc",
+      "label": "/graphify Skill Definition (SKILL.md)",
+      "degree": 13
+    },
+    {
+      "id": "agents_md_doc",
+      "label": "AGENTS.md (agent instructions)",
+      "degree": 9
+    },
+    {
+      "id": "claude_skills_graphify_skill_concept",
+      "label": "graphify (knowledge graph tool)",
+      "degree": 8
+    },
+    {
+      "id": "readme_stack",
+      "label": "Stack (README section)",
+      "degree": 8
+    },
+    {
+      "id": "context_md_evaluator",
+      "label": "Evaluator",
+      "degree": 7
+    },
+    {
+      "id": "agents_feature_workflow",
+      "label": "Feature workflow (Matt Pocock skills main flow)",
+      "degree": 7
+    },
+    {
+      "id": "claude_skills_graphify_references_query_doc",
+      "label": "graphify reference: query.md",
+      "degree": 6
+    },
+    {
+      "id": "readme_domain",
+      "label": "Domain (README section)",
+      "degree": 6
+    },
+    {
+      "id": "readme_working_with_this_repo",
+      "label": "Working with this repo (README section)",
+      "degree": 6
+    }
+  ],
+  "surprises": [
+    {
+      "source": "Dev environment (README section)",
+      "target": "Dev environment (AGENTS.md)",
+      "source_files": [
+        "README.md",
+        "AGENTS.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; semantically similar concepts with no structural link"
+    },
+    {
+      "source": "Domain (README section)",
+      "target": "CONTEXT.md (domain glossary)",
+      "source_files": [
+        "README.md",
+        "CONTEXT.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "Decision: Solid Queue over Sidekiq for background jobs",
+      "target": "Evaluator",
+      "source_files": [
+        "docs/adr/0005-solid-queue-for-background-jobs.md",
+        "CONTEXT.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories; bridges separate communities"
+    },
+    {
+      "source": "AGENTS.md (agent instructions)",
+      "target": "CLAUDE.md (symlink to AGENTS.md)",
+      "source_files": [
+        "AGENTS.md",
+        "CLAUDE.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories; peripheral node `CLAUDE.md (symlink to AGENTS.md)` unexpectedly reaches hub `AGENTS.md (agent instructions)`"
+    },
+    {
+      "source": "Working with this repo (README section)",
+      "target": "Domain docs",
+      "source_files": [
+        "README.md",
+        "AGENTS.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories; bridges separate communities"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `CONTEXT.md (domain glossary)` connect `CONTEXT.md (domain glossary)` to `docs/adr (Architecture Decision Records)`, `Domain (README section)`?",
+      "why": "High betweenness centrality (0.148) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `Domain (README section)` connect `Domain (README section)` to `CONTEXT.md (domain glossary)`, `AGENTS.md (agent instructions)`?",
+      "why": "High betweenness centrality (0.112) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `must-be-the-stack (project overview)` connect `AGENTS.md (agent instructions)` to `Stack (README section)`, `Domain (README section)`?",
+      "why": "High betweenness centrality (0.106) - this node is a cross-community bridge."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `graphify Skill Trigger Config (.claude/CLAUDE.md)`, `graphify reference: github-and-merge.md`, `devcontainer app service` to the rest of the system?",
+      "why": "23 weakly-connected nodes found - possible documentation gaps or missing edges."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `AGENTS.md (agent instructions)` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.13450292397660818 - nodes in this community are weakly interconnected."
+    }
+  ]
+}
