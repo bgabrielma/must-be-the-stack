@@ -1,16 +1,19 @@
-import { createFileRoute, useNavigate, Link } from "@tanstack/react-router";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
-import { signup, ApiError } from "../lib/api";
+import { useTranslation } from "react-i18next";
+import { signup } from "../lib/auth";
+import { ApiError } from "../lib/ApiError";
 import { Field } from "../components/Field";
 import { Button } from "../components/Button";
 import { PageHeading } from "../components/PageHeading";
-import { LINK_MUTED_CLASSES } from "../lib/pageStyles";
+import { MutedLink } from "../components/MutedLink";
 
 export const Route = createFileRoute("/signup")({
   component: SignupPage,
 });
 
 function SignupPage() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -26,7 +29,7 @@ function SignupPage() {
       await signup(email, password);
       navigate({ to: "/login", search: { created: true } });
     } catch (err) {
-      setError(err instanceof ApiError ? err.message : "Something went wrong. Please try again.");
+      setError(err instanceof ApiError ? err.message : t("signup.genericError"));
     } finally {
       setSubmitting(false);
     }
@@ -34,11 +37,11 @@ function SignupPage() {
 
   return (
     <div className="flex min-h-[100svh] flex-col px-5 pt-6 pb-5">
-      <PageHeading eyebrow="Get started" title="Create your account" />
-      <p className="mt-1.5 text-[13px]">Start mastering one concept at a time.</p>
+      <PageHeading eyebrow={t("signup.eyebrow")} title={t("signup.title")} />
+      <p className="mt-1.5 text-[13px]">{t("signup.subtitle")}</p>
       <form className="mt-3 flex flex-col gap-4" onSubmit={handleSubmit}>
         <Field
-          label="Email"
+          label={t("signup.emailLabel")}
           id="signup-email"
           type="email"
           value={email}
@@ -47,7 +50,7 @@ function SignupPage() {
           error={error ?? undefined}
         />
         <Field
-          label="Password"
+          label={t("signup.passwordLabel")}
           id="signup-password"
           type="password"
           value={password}
@@ -55,12 +58,10 @@ function SignupPage() {
           required
         />
         <Button type="submit" block disabled={submitting}>
-          Create account
+          {t("signup.submit")}
         </Button>
       </form>
-      <Link to="/login" className={LINK_MUTED_CLASSES}>
-        Already have an account? Log in
-      </Link>
+      <MutedLink to="/login">{t("signup.haveAccount")}</MutedLink>
     </div>
   );
 }
