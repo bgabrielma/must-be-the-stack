@@ -102,5 +102,6 @@
   "100": "main.ts",
   "101": "preview.ts",
   "102": "submission_spec.rb",
-  "103": "user_journey_spec.rb"
+  "103": "user_journey_spec.rb",
+  "104": "curriculum.rake"
 }
