@@ -1,0 +1,22 @@
+name: Set up web app
+description: >-
+  Installs pnpm, Node, and apps/web dependencies. Assumes the caller has
+  already checked out the repo.
+
+runs:
+  using: composite
+  steps:
+    - uses: pnpm/action-setup@v4
+      with:
+        version: "10"
+
+    - uses: actions/setup-node@v4
+      with:
+        node-version: "22"
+        cache: pnpm
+        cache-dependency-path: pnpm-lock.yaml
+
+    - name: Install dependencies
+      shell: bash
+      working-directory: apps/web
+      run: pnpm install --frozen-lockfile
