@@ -1,12 +1,14 @@
-import { createFileRoute, useNavigate, Link } from "@tanstack/react-router";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
-import { login, ApiError } from "../lib/api";
+import { useTranslation } from "react-i18next";
+import { login } from "../lib/auth";
+import { ApiError } from "../lib/ApiError";
 import { CheckIcon } from "../components/icons";
 import { Banner } from "../components/Banner";
 import { Field } from "../components/Field";
 import { Button } from "../components/Button";
 import { PageHeading } from "../components/PageHeading";
-import { LINK_MUTED_CLASSES } from "../lib/pageStyles";
+import { MutedLink } from "../components/MutedLink";
 
 interface LoginSearch {
   created?: boolean;
@@ -20,6 +22,7 @@ export const Route = createFileRoute("/login")({
 });
 
 function LoginPage() {
+  const { t } = useTranslation();
   const { created } = Route.useSearch();
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -36,7 +39,7 @@ function LoginPage() {
       await login(email, password);
       navigate({ to: "/home" });
     } catch (err) {
-      setError(err instanceof ApiError ? err.message : "Invalid email or password");
+      setError(err instanceof ApiError ? err.message : t("login.genericError"));
     } finally {
       setSubmitting(false);
     }
@@ -48,14 +51,14 @@ function LoginPage() {
         <Banner
           variant="success"
           icon={<CheckIcon size={18} />}
-          title="Account created"
-          description="Log in to continue your Journey."
+          title={t("login.accountCreatedTitle")}
+          description={t("login.accountCreatedDescription")}
         />
       )}
-      <PageHeading title="Log in" />
+      <PageHeading title={t("login.title")} />
       <form className="mt-3 flex flex-col gap-4" onSubmit={handleSubmit}>
         <Field
-          label="Email"
+          label={t("login.emailLabel")}
           id="login-email"
           type="email"
           value={email}
@@ -63,7 +66,7 @@ function LoginPage() {
           required
         />
         <Field
-          label="Password"
+          label={t("login.passwordLabel")}
           id="login-password"
           type="password"
           value={password}
@@ -72,12 +75,10 @@ function LoginPage() {
           error={error ?? undefined}
         />
         <Button type="submit" block disabled={submitting}>
-          Log in
+          {t("login.submit")}
         </Button>
       </form>
-      <Link to="/signup" className={LINK_MUTED_CLASSES}>
-        Need an account? Sign up
-      </Link>
+      <MutedLink to="/signup">{t("login.needAccount")}</MutedLink>
     </div>
   );
 }

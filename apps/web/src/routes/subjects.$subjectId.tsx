@@ -1,5 +1,6 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
+import { useTranslation } from "react-i18next";
 import { requireAuth } from "../lib/routeGuards";
 import { fetchSubject, toPercent } from "../lib/curriculum";
 import { UnitCard } from "../components/UnitCard";
@@ -9,7 +10,7 @@ import { lockStatusIcon, lockStatusMeta } from "../components/lockStatus";
 import { Badge } from "../components/Badge";
 import { Banner } from "../components/Banner";
 import { PageHeading } from "../components/PageHeading";
-import { STATUS_SCREEN_CLASSES } from "../lib/pageStyles";
+import { StatusScreen } from "../components/StatusScreen";
 
 export const Route = createFileRoute("/subjects/$subjectId")({
   beforeLoad: requireAuth,
@@ -17,6 +18,7 @@ export const Route = createFileRoute("/subjects/$subjectId")({
 });
 
 function SubjectPage() {
+  const { t } = useTranslation();
   const { subjectId } = Route.useParams();
   const navigate = useNavigate();
   const { data: subject, isPending, error } = useQuery({
@@ -24,35 +26,37 @@ function SubjectPage() {
     queryFn: () => fetchSubject(subjectId),
   });
 
-  if (isPending) return <div className={STATUS_SCREEN_CLASSES}>Loading...</div>;
-  if (error) return <div className={STATUS_SCREEN_CLASSES}>This Subject is locked, or could not be reached.</div>;
+  if (isPending) return <StatusScreen>{t("subjectDetail.loading")}</StatusScreen>;
+  if (error) return <StatusScreen>{t("subjectDetail.error")}</StatusScreen>;
 
   const activeLesson = subject.lessons.find((lesson) => lesson.status === "active");
 
   return (
     <div className="flex min-h-[100svh] flex-col px-5 pt-6 pb-5">
-      <p className="mb-2 text-xs opacity-70">{subject.journeyTitle} · Subject</p>
+      <p className="mb-2 text-xs opacity-70">{t("subjectDetail.breadcrumb", { journeyTitle: subject.journeyTitle })}</p>
       <PageHeading title={subject.title} />
       <p className="mt-1.5 mb-3 text-[13px]">
         <Badge icon={<InfoIcon size={12} />}>
-          Min. passing score: {toPercent(subject.minimumPassingScore)}%
+          {t("subjectDetail.minPassingScore", { score: toPercent(subject.minimumPassingScore) })}
         </Badge>
       </p>
       <Banner
         variant="info"
         icon={<InfoIcon size={18} />}
-        title="Retakes allowed"
-        description="You can retry the exercise as many times as you need."
+        title={t("subjectDetail.retakesAllowedTitle")}
+        description={t("subjectDetail.retakesAllowedDescription")}
       />
       <div className="my-4 flex flex-col gap-2">
         {subject.lessons.map((lesson) => {
-          const meta = lockStatusMeta(lesson.status, "Unlocked");
+          const meta = lockStatusMeta(lesson.status, t("subjectDetail.lessonMeta"));
           const icon = lockStatusIcon(lesson.status, <PlayIcon size={14} />);
 
           return (
             <div key={lesson.id}>
               {lesson.status === "locked" && activeLesson && (
-                <LockTooltip message={`Pass the Exercise for "${activeLesson.title}" to unlock this Lesson.`} />
+                <LockTooltip
+                  message={t("subjectDetail.lockMessage", { lesson: activeLesson.title })}
+                />
               )}
               <UnitCard
                 status={lesson.status}

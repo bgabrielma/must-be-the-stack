@@ -1,0 +1,89 @@
+{
+  "entry": {
+    "title": "Every step, earned.",
+    "subtitle": "No skipping ahead. No skipping the fun either.",
+    "startJourney": "Start your Journey",
+    "haveAccount": "Already have an account? Log in"
+  },
+  "onboarding": {
+    "eyebrow": "How it works",
+    "title": "One concept at a time",
+    "subtitle": "No skipping ahead — every step is earned.",
+    "pickJourneyTitle": "Pick a Journey",
+    "pickJourneyMeta": "Software Design, and more to come.",
+    "masterLessonTitle": "Master one Lesson",
+    "masterLessonMeta": "Bite-sized concepts, not videos.",
+    "passExerciseTitle": "Pass the Exercise",
+    "passExerciseMeta": "Prove it before the next one unlocks.",
+    "continue": "Continue"
+  },
+  "login": {
+    "title": "Log in",
+    "accountCreatedTitle": "Account created",
+    "accountCreatedDescription": "Log in to continue your Journey.",
+    "emailLabel": "Email",
+    "passwordLabel": "Password",
+    "submit": "Log in",
+    "needAccount": "Need an account? Sign up",
+    "genericError": "Invalid email or password"
+  },
+  "signup": {
+    "eyebrow": "Get started",
+    "title": "Create your account",
+    "subtitle": "Start mastering one concept at a time.",
+    "emailLabel": "Email",
+    "passwordLabel": "Password",
+    "submit": "Create account",
+    "haveAccount": "Already have an account? Log in",
+    "genericError": "Something went wrong. Please try again."
+  },
+  "home": {
+    "loading": "Loading...",
+    "error": "Could not reach the API.",
+    "inProgressEyebrow": "Welcome back",
+    "inProgressTitle": "Continue your Journey",
+    "inProgressMeta": "{{completed}} of {{total}} Subjects completed",
+    "notStartedEyebrow": "Welcome",
+    "notStartedTitle": "Start your first Journey",
+    "notStartedSubtitle": "Search or browse to begin.",
+    "searchPlaceholder": "Search Journeys",
+    "notStartedMeta": "{{count}} Subjects · Not started",
+    "completedEyebrow": "Welcome back",
+    "completedTitle": "{{title}} complete",
+    "completedMeta": "Completed · {{total}} of {{total}} Subjects",
+    "browseOthers": "Browse other Journeys",
+    "empty": "No Journeys are available yet."
+  },
+  "journeyDetail": {
+    "loading": "Loading...",
+    "error": "Could not reach the API.",
+    "eyebrow": "Journey",
+    "subjectsCompleted": "{{completed}} of {{total}} Subjects completed",
+    "subjectMeta": "In progress · {{completed}}/{{total}} lessons",
+    "lockMessage": "Finish all {{count}} lessons in {{subject}} and pass each exercise with {{score}}% or higher to unlock this Subject."
+  },
+  "subjectDetail": {
+    "loading": "Loading...",
+    "error": "This Subject is locked, or could not be reached.",
+    "breadcrumb": "{{journeyTitle}} · Subject",
+    "minPassingScore": "Min. passing score: {{score}}%",
+    "retakesAllowedTitle": "Retakes allowed",
+    "retakesAllowedDescription": "You can retry the exercise as many times as you need.",
+    "lessonMeta": "Unlocked",
+    "lockMessage": "Pass the Exercise for \"{{lesson}}\" to unlock this Lesson."
+  },
+  "lessonDetail": {
+    "loading": "Loading...",
+    "error": "This Lesson is locked, or could not be reached.",
+    "breadcrumb": "{{subjectTitle}} · Lesson {{position}}",
+    "askForHint": "Ask for a hint",
+    "startExercise": "Start Exercise →"
+  },
+  "unitCard": {
+    "completed": "Completed",
+    "locked": "Locked"
+  },
+  "lockTooltip": {
+    "label": "Locked"
+  }
+}
