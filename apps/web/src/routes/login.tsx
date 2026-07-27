@@ -3,7 +3,7 @@ import { useState, type FormEvent } from "react";
 import { useTranslation } from "react-i18next";
 import { login } from "../lib/auth";
 import { ApiError } from "../lib/ApiError";
-import { CheckIcon } from "../components/icons";
+import { CheckIcon, LockedStackMark } from "../components/icons";
 import { Banner } from "../components/Banner";
 import { Field } from "../components/Field";
 import { Button } from "../components/Button";
@@ -47,6 +47,9 @@ function LoginPage() {
 
   return (
     <div className="flex min-h-[100svh] flex-col px-5 pt-6 pb-5">
+      <div className="mb-4">
+        <LockedStackMark size={40} />
+      </div>
       {created && (
         <Banner
           variant="success"
