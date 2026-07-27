@@ -1,16 +1,16 @@
 # Graph Report - 5-curriculum-browse-gating  (2026-07-27)
 
 ## Corpus Check
-- 178 files · ~38,032 words
+- 194 files · ~41,314 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 637 nodes · 831 edges · 104 communities (76 shown, 28 thin omitted)
-- Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 22 edges (avg confidence: 0.69)
+- 689 nodes · 933 edges · 105 communities (76 shown, 29 thin omitted)
+- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 20 edges (avg confidence: 0.67)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `dcc44470`
+- Built from commit: `7099b727`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -58,6 +58,7 @@
 - cors.rb
 - inflections.rb
 - puma.rb
+- setupTests.ts
 - Contributing
 - ApplicationRecord
 - User
@@ -69,15 +70,15 @@
 
 ## God Nodes (most connected - your core abstractions)
 1. `compilerOptions` - 18 edges
-2. `compilerOptions` - 15 edges
-3. `CONTEXT.md (domain glossary)` - 15 edges
-4. `react` - 14 edges
-5. `/graphify Skill Definition (SKILL.md)` - 13 edges
-6. `ApplicationController` - 10 edges
-7. `ApplicationRecord` - 10 edges
-8. `renderRouteTree()` - 9 edges
-9. `PageHeading()` - 9 edges
-10. `setAccessToken()` - 9 edges
+2. `react` - 16 edges
+3. `compilerOptions` - 15 edges
+4. `CONTEXT.md (domain glossary)` - 15 edges
+5. `Contributing` - 13 edges
+6. `/graphify Skill Definition (SKILL.md)` - 13 edges
+7. `ApplicationController` - 12 edges
+8. `setAccessToken()` - 11 edges
+9. `JourneysController` - 10 edges
+10. `ApplicationRecord` - 10 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Dev environment (README section)` --semantically_similar_to--> `Dev environment (AGENTS.md)`  [INFERRED] [semantically similar]
@@ -102,7 +103,7 @@
 - **Project Exercise grading flow (Template Repo, Evaluator, Rubric, Submission)** — context_md_project, context_md_template_repo, context_md_evaluator, context_md_rubric, context_md_submission [EXTRACTED 1.00]
 - **Free/minimal-infra architecture principle (GitHub Actions, PWA, Solid Queue)** — docs_adr_0002_decision, docs_adr_0003_decision, docs_adr_0005_decision [EXTRACTED 1.00]
 
-## Communities (104 total, 28 thin omitted)
+## Communities (105 total, 29 thin omitted)
 
 ### Community 0 - "/graphify Skill Definition (SKILL.md)"
 Cohesion: 0.08
@@ -125,48 +126,44 @@ Cohesion: 0.08
 Nodes (23): compilerOptions, allowArbitraryExtensions, allowImportingTsExtensions, erasableSyntaxOnly, jsx, lib, module, moduleDetection (+15 more)
 
 ### Community 5 - "Stack (README section)"
-Cohesion: 0.08
-Nodes (25): dependencies, react, react-dom, tailwindcss, @tailwindcss/vite, @tanstack/react-query, @tanstack/react-router, name (+17 more)
+Cohesion: 0.06
+Nodes (31): dependencies, class-variance-authority, i18next, react, react-dom, react-i18next, tailwindcss, @tailwindcss/vite (+23 more)
 
 ### Community 6 - "Domain (README section)"
-Cohesion: 0.16
-Nodes (13): apiFetch(), errorDetail(), logout(), refreshAccessToken(), request(), setAccessToken(), ADR-0007, queryClient (+5 more)
+Cohesion: 0.13
+Nodes (14): setAccessToken(), ADR-0007, logout(), signup(), apiFetch(), errorDetail(), refreshAccessToken(), request() (+6 more)
 
 ### Community 7 - "graphify reference: update.md"
 Cohesion: 0.10
 Nodes (19): compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, lib, module, moduleDetection, noEmit, noFallthroughCasesInSwitch (+11 more)
 
-### Community 8 - "graphify reference: exports.md"
-Cohesion: 0.19
-Nodes (4): Authenticatable, Lockable, LessonsController, SubjectsController
-
 ### Community 10 - "graphify reference: add-watch.md"
-Cohesion: 0.06
-Nodes (43): Banner(), BannerProps, variantClasses, Button(), buttonClasses(), ButtonProps, ButtonVariants, sizeClasses (+35 more)
+Cohesion: 0.07
+Nodes (34): plugins, Banner(), BannerProps, variantClasses, Button(), buttonClasses, ButtonProps, ButtonVariants (+26 more)
 
 ### Community 11 - "Lefthook for git-hook backpressure across the split monorepo"
-Cohesion: 0.07
-Nodes (46): LockIcon(), lockStatusIcon(), lockStatusMeta(), LockTooltip(), LockTooltipProps, LockedLesson, LockedSubject, Story (+38 more)
+Cohesion: 0.06
+Nodes (55): lockStatusIcon(), lockStatusMeta(), LockTooltip(), LockTooltipProps, LockedLesson, LockedSubject, Story, PageHeading() (+47 more)
 
 ### Community 12 - "Journey"
-Cohesion: 0.21
+Cohesion: 0.16
 Nodes (3): JourneysController, Journey, UserJourney
 
 ### Community 13 - "index.tsx"
-Cohesion: 0.06
+Cohesion: 0.08
 Nodes (33): Badge(), BadgeProps, Default, Story, WithoutIcon, Danger, Info, Story (+25 more)
 
 ### Community 14 - "Contributing"
-Cohesion: 0.18
+Cohesion: 0.16
 Nodes (5): PingsController, ApplicationJob, Base, PingNotificationJob, Ping
 
 ### Community 15 - "ApplicationController"
-Cohesion: 0.28
+Cohesion: 0.25
 Nodes (3): API, ApplicationController, SignupsController
 
 ### Community 16 - "Gemini 3.6 Flash as the runtime LLM provider"
-Cohesion: 0.22
-Nodes (8): plugins, rules, react/only-export-components, react/rules-of-hooks, $schema, oxc, typescript, warn
+Cohesion: 0.33
+Nodes (5): rules, react/only-export-components, react/rules-of-hooks, $schema, warn
 
 ### Community 17 - "REST + JSON:API response format via active_model_serializers"
 Cohesion: 0.25
@@ -181,37 +178,41 @@ Cohesion: 0.50
 Nodes (3): Consequences, Considered Options, Gemini 3.6 Flash as the runtime LLM provider
 
 ### Community 29 - "brakeman"
-Cohesion: 0.50
-Nodes (3): Consequences, Considered Options, REST + JSON:API response format via active_model_serializers
+Cohesion: 0.25
+Nodes (7): Handoff: wire the finalized logo into the Auth screens, Implementation note, Suggested skills, The decision, What changed in the design canvases, What needs to change in this worktree, Why this exists
 
 ### Community 30 - "bundler-audit"
 Cohesion: 0.50
 Nodes (3): GRAPHIFY_REBUILD_LOG, PYTHONHASHSEED, graphify-post-checkout.sh script
 
+### Community 59 - "setupTests.ts"
+Cohesion: 0.33
+Nodes (5): SearchField(), SearchFieldProps, Empty, Story, WithValue
+
 ### Community 74 - "Contributing"
-Cohesion: 0.12
-Nodes (14): Contributing, Parallel agent work, Principles, Styling (apps/web), Testing (apps/api), Consequences, Considered Options, Lefthook for git-hook backpressure across the split monorepo (+6 more)
+Cohesion: 0.07
+Nodes (25): Components (apps/web), Contributing, Controllers (apps/api), i18n (apps/web), Migrations (apps/api), Models (apps/api), Parallel agent work, Principles (+17 more)
 
 ### Community 95 - "ApplicationRecord"
-Cohesion: 0.25
-Nodes (4): ApplicationRecord, Base, Subject, Submission
+Cohesion: 0.40
+Nodes (3): ApplicationRecord, Base, Submission
 
 ## Knowledge Gaps
-- **194 isolated node(s):** `$schema`, `typescript`, `oxc`, `react/rules-of-hooks`, `warn` (+189 more)
+- **210 isolated node(s):** `$schema`, `typescript`, `oxc`, `react/rules-of-hooks`, `warn` (+205 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **28 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **29 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `react` connect `graphify reference: add-watch.md` to `Gemini 3.6 Flash as the runtime LLM provider`, `Lefthook for git-hook backpressure across the split monorepo`, `index.tsx`, `Domain (README section)`?**
-  _High betweenness centrality (0.017) - this node is a cross-community bridge._
-- **Why does `plugins` connect `Gemini 3.6 Flash as the runtime LLM provider` to `graphify reference: add-watch.md`?**
+- **Why does `react` connect `graphify reference: add-watch.md` to `setupTests.ts`, `Lefthook for git-hook backpressure across the split monorepo`, `index.tsx`, `Domain (README section)`?**
+  _High betweenness centrality (0.019) - this node is a cross-community bridge._
+- **Why does `plugins` connect `graphify reference: add-watch.md` to `Gemini 3.6 Flash as the runtime LLM provider`?**
   _High betweenness centrality (0.007) - this node is a cross-community bridge._
-- **Why does `ApplicationRecord` connect `ApplicationRecord` to `User`, `RefreshToken`, `Lesson`, `Journey`, `Contributing`?**
+- **Why does `devDependencies` connect `graphify (knowledge graph tool)` to `Stack (README section)`?**
   _High betweenness centrality (0.006) - this node is a cross-community bridge._
 - **What connects `$schema`, `typescript`, `oxc` to the rest of the system?**
-  _194 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _210 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `/graphify Skill Definition (SKILL.md)` be split into smaller, more focused modules?**
   _Cohesion score 0.0766488413547237 - nodes in this community are weakly interconnected._
 - **Should `AGENTS.md (agent instructions)` be split into smaller, more focused modules?**

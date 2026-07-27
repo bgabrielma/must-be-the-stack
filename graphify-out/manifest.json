@@ -150,8 +150,8 @@
     "semantic_hash": ""
   },
   "CONTRIBUTING.md": {
-    "mtime": 1785159682.4492738,
-    "ast_hash": "6b83a3e8bba731ca78d7e58aac85c22e",
+    "mtime": 1785161354.8784122,
+    "ast_hash": "be68483c0f99b3810b95f35c7cfb7e40",
     "semantic_hash": ""
   },
   "docs/adr/0011-lefthook-post-checkout-hook-for-worktree-setup.md": {
@@ -415,8 +415,8 @@
     "semantic_hash": ""
   },
   "apps/web/vite.config.ts": {
-    "mtime": 1785159518.6024323,
-    "ast_hash": "d9ba449ec470a5f432953e8e4cdb1c9f",
+    "mtime": 1785161205.6678228,
+    "ast_hash": "cec8f1526f0837442bee51553a9d5e2b",
     "semantic_hash": ""
   },
   "script/graphify-post-checkout.sh": {
@@ -769,21 +769,6 @@
     "ast_hash": "82f0c8cebe617919af507ece1e1e78c5",
     "semantic_hash": ""
   },
-  "apps/web/src/routes/home.tsx": {
-    "mtime": 1785159348.2434835,
-    "ast_hash": "801b7af6a845bc09953bbb053eef3fa5",
-    "semantic_hash": ""
-  },
-  "apps/web/src/routes/journeys.$journeyId.tsx": {
-    "mtime": 1785159364.335762,
-    "ast_hash": "27c17a80c83d08e4a2ac2b5a11a9d404",
-    "semantic_hash": ""
-  },
-  "apps/web/src/routes/lessons.$lessonId.tsx": {
-    "mtime": 1785159373.4759202,
-    "ast_hash": "137a91930a17dbc8a18309619d2e5f96",
-    "semantic_hash": ""
-  },
   "apps/web/src/routes/login.tsx": {
     "mtime": 1785159327.3351216,
     "ast_hash": "0facc8c37d4952256d74313657c2e36e",
@@ -797,11 +782,6 @@
   "apps/web/src/routes/signup.tsx": {
     "mtime": 1785159336.4512794,
     "ast_hash": "f87c9e59d6c5357f893ec6fae0e82a83",
-    "semantic_hash": ""
-  },
-  "apps/web/src/routes/subjects.$subjectId.tsx": {
-    "mtime": 1785159384.3321083,
-    "ast_hash": "9222dae410caf2f5f5526eac7a323873",
     "semantic_hash": ""
   },
   "apps/api/spec/models/submission_spec.rb": {
@@ -1009,29 +989,9 @@
     "ast_hash": "037b68cf7c56c79e81ece15b46921e55",
     "semantic_hash": ""
   },
-  "apps/web/src/routes/-useHome.ts": {
-    "mtime": 1785159104.6192667,
-    "ast_hash": "62d63f51a475884d0564a4ec79564275",
-    "semantic_hash": ""
-  },
-  "apps/web/src/routes/home.test.tsx": {
-    "mtime": 1785159627.6323192,
-    "ast_hash": "2f814d97ca004ee815190ab3a72b3db6",
-    "semantic_hash": ""
-  },
   "apps/web/src/routes/index.test.tsx": {
     "mtime": 1785159557.7391095,
     "ast_hash": "8ee6b112d364d6da014b53a899ac737c",
-    "semantic_hash": ""
-  },
-  "apps/web/src/routes/journeys.$journeyId.test.tsx": {
-    "mtime": 1785159557.7431097,
-    "ast_hash": "b258e2d9194dc64e504aec9e1b0e63e9",
-    "semantic_hash": ""
-  },
-  "apps/web/src/routes/lessons.$lessonId.test.tsx": {
-    "mtime": 1785159557.7471097,
-    "ast_hash": "c1b79d34cdea5ca49386723f2a5951ce",
     "semantic_hash": ""
   },
   "apps/web/src/routes/login.test.tsx": {
@@ -1049,11 +1009,6 @@
     "ast_hash": "e8707e77197511f3a552ee832a49930d",
     "semantic_hash": ""
   },
-  "apps/web/src/routes/subjects.$subjectId.test.tsx": {
-    "mtime": 1785159557.76711,
-    "ast_hash": "b47028f93d1e936cf2494cd77eb47957",
-    "semantic_hash": ""
-  },
   "apps/web/src/test/renderRoute.tsx": {
     "mtime": 1785159549.9269743,
     "ast_hash": "edc065b5932a271dca36844eb8df338d",
@@ -1062,6 +1017,66 @@
   "HANDOFF.md": {
     "mtime": 1785159526.1265624,
     "ast_hash": "9b3c4a5d3977ae8d1ed99aeaaccbdb04",
+    "semantic_hash": ""
+  },
+  "apps/web/src/routes/home/index.test.tsx": {
+    "mtime": 1785161151.1348763,
+    "ast_hash": "be31798acfe833edfc36e215c402664d",
+    "semantic_hash": ""
+  },
+  "apps/web/src/routes/home/index.tsx": {
+    "mtime": 1785161162.523074,
+    "ast_hash": "565c001deaad8434e160daccd86fb257",
+    "semantic_hash": ""
+  },
+  "apps/web/src/routes/home/useHome.ts": {
+    "mtime": 1785161142.5747278,
+    "ast_hash": "709c2b618eb343716f2482912653891a",
+    "semantic_hash": ""
+  },
+  "apps/web/src/routes/journeys.$journeyId/index.test.tsx": {
+    "mtime": 1785161294.3173614,
+    "ast_hash": "48ac7834aefe2d16f0e8c39868136f24",
+    "semantic_hash": ""
+  },
+  "apps/web/src/routes/journeys.$journeyId/index.tsx": {
+    "mtime": 1785161310.6176443,
+    "ast_hash": "b61e20e2a321805bcbd1cb9db2c6807c",
+    "semantic_hash": ""
+  },
+  "apps/web/src/routes/journeys.$journeyId/useJourney.ts": {
+    "mtime": 1785161270.4729476,
+    "ast_hash": "5decc6171cdf80213e717380fd7a5dde",
+    "semantic_hash": ""
+  },
+  "apps/web/src/routes/lessons.$lessonId/index.test.tsx": {
+    "mtime": 1785161294.3213615,
+    "ast_hash": "5543ba83cb2082868be6292acd0c4829",
+    "semantic_hash": ""
+  },
+  "apps/web/src/routes/lessons.$lessonId/index.tsx": {
+    "mtime": 1785161310.6176443,
+    "ast_hash": "4446d5c0172b2e114efc282329cd7ac7",
+    "semantic_hash": ""
+  },
+  "apps/web/src/routes/lessons.$lessonId/useLesson.ts": {
+    "mtime": 1785161274.593019,
+    "ast_hash": "098d2c9ed435906a43659b6595f69953",
+    "semantic_hash": ""
+  },
+  "apps/web/src/routes/subjects.$subjectId/index.test.tsx": {
+    "mtime": 1785161294.3213615,
+    "ast_hash": "62e5a29a22b1707a5651af2d568dfd88",
+    "semantic_hash": ""
+  },
+  "apps/web/src/routes/subjects.$subjectId/index.tsx": {
+    "mtime": 1785161310.6176443,
+    "ast_hash": "e98c3ccc9396defd421696a5051752be",
+    "semantic_hash": ""
+  },
+  "apps/web/src/routes/subjects.$subjectId/useSubject.ts": {
+    "mtime": 1785161278.4770865,
+    "ast_hash": "083fc9084ebd3f9853da26331bf8fdc9",
     "semantic_hash": ""
   }
 }

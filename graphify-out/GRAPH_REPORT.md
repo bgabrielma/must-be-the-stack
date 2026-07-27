@@ -1,16 +1,16 @@
 # Graph Report - 5-curriculum-browse-gating  (2026-07-27)
 
 ## Corpus Check
-- 194 files · ~41,314 words
+- 197 files · ~41,696 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 689 nodes · 933 edges · 105 communities (76 shown, 29 thin omitted)
+- 698 nodes · 955 edges · 105 communities (76 shown, 29 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 20 edges (avg confidence: 0.67)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `7099b727`
+- Built from commit: `682fdff5`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -87,10 +87,10 @@
   README.md → CONTEXT.md
 - `AGENTS.md (agent instructions)` --references--> `CLAUDE.md (symlink to AGENTS.md)`  [EXTRACTED]
   AGENTS.md → CLAUDE.md
+- `Working with this repo (README section)` --references--> `Domain docs`  [EXTRACTED]
+  README.md → AGENTS.md
 - `Decision: Shared curriculum per Subject, not per-user generation` --references--> `Subject`  [EXTRACTED]
   docs/adr/0001-shared-curriculum-per-subject.md → CONTEXT.md
-- `Decision: GitHub Actions as the Evaluator's execution sandbox` --references--> `Submission`  [EXTRACTED]
-  docs/adr/0002-github-actions-as-evaluator-sandbox.md → CONTEXT.md
 
 ## Import Cycles
 - None detected.
@@ -111,11 +111,11 @@ Nodes (34): graphify Skill Trigger Config (.claude/CLAUDE.md), graphify referenc
 
 ### Community 1 - "CONTEXT.md (domain glossary)"
 Cohesion: 0.16
-Nodes (25): Discovery phase, CONTEXT.md (domain glossary), Evaluator, Exercise, Gating / Unlock, Journey, Lesson, Project (+17 more)
+Nodes (26): Domain docs, Discovery phase, CONTEXT.md (domain glossary), Evaluator, Exercise, Gating / Unlock, Journey, Lesson (+18 more)
 
 ### Community 2 - "AGENTS.md (agent instructions)"
 Cohesion: 0.08
-Nodes (32): /code-review step, Commit style, Dev environment (AGENTS.md), Domain docs, Feature workflow (Matt Pocock skills main flow), graphify (AGENTS.md), /grill-with-docs step, /implement step (+24 more)
+Nodes (31): /code-review step, Commit style, Dev environment (AGENTS.md), Feature workflow (Matt Pocock skills main flow), graphify (AGENTS.md), /grill-with-docs step, /implement step, Issue tracker (+23 more)
 
 ### Community 3 - "graphify (knowledge graph tool)"
 Cohesion: 0.06
@@ -130,20 +130,20 @@ Cohesion: 0.06
 Nodes (31): dependencies, class-variance-authority, i18next, react, react-dom, react-i18next, tailwindcss, @tailwindcss/vite (+23 more)
 
 ### Community 6 - "Domain (README section)"
-Cohesion: 0.13
-Nodes (14): setAccessToken(), ADR-0007, logout(), signup(), apiFetch(), errorDetail(), refreshAccessToken(), request() (+6 more)
+Cohesion: 0.12
+Nodes (16): getAccessToken(), setAccessToken(), ADR-0007, logout(), signup(), apiFetch(), errorDetail(), refreshAccessToken() (+8 more)
 
 ### Community 7 - "graphify reference: update.md"
 Cohesion: 0.10
 Nodes (19): compilerOptions, allowImportingTsExtensions, erasableSyntaxOnly, lib, module, moduleDetection, noEmit, noFallthroughCasesInSwitch (+11 more)
 
 ### Community 10 - "graphify reference: add-watch.md"
-Cohesion: 0.07
-Nodes (34): plugins, Banner(), BannerProps, variantClasses, Button(), buttonClasses, ButtonProps, ButtonVariants (+26 more)
+Cohesion: 0.06
+Nodes (37): Button(), buttonClasses, ButtonProps, ButtonVariants, Block, Disabled, Primary, Secondary (+29 more)
 
 ### Community 11 - "Lefthook for git-hook backpressure across the split monorepo"
 Cohesion: 0.06
-Nodes (55): lockStatusIcon(), lockStatusMeta(), LockTooltip(), LockTooltipProps, LockedLesson, LockedSubject, Story, PageHeading() (+47 more)
+Nodes (52): Badge(), BadgeProps, lockStatusIcon(), lockStatusMeta(), LockTooltip(), LockTooltipProps, LockedLesson, LockedSubject (+44 more)
 
 ### Community 12 - "Journey"
 Cohesion: 0.16
@@ -151,7 +151,7 @@ Nodes (3): JourneysController, Journey, UserJourney
 
 ### Community 13 - "index.tsx"
 Cohesion: 0.08
-Nodes (33): Badge(), BadgeProps, Default, Story, WithoutIcon, Danger, Info, Story (+25 more)
+Nodes (34): Default, Story, WithoutIcon, Banner(), BannerProps, Danger, Info, Story (+26 more)
 
 ### Community 14 - "Contributing"
 Cohesion: 0.16
@@ -162,8 +162,8 @@ Cohesion: 0.25
 Nodes (3): API, ApplicationController, SignupsController
 
 ### Community 16 - "Gemini 3.6 Flash as the runtime LLM provider"
-Cohesion: 0.33
-Nodes (5): rules, react/only-export-components, react/rules-of-hooks, $schema, warn
+Cohesion: 0.22
+Nodes (8): plugins, rules, react/only-export-components, react/rules-of-hooks, $schema, oxc, typescript, warn
 
 ### Community 17 - "REST + JSON:API response format via active_model_serializers"
 Cohesion: 0.25
@@ -198,24 +198,24 @@ Cohesion: 0.40
 Nodes (3): ApplicationRecord, Base, Submission
 
 ## Knowledge Gaps
-- **210 isolated node(s):** `$schema`, `typescript`, `oxc`, `react/rules-of-hooks`, `warn` (+205 more)
+- **213 isolated node(s):** `$schema`, `typescript`, `oxc`, `react/rules-of-hooks`, `warn` (+208 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **29 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `react` connect `graphify reference: add-watch.md` to `setupTests.ts`, `Lefthook for git-hook backpressure across the split monorepo`, `index.tsx`, `Domain (README section)`?**
-  _High betweenness centrality (0.019) - this node is a cross-community bridge._
-- **Why does `plugins` connect `graphify reference: add-watch.md` to `Gemini 3.6 Flash as the runtime LLM provider`?**
+- **Why does `react` connect `Lefthook for git-hook backpressure across the split monorepo` to `Domain (README section)`, `graphify reference: add-watch.md`, `index.tsx`, `Gemini 3.6 Flash as the runtime LLM provider`, `setupTests.ts`?**
+  _High betweenness centrality (0.020) - this node is a cross-community bridge._
+- **Why does `plugins` connect `Gemini 3.6 Flash as the runtime LLM provider` to `Lefthook for git-hook backpressure across the split monorepo`?**
   _High betweenness centrality (0.007) - this node is a cross-community bridge._
 - **Why does `devDependencies` connect `graphify (knowledge graph tool)` to `Stack (README section)`?**
   _High betweenness centrality (0.006) - this node is a cross-community bridge._
 - **What connects `$schema`, `typescript`, `oxc` to the rest of the system?**
-  _210 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _213 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `/graphify Skill Definition (SKILL.md)` be split into smaller, more focused modules?**
   _Cohesion score 0.0766488413547237 - nodes in this community are weakly interconnected._
 - **Should `AGENTS.md (agent instructions)` be split into smaller, more focused modules?**
-  _Cohesion score 0.0784313725490196 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07954545454545454 - nodes in this community are weakly interconnected._
 - **Should `graphify (knowledge graph tool)` be split into smaller, more focused modules?**
   _Cohesion score 0.06451612903225806 - nodes in this community are weakly interconnected._
