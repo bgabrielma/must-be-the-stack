@@ -18,6 +18,7 @@ was verified.
 | `VPS_HOST` | `deploy-backend` | SSH host for the VPS |
 | `VPS_USER` | `deploy-backend` | SSH user for the VPS |
 | `VPS_SSH_KEY` | `deploy-backend` | Private key for the deploy user (public half installed on the VPS) |
+| `GHCR_DEPLOY_USER` | `deploy-backend` | GitHub username that owns `GHCR_DEPLOY_TOKEN` — kept as its own secret rather than reused from `github.actor`, since `github.actor` is whoever triggered the push and won't generally be the PAT's owner |
 | `GHCR_DEPLOY_TOKEN` | `deploy-backend` | PAT with `read:packages`, used by the VPS to `docker login ghcr.io` and pull the image |
 | `CLOUDFLARE_API_TOKEN` | `deploy-frontend` | Cloudflare API token scoped to Pages edit on the `must-be-the-stack` project |
 | `CLOUDFLARE_ACCOUNT_ID` | `deploy-frontend` | Cloudflare account ID |
@@ -66,22 +67,23 @@ job it depends on fails (equivalent to an implicit `if: success()`), so
 `deploy-frontend` never runs when `deploy-backend` fails — no extra `if:`
 guard needed in the workflow itself.
 
-This was verified directly rather than just asserted: a minimal two-job
-workflow with the same `deploy-backend` → `needs: deploy-backend
-deploy-frontend` shape was run locally with [`act`](https://github.com/nektos/act)
-(a local GitHub Actions runner), once with `deploy-backend` failing and once
-succeeding:
+Two ways to re-check this whenever the workflow's shape changes, cheapest
+first:
 
-- **`deploy-backend` fails** (`exit 1`): the run log shows `deploy-backend`
-  reaching `🏁 Job failed`, and `deploy-frontend` never starts — no
-  "Set up job" line for it appears anywhere in the log, and `act` reports
-  `Error: Job 'deploy-backend' failed`.
-- **`deploy-backend` succeeds** (`exit 0`): `deploy-backend` reaches
-  `🏁 Job succeeded`, and `deploy-frontend` runs immediately after and
-  reaches `🏁 Job succeeded` itself.
+1. **Locally with [`act`](https://github.com/nektos/act)** (a local GitHub
+   Actions runner): run `deploy.yml` with a step in `deploy-backend`
+   temporarily forced to fail (e.g. `run: exit 1`), and confirm `act`'s
+   output never reaches a "Set up job" line for `deploy-frontend` and exits
+   non-zero overall. Then remove the forced failure and confirm both jobs
+   report success and `deploy-frontend` actually runs. This doesn't need
+   real secrets — the SSH/Cloudflare steps can be stubbed or the run only
+   needs to get as far as the `needs:` check.
+2. **Against the real workflow**, once secrets are configured: push a commit
+   that breaks `deploy-backend` (e.g. a failing RSpec example) to `main` and
+   confirm in the Actions run summary that `deploy-frontend` shows as
+   **Skipped**, then revert and confirm a clean push runs both jobs to
+   completion.
 
-Once real secrets are configured (see above), the same check can be done
-against the actual workflow: push a commit that breaks `deploy-backend`
-(e.g. a failing RSpec example) to `main` and confirm in the Actions run
-summary that `deploy-frontend` shows as **Skipped**, then revert and confirm
-a clean push runs both jobs.
+Prefer (2) before trusting a production deploy on a new VPS/Cloudflare
+setup — (1) only proves GitHub Actions' generic `needs:` semantics, not that
+this specific workflow's secrets and steps are wired correctly end to end.
