@@ -14,7 +14,7 @@ export function LockTooltip({ message, testId = "lock-tooltip" }: LockTooltipPro
       <p className="mb-0.5 flex items-center gap-1 font-bold">
         <LockIcon size={12} /> {t("lockTooltip.label")}
       </p>
-      <p className="opacity-90">{message}</p>
+      <p className="opacity-[0.82]">{message}</p>
     </div>
   );
 }

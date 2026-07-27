@@ -9,7 +9,7 @@ interface BadgeProps {
 export function Badge({ icon, children, testId = "badge" }: BadgeProps) {
   return (
     <span
-      className="inline-flex items-center gap-2 rounded-full border border-accent-border bg-accent-bg px-[11px] py-1 text-xs font-semibold text-accent"
+      className="inline-flex items-center gap-2 rounded-full border border-accent-border bg-accent-bg px-[11px] py-1 text-xs font-bold text-accent"
       data-testid={testId}
     >
       {icon}
