@@ -7,7 +7,7 @@ import {
   CompassIcon,
   SearchIcon,
   InfoIcon,
-} from "./icons";
+} from ".";
 
 const icons = {
   CheckIcon,
