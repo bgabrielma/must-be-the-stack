@@ -70,7 +70,11 @@ This convention is enforced by code review, not CI.
 
 ## Route components (apps/web)
 
-A route file's component (`src/routes/*.tsx`) stays a thin renderer: data fetching, mutations, and derived-state decisions (which view to show, filtered lists, etc.) live in a colocated hook, not inline `if`s scattered through the component body. One hook -> `src/routes/-use<Name>.ts` next to the route file it serves (the leading `-` is TanStack Router's documented convention for excluding a file from route generation — see `-useHome.ts`); multiple hooks for one route -> a `-hooks/` subfolder. The hook returns a small discriminated union describing what the screen should render (e.g. `{ status: "loading" }` / `{ status: "not_started", journeys, onStart, ... }`); the component then does a single `switch` over `status` purely to pick JSX, with no business logic of its own. See `home.tsx` + `-useHome.ts` for the reference shape.
+A route's component stays a thin renderer: data fetching, mutations, and derived-state decisions (which view to show, filtered lists, etc.) live in a colocated hook, not inline `if`s scattered through the component body. This uses composition (folder-per-route), not a naming trick: once a route needs a hook, it moves from a flat `src/routes/<name>.tsx` file into `src/routes/<name>/index.tsx`, with the hook alongside it — `useFile.ts` for a single hook, a `hooks/` subfolder for multiple. `vite.config.ts`'s `routeFileIgnorePattern` excludes both colocated tests (`*.test.tsx`) and colocated hooks (`use*.ts`) from TanStack Router's route generation, so no special filename prefix is needed. See `src/routes/home/` (`index.tsx` + `useHome.ts` + `index.test.tsx`) for the reference shape. A route with no extracted hook (nothing to colocate) stays a flat file — see `login.tsx`/`signup.tsx`/`onboarding.tsx`.
+
+The hook returns a small discriminated union describing what the screen should render (e.g. `{ status: "loading" }` / `{ status: "not_started", journeys, onStart, ... }`); the component does a single `switch` over `status` purely to pick JSX, with no business logic of its own.
+
+**Note**: moving a route from `<name>.tsx` to `<name>/index.tsx` changes its canonical path to have a trailing slash (e.g. `/home` -> `/home/`) — TanStack Router still resolves the no-slash form to the same route, but be aware of this when adding a hook to a previously-flat route.
 
 This convention is enforced by code review, not CI.
 

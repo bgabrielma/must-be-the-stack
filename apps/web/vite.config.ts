@@ -7,7 +7,13 @@ import tailwindcss from "@tailwindcss/vite";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
-    tanstackRouter({ autoCodeSplitting: true, routeFileIgnorePattern: "\\.test\\.tsx?$" }),
+    tanstackRouter({
+      autoCodeSplitting: true,
+      // Excludes colocated test files and colocated route-local hooks
+      // (useHome.ts, etc.) from route generation — both live inside
+      // src/routes/ but aren't route files themselves.
+      routeFileIgnorePattern: "\\.test\\.tsx?$|/use[A-Z][^/]*\\.tsx?$",
+    }),
     react(),
     tailwindcss(),
   ],

@@ -1,15 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
-import { useHome } from "./-useHome";
-import { requireAuth } from "../lib/routeGuards";
-import { UnitCard } from "../components/UnitCard";
-import { CompassIcon, CheckIcon } from "../components/icons";
-import { SearchField } from "../components/SearchField";
-import { Button } from "../components/Button";
-import { PageHeading } from "../components/PageHeading";
-import { StatusScreen } from "../components/StatusScreen";
+import { useHome } from "./useHome";
+import { requireAuth } from "../../lib/routeGuards";
+import { UnitCard } from "../../components/UnitCard";
+import { CompassIcon, CheckIcon } from "../../components/icons";
+import { SearchField } from "../../components/SearchField";
+import { Button } from "../../components/Button";
+import { PageHeading } from "../../components/PageHeading";
+import { StatusScreen } from "../../components/StatusScreen";
 
-export const Route = createFileRoute("/home")({
+export const Route = createFileRoute("/home/")({
   beforeLoad: requireAuth,
   component: Home,
 });
