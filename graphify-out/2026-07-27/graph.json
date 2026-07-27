@@ -11796,6 +11796,18 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/routes/subjects.$subjectId.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_routes_subjects_subjectid",
+      "target": "apps_web_src_components_icons_playicon",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "apps/web/src/routes/home.tsx",
       "source_location": "L7",
       "weight": 1.0,
@@ -16086,5 +16098,5 @@
       "source_file": "docs/adr/0005-solid-queue-for-background-jobs.md"
     }
   ],
-  "built_at_commit": "27bb0445228e78f15fff053f8571dca0e7fa7386"
+  "built_at_commit": "3087c99889a805a65da9482b72f011b6093f3da6"
 }

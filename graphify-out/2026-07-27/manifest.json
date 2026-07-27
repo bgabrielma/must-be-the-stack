@@ -790,8 +790,8 @@
     "semantic_hash": ""
   },
   "apps/web/src/__tests__/routes/subjects.$subjectId.test.tsx": {
-    "mtime": 1785096193.233661,
-    "ast_hash": "f5195504bde5c4baab59db1d2c936e12",
+    "mtime": 1785148698.6751862,
+    "ast_hash": "ede7d8a4330769a6f6f32f9bc63fcdd3",
     "semantic_hash": ""
   },
   "apps/web/src/components/LockTooltip.tsx": {
@@ -855,8 +855,8 @@
     "semantic_hash": ""
   },
   "apps/web/src/routes/subjects.$subjectId.tsx": {
-    "mtime": 1785138524.4800575,
-    "ast_hash": "1bbda37d86e94dc9da8403d022f9b721",
+    "mtime": 1785148675.4507875,
+    "ast_hash": "eb71363595ed4b5804dfad87e63ab0d2",
     "semantic_hash": ""
   },
   "HANDOFF.md": {

@@ -101,8 +101,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_controllers_application_controller",
-      "community": 6,
-      "community_name": "Domain (README section)",
+      "community": 8,
+      "community_name": "graphify reference: exports.md",
       "norm_label": "application_controller.rb"
     },
     {
@@ -112,8 +112,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_controllers_application_controller_applicationcontroller",
-      "community": 6,
-      "community_name": "Domain (README section)",
+      "community": 8,
+      "community_name": "graphify reference: exports.md",
       "norm_label": "applicationcontroller"
     },
     {
@@ -123,8 +123,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "api",
-      "community": 6,
-      "community_name": "Domain (README section)",
+      "community": 8,
+      "community_name": "graphify reference: exports.md",
       "norm_label": "api"
     },
     {
@@ -134,8 +134,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "apps_api_app_controllers_application_controller_applicationcontroller_render_not_found",
-      "community": 6,
-      "community_name": "Domain (README section)",
+      "community": 8,
+      "community_name": "graphify reference: exports.md",
       "norm_label": ".render_not_found()"
     },
     {
@@ -145,8 +145,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "apps_api_app_controllers_application_controller_applicationcontroller_render_errors",
-      "community": 6,
-      "community_name": "Domain (README section)",
+      "community": 8,
+      "community_name": "graphify reference: exports.md",
       "norm_label": ".render_errors()"
     },
     {
@@ -189,8 +189,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "apps_api_app_controllers_concerns_authenticatable_authenticatable_user_from_access_token",
-      "community": 96,
-      "community_name": "User",
+      "community": 8,
+      "community_name": "graphify reference: exports.md",
       "norm_label": ".user_from_access_token()"
     },
     {
@@ -244,8 +244,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_controllers_journeys_controller",
-      "community": 12,
-      "community_name": "JWT access tokens + opaque refresh tokens, hand-rolled on Rails 8's built-in auth",
+      "community": 14,
+      "community_name": "Contributing",
       "norm_label": "journeys_controller.rb"
     },
     {
@@ -255,8 +255,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_controllers_journeys_controller_journeyscontroller",
-      "community": 12,
-      "community_name": "JWT access tokens + opaque refresh tokens, hand-rolled on Rails 8's built-in auth",
+      "community": 14,
+      "community_name": "Contributing",
       "norm_label": "journeyscontroller"
     },
     {
@@ -266,8 +266,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "apps_api_app_controllers_journeys_controller_journeyscontroller_index",
-      "community": 12,
-      "community_name": "JWT access tokens + opaque refresh tokens, hand-rolled on Rails 8's built-in auth",
+      "community": 14,
+      "community_name": "Contributing",
       "norm_label": ".index()"
     },
     {
@@ -277,8 +277,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "apps_api_app_controllers_journeys_controller_journeyscontroller_show",
-      "community": 12,
-      "community_name": "JWT access tokens + opaque refresh tokens, hand-rolled on Rails 8's built-in auth",
+      "community": 14,
+      "community_name": "Contributing",
       "norm_label": ".show()"
     },
     {
@@ -288,8 +288,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "apps_api_app_controllers_journeys_controller_journeyscontroller_start",
-      "community": 12,
-      "community_name": "JWT access tokens + opaque refresh tokens, hand-rolled on Rails 8's built-in auth",
+      "community": 14,
+      "community_name": "Contributing",
       "norm_label": ".start()"
     },
     {
@@ -376,8 +376,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_controllers_sessions_controller",
-      "community": 98,
-      "community_name": "SessionsController",
+      "community": 8,
+      "community_name": "graphify reference: exports.md",
       "norm_label": "sessions_controller.rb"
     },
     {
@@ -387,8 +387,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_controllers_sessions_controller_sessionscontroller",
-      "community": 98,
-      "community_name": "SessionsController",
+      "community": 8,
+      "community_name": "graphify reference: exports.md",
       "norm_label": "sessionscontroller"
     },
     {
@@ -398,8 +398,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "apps_api_app_controllers_sessions_controller_sessionscontroller_create",
-      "community": 98,
-      "community_name": "SessionsController",
+      "community": 8,
+      "community_name": "graphify reference: exports.md",
       "norm_label": ".create()"
     },
     {
@@ -409,8 +409,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "apps_api_app_controllers_sessions_controller_sessionscontroller_refresh",
-      "community": 98,
-      "community_name": "SessionsController",
+      "community": 8,
+      "community_name": "graphify reference: exports.md",
       "norm_label": ".refresh()"
     },
     {
@@ -420,8 +420,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "apps_api_app_controllers_sessions_controller_sessionscontroller_destroy",
-      "community": 98,
-      "community_name": "SessionsController",
+      "community": 8,
+      "community_name": "graphify reference: exports.md",
       "norm_label": ".destroy()"
     },
     {
@@ -431,8 +431,8 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "apps_api_app_controllers_sessions_controller_sessionscontroller_current_refresh_token",
-      "community": 97,
-      "community_name": "RefreshToken",
+      "community": 8,
+      "community_name": "graphify reference: exports.md",
       "norm_label": ".current_refresh_token()"
     },
     {
@@ -442,8 +442,8 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "apps_api_app_controllers_sessions_controller_sessionscontroller_issue_session",
-      "community": 98,
-      "community_name": "SessionsController",
+      "community": 8,
+      "community_name": "graphify reference: exports.md",
       "norm_label": ".issue_session()"
     },
     {
@@ -453,8 +453,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_controllers_signups_controller",
-      "community": 6,
-      "community_name": "Domain (README section)",
+      "community": 8,
+      "community_name": "graphify reference: exports.md",
       "norm_label": "signups_controller.rb"
     },
     {
@@ -464,8 +464,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_controllers_signups_controller_signupscontroller",
-      "community": 6,
-      "community_name": "Domain (README section)",
+      "community": 8,
+      "community_name": "graphify reference: exports.md",
       "norm_label": "signupscontroller"
     },
     {
@@ -475,8 +475,8 @@
       "source_location": "L2",
       "_origin": "ast",
       "id": "apps_api_app_controllers_signups_controller_signupscontroller_create",
-      "community": 6,
-      "community_name": "Domain (README section)",
+      "community": 8,
+      "community_name": "graphify reference: exports.md",
       "norm_label": ".create()"
     },
     {
@@ -486,8 +486,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "apps_api_app_controllers_signups_controller_signupscontroller_user_params",
-      "community": 6,
-      "community_name": "Domain (README section)",
+      "community": 8,
+      "community_name": "graphify reference: exports.md",
       "norm_label": ".user_params()"
     },
     {
@@ -640,8 +640,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_models_application_record",
-      "community": 95,
-      "community_name": "ApplicationRecord",
+      "community": 14,
+      "community_name": "Contributing",
       "norm_label": "application_record.rb"
     },
     {
@@ -651,8 +651,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_models_application_record_applicationrecord",
-      "community": 95,
-      "community_name": "ApplicationRecord",
+      "community": 14,
+      "community_name": "Contributing",
       "norm_label": "applicationrecord"
     },
     {
@@ -662,8 +662,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "apps_api_app_models_application_record_rb_base",
-      "community": 95,
-      "community_name": "ApplicationRecord",
+      "community": 14,
+      "community_name": "Contributing",
       "norm_label": "base"
     },
     {
@@ -673,8 +673,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_models_journey",
-      "community": 12,
-      "community_name": "JWT access tokens + opaque refresh tokens, hand-rolled on Rails 8's built-in auth",
+      "community": 14,
+      "community_name": "Contributing",
       "norm_label": "journey.rb"
     },
     {
@@ -684,8 +684,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_models_journey_journey",
-      "community": 12,
-      "community_name": "JWT access tokens + opaque refresh tokens, hand-rolled on Rails 8's built-in auth",
+      "community": 14,
+      "community_name": "Contributing",
       "norm_label": "journey"
     },
     {
@@ -695,8 +695,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "apps_api_app_models_journey_journey_started_by",
-      "community": 12,
-      "community_name": "JWT access tokens + opaque refresh tokens, hand-rolled on Rails 8's built-in auth",
+      "community": 14,
+      "community_name": "Contributing",
       "norm_label": ".started_by?()"
     },
     {
@@ -706,8 +706,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "apps_api_app_models_journey_journey_completed_for",
-      "community": 12,
-      "community_name": "JWT access tokens + opaque refresh tokens, hand-rolled on Rails 8's built-in auth",
+      "community": 14,
+      "community_name": "Contributing",
       "norm_label": ".completed_for?()"
     },
     {
@@ -717,8 +717,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "apps_api_app_models_journey_journey_status_for",
-      "community": 12,
-      "community_name": "JWT access tokens + opaque refresh tokens, hand-rolled on Rails 8's built-in auth",
+      "community": 14,
+      "community_name": "Contributing",
       "norm_label": ".status_for()"
     },
     {
@@ -728,8 +728,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_models_lesson",
-      "community": 95,
-      "community_name": "ApplicationRecord",
+      "community": 14,
+      "community_name": "Contributing",
       "norm_label": "lesson.rb"
     },
     {
@@ -739,8 +739,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_models_lesson_lesson",
-      "community": 95,
-      "community_name": "ApplicationRecord",
+      "community": 14,
+      "community_name": "Contributing",
       "norm_label": "lesson"
     },
     {
@@ -750,8 +750,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "apps_api_app_models_lesson_lesson_passed_by",
-      "community": 95,
-      "community_name": "ApplicationRecord",
+      "community": 14,
+      "community_name": "Contributing",
       "norm_label": ".passed_by?()"
     },
     {
@@ -761,8 +761,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "apps_api_app_models_lesson_lesson_status_for",
-      "community": 95,
-      "community_name": "ApplicationRecord",
+      "community": 14,
+      "community_name": "Contributing",
       "norm_label": ".status_for()"
     },
     {
@@ -794,8 +794,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_models_refresh_token",
-      "community": 97,
-      "community_name": "RefreshToken",
+      "community": 8,
+      "community_name": "graphify reference: exports.md",
       "norm_label": "refresh_token.rb"
     },
     {
@@ -805,8 +805,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_models_refresh_token_refreshtoken",
-      "community": 97,
-      "community_name": "RefreshToken",
+      "community": 8,
+      "community_name": "graphify reference: exports.md",
       "norm_label": "refreshtoken"
     },
     {
@@ -816,8 +816,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "apps_api_app_models_refresh_token_refreshtoken_issue",
-      "community": 97,
-      "community_name": "RefreshToken",
+      "community": 8,
+      "community_name": "graphify reference: exports.md",
       "norm_label": ".issue()"
     },
     {
@@ -827,8 +827,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "apps_api_app_models_refresh_token_refreshtoken_authenticate",
-      "community": 97,
-      "community_name": "RefreshToken",
+      "community": 8,
+      "community_name": "graphify reference: exports.md",
       "norm_label": ".authenticate()"
     },
     {
@@ -838,8 +838,8 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "apps_api_app_models_refresh_token_refreshtoken_digest",
-      "community": 97,
-      "community_name": "RefreshToken",
+      "community": 8,
+      "community_name": "graphify reference: exports.md",
       "norm_label": ".digest()"
     },
     {
@@ -849,8 +849,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "apps_api_app_models_refresh_token_refreshtoken_expired",
-      "community": 97,
-      "community_name": "RefreshToken",
+      "community": 8,
+      "community_name": "graphify reference: exports.md",
       "norm_label": ".expired?()"
     },
     {
@@ -860,8 +860,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_models_subject",
-      "community": 99,
-      "community_name": "Subject",
+      "community": 14,
+      "community_name": "Contributing",
       "norm_label": "subject.rb"
     },
     {
@@ -871,8 +871,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_models_subject_subject",
-      "community": 99,
-      "community_name": "Subject",
+      "community": 14,
+      "community_name": "Contributing",
       "norm_label": "subject"
     },
     {
@@ -882,8 +882,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "apps_api_app_models_subject_subject_completed_for",
-      "community": 99,
-      "community_name": "Subject",
+      "community": 14,
+      "community_name": "Contributing",
       "norm_label": ".completed_for?()"
     },
     {
@@ -893,8 +893,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "apps_api_app_models_subject_subject_status_for",
-      "community": 99,
-      "community_name": "Subject",
+      "community": 14,
+      "community_name": "Contributing",
       "norm_label": ".status_for()"
     },
     {
@@ -904,8 +904,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_models_submission",
-      "community": 95,
-      "community_name": "ApplicationRecord",
+      "community": 14,
+      "community_name": "Contributing",
       "norm_label": "submission.rb"
     },
     {
@@ -915,8 +915,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_models_submission_submission",
-      "community": 95,
-      "community_name": "ApplicationRecord",
+      "community": 14,
+      "community_name": "Contributing",
       "norm_label": "submission"
     },
     {
@@ -926,8 +926,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_models_user",
-      "community": 96,
-      "community_name": "User",
+      "community": 8,
+      "community_name": "graphify reference: exports.md",
       "norm_label": "user.rb"
     },
     {
@@ -937,8 +937,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_models_user_user",
-      "community": 96,
-      "community_name": "User",
+      "community": 8,
+      "community_name": "graphify reference: exports.md",
       "norm_label": "user"
     },
     {
@@ -948,8 +948,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_models_user_journey",
-      "community": 12,
-      "community_name": "JWT access tokens + opaque refresh tokens, hand-rolled on Rails 8's built-in auth",
+      "community": 14,
+      "community_name": "Contributing",
       "norm_label": "user_journey.rb"
     },
     {
@@ -959,8 +959,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_models_user_journey_userjourney",
-      "community": 12,
-      "community_name": "JWT access tokens + opaque refresh tokens, hand-rolled on Rails 8's built-in auth",
+      "community": 14,
+      "community_name": "Contributing",
       "norm_label": "userjourney"
     },
     {
@@ -1278,8 +1278,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_services_access_token",
-      "community": 96,
-      "community_name": "User",
+      "community": 8,
+      "community_name": "graphify reference: exports.md",
       "norm_label": "access_token.rb"
     },
     {
@@ -1289,8 +1289,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "apps_api_app_services_access_token_accesstoken",
-      "community": 96,
-      "community_name": "User",
+      "community": 8,
+      "community_name": "graphify reference: exports.md",
       "norm_label": "accesstoken"
     },
     {
@@ -1300,8 +1300,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "apps_api_app_services_access_token_accesstoken_encode",
-      "community": 96,
-      "community_name": "User",
+      "community": 8,
+      "community_name": "graphify reference: exports.md",
       "norm_label": ".encode()"
     },
     {
@@ -1311,8 +1311,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "apps_api_app_services_access_token_accesstoken_decode",
-      "community": 96,
-      "community_name": "User",
+      "community": 8,
+      "community_name": "graphify reference: exports.md",
       "norm_label": ".decode()"
     },
     {
@@ -1322,8 +1322,8 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "apps_api_app_services_access_token_accesstoken_secret",
-      "community": 96,
-      "community_name": "User",
+      "community": 8,
+      "community_name": "graphify reference: exports.md",
       "norm_label": ".secret()"
     },
     {
@@ -2534,10 +2534,32 @@
       "norm_label": "dependencies"
     },
     {
-      "label": "@tanstack/react-query",
+      "label": "@tailwindcss/vite",
       "file_type": "code",
       "source_file": "apps/web/package.json",
       "source_location": "L16",
+      "_origin": "ast",
+      "id": "apps_web_package_dependencies_tailwindcss_vite",
+      "community": 5,
+      "community_name": "Stack (README section)",
+      "norm_label": "@tailwindcss/vite"
+    },
+    {
+      "label": "@tailwindcss/vite",
+      "file_type": "concept",
+      "source_file": "apps/web/package.json",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "tailwindcss_vite",
+      "community": 5,
+      "community_name": "Stack (README section)",
+      "norm_label": "@tailwindcss/vite"
+    },
+    {
+      "label": "@tanstack/react-query",
+      "file_type": "code",
+      "source_file": "apps/web/package.json",
+      "source_location": "L17",
       "_origin": "ast",
       "id": "apps_web_package_dependencies_tanstack_react_query",
       "community": 5,
@@ -2548,7 +2570,7 @@
       "label": "@tanstack/react-query",
       "file_type": "concept",
       "source_file": "apps/web/package.json",
-      "source_location": "L16",
+      "source_location": "L17",
       "_origin": "ast",
       "id": "tanstack_react_query",
       "community": 5,
@@ -2559,7 +2581,7 @@
       "label": "@tanstack/react-router",
       "file_type": "code",
       "source_file": "apps/web/package.json",
-      "source_location": "L17",
+      "source_location": "L18",
       "_origin": "ast",
       "id": "apps_web_package_dependencies_tanstack_react_router",
       "community": 5,
@@ -2570,7 +2592,7 @@
       "label": "@tanstack/react-router",
       "file_type": "concept",
       "source_file": "apps/web/package.json",
-      "source_location": "L17",
+      "source_location": "L18",
       "_origin": "ast",
       "id": "tanstack_react_router",
       "community": 5,
@@ -2581,7 +2603,7 @@
       "label": "react",
       "file_type": "code",
       "source_file": "apps/web/package.json",
-      "source_location": "L18",
+      "source_location": "L19",
       "_origin": "ast",
       "id": "apps_web_package_dependencies_react",
       "community": 5,
@@ -2592,7 +2614,7 @@
       "label": "react",
       "file_type": "concept",
       "source_file": "apps/web/package.json",
-      "source_location": "L18",
+      "source_location": "L19",
       "_origin": "ast",
       "id": "react",
       "community": 5,
@@ -2603,7 +2625,7 @@
       "label": "react-dom",
       "file_type": "code",
       "source_file": "apps/web/package.json",
-      "source_location": "L19",
+      "source_location": "L20",
       "_origin": "ast",
       "id": "apps_web_package_dependencies_react_dom",
       "community": 5,
@@ -2614,7 +2636,7 @@
       "label": "react-dom",
       "file_type": "concept",
       "source_file": "apps/web/package.json",
-      "source_location": "L19",
+      "source_location": "L20",
       "_origin": "ast",
       "id": "react_dom",
       "community": 5,
@@ -2622,10 +2644,32 @@
       "norm_label": "react-dom"
     },
     {
-      "label": "devDependencies",
+      "label": "tailwindcss",
       "file_type": "code",
       "source_file": "apps/web/package.json",
       "source_location": "L21",
+      "_origin": "ast",
+      "id": "apps_web_package_dependencies_tailwindcss",
+      "community": 5,
+      "community_name": "Stack (README section)",
+      "norm_label": "tailwindcss"
+    },
+    {
+      "label": "tailwindcss",
+      "file_type": "concept",
+      "source_file": "apps/web/package.json",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "tailwindcss",
+      "community": 5,
+      "community_name": "Stack (README section)",
+      "norm_label": "tailwindcss"
+    },
+    {
+      "label": "devDependencies",
+      "file_type": "code",
+      "source_file": "apps/web/package.json",
+      "source_location": "L23",
       "_origin": "ast",
       "id": "apps_web_package_devdependencies",
       "community": 3,
@@ -2636,7 +2680,7 @@
       "label": "@storybook/react-vite",
       "file_type": "code",
       "source_file": "apps/web/package.json",
-      "source_location": "L22",
+      "source_location": "L24",
       "_origin": "ast",
       "id": "apps_web_package_devdependencies_storybook_react_vite",
       "community": 3,
@@ -2647,7 +2691,7 @@
       "label": "@storybook/react-vite",
       "file_type": "concept",
       "source_file": "apps/web/package.json",
-      "source_location": "L22",
+      "source_location": "L24",
       "_origin": "ast",
       "id": "storybook_react_vite",
       "community": 3,
@@ -2658,7 +2702,7 @@
       "label": "@tanstack/router-plugin",
       "file_type": "code",
       "source_file": "apps/web/package.json",
-      "source_location": "L23",
+      "source_location": "L25",
       "_origin": "ast",
       "id": "apps_web_package_devdependencies_tanstack_router_plugin",
       "community": 3,
@@ -2669,7 +2713,7 @@
       "label": "@tanstack/router-plugin",
       "file_type": "concept",
       "source_file": "apps/web/package.json",
-      "source_location": "L23",
+      "source_location": "L25",
       "_origin": "ast",
       "id": "tanstack_router_plugin",
       "community": 3,
@@ -2680,7 +2724,7 @@
       "label": "@testing-library/jest-dom",
       "file_type": "code",
       "source_file": "apps/web/package.json",
-      "source_location": "L24",
+      "source_location": "L26",
       "_origin": "ast",
       "id": "apps_web_package_devdependencies_testing_library_jest_dom",
       "community": 3,
@@ -2691,7 +2735,7 @@
       "label": "@testing-library/jest-dom",
       "file_type": "concept",
       "source_file": "apps/web/package.json",
-      "source_location": "L24",
+      "source_location": "L26",
       "_origin": "ast",
       "id": "testing_library_jest_dom",
       "community": 3,
@@ -2702,7 +2746,7 @@
       "label": "@testing-library/react",
       "file_type": "code",
       "source_file": "apps/web/package.json",
-      "source_location": "L25",
+      "source_location": "L27",
       "_origin": "ast",
       "id": "apps_web_package_devdependencies_testing_library_react",
       "community": 3,
@@ -2713,7 +2757,7 @@
       "label": "@testing-library/react",
       "file_type": "concept",
       "source_file": "apps/web/package.json",
-      "source_location": "L25",
+      "source_location": "L27",
       "_origin": "ast",
       "id": "testing_library_react",
       "community": 3,
@@ -2724,7 +2768,7 @@
       "label": "@testing-library/user-event",
       "file_type": "code",
       "source_file": "apps/web/package.json",
-      "source_location": "L26",
+      "source_location": "L28",
       "_origin": "ast",
       "id": "apps_web_package_devdependencies_testing_library_user_event",
       "community": 3,
@@ -2735,7 +2779,7 @@
       "label": "@testing-library/user-event",
       "file_type": "concept",
       "source_file": "apps/web/package.json",
-      "source_location": "L26",
+      "source_location": "L28",
       "_origin": "ast",
       "id": "testing_library_user_event",
       "community": 3,
@@ -2746,7 +2790,7 @@
       "label": "@types/node",
       "file_type": "code",
       "source_file": "apps/web/package.json",
-      "source_location": "L27",
+      "source_location": "L29",
       "_origin": "ast",
       "id": "apps_web_package_devdependencies_types_node",
       "community": 3,
@@ -2757,7 +2801,7 @@
       "label": "@types/node",
       "file_type": "concept",
       "source_file": "apps/web/package.json",
-      "source_location": "L27",
+      "source_location": "L29",
       "_origin": "ast",
       "id": "types_node",
       "community": 3,
@@ -2768,7 +2812,7 @@
       "label": "@types/react",
       "file_type": "code",
       "source_file": "apps/web/package.json",
-      "source_location": "L28",
+      "source_location": "L30",
       "_origin": "ast",
       "id": "apps_web_package_devdependencies_types_react",
       "community": 3,
@@ -2779,7 +2823,7 @@
       "label": "@types/react",
       "file_type": "concept",
       "source_file": "apps/web/package.json",
-      "source_location": "L28",
+      "source_location": "L30",
       "_origin": "ast",
       "id": "types_react",
       "community": 3,
@@ -2790,7 +2834,7 @@
       "label": "@types/react-dom",
       "file_type": "code",
       "source_file": "apps/web/package.json",
-      "source_location": "L29",
+      "source_location": "L31",
       "_origin": "ast",
       "id": "apps_web_package_devdependencies_types_react_dom",
       "community": 3,
@@ -2801,7 +2845,7 @@
       "label": "@types/react-dom",
       "file_type": "concept",
       "source_file": "apps/web/package.json",
-      "source_location": "L29",
+      "source_location": "L31",
       "_origin": "ast",
       "id": "types_react_dom",
       "community": 3,
@@ -2812,7 +2856,7 @@
       "label": "@vitejs/plugin-react",
       "file_type": "code",
       "source_file": "apps/web/package.json",
-      "source_location": "L30",
+      "source_location": "L32",
       "_origin": "ast",
       "id": "apps_web_package_devdependencies_vitejs_plugin_react",
       "community": 3,
@@ -2823,7 +2867,7 @@
       "label": "@vitejs/plugin-react",
       "file_type": "concept",
       "source_file": "apps/web/package.json",
-      "source_location": "L30",
+      "source_location": "L32",
       "_origin": "ast",
       "id": "vitejs_plugin_react",
       "community": 3,
@@ -2834,7 +2878,7 @@
       "label": "jsdom",
       "file_type": "code",
       "source_file": "apps/web/package.json",
-      "source_location": "L31",
+      "source_location": "L33",
       "_origin": "ast",
       "id": "apps_web_package_devdependencies_jsdom",
       "community": 3,
@@ -2845,7 +2889,7 @@
       "label": "jsdom",
       "file_type": "concept",
       "source_file": "apps/web/package.json",
-      "source_location": "L31",
+      "source_location": "L33",
       "_origin": "ast",
       "id": "jsdom",
       "community": 3,
@@ -2856,7 +2900,7 @@
       "label": "oxlint",
       "file_type": "code",
       "source_file": "apps/web/package.json",
-      "source_location": "L32",
+      "source_location": "L34",
       "_origin": "ast",
       "id": "apps_web_package_devdependencies_oxlint",
       "community": 3,
@@ -2867,7 +2911,7 @@
       "label": "oxlint",
       "file_type": "concept",
       "source_file": "apps/web/package.json",
-      "source_location": "L32",
+      "source_location": "L34",
       "_origin": "ast",
       "id": "oxlint",
       "community": 3,
@@ -2878,7 +2922,7 @@
       "label": "storybook",
       "file_type": "code",
       "source_file": "apps/web/package.json",
-      "source_location": "L33",
+      "source_location": "L35",
       "_origin": "ast",
       "id": "apps_web_package_devdependencies_storybook",
       "community": 3,
@@ -2889,7 +2933,7 @@
       "label": "storybook",
       "file_type": "concept",
       "source_file": "apps/web/package.json",
-      "source_location": "L33",
+      "source_location": "L35",
       "_origin": "ast",
       "id": "storybook",
       "community": 3,
@@ -2900,7 +2944,7 @@
       "label": "typescript",
       "file_type": "code",
       "source_file": "apps/web/package.json",
-      "source_location": "L34",
+      "source_location": "L36",
       "_origin": "ast",
       "id": "apps_web_package_devdependencies_typescript",
       "community": 3,
@@ -2911,7 +2955,7 @@
       "label": "typescript",
       "file_type": "concept",
       "source_file": "apps/web/package.json",
-      "source_location": "L34",
+      "source_location": "L36",
       "_origin": "ast",
       "id": "typescript",
       "community": 3,
@@ -2922,7 +2966,7 @@
       "label": "vite",
       "file_type": "code",
       "source_file": "apps/web/package.json",
-      "source_location": "L35",
+      "source_location": "L37",
       "_origin": "ast",
       "id": "apps_web_package_devdependencies_vite",
       "community": 3,
@@ -2933,7 +2977,7 @@
       "label": "vite",
       "file_type": "concept",
       "source_file": "apps/web/package.json",
-      "source_location": "L35",
+      "source_location": "L37",
       "_origin": "ast",
       "id": "vite",
       "community": 3,
@@ -2944,7 +2988,7 @@
       "label": "vitest",
       "file_type": "code",
       "source_file": "apps/web/package.json",
-      "source_location": "L36",
+      "source_location": "L38",
       "_origin": "ast",
       "id": "apps_web_package_devdependencies_vitest",
       "community": 3,
@@ -2955,7 +2999,7 @@
       "label": "vitest",
       "file_type": "concept",
       "source_file": "apps/web/package.json",
-      "source_location": "L36",
+      "source_location": "L38",
       "_origin": "ast",
       "id": "vitest",
       "community": 3,
@@ -3156,8 +3200,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_components_banner_stories",
-      "community": 10,
-      "community_name": "graphify reference: add-watch.md",
+      "community": 13,
+      "community_name": "index.tsx",
       "norm_label": "banner.stories.tsx"
     },
     {
@@ -3167,8 +3211,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "apps_web_src_components_banner_stories_story",
-      "community": 10,
-      "community_name": "graphify reference: add-watch.md",
+      "community": 13,
+      "community_name": "index.tsx",
       "norm_label": "story"
     },
     {
@@ -3178,8 +3222,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "apps_web_src_components_banner_stories_info",
-      "community": 10,
-      "community_name": "graphify reference: add-watch.md",
+      "community": 13,
+      "community_name": "index.tsx",
       "norm_label": "info"
     },
     {
@@ -3189,8 +3233,8 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "apps_web_src_components_banner_stories_success",
-      "community": 10,
-      "community_name": "graphify reference: add-watch.md",
+      "community": 13,
+      "community_name": "index.tsx",
       "norm_label": "success"
     },
     {
@@ -3200,8 +3244,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "apps_web_src_components_banner_stories_danger",
-      "community": 10,
-      "community_name": "graphify reference: add-watch.md",
+      "community": 13,
+      "community_name": "index.tsx",
       "norm_label": "danger"
     },
     {
@@ -3227,10 +3271,21 @@
       "norm_label": "bannerprops"
     },
     {
-      "label": "Banner()",
+      "label": "variantClasses",
       "file_type": "code",
       "source_file": "apps/web/src/components/Banner.tsx",
       "source_location": "L10",
+      "_origin": "ast",
+      "id": "apps_web_src_components_banner_variantclasses",
+      "community": 10,
+      "community_name": "graphify reference: add-watch.md",
+      "norm_label": "variantclasses"
+    },
+    {
+      "label": "Banner()",
+      "file_type": "code",
+      "source_file": "apps/web/src/components/Banner.tsx",
+      "source_location": "L16",
       "_origin": "ast",
       "id": "apps_web_src_components_banner_banner",
       "community": 10,
@@ -3244,8 +3299,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_components_button_stories",
-      "community": 11,
-      "community_name": "Lefthook for git-hook backpressure across the split monorepo",
+      "community": 6,
+      "community_name": "Domain (README section)",
       "norm_label": "button.stories.tsx"
     },
     {
@@ -3255,8 +3310,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "apps_web_src_components_button_stories_story",
-      "community": 11,
-      "community_name": "Lefthook for git-hook backpressure across the split monorepo",
+      "community": 6,
+      "community_name": "Domain (README section)",
       "norm_label": "story"
     },
     {
@@ -3266,8 +3321,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "apps_web_src_components_button_stories_primary",
-      "community": 11,
-      "community_name": "Lefthook for git-hook backpressure across the split monorepo",
+      "community": 6,
+      "community_name": "Domain (README section)",
       "norm_label": "primary"
     },
     {
@@ -3277,8 +3332,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "apps_web_src_components_button_stories_secondary",
-      "community": 11,
-      "community_name": "Lefthook for git-hook backpressure across the split monorepo",
+      "community": 6,
+      "community_name": "Domain (README section)",
       "norm_label": "secondary"
     },
     {
@@ -3288,8 +3343,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "apps_web_src_components_button_stories_small",
-      "community": 11,
-      "community_name": "Lefthook for git-hook backpressure across the split monorepo",
+      "community": 6,
+      "community_name": "Domain (README section)",
       "norm_label": "small"
     },
     {
@@ -3299,8 +3354,8 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "apps_web_src_components_button_stories_block",
-      "community": 11,
-      "community_name": "Lefthook for git-hook backpressure across the split monorepo",
+      "community": 6,
+      "community_name": "Domain (README section)",
       "norm_label": "block"
     },
     {
@@ -3310,8 +3365,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "apps_web_src_components_button_stories_disabled",
-      "community": 11,
-      "community_name": "Lefthook for git-hook backpressure across the split monorepo",
+      "community": 6,
+      "community_name": "Domain (README section)",
       "norm_label": "disabled"
     },
     {
@@ -3321,30 +3376,74 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_components_button",
-      "community": 11,
-      "community_name": "Lefthook for git-hook backpressure across the split monorepo",
+      "community": 6,
+      "community_name": "Domain (README section)",
       "norm_label": "button.tsx"
+    },
+    {
+      "label": "ButtonVariants",
+      "file_type": "code",
+      "source_file": "apps/web/src/components/Button.tsx",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "apps_web_src_components_button_buttonvariants",
+      "community": 6,
+      "community_name": "Domain (README section)",
+      "norm_label": "buttonvariants"
+    },
+    {
+      "label": "variantClasses",
+      "file_type": "code",
+      "source_file": "apps/web/src/components/Button.tsx",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "apps_web_src_components_button_variantclasses",
+      "community": 6,
+      "community_name": "Domain (README section)",
+      "norm_label": "variantclasses"
+    },
+    {
+      "label": "sizeClasses",
+      "file_type": "code",
+      "source_file": "apps/web/src/components/Button.tsx",
+      "source_location": "L18",
+      "_origin": "ast",
+      "id": "apps_web_src_components_button_sizeclasses",
+      "community": 6,
+      "community_name": "Domain (README section)",
+      "norm_label": "sizeclasses"
+    },
+    {
+      "label": "buttonClasses()",
+      "file_type": "code",
+      "source_file": "apps/web/src/components/Button.tsx",
+      "source_location": "L23",
+      "_origin": "ast",
+      "id": "apps_web_src_components_button_buttonclasses",
+      "community": 6,
+      "community_name": "Domain (README section)",
+      "norm_label": "buttonclasses()"
     },
     {
       "label": "ButtonProps",
       "file_type": "code",
       "source_file": "apps/web/src/components/Button.tsx",
-      "source_location": "L3",
+      "source_location": "L29",
       "_origin": "ast",
       "id": "apps_web_src_components_button_buttonprops",
-      "community": 11,
-      "community_name": "Lefthook for git-hook backpressure across the split monorepo",
+      "community": 6,
+      "community_name": "Domain (README section)",
       "norm_label": "buttonprops"
     },
     {
       "label": "Button()",
       "file_type": "code",
       "source_file": "apps/web/src/components/Button.tsx",
-      "source_location": "L9",
+      "source_location": "L31",
       "_origin": "ast",
       "id": "apps_web_src_components_button_button",
-      "community": 11,
-      "community_name": "Lefthook for git-hook backpressure across the split monorepo",
+      "community": 6,
+      "community_name": "Domain (README section)",
       "norm_label": "button()"
     },
     {
@@ -3442,8 +3541,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_components_locktooltip_stories",
-      "community": 13,
-      "community_name": "index.tsx",
+      "community": 11,
+      "community_name": "Lefthook for git-hook backpressure across the split monorepo",
       "norm_label": "locktooltip.stories.tsx"
     },
     {
@@ -3453,8 +3552,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "apps_web_src_components_locktooltip_stories_story",
-      "community": 13,
-      "community_name": "index.tsx",
+      "community": 11,
+      "community_name": "Lefthook for git-hook backpressure across the split monorepo",
       "norm_label": "story"
     },
     {
@@ -3464,8 +3563,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "apps_web_src_components_locktooltip_stories_lockedsubject",
-      "community": 13,
-      "community_name": "index.tsx",
+      "community": 11,
+      "community_name": "Lefthook for git-hook backpressure across the split monorepo",
       "norm_label": "lockedsubject"
     },
     {
@@ -3475,8 +3574,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "apps_web_src_components_locktooltip_stories_lockedlesson",
-      "community": 13,
-      "community_name": "index.tsx",
+      "community": 11,
+      "community_name": "Lefthook for git-hook backpressure across the split monorepo",
       "norm_label": "lockedlesson"
     },
     {
@@ -3486,8 +3585,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_components_locktooltip",
-      "community": 13,
-      "community_name": "index.tsx",
+      "community": 11,
+      "community_name": "Lefthook for git-hook backpressure across the split monorepo",
       "norm_label": "locktooltip.tsx"
     },
     {
@@ -3497,8 +3596,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "apps_web_src_components_locktooltip_locktooltipprops",
-      "community": 13,
-      "community_name": "index.tsx",
+      "community": 11,
+      "community_name": "Lefthook for git-hook backpressure across the split monorepo",
       "norm_label": "locktooltipprops"
     },
     {
@@ -3508,8 +3607,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "apps_web_src_components_locktooltip_locktooltip",
-      "community": 13,
-      "community_name": "index.tsx",
+      "community": 11,
+      "community_name": "Lefthook for git-hook backpressure across the split monorepo",
       "norm_label": "locktooltip()"
     },
     {
@@ -3689,14 +3788,47 @@
       "norm_label": "unitcardprops"
     },
     {
+      "label": "stateClasses",
+      "file_type": "code",
+      "source_file": "apps/web/src/components/UnitCard.tsx",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "apps_web_src_components_unitcard_stateclasses",
+      "community": 13,
+      "community_name": "index.tsx",
+      "norm_label": "stateclasses"
+    },
+    {
+      "label": "iconStateClasses",
+      "file_type": "code",
+      "source_file": "apps/web/src/components/UnitCard.tsx",
+      "source_location": "L24",
+      "_origin": "ast",
+      "id": "apps_web_src_components_unitcard_iconstateclasses",
+      "community": 13,
+      "community_name": "index.tsx",
+      "norm_label": "iconstateclasses"
+    },
+    {
+      "label": "titleStateClasses",
+      "file_type": "code",
+      "source_file": "apps/web/src/components/UnitCard.tsx",
+      "source_location": "L31",
+      "_origin": "ast",
+      "id": "apps_web_src_components_unitcard_titlestateclasses",
+      "community": 13,
+      "community_name": "index.tsx",
+      "norm_label": "titlestateclasses"
+    },
+    {
       "label": "UnitCard()",
       "file_type": "code",
       "source_file": "apps/web/src/components/UnitCard.tsx",
-      "source_location": "L14",
+      "source_location": "L38",
       "_origin": "ast",
       "id": "apps_web_src_components_unitcard_unitcard",
-      "community": 13,
-      "community_name": "index.tsx",
+      "community": 11,
+      "community_name": "Lefthook for git-hook backpressure across the split monorepo",
       "norm_label": "unitcard()"
     },
     {
@@ -3805,8 +3937,8 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "apps_web_src_components_icons_lockicon",
-      "community": 13,
-      "community_name": "index.tsx",
+      "community": 11,
+      "community_name": "Lefthook for git-hook backpressure across the split monorepo",
       "norm_label": "lockicon()"
     },
     {
@@ -3827,8 +3959,8 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "apps_web_src_components_icons_playicon",
-      "community": 13,
-      "community_name": "index.tsx",
+      "community": 11,
+      "community_name": "Lefthook for git-hook backpressure across the split monorepo",
       "norm_label": "playicon()"
     },
     {
@@ -3871,8 +4003,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_components_lockstatus",
-      "community": 13,
-      "community_name": "index.tsx",
+      "community": 11,
+      "community_name": "Lefthook for git-hook backpressure across the split monorepo",
       "norm_label": "lockstatus.tsx"
     },
     {
@@ -3882,8 +4014,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "apps_web_src_components_lockstatus_lockstatusicon",
-      "community": 13,
-      "community_name": "index.tsx",
+      "community": 11,
+      "community_name": "Lefthook for git-hook backpressure across the split monorepo",
       "norm_label": "lockstatusicon()"
     },
     {
@@ -3893,8 +4025,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "apps_web_src_components_lockstatus_lockstatusmeta",
-      "community": 13,
-      "community_name": "index.tsx",
+      "community": 11,
+      "community_name": "Lefthook for git-hook backpressure across the split monorepo",
       "norm_label": "lockstatusmeta()"
     },
     {
@@ -3926,8 +4058,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "apps_web_src_lib_api_getaccesstoken",
-      "community": 13,
-      "community_name": "index.tsx",
+      "community": 11,
+      "community_name": "Lefthook for git-hook backpressure across the split monorepo",
       "norm_label": "getaccesstoken()"
     },
     {
@@ -4069,8 +4201,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "apps_web_src_lib_curriculum_lockstatus",
-      "community": 13,
-      "community_name": "index.tsx",
+      "community": 11,
+      "community_name": "Lefthook for git-hook backpressure across the split monorepo",
       "norm_label": "lockstatus"
     },
     {
@@ -4080,8 +4212,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "apps_web_src_lib_curriculum_topercent",
-      "community": 13,
-      "community_name": "index.tsx",
+      "community": 11,
+      "community_name": "Lefthook for git-hook backpressure across the split monorepo",
       "norm_label": "topercent()"
     },
     {
@@ -4388,8 +4520,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_lib_routeguards",
-      "community": 13,
-      "community_name": "index.tsx",
+      "community": 11,
+      "community_name": "Lefthook for git-hook backpressure across the split monorepo",
       "norm_label": "routeguards.ts"
     },
     {
@@ -4399,8 +4531,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "apps_web_src_lib_routeguards_requireauth",
-      "community": 13,
-      "community_name": "index.tsx",
+      "community": 11,
+      "community_name": "Lefthook for git-hook backpressure across the split monorepo",
       "norm_label": "requireauth()"
     },
     {
@@ -4517,7 +4649,7 @@
       "label": "Home()",
       "file_type": "code",
       "source_file": "apps/web/src/routes/home.tsx",
-      "source_location": "L16",
+      "source_location": "L18",
       "_origin": "ast",
       "id": "apps_web_src_routes_home_home",
       "community": 11,
@@ -4531,30 +4663,30 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_routes_index",
-      "community": 13,
-      "community_name": "index.tsx",
+      "community": 6,
+      "community_name": "Domain (README section)",
       "norm_label": "index.tsx"
     },
     {
       "label": "Route",
       "file_type": "code",
       "source_file": "apps/web/src/routes/index.tsx",
-      "source_location": "L4",
+      "source_location": "L5",
       "_origin": "ast",
       "id": "apps_web_src_routes_index_route",
-      "community": 13,
-      "community_name": "index.tsx",
+      "community": 6,
+      "community_name": "Domain (README section)",
       "norm_label": "route"
     },
     {
       "label": "Entry()",
       "file_type": "code",
       "source_file": "apps/web/src/routes/index.tsx",
-      "source_location": "L8",
+      "source_location": "L9",
       "_origin": "ast",
       "id": "apps_web_src_routes_index_entry",
-      "community": 13,
-      "community_name": "index.tsx",
+      "community": 6,
+      "community_name": "Domain (README section)",
       "norm_label": "entry()"
     },
     {
@@ -4564,8 +4696,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_routes_journeys_journeyid",
-      "community": 13,
-      "community_name": "index.tsx",
+      "community": 11,
+      "community_name": "Lefthook for git-hook backpressure across the split monorepo",
       "norm_label": "journeys.$journeyid.tsx"
     },
     {
@@ -4575,19 +4707,19 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "apps_web_src_routes_journeys_journeyid_route",
-      "community": 13,
-      "community_name": "index.tsx",
+      "community": 11,
+      "community_name": "Lefthook for git-hook backpressure across the split monorepo",
       "norm_label": "route"
     },
     {
       "label": "JourneyPage()",
       "file_type": "code",
       "source_file": "apps/web/src/routes/journeys.$journeyId.tsx",
-      "source_location": "L15",
+      "source_location": "L17",
       "_origin": "ast",
       "id": "apps_web_src_routes_journeys_journeyid_journeypage",
-      "community": 13,
-      "community_name": "index.tsx",
+      "community": 11,
+      "community_name": "Lefthook for git-hook backpressure across the split monorepo",
       "norm_label": "journeypage()"
     },
     {
@@ -4616,7 +4748,7 @@
       "label": "LessonPage()",
       "file_type": "code",
       "source_file": "apps/web/src/routes/lessons.$lessonId.tsx",
-      "source_location": "L12",
+      "source_location": "L14",
       "_origin": "ast",
       "id": "apps_web_src_routes_lessons_lessonid_lessonpage",
       "community": 11,
@@ -4682,7 +4814,7 @@
       "label": "Route",
       "file_type": "code",
       "source_file": "apps/web/src/routes/onboarding.tsx",
-      "source_location": "L4",
+      "source_location": "L5",
       "_origin": "ast",
       "id": "apps_web_src_routes_onboarding_route",
       "community": 13,
@@ -4693,7 +4825,7 @@
       "label": "steps",
       "file_type": "code",
       "source_file": "apps/web/src/routes/onboarding.tsx",
-      "source_location": "L8",
+      "source_location": "L9",
       "_origin": "ast",
       "id": "apps_web_src_routes_onboarding_steps",
       "community": 13,
@@ -4704,11 +4836,11 @@
       "label": "Onboarding()",
       "file_type": "code",
       "source_file": "apps/web/src/routes/onboarding.tsx",
-      "source_location": "L14",
+      "source_location": "L15",
       "_origin": "ast",
       "id": "apps_web_src_routes_onboarding_onboarding",
-      "community": 13,
-      "community_name": "index.tsx",
+      "community": 6,
+      "community_name": "Domain (README section)",
       "norm_label": "onboarding()"
     },
     {
@@ -4751,8 +4883,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_routes_subjects_subjectid",
-      "community": 13,
-      "community_name": "index.tsx",
+      "community": 11,
+      "community_name": "Lefthook for git-hook backpressure across the split monorepo",
       "norm_label": "subjects.$subjectid.tsx"
     },
     {
@@ -4762,19 +4894,19 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "apps_web_src_routes_subjects_subjectid_route",
-      "community": 13,
-      "community_name": "index.tsx",
+      "community": 11,
+      "community_name": "Lefthook for git-hook backpressure across the split monorepo",
       "norm_label": "route"
     },
     {
       "label": "SubjectPage()",
       "file_type": "code",
       "source_file": "apps/web/src/routes/subjects.$subjectId.tsx",
-      "source_location": "L17",
+      "source_location": "L19",
       "_origin": "ast",
       "id": "apps_web_src_routes_subjects_subjectid_subjectpage",
-      "community": 13,
-      "community_name": "index.tsx",
+      "community": 11,
+      "community_name": "Lefthook for git-hook backpressure across the split monorepo",
       "norm_label": "subjectpage()"
     },
     {
@@ -5451,114 +5583,26 @@
       "norm_label": "testing (apps/api)"
     },
     {
-      "label": "Parallel agent work",
+      "label": "Styling (apps/web)",
       "file_type": "document",
       "source_file": "CONTRIBUTING.md",
       "source_location": "L23",
+      "_origin": "ast",
+      "id": "contributing_styling_apps_web",
+      "community": 74,
+      "community_name": "Contributing",
+      "norm_label": "styling (apps/web)"
+    },
+    {
+      "label": "Parallel agent work",
+      "file_type": "document",
+      "source_file": "CONTRIBUTING.md",
+      "source_location": "L29",
       "_origin": "ast",
       "id": "contributing_parallel_agent_work",
       "community": 74,
       "community_name": "Contributing",
       "norm_label": "parallel agent work"
-    },
-    {
-      "label": "HANDOFF.md",
-      "file_type": "document",
-      "source_file": "HANDOFF.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "handoff",
-      "community": 15,
-      "community_name": "graphify-post-checkout.sh",
-      "norm_label": "handoff.md"
-    },
-    {
-      "label": "Handoff: implementing issue #5 (Curriculum browse + gating)",
-      "file_type": "document",
-      "source_file": "HANDOFF.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "handoff_handoff_implementing_issue_5_curriculum_browse_gating",
-      "community": 15,
-      "community_name": "graphify-post-checkout.sh",
-      "norm_label": "handoff: implementing issue #5 (curriculum browse + gating)"
-    },
-    {
-      "label": "Ground truth / non-negotiables from the user this session",
-      "file_type": "document",
-      "source_file": "HANDOFF.md",
-      "source_location": "L9",
-      "_origin": "ast",
-      "id": "handoff_ground_truth_non_negotiables_from_the_user_this_session",
-      "community": 15,
-      "community_name": "graphify-post-checkout.sh",
-      "norm_label": "ground truth / non-negotiables from the user this session"
-    },
-    {
-      "label": "Environment (already set up \u2014 verify still running, don't recreate blindly)",
-      "file_type": "document",
-      "source_file": "HANDOFF.md",
-      "source_location": "L24",
-      "_origin": "ast",
-      "id": "handoff_environment_already_set_up_verify_still_running_don_t_recreate_blindly",
-      "community": 15,
-      "community_name": "graphify-post-checkout.sh",
-      "norm_label": "environment (already set up \u2014 verify still running, don't recreate blindly)"
-    },
-    {
-      "label": "Where the work lives",
-      "file_type": "document",
-      "source_file": "HANDOFF.md",
-      "source_location": "L50",
-      "_origin": "ast",
-      "id": "handoff_where_the_work_lives",
-      "community": 15,
-      "community_name": "graphify-post-checkout.sh",
-      "norm_label": "where the work lives"
-    },
-    {
-      "label": "What was built (full detail in earlier conversation \u2014 this is the summary)",
-      "file_type": "document",
-      "source_file": "HANDOFF.md",
-      "source_location": "L57",
-      "_origin": "ast",
-      "id": "handoff_what_was_built_full_detail_in_earlier_conversation_this_is_the_summary",
-      "community": 15,
-      "community_name": "graphify-post-checkout.sh",
-      "norm_label": "what was built (full detail in earlier conversation \u2014 this is the summary)"
-    },
-    {
-      "label": "Code review: done, findings applied",
-      "file_type": "document",
-      "source_file": "HANDOFF.md",
-      "source_location": "L99",
-      "_origin": "ast",
-      "id": "handoff_code_review_done_findings_applied",
-      "community": 15,
-      "community_name": "graphify-post-checkout.sh",
-      "norm_label": "code review: done, findings applied"
-    },
-    {
-      "label": "Final steps (not yet done)",
-      "file_type": "document",
-      "source_file": "HANDOFF.md",
-      "source_location": "L135",
-      "_origin": "ast",
-      "id": "handoff_final_steps_not_yet_done",
-      "community": 15,
-      "community_name": "graphify-post-checkout.sh",
-      "norm_label": "final steps (not yet done)"
-    },
-    {
-      "label": "Known gotchas hit this session",
-      "file_type": "document",
-      "source_file": "HANDOFF.md",
-      "source_location": "L151",
-      "_origin": "ast",
-      "id": "handoff_known_gotchas_hit_this_session",
-      "community": 15,
-      "community_name": "graphify-post-checkout.sh",
-      "norm_label": "known gotchas hit this session"
     },
     {
       "label": "api/README.md",
@@ -5886,6 +5930,50 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "docs_adr_0011_lefthook_post_checkout_hook_for_worktree_setup_consequences",
+      "community": 74,
+      "community_name": "Contributing",
+      "norm_label": "consequences"
+    },
+    {
+      "label": "0012-tailwind-css-for-apps-web.md",
+      "file_type": "document",
+      "source_file": "docs/adr/0012-tailwind-css-for-apps-web.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "docs_adr_0012_tailwind_css_for_apps_web",
+      "community": 74,
+      "community_name": "Contributing",
+      "norm_label": "0012-tailwind-css-for-apps-web.md"
+    },
+    {
+      "label": "Tailwind CSS v4 for apps/web styling",
+      "file_type": "document",
+      "source_file": "docs/adr/0012-tailwind-css-for-apps-web.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "docs_adr_0012_tailwind_css_for_apps_web_tailwind_css_v4_for_apps_web_styling",
+      "community": 74,
+      "community_name": "Contributing",
+      "norm_label": "tailwind css v4 for apps/web styling"
+    },
+    {
+      "label": "Considered Options",
+      "file_type": "document",
+      "source_file": "docs/adr/0012-tailwind-css-for-apps-web.md",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "docs_adr_0012_tailwind_css_for_apps_web_considered_options",
+      "community": 74,
+      "community_name": "Contributing",
+      "norm_label": "considered options"
+    },
+    {
+      "label": "Consequences",
+      "file_type": "document",
+      "source_file": "docs/adr/0012-tailwind-css-for-apps-web.md",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "docs_adr_0012_tailwind_css_for_apps_web_consequences",
       "community": 74,
       "community_name": "Contributing",
       "norm_label": "consequences"
@@ -9317,7 +9405,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/package.json",
-      "source_location": "L21",
+      "source_location": "L23",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_package",
@@ -9460,7 +9548,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/package.json",
-      "source_location": "L18",
+      "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_package_dependencies",
@@ -9471,7 +9559,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/package.json",
-      "source_location": "L19",
+      "source_location": "L20",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_package_dependencies",
@@ -9482,7 +9570,29 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/package.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_package_dependencies",
+      "target": "apps_web_package_dependencies_tailwindcss",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/package.json",
       "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_package_dependencies",
+      "target": "apps_web_package_dependencies_tailwindcss_vite",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/package.json",
+      "source_location": "L17",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_package_dependencies",
@@ -9493,7 +9603,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/package.json",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_package_dependencies",
@@ -9508,6 +9618,18 @@
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
+      "source": "apps_web_package_dependencies_tailwindcss_vite",
+      "target": "tailwindcss_vite",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/package.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "context": "import",
+      "_origin": "ast",
       "source": "apps_web_package_dependencies_tanstack_react_query",
       "target": "tanstack_react_query",
       "confidence_score": 1.0
@@ -9516,7 +9638,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/package.json",
-      "source_location": "L17",
+      "source_location": "L18",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -9528,7 +9650,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/package.json",
-      "source_location": "L18",
+      "source_location": "L19",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -9540,7 +9662,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/package.json",
-      "source_location": "L19",
+      "source_location": "L20",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -9549,25 +9671,15 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "contains",
+      "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/package.json",
-      "source_location": "L31",
+      "source_location": "L21",
       "weight": 1.0,
+      "context": "import",
       "_origin": "ast",
-      "source": "apps_web_package_devdependencies",
-      "target": "apps_web_package_devdependencies_jsdom",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/web/package.json",
-      "source_location": "L32",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "apps_web_package_devdependencies",
-      "target": "apps_web_package_devdependencies_oxlint",
+      "source": "apps_web_package_dependencies_tailwindcss",
+      "target": "tailwindcss",
       "confidence_score": 1.0
     },
     {
@@ -9578,95 +9690,7 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_package_devdependencies",
-      "target": "apps_web_package_devdependencies_storybook",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/web/package.json",
-      "source_location": "L22",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "apps_web_package_devdependencies",
-      "target": "apps_web_package_devdependencies_storybook_react_vite",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/web/package.json",
-      "source_location": "L23",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "apps_web_package_devdependencies",
-      "target": "apps_web_package_devdependencies_tanstack_router_plugin",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/web/package.json",
-      "source_location": "L24",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "apps_web_package_devdependencies",
-      "target": "apps_web_package_devdependencies_testing_library_jest_dom",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/web/package.json",
-      "source_location": "L25",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "apps_web_package_devdependencies",
-      "target": "apps_web_package_devdependencies_testing_library_react",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/web/package.json",
-      "source_location": "L26",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "apps_web_package_devdependencies",
-      "target": "apps_web_package_devdependencies_testing_library_user_event",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/web/package.json",
-      "source_location": "L27",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "apps_web_package_devdependencies",
-      "target": "apps_web_package_devdependencies_types_node",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/web/package.json",
-      "source_location": "L28",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "apps_web_package_devdependencies",
-      "target": "apps_web_package_devdependencies_types_react",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "apps/web/package.json",
-      "source_location": "L29",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "apps_web_package_devdependencies",
-      "target": "apps_web_package_devdependencies_types_react_dom",
+      "target": "apps_web_package_devdependencies_jsdom",
       "confidence_score": 1.0
     },
     {
@@ -9677,7 +9701,7 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_package_devdependencies",
-      "target": "apps_web_package_devdependencies_typescript",
+      "target": "apps_web_package_devdependencies_oxlint",
       "confidence_score": 1.0
     },
     {
@@ -9688,7 +9712,73 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_package_devdependencies",
-      "target": "apps_web_package_devdependencies_vite",
+      "target": "apps_web_package_devdependencies_storybook",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/package.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_package_devdependencies",
+      "target": "apps_web_package_devdependencies_storybook_react_vite",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/package.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_package_devdependencies",
+      "target": "apps_web_package_devdependencies_tanstack_router_plugin",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/package.json",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_package_devdependencies",
+      "target": "apps_web_package_devdependencies_testing_library_jest_dom",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/package.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_package_devdependencies",
+      "target": "apps_web_package_devdependencies_testing_library_react",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/package.json",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_package_devdependencies",
+      "target": "apps_web_package_devdependencies_testing_library_user_event",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/package.json",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_package_devdependencies",
+      "target": "apps_web_package_devdependencies_types_node",
       "confidence_score": 1.0
     },
     {
@@ -9699,7 +9789,18 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_package_devdependencies",
-      "target": "apps_web_package_devdependencies_vitejs_plugin_react",
+      "target": "apps_web_package_devdependencies_types_react",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/package.json",
+      "source_location": "L31",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_package_devdependencies",
+      "target": "apps_web_package_devdependencies_types_react_dom",
       "confidence_score": 1.0
     },
     {
@@ -9710,6 +9811,39 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_package_devdependencies",
+      "target": "apps_web_package_devdependencies_typescript",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/package.json",
+      "source_location": "L37",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_package_devdependencies",
+      "target": "apps_web_package_devdependencies_vite",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/package.json",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_package_devdependencies",
+      "target": "apps_web_package_devdependencies_vitejs_plugin_react",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/package.json",
+      "source_location": "L38",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_package_devdependencies",
       "target": "apps_web_package_devdependencies_vitest",
       "confidence_score": 1.0
     },
@@ -9717,7 +9851,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/package.json",
-      "source_location": "L22",
+      "source_location": "L24",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -9729,7 +9863,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/package.json",
-      "source_location": "L23",
+      "source_location": "L25",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -9741,7 +9875,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/package.json",
-      "source_location": "L24",
+      "source_location": "L26",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -9753,7 +9887,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/package.json",
-      "source_location": "L25",
+      "source_location": "L27",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -9765,7 +9899,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/package.json",
-      "source_location": "L26",
+      "source_location": "L28",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -9777,7 +9911,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/package.json",
-      "source_location": "L27",
+      "source_location": "L29",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -9789,7 +9923,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/package.json",
-      "source_location": "L28",
+      "source_location": "L30",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -9801,7 +9935,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/package.json",
-      "source_location": "L29",
+      "source_location": "L31",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -9813,7 +9947,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/package.json",
-      "source_location": "L30",
+      "source_location": "L32",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -9825,7 +9959,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/package.json",
-      "source_location": "L31",
+      "source_location": "L33",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -9837,7 +9971,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/package.json",
-      "source_location": "L32",
+      "source_location": "L34",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -9849,7 +9983,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/package.json",
-      "source_location": "L33",
+      "source_location": "L35",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -9861,7 +9995,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/package.json",
-      "source_location": "L34",
+      "source_location": "L36",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -9873,7 +10007,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/package.json",
-      "source_location": "L35",
+      "source_location": "L37",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -9885,7 +10019,7 @@
       "relation": "imports",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/package.json",
-      "source_location": "L36",
+      "source_location": "L38",
       "weight": 1.0,
       "context": "import",
       "_origin": "ast",
@@ -10450,7 +10584,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/components/Banner.tsx",
-      "source_location": "L10",
+      "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_components_banner",
@@ -10466,6 +10600,17 @@
       "_origin": "ast",
       "source": "apps_web_src_components_banner",
       "target": "apps_web_src_components_banner_bannerprops",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/components/Banner.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_components_banner",
+      "target": "apps_web_src_components_banner_variantclasses",
       "confidence_score": 1.0
     },
     {
@@ -10610,7 +10755,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/components/Button.tsx",
-      "source_location": "L9",
+      "source_location": "L31",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_components_button",
@@ -10621,11 +10766,55 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/components/Button.tsx",
-      "source_location": "L3",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_components_button",
+      "target": "apps_web_src_components_button_buttonclasses",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/components/Button.tsx",
+      "source_location": "L29",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_components_button",
       "target": "apps_web_src_components_button_buttonprops",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/components/Button.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_components_button",
+      "target": "apps_web_src_components_button_buttonvariants",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/components/Button.tsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_components_button",
+      "target": "apps_web_src_components_button_sizeclasses",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/components/Button.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_components_button",
+      "target": "apps_web_src_components_button_variantclasses",
       "confidence_score": 1.0
     },
     {
@@ -10637,6 +10826,18 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_routes_home",
+      "target": "apps_web_src_components_button",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/routes/index.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_routes_index",
       "target": "apps_web_src_components_button",
       "confidence_score": 1.0
     },
@@ -10668,6 +10869,18 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/routes/onboarding.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_routes_onboarding",
+      "target": "apps_web_src_components_button",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "apps/web/src/routes/signup.tsx",
       "source_location": "L5",
       "weight": 1.0,
@@ -10675,6 +10888,78 @@
       "source": "apps_web_src_routes_signup",
       "target": "apps_web_src_components_button",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "context": "type",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/components/Button.tsx",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_components_button_buttonprops",
+      "target": "apps_web_src_components_button_buttonvariants",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/components/Button.tsx",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_components_button_button",
+      "target": "apps_web_src_components_button_buttonclasses",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/routes/index.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_routes_index",
+      "target": "apps_web_src_components_button_buttonclasses",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/web/src/routes/index.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_routes_index_entry",
+      "target": "apps_web_src_components_button_buttonclasses"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/routes/onboarding.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_routes_onboarding",
+      "target": "apps_web_src_components_button_buttonclasses",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "apps/web/src/routes/onboarding.tsx",
+      "source_location": "L42",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_routes_onboarding_onboarding",
+      "target": "apps_web_src_components_button_buttonclasses"
     },
     {
       "relation": "imports",
@@ -11283,7 +11568,40 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/components/UnitCard.tsx",
-      "source_location": "L14",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_components_unitcard",
+      "target": "apps_web_src_components_unitcard_iconstateclasses",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/components/UnitCard.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_components_unitcard",
+      "target": "apps_web_src_components_unitcard_stateclasses",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/components/UnitCard.tsx",
+      "source_location": "L31",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_components_unitcard",
+      "target": "apps_web_src_components_unitcard_titlestateclasses",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/components/UnitCard.tsx",
+      "source_location": "L38",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_components_unitcard",
@@ -11940,7 +12258,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/web/src/routes/journeys.$journeyId.tsx",
-      "source_location": "L41",
+      "source_location": "L45",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_routes_journeys_journeyid_journeypage",
@@ -11964,7 +12282,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/web/src/routes/subjects.$subjectId.tsx",
-      "source_location": "L48",
+      "source_location": "L52",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_routes_subjects_subjectid_subjectpage",
@@ -11988,7 +12306,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/web/src/routes/journeys.$journeyId.tsx",
-      "source_location": "L37",
+      "source_location": "L41",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_routes_journeys_journeyid_journeypage",
@@ -12012,7 +12330,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/web/src/routes/subjects.$subjectId.tsx",
-      "source_location": "L47",
+      "source_location": "L51",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_routes_subjects_subjectid_subjectpage",
@@ -12761,7 +13079,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/web/src/routes/journeys.$journeyId.tsx",
-      "source_location": "L47",
+      "source_location": "L51",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_routes_journeys_journeyid_journeypage",
@@ -12785,7 +13103,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/web/src/routes/subjects.$subjectId.tsx",
-      "source_location": "L36",
+      "source_location": "L40",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_routes_subjects_subjectid_subjectpage",
@@ -12965,7 +13283,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "apps/web/src/routes/home.tsx",
-      "source_location": "L22",
+      "source_location": "L24",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_routes_home_home",
@@ -12989,7 +13307,7 @@
       "confidence": "INFERRED",
       "confidence_score": 0.8,
       "source_file": "apps/web/src/routes/home.tsx",
-      "source_location": "L26",
+      "source_location": "L28",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_routes_home_home",
@@ -13025,7 +13343,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/web/src/routes/journeys.$journeyId.tsx",
-      "source_location": "L20",
+      "source_location": "L22",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_routes_journeys_journeyid_journeypage",
@@ -13061,7 +13379,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/web/src/routes/subjects.$subjectId.tsx",
-      "source_location": "L22",
+      "source_location": "L24",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_routes_subjects_subjectid_subjectpage",
@@ -13083,13 +13401,13 @@
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
       "source_file": "apps/web/src/routes/lessons.$lessonId.tsx",
-      "source_location": "L16",
+      "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_routes_lessons_lessonid_lessonpage",
-      "target": "apps_web_src_lib_curriculum_fetchlesson",
-      "confidence_score": 1.0
+      "target": "apps_web_src_lib_curriculum_fetchlesson"
     },
     {
       "relation": "contains",
@@ -13425,7 +13743,7 @@
       "relation": "indirect_call",
       "confidence": "INFERRED",
       "source_file": "apps/web/src/routes/index.tsx",
-      "source_location": "L5",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
       "context": "collection",
@@ -13437,7 +13755,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/routes/index.tsx",
-      "source_location": "L4",
+      "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_routes_index",
@@ -13528,7 +13846,7 @@
       "relation": "indirect_call",
       "confidence": "INFERRED",
       "source_file": "apps/web/src/routes/onboarding.tsx",
-      "source_location": "L5",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
       "context": "collection",
@@ -13540,7 +13858,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/routes/onboarding.tsx",
-      "source_location": "L4",
+      "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_routes_onboarding",
@@ -13551,7 +13869,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/routes/onboarding.tsx",
-      "source_location": "L8",
+      "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_routes_onboarding",
@@ -14154,7 +14472,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "CONTRIBUTING.md",
-      "source_location": "L33",
+      "source_location": "L39",
       "weight": 1.0,
       "_origin": "ast",
       "source": "contributing",
@@ -14165,7 +14483,7 @@
       "relation": "references",
       "confidence": "EXTRACTED",
       "source_file": "CONTRIBUTING.md",
-      "source_location": "L33",
+      "source_location": "L39",
       "weight": 1.0,
       "_origin": "ast",
       "source": "contributing",
@@ -14173,10 +14491,21 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "CONTRIBUTING.md",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "contributing",
+      "target": "docs_adr_0012_tailwind_css_for_apps_web",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CONTRIBUTING.md",
-      "source_location": "L23",
+      "source_location": "L29",
       "weight": 1.0,
       "_origin": "ast",
       "source": "contributing_contributing",
@@ -14198,99 +14527,22 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "CONTRIBUTING.md",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "contributing_contributing",
+      "target": "contributing_styling_apps_web",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CONTRIBUTING.md",
       "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast",
       "source": "contributing_contributing",
       "target": "contributing_testing_apps_api",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "HANDOFF.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "handoff",
-      "target": "handoff_handoff_implementing_issue_5_curriculum_browse_gating",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "HANDOFF.md",
-      "source_location": "L99",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "handoff_handoff_implementing_issue_5_curriculum_browse_gating",
-      "target": "handoff_code_review_done_findings_applied",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "HANDOFF.md",
-      "source_location": "L24",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "handoff_handoff_implementing_issue_5_curriculum_browse_gating",
-      "target": "handoff_environment_already_set_up_verify_still_running_don_t_recreate_blindly",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "HANDOFF.md",
-      "source_location": "L135",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "handoff_handoff_implementing_issue_5_curriculum_browse_gating",
-      "target": "handoff_final_steps_not_yet_done",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "HANDOFF.md",
-      "source_location": "L9",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "handoff_handoff_implementing_issue_5_curriculum_browse_gating",
-      "target": "handoff_ground_truth_non_negotiables_from_the_user_this_session",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "HANDOFF.md",
-      "source_location": "L151",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "handoff_handoff_implementing_issue_5_curriculum_browse_gating",
-      "target": "handoff_known_gotchas_hit_this_session",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "HANDOFF.md",
-      "source_location": "L57",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "handoff_handoff_implementing_issue_5_curriculum_browse_gating",
-      "target": "handoff_what_was_built_full_detail_in_earlier_conversation_this_is_the_summary",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "HANDOFF.md",
-      "source_location": "L50",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "handoff_handoff_implementing_issue_5_curriculum_browse_gating",
-      "target": "handoff_where_the_work_lives",
       "confidence_score": 1.0
     },
     {
@@ -14555,6 +14807,39 @@
       "_origin": "ast",
       "source": "docs_adr_0011_lefthook_post_checkout_hook_for_worktree_setup_lefthook_post_checkout_hook_for_git_worktree_environment_setup",
       "target": "docs_adr_0011_lefthook_post_checkout_hook_for_worktree_setup_considered_options",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/adr/0012-tailwind-css-for-apps-web.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_adr_0012_tailwind_css_for_apps_web",
+      "target": "docs_adr_0012_tailwind_css_for_apps_web_tailwind_css_v4_for_apps_web_styling",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/adr/0012-tailwind-css-for-apps-web.md",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_adr_0012_tailwind_css_for_apps_web_tailwind_css_v4_for_apps_web_styling",
+      "target": "docs_adr_0012_tailwind_css_for_apps_web_consequences",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "docs/adr/0012-tailwind-css-for-apps-web.md",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "docs_adr_0012_tailwind_css_for_apps_web_tailwind_css_v4_for_apps_web_styling",
+      "target": "docs_adr_0012_tailwind_css_for_apps_web_considered_options",
       "confidence_score": 1.0
     },
     {
@@ -16098,5 +16383,5 @@
       "source_file": "docs/adr/0005-solid-queue-for-background-jobs.md"
     }
   ],
-  "built_at_commit": "3087c99889a805a65da9482b72f011b6093f3da6"
+  "built_at_commit": "5688a45d811fead41b1be5018b3853cdb00adf8c"
 }
