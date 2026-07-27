@@ -20,6 +20,66 @@ Test data is built with [FactoryBot](https://github.com/thoughtbot/factory_bot) 
 
 This convention is enforced by code review, not CI.
 
+## Testing (apps/web)
+
+`*.test.tsx` files sit next to the implementation they cover (`src/routes/home.tsx` -> `src/routes/home.test.tsx`), not in a separate `__tests__` tree — there's nothing gained by relocating tests away from the code they exercise. Test-only utilities genuinely shared across multiple test files (not tied to one component/route) live in `src/test/` (e.g. `src/test/renderRoute.tsx`), which is exempt from the TypeScript file-structure/lib-vs-helpers rules above since it holds test infrastructure, not app code.
+
+Within a test file, the `describe` block(s) come first; any local helper/mock function they call goes below the last `describe`, not above the first one — the reader wants the actual test cases before the plumbing that supports them. Function declarations (not arrow-function consts) are hoisted, so this ordering doesn't affect execution.
+
+This convention is enforced by code review, not CI.
+
+## Controllers (apps/api)
+
+Never read `params[...]` directly inside an action body. Extract every param a controller uses through a private method at the bottom of the class — `params.require(:id)` for a required route param, `params.permit(...)` for a request body — even when the value isn't used for mass assignment. `SignupsController#user_params` is the reference example; `JourneysController#journey_id`/`#pagination_params` and `SessionsController#login_params` follow the same shape. This keeps what a controller accepts legible from one place and testable in isolation, and matches Rails' own strong-parameters convention rather than special-casing "just an id."
+
+`ApplicationController` rescues `ActionController::ParameterMissing` (400) alongside `ActiveRecord::RecordNotFound` (404) — a required param is a client error, not a 500.
+
+API responses use `Content-Type: application/json`, not `application/vnd.api+json` — see [ADR-0008](docs/adr/0008-rest-json-api-with-active-model-serializers.md)'s Consequences section. The JSON:API contract is the response body shape, not the content-type header.
+
+This convention is enforced by code review, not CI.
+
+## Models (apps/api)
+
+Prefer a guard clause over combining conditions with `&&`/`||` in a boolean-returning method, e.g. `return false if children.none?` followed by the real check, rather than `children.any? && children.all? { ... }` on one line. See `Journey#completed_for?`/`Subject#completed_for?` for the reference shape.
+
+Where a per-record predicate can be expressed as a query, back it with an ActiveRecord `scope` instead of only computing it in Ruby — the scope is then reusable for future collection-level queries (e.g. "every lesson a user has passed"), not just the single-record check. See `Lesson.passed_by`/`Lesson#passed_by?`. This doesn't apply to predicates that are inherently a computation over an ordered sibling collection per user (e.g. lock-state derivation) — those stay as plain Ruby methods on the association.
+
+This convention is enforced by code review, not CI.
+
+## Migrations (apps/api)
+
+New migrations define explicit `up`/`down` methods, not `change` — even for migrations `change` could auto-reverse (like a plain `create_table`) — so a revert never depends on Rails successfully inferring the inverse. See `db/migrate/20260726180001_create_journeys.rb` for the reference shape. Pre-existing migrations already on `main` are not retrofitted.
+
+This convention is enforced by code review, not CI.
+
+## TypeScript file structure (apps/web)
+
+Within a file, order type/interface declarations before the functions/consts that use them — not interspersed, and not after. See `src/lib/curriculum.ts` (all `interface`/`type` declarations up top, implementation below) or `src/helpers/jsonApi.ts` for the reference shape. A single component's own props `interface` immediately above that component (`Badge.tsx`, `Field.tsx`, etc.) already satisfies this — the rule is about not letting a type declaration trail behind code that doesn't need it yet, not about hoisting every type to the literal first line.
+
+`src/lib/` holds modules with real behavior or state (the API client, auth actions, the curriculum domain layer) — one exported concern per file, not a grab-bag (`accessToken.ts`, `ApiError.ts`, `httpClient.ts`, `auth.ts` are four files, not one `api.ts`). `src/helpers/` holds pure, stateless utility functions with no module-level state and no side effects (e.g. `jsonApi.ts`'s envelope parsing). If a file doesn't hold onto anything and doesn't call `fetch`, it's a helper, not a lib.
+
+This convention is enforced by code review, not CI.
+
+## Components (apps/web)
+
+Every component in `src/components/` accepts an optional `testId?: string` prop, applied as `data-testid={testId}` on the component's root DOM node, defaulting to a kebab-case name for that component (e.g. `Badge` defaults to `"badge"`) so it's always identifiable for future e2e tests even when the caller doesn't pass one explicitly. See `Badge.tsx`/`UnitCard.tsx` for the reference shape. A component with no single root element it controls (e.g. one that returns a bare `Fragment`) should get a wrapping element specifically so it has somewhere to put the test id, rather than skipping the prop.
+
+Icon components (`src/components/icons/`) are exempt — they're leaf visual elements referenced by their parent's `testId`, not targeted directly in e2e tests.
+
+This convention is enforced by code review, not CI.
+
+## Route components (apps/web)
+
+A route file's component (`src/routes/*.tsx`) stays a thin renderer: data fetching, mutations, and derived-state decisions (which view to show, filtered lists, etc.) live in a colocated hook, not inline `if`s scattered through the component body. One hook -> `src/routes/-use<Name>.ts` next to the route file it serves (the leading `-` is TanStack Router's documented convention for excluding a file from route generation — see `-useHome.ts`); multiple hooks for one route -> a `-hooks/` subfolder. The hook returns a small discriminated union describing what the screen should render (e.g. `{ status: "loading" }` / `{ status: "not_started", journeys, onStart, ... }`); the component then does a single `switch` over `status` purely to pick JSX, with no business logic of its own. See `home.tsx` + `-useHome.ts` for the reference shape.
+
+This convention is enforced by code review, not CI.
+
+## i18n (apps/web)
+
+Every user-facing string outside `.stories.tsx` files (Storybook's component gallery renders fixed English on purpose) goes through [react-i18next](https://react.i18next.com/), not a hardcoded literal in JSX. Add the string to `src/locales/en.json` under a section named after the route/component it belongs to (e.g. `home.*`, `login.*`), then reference it via `useTranslation()`'s `t()` in a component, or the `i18n` singleton exported from `src/i18n.ts` in a plain (non-component) function that can't call hooks — see `components/lockStatus.tsx` for that shape. Use `{{placeholder}}` interpolation for dynamic values (`t("home.inProgressMeta", { completed, total })`) rather than string-concatenating a translated fragment with a raw value.
+
+This convention is enforced by code review, not CI.
+
 ## Styling (apps/web)
 
 Styling uses [Tailwind CSS v4](https://tailwindcss.com) (CSS-first config via `@tailwindcss/vite`) — see [ADR-0012](docs/adr/0012-tailwind-css-for-apps-web.md). Components style via inline utility classes in JSX, not `@apply`; the React component (`src/components/`) is the reuse boundary, not a CSS class. The current design tokens (colors, spacing, DM Sans) live in a `@theme` block in `src/index.css` — reuse those (`bg-accent`, `text-danger`, etc.) instead of hardcoding hex values or arbitrary Tailwind values. `flows.html`/`foundations.html` (the Claude Design mockups) are exempt — they stay hand-rolled CSS.
