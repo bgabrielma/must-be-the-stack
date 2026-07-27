@@ -10,7 +10,7 @@ interface MutedLinkProps extends ComponentProps<typeof Link> {
 export function MutedLink({ testId = "muted-link", ...props }: MutedLinkProps) {
   return (
     <Link
-      className="mt-4 block text-center text-[13px] text-accent no-underline"
+      className="mt-4 block text-center text-[0.8125rem] text-accent no-underline"
       data-testid={testId}
       {...props}
     />

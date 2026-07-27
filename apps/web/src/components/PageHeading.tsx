@@ -10,11 +10,11 @@ export function PageHeading({ eyebrow, title, testId = "page-heading" }: PageHea
   return (
     <div data-testid={testId}>
       {eyebrow && (
-        <p className="mb-1 font-heading text-[11px] font-semibold tracking-[0.06em] text-accent uppercase">
+        <p className="mb-1 font-heading text-[0.6875rem] font-semibold tracking-[0.06em] text-accent uppercase">
           {eyebrow}
         </p>
       )}
-      <h1 className="mb-[5px] font-heading text-[22px] leading-[1.15] font-bold tracking-[-0.3px] text-text-h">
+      <h1 className="mb-[0.3125rem] font-heading text-[1.375rem] leading-[1.15] font-bold tracking-[-0.3px] text-text-h">
         {title}
       </h1>
     </div>

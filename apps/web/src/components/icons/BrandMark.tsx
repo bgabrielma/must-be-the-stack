@@ -10,7 +10,7 @@ interface BrandMarkProps {
 // anywhere a badge isn't wanted.
 const badgeClasses = {
   md: "h-10 w-10 rounded-xl",
-  lg: "h-11 w-11 rounded-[13px]",
+  lg: "h-11 w-11 rounded-[0.8125rem]",
 };
 
 const markSize = {

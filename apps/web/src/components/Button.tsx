@@ -16,8 +16,8 @@ export const buttonClasses = cva(
         secondary: "bg-transparent text-accent border border-accent-border",
       },
       size: {
-        md: "text-sm px-5 py-[11px]",
-        sm: "text-[13px] px-3.5 py-[7px]",
+        md: "text-sm px-5 py-[0.6875rem]",
+        sm: "text-[0.8125rem] px-3.5 py-[0.4375rem]",
       },
       block: {
         true: "w-full",
