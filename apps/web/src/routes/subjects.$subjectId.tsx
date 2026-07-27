@@ -6,6 +6,8 @@ import { UnitCard } from "../components/UnitCard";
 import { LockTooltip } from "../components/LockTooltip";
 import { InfoIcon } from "../components/icons";
 import { lockStatusIcon, lockStatusMeta } from "../components/lockStatus";
+import { Badge } from "../components/Badge";
+import { Banner } from "../components/Banner";
 
 export const Route = createFileRoute("/subjects/$subjectId")({
   beforeLoad: requireAuth,
@@ -30,17 +32,16 @@ function SubjectPage() {
       <p className="crumb">{subject.journeyTitle} · Subject</p>
       <h1 className="h1">{subject.title}</h1>
       <p className="sub" style={{ marginBottom: "var(--space-3)" }}>
-        <span className="badge">
-          <InfoIcon size={12} /> Min. passing score: {toPercent(subject.minimumPassingScore)}%
-        </span>
+        <Badge icon={<InfoIcon size={12} />}>
+          Min. passing score: {toPercent(subject.minimumPassingScore)}%
+        </Badge>
       </p>
-      <div className="banner banner-info">
-        <InfoIcon size={18} />
-        <div>
-          <p className="title">Retakes allowed</p>
-          <p className="desc">You can retry the exercise as many times as you need.</p>
-        </div>
-      </div>
+      <Banner
+        variant="info"
+        icon={<InfoIcon size={18} />}
+        title="Retakes allowed"
+        description="You can retry the exercise as many times as you need."
+      />
       <div className="list">
         {subject.lessons.map((lesson) => {
           const meta = lockStatusMeta(lesson.status, "Unlocked");

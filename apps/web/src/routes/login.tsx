@@ -2,6 +2,9 @@ import { createFileRoute, useNavigate, Link } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { login, ApiError } from "../lib/api";
 import { CheckIcon } from "../components/icons";
+import { Banner } from "../components/Banner";
+import { Field } from "../components/Field";
+import { Button } from "../components/Button";
 
 interface LoginSearch {
   created?: boolean;
@@ -40,40 +43,35 @@ function LoginPage() {
   return (
     <div className="page">
       {created && (
-        <div className="banner banner-success">
-          <CheckIcon size={18} />
-          <div>
-            <p className="title">Account created</p>
-            <p className="desc">Log in to continue your Journey.</p>
-          </div>
-        </div>
+        <Banner
+          variant="success"
+          icon={<CheckIcon size={18} />}
+          title="Account created"
+          description="Log in to continue your Journey."
+        />
       )}
       <h1 className="h1">Log in</h1>
       <form className="form-stack" onSubmit={handleSubmit}>
-        <div className="field">
-          <label htmlFor="login-email">Email</label>
-          <input
-            id="login-email"
-            type="email"
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
-            required
-          />
-        </div>
-        <div className={`field ${error ? "is-error" : ""}`.trim()}>
-          <label htmlFor="login-password">Password</label>
-          <input
-            id="login-password"
-            type="password"
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}
-            required
-          />
-          {error && <span className="error-msg">{error}</span>}
-        </div>
-        <button type="submit" className="btn btn-primary btn-block" disabled={submitting}>
+        <Field
+          label="Email"
+          id="login-email"
+          type="email"
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
+          required
+        />
+        <Field
+          label="Password"
+          id="login-password"
+          type="password"
+          value={password}
+          onChange={(event) => setPassword(event.target.value)}
+          required
+          error={error ?? undefined}
+        />
+        <Button type="submit" block disabled={submitting}>
           Log in
-        </button>
+        </Button>
       </form>
       <Link to="/signup" className="link-muted">
         Need an account? Sign up
