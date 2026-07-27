@@ -1,18 +1,7 @@
 import { describe, it, expect, vi, afterEach } from "vitest";
 import { screen, waitFor } from "@testing-library/react";
-import { renderRouteTree } from "../helpers/renderRoute";
-import { setAccessToken } from "../../lib/api";
-
-function mockJourneysResponse(journeys: unknown[]) {
-  vi.stubGlobal(
-    "fetch",
-    vi.fn(async () => ({
-      ok: true,
-      status: 200,
-      json: async () => ({ data: journeys }),
-    })),
-  );
-}
+import { renderRouteTree } from "../test/renderRoute";
+import { setAccessToken } from "../lib/accessToken";
 
 describe("Home route (/home)", () => {
   afterEach(() => setAccessToken(null));
@@ -96,3 +85,14 @@ describe("Home route (/home)", () => {
     );
   });
 });
+
+function mockJourneysResponse(journeys: unknown[]) {
+  vi.stubGlobal(
+    "fetch",
+    vi.fn(async () => ({
+      ok: true,
+      status: 200,
+      json: async () => ({ data: journeys }),
+    })),
+  );
+}

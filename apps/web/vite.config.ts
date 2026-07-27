@@ -6,7 +6,11 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [tanstackRouter({ autoCodeSplitting: true }), react(), tailwindcss()],
+  plugins: [
+    tanstackRouter({ autoCodeSplitting: true, routeFileIgnorePattern: "\\.test\\.tsx?$" }),
+    react(),
+    tailwindcss(),
+  ],
   test: {
     environment: "jsdom",
     setupFiles: ["./src/setupTests.ts"],

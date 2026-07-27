@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { renderRouteTree } from "../helpers/renderRoute";
+import { renderRouteTree } from "../test/renderRoute";
 
 describe("Onboarding route (/onboarding)", () => {
   it("shows the three how-it-works steps and continues to signup", async () => {

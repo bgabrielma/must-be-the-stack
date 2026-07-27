@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { screen, waitFor } from "@testing-library/react";
-import { renderRouteTree } from "../helpers/renderRoute";
+import { renderRouteTree } from "../test/renderRoute";
 
 describe("Entry route (/)", () => {
   it("renders the hero and both entry CTAs", async () => {
