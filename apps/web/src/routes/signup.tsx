@@ -38,7 +38,7 @@ function SignupPage() {
   return (
     <div className="flex min-h-[100svh] flex-col px-5 pt-6 pb-5">
       <PageHeading eyebrow={t("signup.eyebrow")} title={t("signup.title")} />
-      <p className="mt-1.5 text-[13px]">{t("signup.subtitle")}</p>
+      <p className="mb-3 text-xs">{t("signup.subtitle")}</p>
       <form className="mt-3 flex flex-col gap-4" onSubmit={handleSubmit}>
         <Field
           label={t("signup.emailLabel")}

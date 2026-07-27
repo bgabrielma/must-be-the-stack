@@ -13,7 +13,7 @@ export function LockedStackMark({ size = 40 }: IconProps) {
       <path
         d="M92 155 l6 6 l10 -12"
         stroke="var(--color-accent)"
-        strokeWidth={4}
+        strokeWidth={8}
         fill="none"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -28,8 +28,8 @@ export function LockedStackMark({ size = 40 }: IconProps) {
         fill="none"
         stroke="currentColor"
         strokeOpacity={0.45}
-        strokeWidth={3}
-        strokeDasharray="6 4"
+        strokeWidth={6}
+        strokeDasharray="8 6"
       />
       <g transform="translate(90,63)">
         <rect x="0" y="10" width="20" height="16" rx="2" fill="currentColor" fillOpacity={0.45} />
@@ -38,7 +38,7 @@ export function LockedStackMark({ size = 40 }: IconProps) {
           fill="none"
           stroke="currentColor"
           strokeOpacity={0.45}
-          strokeWidth={3}
+          strokeWidth={6}
         />
       </g>
     </svg>

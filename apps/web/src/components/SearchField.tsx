@@ -16,7 +16,7 @@ export function SearchField({ wrapperClassName, testId = "search-field", ...prop
       </span>
       <input
         type="text"
-        className="w-full rounded-lg border border-border bg-bg py-2.5 pr-3 pl-[34px] text-sm text-text-h focus:border-accent focus:ring-[3px] focus:ring-accent-bg focus:outline-none"
+        className="w-full rounded-lg border border-border bg-bg py-2.5 pr-3 pl-9 text-sm text-text-h focus:border-accent focus:ring-[3px] focus:ring-accent-bg focus:outline-none"
         {...props}
       />
     </div>
