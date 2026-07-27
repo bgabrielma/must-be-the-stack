@@ -12,9 +12,24 @@ function Onboarding() {
   const { t } = useTranslation();
 
   const steps = [
-    { icon: <CompassIcon size={16} />, title: t("onboarding.pickJourneyTitle"), meta: t("onboarding.pickJourneyMeta") },
-    { icon: <PlayIcon size={16} />, title: t("onboarding.masterLessonTitle"), meta: t("onboarding.masterLessonMeta") },
-    { icon: <CheckIcon size={16} />, title: t("onboarding.passExerciseTitle"), meta: t("onboarding.passExerciseMeta") },
+    {
+      icon: <CompassIcon size={16} />,
+      iconClassName: "bg-accent-bg text-accent",
+      title: t("onboarding.pickJourneyTitle"),
+      meta: t("onboarding.pickJourneyMeta"),
+    },
+    {
+      icon: <PlayIcon size={16} />,
+      iconClassName: "bg-accent-bg text-accent",
+      title: t("onboarding.masterLessonTitle"),
+      meta: t("onboarding.masterLessonMeta"),
+    },
+    {
+      icon: <CheckIcon size={16} />,
+      iconClassName: "bg-success-bg text-success",
+      title: t("onboarding.passExerciseTitle"),
+      meta: t("onboarding.passExerciseMeta"),
+    },
   ];
 
   return (
@@ -30,7 +45,7 @@ function Onboarding() {
             key={step.title}
             className="flex w-full cursor-default items-center gap-3 rounded-card border border-border bg-bg px-4 py-3.5 text-left"
           >
-            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-surface-muted text-text-muted">
+            <span className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full ${step.iconClassName}`}>
               {step.icon}
             </span>
             <span className="min-w-0 flex-1">
