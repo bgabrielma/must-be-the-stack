@@ -6,13 +6,13 @@ import { UnitCard } from "../components/UnitCard";
 import { LockTooltip } from "../components/LockTooltip";
 import { PlayIcon } from "../components/icons";
 import { lockStatusIcon, lockStatusMeta } from "../components/lockStatus";
+import { PageHeading } from "../components/PageHeading";
+import { STATUS_SCREEN_CLASSES } from "../lib/pageStyles";
 
 export const Route = createFileRoute("/journeys/$journeyId")({
   beforeLoad: requireAuth,
   component: JourneyPage,
 });
-
-const statusClasses = "flex min-h-[100svh] flex-col px-0 py-10 text-center";
 
 function JourneyPage() {
   const { journeyId } = Route.useParams();
@@ -22,17 +22,14 @@ function JourneyPage() {
     queryFn: () => fetchJourney(journeyId),
   });
 
-  if (isPending) return <div className={statusClasses}>Loading...</div>;
-  if (error) return <div className={statusClasses}>Could not reach the API.</div>;
+  if (isPending) return <div className={STATUS_SCREEN_CLASSES}>Loading...</div>;
+  if (error) return <div className={STATUS_SCREEN_CLASSES}>Could not reach the API.</div>;
 
   const activeSubject = journey.subjects.find((subject) => subject.status === "active");
 
   return (
     <div className="flex min-h-[100svh] flex-col px-5 pt-6 pb-5">
-      <p className="mb-1 font-heading text-[11px] font-semibold tracking-[0.06em] text-accent uppercase">Journey</p>
-      <h1 className="font-heading text-2xl leading-[1.15] font-bold tracking-[-0.3px] text-text-h">
-        {journey.title}
-      </h1>
+      <PageHeading eyebrow="Journey" title={journey.title} />
       <p className="mt-1.5 text-[13px]">
         {journey.completedSubjectsCount} of {journey.subjectsCount} Subjects completed
       </p>

@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { CompassIcon } from "../components/icons";
 import { buttonClasses } from "../components/Button";
+import { LINK_MUTED_CLASSES } from "../lib/pageStyles";
 
 export const Route = createFileRoute("/")({
   component: Entry,
@@ -20,7 +21,7 @@ function Entry() {
         <Link to="/onboarding" className={buttonClasses({ variant: "primary", block: true })}>
           Start your Journey
         </Link>
-        <Link to="/login" className="mt-4 block text-center text-[13px] text-accent no-underline">
+        <Link to="/login" className={LINK_MUTED_CLASSES}>
           Already have an account? Log in
         </Link>
       </div>
