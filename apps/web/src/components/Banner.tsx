@@ -5,6 +5,7 @@ interface BannerProps {
   icon: ReactNode;
   title: string;
   description: string;
+  testId?: string;
 }
 
 const variantClasses: Record<BannerProps["variant"], string> = {
@@ -13,9 +14,12 @@ const variantClasses: Record<BannerProps["variant"], string> = {
   danger: "bg-danger-bg border-danger-border text-danger",
 };
 
-export function Banner({ variant, icon, title, description }: BannerProps) {
+export function Banner({ variant, icon, title, description, testId = "banner" }: BannerProps) {
   return (
-    <div className={`mb-4 flex items-start gap-2.5 rounded-[10px] border px-3.5 py-3 ${variantClasses[variant]}`}>
+    <div
+      className={`mb-4 flex items-start gap-2.5 rounded-card border px-3.5 py-3 ${variantClasses[variant]}`}
+      data-testid={testId}
+    >
       {icon}
       <div>
         <p className="mb-0.5 text-[12.5px] leading-[1.2] font-semibold text-text-h">{title}</p>
