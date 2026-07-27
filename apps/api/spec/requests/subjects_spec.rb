@@ -52,5 +52,11 @@ RSpec.describe "Subjects", type: :request do
 
       expect(response).to have_http_status(:unauthorized)
     end
+
+    it "404s for an unknown Subject" do
+      get "/subjects/999999", headers: headers
+
+      expect(response).to have_http_status(:not_found)
+    end
   end
 end
