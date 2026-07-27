@@ -12,6 +12,8 @@ export const Route = createFileRoute("/journeys/$journeyId")({
   component: JourneyPage,
 });
 
+const statusClasses = "flex min-h-[100svh] flex-col px-0 py-10 text-center";
+
 function JourneyPage() {
   const { journeyId } = Route.useParams();
   const navigate = useNavigate();
@@ -20,19 +22,21 @@ function JourneyPage() {
     queryFn: () => fetchJourney(journeyId),
   });
 
-  if (isPending) return <div className="page status">Loading...</div>;
-  if (error) return <div className="page status">Could not reach the API.</div>;
+  if (isPending) return <div className={statusClasses}>Loading...</div>;
+  if (error) return <div className={statusClasses}>Could not reach the API.</div>;
 
   const activeSubject = journey.subjects.find((subject) => subject.status === "active");
 
   return (
-    <div className="page">
-      <p className="eyebrow">Journey</p>
-      <h1 className="h1">{journey.title}</h1>
-      <p className="sub">
+    <div className="flex min-h-[100svh] flex-col px-5 pt-6 pb-5">
+      <p className="mb-1 font-heading text-[11px] font-semibold tracking-[0.06em] text-accent uppercase">Journey</p>
+      <h1 className="font-heading text-2xl leading-[1.15] font-bold tracking-[-0.3px] text-text-h">
+        {journey.title}
+      </h1>
+      <p className="mt-1.5 text-[13px]">
         {journey.completedSubjectsCount} of {journey.subjectsCount} Subjects completed
       </p>
-      <div className="list">
+      <div className="my-4 flex flex-col gap-2">
         {journey.subjects.map((subject) => {
           const meta = lockStatusMeta(
             subject.status,

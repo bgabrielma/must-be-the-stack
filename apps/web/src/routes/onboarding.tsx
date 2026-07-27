@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { CompassIcon, PlayIcon, CheckIcon } from "../components/icons";
+import { buttonClasses } from "../components/Button";
 
 export const Route = createFileRoute("/onboarding")({
   component: Onboarding,
@@ -13,23 +14,32 @@ const steps = [
 
 function Onboarding() {
   return (
-    <div className="page">
-      <p className="eyebrow">How it works</p>
-      <h1 className="h1">One concept at a time</h1>
-      <p className="sub">No skipping ahead — every step is earned.</p>
-      <div className="list">
+    <div className="flex min-h-[100svh] flex-col px-5 pt-6 pb-5">
+      <p className="mb-1 font-heading text-[11px] font-semibold tracking-[0.06em] text-accent uppercase">
+        How it works
+      </p>
+      <h1 className="font-heading text-2xl leading-[1.15] font-bold tracking-[-0.3px] text-text-h">
+        One concept at a time
+      </h1>
+      <p className="mt-1.5 text-[13px]">No skipping ahead — every step is earned.</p>
+      <div className="my-4 flex flex-col gap-2">
         {steps.map((step) => (
-          <div key={step.title} className="unit-card" style={{ cursor: "default" }}>
-            <span className="icon">{step.icon}</span>
-            <span className="body">
-              <span className="title">{step.title}</span>
-              <span className="meta">{step.meta}</span>
+          <div
+            key={step.title}
+            className="flex w-full cursor-default items-center gap-3 rounded-[10px] border border-border bg-bg px-4 py-3.5 text-left"
+          >
+            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-surface-muted text-text-muted">
+              {step.icon}
+            </span>
+            <span className="min-w-0 flex-1">
+              <span className="mb-0.5 block font-heading text-sm font-semibold text-text-h">{step.title}</span>
+              <span className="block text-xs text-text">{step.meta}</span>
             </span>
           </div>
         ))}
       </div>
-      <div className="hero-cta">
-        <Link to="/signup" className="btn btn-primary btn-block">
+      <div className="mt-auto pt-6">
+        <Link to="/signup" className={buttonClasses({ variant: "primary", block: true })}>
           Continue
         </Link>
       </div>

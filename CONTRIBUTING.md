@@ -20,6 +20,12 @@ Test data is built with [FactoryBot](https://github.com/thoughtbot/factory_bot) 
 
 This convention is enforced by code review, not CI.
 
+## Styling (apps/web)
+
+Styling uses [Tailwind CSS v4](https://tailwindcss.com) (CSS-first config via `@tailwindcss/vite`) — see [ADR-0012](docs/adr/0012-tailwind-css-for-apps-web.md). Components style via inline utility classes in JSX, not `@apply`; the React component (`src/components/`) is the reuse boundary, not a CSS class. The current design tokens (colors, spacing, DM Sans) live in a `@theme` block in `src/index.css` — reuse those (`bg-accent`, `text-danger`, etc.) instead of hardcoding hex values or arbitrary Tailwind values. `flows.html`/`foundations.html` (the Claude Design mockups) are exempt — they stay hand-rolled CSS.
+
+This convention is enforced by code review, not CI.
+
 ## Parallel agent work
 
 Every ticket — solo or parallel — is implemented in its own git worktree, not in the main checkout. This applies even when only one agent is working: it keeps the main checkout clean and means running a second ticket in parallel later needs no special-casing.
