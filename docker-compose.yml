@@ -2,9 +2,13 @@
 # [ADR-0009], for running apps/api outside the devcontainer (e.g. the VPS).
 # The frontend (apps/web) deploys separately to Cloudflare Pages, so it has
 # no service here.
+#
+# `app` runs the image the deploy-backend workflow job builds and pushes to
+# GHCR, not a local build — the VPS pulls a prebuilt image rather than
+# needing the Ruby build toolchain. See docs/deploy.md.
 services:
   app:
-    build: apps/api
+    image: ${API_IMAGE:?Set API_IMAGE in .env — see docs/deploy.md}
     ports:
       - "3000:3000"
     environment:
@@ -12,6 +16,7 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       RAILS_MASTER_KEY: ${RAILS_MASTER_KEY}
+      FRONTEND_ORIGIN: ${FRONTEND_ORIGIN}
     depends_on:
       postgres:
         condition: service_healthy

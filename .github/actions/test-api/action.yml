@@ -1,0 +1,28 @@
+name: Test Rails API
+description: >-
+  Sets up Ruby and runs RuboCop + RSpec for apps/api. Assumes the caller has
+  already checked out the repo and started a postgres service.
+
+runs:
+  using: composite
+  steps:
+    - uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: "3.3"
+        bundler-cache: true
+        working-directory: apps/api
+
+    - name: Set up database
+      shell: bash
+      working-directory: apps/api
+      run: bin/rails db:create db:schema:load
+
+    - name: RuboCop
+      shell: bash
+      working-directory: apps/api
+      run: bundle exec rubocop
+
+    - name: RSpec
+      shell: bash
+      working-directory: apps/api
+      run: bundle exec rspec
