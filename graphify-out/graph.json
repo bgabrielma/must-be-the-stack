@@ -101,8 +101,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_controllers_application_controller",
-      "community": 8,
-      "community_name": "graphify reference: exports.md",
+      "community": 15,
+      "community_name": "ApplicationController",
       "norm_label": "application_controller.rb"
     },
     {
@@ -112,8 +112,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_controllers_application_controller_applicationcontroller",
-      "community": 8,
-      "community_name": "graphify reference: exports.md",
+      "community": 15,
+      "community_name": "ApplicationController",
       "norm_label": "applicationcontroller"
     },
     {
@@ -123,8 +123,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "api",
-      "community": 8,
-      "community_name": "graphify reference: exports.md",
+      "community": 15,
+      "community_name": "ApplicationController",
       "norm_label": "api"
     },
     {
@@ -134,8 +134,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "apps_api_app_controllers_application_controller_applicationcontroller_render_not_found",
-      "community": 8,
-      "community_name": "graphify reference: exports.md",
+      "community": 15,
+      "community_name": "ApplicationController",
       "norm_label": ".render_not_found()"
     },
     {
@@ -145,8 +145,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "apps_api_app_controllers_application_controller_applicationcontroller_render_errors",
-      "community": 8,
-      "community_name": "graphify reference: exports.md",
+      "community": 15,
+      "community_name": "ApplicationController",
       "norm_label": ".render_errors()"
     },
     {
@@ -189,8 +189,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "apps_api_app_controllers_concerns_authenticatable_authenticatable_user_from_access_token",
-      "community": 8,
-      "community_name": "graphify reference: exports.md",
+      "community": 96,
+      "community_name": "User",
       "norm_label": ".user_from_access_token()"
     },
     {
@@ -244,8 +244,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_controllers_journeys_controller",
-      "community": 14,
-      "community_name": "Contributing",
+      "community": 12,
+      "community_name": "Journey",
       "norm_label": "journeys_controller.rb"
     },
     {
@@ -255,8 +255,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_controllers_journeys_controller_journeyscontroller",
-      "community": 14,
-      "community_name": "Contributing",
+      "community": 12,
+      "community_name": "Journey",
       "norm_label": "journeyscontroller"
     },
     {
@@ -266,8 +266,8 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "apps_api_app_controllers_journeys_controller_journeyscontroller_index",
-      "community": 14,
-      "community_name": "Contributing",
+      "community": 12,
+      "community_name": "Journey",
       "norm_label": ".index()"
     },
     {
@@ -277,8 +277,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "apps_api_app_controllers_journeys_controller_journeyscontroller_show",
-      "community": 14,
-      "community_name": "Contributing",
+      "community": 12,
+      "community_name": "Journey",
       "norm_label": ".show()"
     },
     {
@@ -288,8 +288,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "apps_api_app_controllers_journeys_controller_journeyscontroller_start",
-      "community": 14,
-      "community_name": "Contributing",
+      "community": 12,
+      "community_name": "Journey",
       "norm_label": ".start()"
     },
     {
@@ -376,8 +376,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_controllers_sessions_controller",
-      "community": 8,
-      "community_name": "graphify reference: exports.md",
+      "community": 98,
+      "community_name": "SessionsController",
       "norm_label": "sessions_controller.rb"
     },
     {
@@ -387,8 +387,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_controllers_sessions_controller_sessionscontroller",
-      "community": 8,
-      "community_name": "graphify reference: exports.md",
+      "community": 98,
+      "community_name": "SessionsController",
       "norm_label": "sessionscontroller"
     },
     {
@@ -398,8 +398,8 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "apps_api_app_controllers_sessions_controller_sessionscontroller_create",
-      "community": 8,
-      "community_name": "graphify reference: exports.md",
+      "community": 98,
+      "community_name": "SessionsController",
       "norm_label": ".create()"
     },
     {
@@ -409,8 +409,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "apps_api_app_controllers_sessions_controller_sessionscontroller_refresh",
-      "community": 8,
-      "community_name": "graphify reference: exports.md",
+      "community": 98,
+      "community_name": "SessionsController",
       "norm_label": ".refresh()"
     },
     {
@@ -420,8 +420,8 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "apps_api_app_controllers_sessions_controller_sessionscontroller_destroy",
-      "community": 8,
-      "community_name": "graphify reference: exports.md",
+      "community": 98,
+      "community_name": "SessionsController",
       "norm_label": ".destroy()"
     },
     {
@@ -431,8 +431,8 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "apps_api_app_controllers_sessions_controller_sessionscontroller_current_refresh_token",
-      "community": 8,
-      "community_name": "graphify reference: exports.md",
+      "community": 97,
+      "community_name": "RefreshToken",
       "norm_label": ".current_refresh_token()"
     },
     {
@@ -442,8 +442,8 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "apps_api_app_controllers_sessions_controller_sessionscontroller_issue_session",
-      "community": 8,
-      "community_name": "graphify reference: exports.md",
+      "community": 98,
+      "community_name": "SessionsController",
       "norm_label": ".issue_session()"
     },
     {
@@ -453,8 +453,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_controllers_signups_controller",
-      "community": 8,
-      "community_name": "graphify reference: exports.md",
+      "community": 15,
+      "community_name": "ApplicationController",
       "norm_label": "signups_controller.rb"
     },
     {
@@ -464,8 +464,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_controllers_signups_controller_signupscontroller",
-      "community": 8,
-      "community_name": "graphify reference: exports.md",
+      "community": 15,
+      "community_name": "ApplicationController",
       "norm_label": "signupscontroller"
     },
     {
@@ -475,8 +475,8 @@
       "source_location": "L2",
       "_origin": "ast",
       "id": "apps_api_app_controllers_signups_controller_signupscontroller_create",
-      "community": 8,
-      "community_name": "graphify reference: exports.md",
+      "community": 15,
+      "community_name": "ApplicationController",
       "norm_label": ".create()"
     },
     {
@@ -486,8 +486,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "apps_api_app_controllers_signups_controller_signupscontroller_user_params",
-      "community": 8,
-      "community_name": "graphify reference: exports.md",
+      "community": 15,
+      "community_name": "ApplicationController",
       "norm_label": ".user_params()"
     },
     {
@@ -640,8 +640,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_models_application_record",
-      "community": 14,
-      "community_name": "Contributing",
+      "community": 95,
+      "community_name": "ApplicationRecord",
       "norm_label": "application_record.rb"
     },
     {
@@ -651,8 +651,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_models_application_record_applicationrecord",
-      "community": 14,
-      "community_name": "Contributing",
+      "community": 95,
+      "community_name": "ApplicationRecord",
       "norm_label": "applicationrecord"
     },
     {
@@ -662,8 +662,8 @@
       "source_location": "",
       "_origin": "ast",
       "id": "apps_api_app_models_application_record_rb_base",
-      "community": 14,
-      "community_name": "Contributing",
+      "community": 95,
+      "community_name": "ApplicationRecord",
       "norm_label": "base"
     },
     {
@@ -673,8 +673,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_models_journey",
-      "community": 14,
-      "community_name": "Contributing",
+      "community": 12,
+      "community_name": "Journey",
       "norm_label": "journey.rb"
     },
     {
@@ -684,8 +684,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_models_journey_journey",
-      "community": 14,
-      "community_name": "Contributing",
+      "community": 12,
+      "community_name": "Journey",
       "norm_label": "journey"
     },
     {
@@ -695,8 +695,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "apps_api_app_models_journey_journey_started_by",
-      "community": 14,
-      "community_name": "Contributing",
+      "community": 12,
+      "community_name": "Journey",
       "norm_label": ".started_by?()"
     },
     {
@@ -706,8 +706,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "apps_api_app_models_journey_journey_completed_for",
-      "community": 14,
-      "community_name": "Contributing",
+      "community": 12,
+      "community_name": "Journey",
       "norm_label": ".completed_for?()"
     },
     {
@@ -717,8 +717,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "apps_api_app_models_journey_journey_status_for",
-      "community": 14,
-      "community_name": "Contributing",
+      "community": 12,
+      "community_name": "Journey",
       "norm_label": ".status_for()"
     },
     {
@@ -728,8 +728,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_models_lesson",
-      "community": 14,
-      "community_name": "Contributing",
+      "community": 99,
+      "community_name": "Lesson",
       "norm_label": "lesson.rb"
     },
     {
@@ -739,8 +739,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_models_lesson_lesson",
-      "community": 14,
-      "community_name": "Contributing",
+      "community": 99,
+      "community_name": "Lesson",
       "norm_label": "lesson"
     },
     {
@@ -750,8 +750,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "apps_api_app_models_lesson_lesson_passed_by",
-      "community": 14,
-      "community_name": "Contributing",
+      "community": 99,
+      "community_name": "Lesson",
       "norm_label": ".passed_by?()"
     },
     {
@@ -761,8 +761,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "apps_api_app_models_lesson_lesson_status_for",
-      "community": 14,
-      "community_name": "Contributing",
+      "community": 99,
+      "community_name": "Lesson",
       "norm_label": ".status_for()"
     },
     {
@@ -794,8 +794,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_models_refresh_token",
-      "community": 8,
-      "community_name": "graphify reference: exports.md",
+      "community": 97,
+      "community_name": "RefreshToken",
       "norm_label": "refresh_token.rb"
     },
     {
@@ -805,8 +805,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_models_refresh_token_refreshtoken",
-      "community": 8,
-      "community_name": "graphify reference: exports.md",
+      "community": 97,
+      "community_name": "RefreshToken",
       "norm_label": "refreshtoken"
     },
     {
@@ -816,8 +816,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "apps_api_app_models_refresh_token_refreshtoken_issue",
-      "community": 8,
-      "community_name": "graphify reference: exports.md",
+      "community": 97,
+      "community_name": "RefreshToken",
       "norm_label": ".issue()"
     },
     {
@@ -827,8 +827,8 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "apps_api_app_models_refresh_token_refreshtoken_authenticate",
-      "community": 8,
-      "community_name": "graphify reference: exports.md",
+      "community": 97,
+      "community_name": "RefreshToken",
       "norm_label": ".authenticate()"
     },
     {
@@ -838,8 +838,8 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "apps_api_app_models_refresh_token_refreshtoken_digest",
-      "community": 8,
-      "community_name": "graphify reference: exports.md",
+      "community": 97,
+      "community_name": "RefreshToken",
       "norm_label": ".digest()"
     },
     {
@@ -849,8 +849,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "apps_api_app_models_refresh_token_refreshtoken_expired",
-      "community": 8,
-      "community_name": "graphify reference: exports.md",
+      "community": 97,
+      "community_name": "RefreshToken",
       "norm_label": ".expired?()"
     },
     {
@@ -860,8 +860,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_models_subject",
-      "community": 14,
-      "community_name": "Contributing",
+      "community": 95,
+      "community_name": "ApplicationRecord",
       "norm_label": "subject.rb"
     },
     {
@@ -871,8 +871,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_models_subject_subject",
-      "community": 14,
-      "community_name": "Contributing",
+      "community": 95,
+      "community_name": "ApplicationRecord",
       "norm_label": "subject"
     },
     {
@@ -882,8 +882,8 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "apps_api_app_models_subject_subject_completed_for",
-      "community": 14,
-      "community_name": "Contributing",
+      "community": 95,
+      "community_name": "ApplicationRecord",
       "norm_label": ".completed_for?()"
     },
     {
@@ -893,8 +893,8 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "apps_api_app_models_subject_subject_status_for",
-      "community": 14,
-      "community_name": "Contributing",
+      "community": 95,
+      "community_name": "ApplicationRecord",
       "norm_label": ".status_for()"
     },
     {
@@ -904,8 +904,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_models_submission",
-      "community": 14,
-      "community_name": "Contributing",
+      "community": 95,
+      "community_name": "ApplicationRecord",
       "norm_label": "submission.rb"
     },
     {
@@ -915,8 +915,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_models_submission_submission",
-      "community": 14,
-      "community_name": "Contributing",
+      "community": 95,
+      "community_name": "ApplicationRecord",
       "norm_label": "submission"
     },
     {
@@ -926,8 +926,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_models_user",
-      "community": 8,
-      "community_name": "graphify reference: exports.md",
+      "community": 96,
+      "community_name": "User",
       "norm_label": "user.rb"
     },
     {
@@ -937,8 +937,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_models_user_user",
-      "community": 8,
-      "community_name": "graphify reference: exports.md",
+      "community": 96,
+      "community_name": "User",
       "norm_label": "user"
     },
     {
@@ -948,8 +948,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_models_user_journey",
-      "community": 14,
-      "community_name": "Contributing",
+      "community": 12,
+      "community_name": "Journey",
       "norm_label": "user_journey.rb"
     },
     {
@@ -959,8 +959,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_models_user_journey_userjourney",
-      "community": 14,
-      "community_name": "Contributing",
+      "community": 12,
+      "community_name": "Journey",
       "norm_label": "userjourney"
     },
     {
@@ -1278,8 +1278,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_api_app_services_access_token",
-      "community": 8,
-      "community_name": "graphify reference: exports.md",
+      "community": 96,
+      "community_name": "User",
       "norm_label": "access_token.rb"
     },
     {
@@ -1289,8 +1289,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "apps_api_app_services_access_token_accesstoken",
-      "community": 8,
-      "community_name": "graphify reference: exports.md",
+      "community": 96,
+      "community_name": "User",
       "norm_label": "accesstoken"
     },
     {
@@ -1300,8 +1300,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "apps_api_app_services_access_token_accesstoken_encode",
-      "community": 8,
-      "community_name": "graphify reference: exports.md",
+      "community": 96,
+      "community_name": "User",
       "norm_label": ".encode()"
     },
     {
@@ -1311,8 +1311,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "apps_api_app_services_access_token_accesstoken_decode",
-      "community": 8,
-      "community_name": "graphify reference: exports.md",
+      "community": 96,
+      "community_name": "User",
       "norm_label": ".decode()"
     },
     {
@@ -1322,8 +1322,8 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "apps_api_app_services_access_token_accesstoken_secret",
-      "community": 8,
-      "community_name": "graphify reference: exports.md",
+      "community": 96,
+      "community_name": "User",
       "norm_label": ".secret()"
     },
     {
@@ -2254,8 +2254,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "apps_web_oxlintrc_plugins",
-      "community": 10,
-      "community_name": "graphify reference: add-watch.md",
+      "community": 16,
+      "community_name": "Gemini 3.6 Flash as the runtime LLM provider",
       "norm_label": "plugins"
     },
     {
@@ -2276,8 +2276,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "ref_typescript",
-      "community": 10,
-      "community_name": "graphify reference: add-watch.md",
+      "community": 16,
+      "community_name": "Gemini 3.6 Flash as the runtime LLM provider",
       "norm_label": "typescript"
     },
     {
@@ -2287,8 +2287,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "ref_oxc",
-      "community": 10,
-      "community_name": "graphify reference: add-watch.md",
+      "community": 16,
+      "community_name": "Gemini 3.6 Flash as the runtime LLM provider",
       "norm_label": "oxc"
     },
     {
@@ -3013,8 +3013,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_tests_helpers_renderroute",
-      "community": 10,
-      "community_name": "graphify reference: add-watch.md",
+      "community": 6,
+      "community_name": "Domain (README section)",
       "norm_label": "renderroute.tsx"
     },
     {
@@ -3024,8 +3024,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "apps_web_src_tests_helpers_renderroute_renderroutetree",
-      "community": 10,
-      "community_name": "graphify reference: add-watch.md",
+      "community": 6,
+      "community_name": "Domain (README section)",
       "norm_label": "renderroutetree()"
     },
     {
@@ -3035,8 +3035,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_tests_routes_home_test",
-      "community": 10,
-      "community_name": "graphify reference: add-watch.md",
+      "community": 6,
+      "community_name": "Domain (README section)",
       "norm_label": "home.test.tsx"
     },
     {
@@ -3046,8 +3046,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "apps_web_src_tests_routes_home_test_mockjourneysresponse",
-      "community": 10,
-      "community_name": "graphify reference: add-watch.md",
+      "community": 6,
+      "community_name": "Domain (README section)",
       "norm_label": "mockjourneysresponse()"
     },
     {
@@ -3057,8 +3057,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_tests_routes_index_test",
-      "community": 10,
-      "community_name": "graphify reference: add-watch.md",
+      "community": 6,
+      "community_name": "Domain (README section)",
       "norm_label": "index.test.tsx"
     },
     {
@@ -3068,8 +3068,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_tests_routes_journeys_journeyid_test",
-      "community": 10,
-      "community_name": "graphify reference: add-watch.md",
+      "community": 6,
+      "community_name": "Domain (README section)",
       "norm_label": "journeys.$journeyid.test.tsx"
     },
     {
@@ -3079,8 +3079,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_tests_routes_lessons_lessonid_test",
-      "community": 10,
-      "community_name": "graphify reference: add-watch.md",
+      "community": 6,
+      "community_name": "Domain (README section)",
       "norm_label": "lessons.$lessonid.test.tsx"
     },
     {
@@ -3090,9 +3090,20 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_tests_routes_login_test",
-      "community": 10,
-      "community_name": "graphify reference: add-watch.md",
+      "community": 6,
+      "community_name": "Domain (README section)",
       "norm_label": "login.test.tsx"
+    },
+    {
+      "label": "onboarding.test.tsx",
+      "file_type": "code",
+      "source_file": "apps/web/src/__tests__/routes/onboarding.test.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "apps_web_src_tests_routes_onboarding_test",
+      "community": 6,
+      "community_name": "Domain (README section)",
+      "norm_label": "onboarding.test.tsx"
     },
     {
       "label": "signup.test.tsx",
@@ -3101,8 +3112,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_tests_routes_signup_test",
-      "community": 10,
-      "community_name": "graphify reference: add-watch.md",
+      "community": 6,
+      "community_name": "Domain (README section)",
       "norm_label": "signup.test.tsx"
     },
     {
@@ -3112,8 +3123,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_tests_routes_subjects_subjectid_test",
-      "community": 10,
-      "community_name": "graphify reference: add-watch.md",
+      "community": 6,
+      "community_name": "Domain (README section)",
       "norm_label": "subjects.$subjectid.test.tsx"
     },
     {
@@ -3299,8 +3310,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_components_button_stories",
-      "community": 6,
-      "community_name": "Domain (README section)",
+      "community": 10,
+      "community_name": "graphify reference: add-watch.md",
       "norm_label": "button.stories.tsx"
     },
     {
@@ -3310,8 +3321,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "apps_web_src_components_button_stories_story",
-      "community": 6,
-      "community_name": "Domain (README section)",
+      "community": 10,
+      "community_name": "graphify reference: add-watch.md",
       "norm_label": "story"
     },
     {
@@ -3321,8 +3332,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "apps_web_src_components_button_stories_primary",
-      "community": 6,
-      "community_name": "Domain (README section)",
+      "community": 10,
+      "community_name": "graphify reference: add-watch.md",
       "norm_label": "primary"
     },
     {
@@ -3332,8 +3343,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "apps_web_src_components_button_stories_secondary",
-      "community": 6,
-      "community_name": "Domain (README section)",
+      "community": 10,
+      "community_name": "graphify reference: add-watch.md",
       "norm_label": "secondary"
     },
     {
@@ -3343,8 +3354,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "apps_web_src_components_button_stories_small",
-      "community": 6,
-      "community_name": "Domain (README section)",
+      "community": 10,
+      "community_name": "graphify reference: add-watch.md",
       "norm_label": "small"
     },
     {
@@ -3354,8 +3365,8 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "apps_web_src_components_button_stories_block",
-      "community": 6,
-      "community_name": "Domain (README section)",
+      "community": 10,
+      "community_name": "graphify reference: add-watch.md",
       "norm_label": "block"
     },
     {
@@ -3365,8 +3376,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "apps_web_src_components_button_stories_disabled",
-      "community": 6,
-      "community_name": "Domain (README section)",
+      "community": 10,
+      "community_name": "graphify reference: add-watch.md",
       "norm_label": "disabled"
     },
     {
@@ -3376,8 +3387,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_components_button",
-      "community": 6,
-      "community_name": "Domain (README section)",
+      "community": 10,
+      "community_name": "graphify reference: add-watch.md",
       "norm_label": "button.tsx"
     },
     {
@@ -3387,8 +3398,8 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "apps_web_src_components_button_buttonvariants",
-      "community": 6,
-      "community_name": "Domain (README section)",
+      "community": 10,
+      "community_name": "graphify reference: add-watch.md",
       "norm_label": "buttonvariants"
     },
     {
@@ -3398,8 +3409,8 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "apps_web_src_components_button_variantclasses",
-      "community": 6,
-      "community_name": "Domain (README section)",
+      "community": 10,
+      "community_name": "graphify reference: add-watch.md",
       "norm_label": "variantclasses"
     },
     {
@@ -3409,8 +3420,8 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "apps_web_src_components_button_sizeclasses",
-      "community": 6,
-      "community_name": "Domain (README section)",
+      "community": 10,
+      "community_name": "graphify reference: add-watch.md",
       "norm_label": "sizeclasses"
     },
     {
@@ -3420,8 +3431,8 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "apps_web_src_components_button_buttonclasses",
-      "community": 6,
-      "community_name": "Domain (README section)",
+      "community": 10,
+      "community_name": "graphify reference: add-watch.md",
       "norm_label": "buttonclasses()"
     },
     {
@@ -3431,8 +3442,8 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "apps_web_src_components_button_buttonprops",
-      "community": 6,
-      "community_name": "Domain (README section)",
+      "community": 10,
+      "community_name": "graphify reference: add-watch.md",
       "norm_label": "buttonprops"
     },
     {
@@ -3442,8 +3453,8 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "apps_web_src_components_button_button",
-      "community": 6,
-      "community_name": "Domain (README section)",
+      "community": 10,
+      "community_name": "graphify reference: add-watch.md",
       "norm_label": "button()"
     },
     {
@@ -3610,6 +3621,83 @@
       "community": 11,
       "community_name": "Lefthook for git-hook backpressure across the split monorepo",
       "norm_label": "locktooltip()"
+    },
+    {
+      "label": "PageHeading.stories.tsx",
+      "file_type": "code",
+      "source_file": "apps/web/src/components/PageHeading.stories.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "apps_web_src_components_pageheading_stories",
+      "community": 10,
+      "community_name": "graphify reference: add-watch.md",
+      "norm_label": "pageheading.stories.tsx"
+    },
+    {
+      "label": "Story",
+      "file_type": "code",
+      "source_file": "apps/web/src/components/PageHeading.stories.tsx",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "apps_web_src_components_pageheading_stories_story",
+      "community": 10,
+      "community_name": "graphify reference: add-watch.md",
+      "norm_label": "story"
+    },
+    {
+      "label": "WithEyebrow",
+      "file_type": "code",
+      "source_file": "apps/web/src/components/PageHeading.stories.tsx",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "apps_web_src_components_pageheading_stories_witheyebrow",
+      "community": 10,
+      "community_name": "graphify reference: add-watch.md",
+      "norm_label": "witheyebrow"
+    },
+    {
+      "label": "WithoutEyebrow",
+      "file_type": "code",
+      "source_file": "apps/web/src/components/PageHeading.stories.tsx",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "apps_web_src_components_pageheading_stories_withouteyebrow",
+      "community": 10,
+      "community_name": "graphify reference: add-watch.md",
+      "norm_label": "withouteyebrow"
+    },
+    {
+      "label": "PageHeading.tsx",
+      "file_type": "code",
+      "source_file": "apps/web/src/components/PageHeading.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "apps_web_src_components_pageheading",
+      "community": 10,
+      "community_name": "graphify reference: add-watch.md",
+      "norm_label": "pageheading.tsx"
+    },
+    {
+      "label": "PageHeadingProps",
+      "file_type": "code",
+      "source_file": "apps/web/src/components/PageHeading.tsx",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "apps_web_src_components_pageheading_pageheadingprops",
+      "community": 10,
+      "community_name": "graphify reference: add-watch.md",
+      "norm_label": "pageheadingprops"
+    },
+    {
+      "label": "PageHeading()",
+      "file_type": "code",
+      "source_file": "apps/web/src/components/PageHeading.tsx",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "apps_web_src_components_pageheading_pageheading",
+      "community": 10,
+      "community_name": "graphify reference: add-watch.md",
+      "norm_label": "pageheading()"
     },
     {
       "label": "SearchField.stories.tsx",
@@ -3827,8 +3915,8 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "apps_web_src_components_unitcard_unitcard",
-      "community": 11,
-      "community_name": "Lefthook for git-hook backpressure across the split monorepo",
+      "community": 13,
+      "community_name": "index.tsx",
       "norm_label": "unitcard()"
     },
     {
@@ -3959,8 +4047,8 @@
       "source_location": "L49",
       "_origin": "ast",
       "id": "apps_web_src_components_icons_playicon",
-      "community": 11,
-      "community_name": "Lefthook for git-hook backpressure across the split monorepo",
+      "community": 10,
+      "community_name": "graphify reference: add-watch.md",
       "norm_label": "playicon()"
     },
     {
@@ -3970,8 +4058,8 @@
       "source_location": "L57",
       "_origin": "ast",
       "id": "apps_web_src_components_icons_compassicon",
-      "community": 13,
-      "community_name": "index.tsx",
+      "community": 10,
+      "community_name": "graphify reference: add-watch.md",
       "norm_label": "compassicon()"
     },
     {
@@ -4036,8 +4124,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_lib_api",
-      "community": 10,
-      "community_name": "graphify reference: add-watch.md",
+      "community": 6,
+      "community_name": "Domain (README section)",
       "norm_label": "api.ts"
     },
     {
@@ -4047,8 +4135,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "apps_web_src_lib_api_setaccesstoken",
-      "community": 10,
-      "community_name": "graphify reference: add-watch.md",
+      "community": 6,
+      "community_name": "Domain (README section)",
       "norm_label": "setaccesstoken()"
     },
     {
@@ -4091,8 +4179,8 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "apps_web_src_lib_api_errordetail",
-      "community": 10,
-      "community_name": "graphify reference: add-watch.md",
+      "community": 6,
+      "community_name": "Domain (README section)",
       "norm_label": "errordetail()"
     },
     {
@@ -4102,8 +4190,8 @@
       "source_location": "L32",
       "_origin": "ast",
       "id": "apps_web_src_lib_api_refreshaccesstoken",
-      "community": 10,
-      "community_name": "graphify reference: add-watch.md",
+      "community": 6,
+      "community_name": "Domain (README section)",
       "norm_label": "refreshaccesstoken()"
     },
     {
@@ -4113,8 +4201,8 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "apps_web_src_lib_api_request",
-      "community": 10,
-      "community_name": "graphify reference: add-watch.md",
+      "community": 6,
+      "community_name": "Domain (README section)",
       "norm_label": "request()"
     },
     {
@@ -4124,8 +4212,8 @@
       "source_location": "L71",
       "_origin": "ast",
       "id": "apps_web_src_lib_api_apifetch",
-      "community": 10,
-      "community_name": "graphify reference: add-watch.md",
+      "community": 6,
+      "community_name": "Domain (README section)",
       "norm_label": "apifetch()"
     },
     {
@@ -4157,8 +4245,8 @@
       "source_location": "L94",
       "_origin": "ast",
       "id": "apps_web_src_lib_api_logout",
-      "community": 10,
-      "community_name": "graphify reference: add-watch.md",
+      "community": 6,
+      "community_name": "Domain (README section)",
       "norm_label": "logout()"
     },
     {
@@ -4168,8 +4256,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_lib_api_ts_docref_adr_0007",
-      "community": 10,
-      "community_name": "graphify reference: add-watch.md",
+      "community": 6,
+      "community_name": "Domain (README section)",
       "norm_label": "adr-0007"
     },
     {
@@ -4514,6 +4602,17 @@
       "norm_label": "adr-0008"
     },
     {
+      "label": "pageStyles.ts",
+      "file_type": "code",
+      "source_file": "apps/web/src/lib/pageStyles.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "apps_web_src_lib_pagestyles",
+      "community": 10,
+      "community_name": "graphify reference: add-watch.md",
+      "norm_label": "pagestyles.ts"
+    },
+    {
       "label": "routeGuards.ts",
       "file_type": "code",
       "source_file": "apps/web/src/lib/routeGuards.ts",
@@ -4542,8 +4641,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_main",
-      "community": 10,
-      "community_name": "graphify reference: add-watch.md",
+      "community": 6,
+      "community_name": "Domain (README section)",
       "norm_label": "main.tsx"
     },
     {
@@ -4553,8 +4652,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "apps_web_src_main_router",
-      "community": 10,
-      "community_name": "graphify reference: add-watch.md",
+      "community": 6,
+      "community_name": "Domain (README section)",
       "norm_label": "router"
     },
     {
@@ -4564,8 +4663,8 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "apps_web_src_main_tanstack_react_router",
-      "community": 10,
-      "community_name": "graphify reference: add-watch.md",
+      "community": 6,
+      "community_name": "Domain (README section)",
       "norm_label": "@tanstack/react-router"
     },
     {
@@ -4575,8 +4674,8 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "apps_web_src_main_register",
-      "community": 10,
-      "community_name": "graphify reference: add-watch.md",
+      "community": 6,
+      "community_name": "Domain (README section)",
       "norm_label": "register"
     },
     {
@@ -4586,8 +4685,8 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "apps_web_src_main_queryclient",
-      "community": 10,
-      "community_name": "graphify reference: add-watch.md",
+      "community": 6,
+      "community_name": "Domain (README section)",
       "norm_label": "queryclient"
     },
     {
@@ -4597,8 +4696,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "apps_web_src_main_tsx_docref_adr_0007",
-      "community": 10,
-      "community_name": "graphify reference: add-watch.md",
+      "community": 6,
+      "community_name": "Domain (README section)",
       "norm_label": "adr-0007"
     },
     {
@@ -4638,7 +4737,7 @@
       "label": "Route",
       "file_type": "code",
       "source_file": "apps/web/src/routes/home.tsx",
-      "source_location": "L11",
+      "source_location": "L13",
       "_origin": "ast",
       "id": "apps_web_src_routes_home_route",
       "community": 11,
@@ -4663,30 +4762,30 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_routes_index",
-      "community": 6,
-      "community_name": "Domain (README section)",
+      "community": 10,
+      "community_name": "graphify reference: add-watch.md",
       "norm_label": "index.tsx"
     },
     {
       "label": "Route",
       "file_type": "code",
       "source_file": "apps/web/src/routes/index.tsx",
-      "source_location": "L5",
+      "source_location": "L6",
       "_origin": "ast",
       "id": "apps_web_src_routes_index_route",
-      "community": 6,
-      "community_name": "Domain (README section)",
+      "community": 10,
+      "community_name": "graphify reference: add-watch.md",
       "norm_label": "route"
     },
     {
       "label": "Entry()",
       "file_type": "code",
       "source_file": "apps/web/src/routes/index.tsx",
-      "source_location": "L9",
+      "source_location": "L10",
       "_origin": "ast",
       "id": "apps_web_src_routes_index_entry",
-      "community": 6,
-      "community_name": "Domain (README section)",
+      "community": 10,
+      "community_name": "graphify reference: add-watch.md",
       "norm_label": "entry()"
     },
     {
@@ -4704,7 +4803,7 @@
       "label": "Route",
       "file_type": "code",
       "source_file": "apps/web/src/routes/journeys.$journeyId.tsx",
-      "source_location": "L10",
+      "source_location": "L12",
       "_origin": "ast",
       "id": "apps_web_src_routes_journeys_journeyid_route",
       "community": 11,
@@ -4729,19 +4828,19 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_routes_lessons_lessonid",
-      "community": 11,
-      "community_name": "Lefthook for git-hook backpressure across the split monorepo",
+      "community": 10,
+      "community_name": "graphify reference: add-watch.md",
       "norm_label": "lessons.$lessonid.tsx"
     },
     {
       "label": "Route",
       "file_type": "code",
       "source_file": "apps/web/src/routes/lessons.$lessonId.tsx",
-      "source_location": "L7",
+      "source_location": "L9",
       "_origin": "ast",
       "id": "apps_web_src_routes_lessons_lessonid_route",
-      "community": 11,
-      "community_name": "Lefthook for git-hook backpressure across the split monorepo",
+      "community": 10,
+      "community_name": "graphify reference: add-watch.md",
       "norm_label": "route"
     },
     {
@@ -4770,7 +4869,7 @@
       "label": "LoginSearch",
       "file_type": "code",
       "source_file": "apps/web/src/routes/login.tsx",
-      "source_location": "L9",
+      "source_location": "L11",
       "_origin": "ast",
       "id": "apps_web_src_routes_login_loginsearch",
       "community": 10,
@@ -4781,7 +4880,7 @@
       "label": "Route",
       "file_type": "code",
       "source_file": "apps/web/src/routes/login.tsx",
-      "source_location": "L13",
+      "source_location": "L15",
       "_origin": "ast",
       "id": "apps_web_src_routes_login_route",
       "community": 10,
@@ -4792,7 +4891,7 @@
       "label": "LoginPage()",
       "file_type": "code",
       "source_file": "apps/web/src/routes/login.tsx",
-      "source_location": "L20",
+      "source_location": "L22",
       "_origin": "ast",
       "id": "apps_web_src_routes_login_loginpage",
       "community": 10,
@@ -4806,41 +4905,41 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "apps_web_src_routes_onboarding",
-      "community": 13,
-      "community_name": "index.tsx",
+      "community": 10,
+      "community_name": "graphify reference: add-watch.md",
       "norm_label": "onboarding.tsx"
     },
     {
       "label": "Route",
       "file_type": "code",
       "source_file": "apps/web/src/routes/onboarding.tsx",
-      "source_location": "L5",
+      "source_location": "L6",
       "_origin": "ast",
       "id": "apps_web_src_routes_onboarding_route",
-      "community": 13,
-      "community_name": "index.tsx",
+      "community": 10,
+      "community_name": "graphify reference: add-watch.md",
       "norm_label": "route"
     },
     {
       "label": "steps",
       "file_type": "code",
       "source_file": "apps/web/src/routes/onboarding.tsx",
-      "source_location": "L9",
+      "source_location": "L10",
       "_origin": "ast",
       "id": "apps_web_src_routes_onboarding_steps",
-      "community": 13,
-      "community_name": "index.tsx",
+      "community": 10,
+      "community_name": "graphify reference: add-watch.md",
       "norm_label": "steps"
     },
     {
       "label": "Onboarding()",
       "file_type": "code",
       "source_file": "apps/web/src/routes/onboarding.tsx",
-      "source_location": "L15",
+      "source_location": "L16",
       "_origin": "ast",
       "id": "apps_web_src_routes_onboarding_onboarding",
-      "community": 6,
-      "community_name": "Domain (README section)",
+      "community": 10,
+      "community_name": "graphify reference: add-watch.md",
       "norm_label": "onboarding()"
     },
     {
@@ -4858,7 +4957,7 @@
       "label": "Route",
       "file_type": "code",
       "source_file": "apps/web/src/routes/signup.tsx",
-      "source_location": "L7",
+      "source_location": "L9",
       "_origin": "ast",
       "id": "apps_web_src_routes_signup_route",
       "community": 10,
@@ -4869,7 +4968,7 @@
       "label": "SignupPage()",
       "file_type": "code",
       "source_file": "apps/web/src/routes/signup.tsx",
-      "source_location": "L11",
+      "source_location": "L13",
       "_origin": "ast",
       "id": "apps_web_src_routes_signup_signuppage",
       "community": 10,
@@ -4891,7 +4990,7 @@
       "label": "Route",
       "file_type": "code",
       "source_file": "apps/web/src/routes/subjects.$subjectId.tsx",
-      "source_location": "L12",
+      "source_location": "L14",
       "_origin": "ast",
       "id": "apps_web_src_routes_subjects_subjectid_route",
       "community": 11,
@@ -9266,6 +9365,18 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/components/PageHeading.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_components_pageheading",
+      "target": "ref_react",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "apps/web/src/components/SearchField.tsx",
       "source_location": "L1",
       "weight": 1.0,
@@ -10102,6 +10213,18 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/__tests__/routes/onboarding.test.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_tests_routes_onboarding_test",
+      "target": "apps_web_src_tests_helpers_renderroute",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "apps/web/src/__tests__/routes/signup.test.tsx",
       "source_location": "L4",
       "weight": 1.0,
@@ -10179,6 +10302,18 @@
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_tests_routes_login_test",
+      "target": "apps_web_src_tests_helpers_renderroute_renderroutetree",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/__tests__/routes/onboarding.test.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_tests_routes_onboarding_test",
       "target": "apps_web_src_tests_helpers_renderroute_renderroutetree",
       "confidence_score": 1.0
     },
@@ -10931,7 +11066,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/web/src/routes/index.tsx",
-      "source_location": "L20",
+      "source_location": "L21",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_routes_index_entry",
@@ -10955,7 +11090,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/web/src/routes/onboarding.tsx",
-      "source_location": "L42",
+      "source_location": "L38",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_routes_onboarding_onboarding",
@@ -11296,6 +11431,253 @@
       "_origin": "ast",
       "source": "apps_web_src_routes_subjects_subjectid",
       "target": "apps_web_src_components_locktooltip_locktooltip",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/components/PageHeading.stories.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_components_pageheading_stories",
+      "target": "apps_web_src_components_pageheading",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/components/PageHeading.stories.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_components_pageheading_stories",
+      "target": "apps_web_src_components_pageheading_pageheading",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/components/PageHeading.stories.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_components_pageheading_stories",
+      "target": "apps_web_src_components_pageheading_stories_story",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/components/PageHeading.stories.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_components_pageheading_stories",
+      "target": "apps_web_src_components_pageheading_stories_witheyebrow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/components/PageHeading.stories.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_components_pageheading_stories",
+      "target": "apps_web_src_components_pageheading_stories_withouteyebrow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/components/PageHeading.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_components_pageheading",
+      "target": "apps_web_src_components_pageheading_pageheading",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/components/PageHeading.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_components_pageheading",
+      "target": "apps_web_src_components_pageheading_pageheadingprops",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/routes/home.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_routes_home",
+      "target": "apps_web_src_components_pageheading",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/routes/journeys.$journeyId.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_routes_journeys_journeyid",
+      "target": "apps_web_src_components_pageheading",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/routes/lessons.$lessonId.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_routes_lessons_lessonid",
+      "target": "apps_web_src_components_pageheading",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/routes/login.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_routes_login",
+      "target": "apps_web_src_components_pageheading",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/routes/onboarding.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_routes_onboarding",
+      "target": "apps_web_src_components_pageheading",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/routes/signup.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_routes_signup",
+      "target": "apps_web_src_components_pageheading",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/routes/subjects.$subjectId.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_routes_subjects_subjectid",
+      "target": "apps_web_src_components_pageheading",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/routes/home.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_routes_home",
+      "target": "apps_web_src_components_pageheading_pageheading",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/routes/journeys.$journeyId.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_routes_journeys_journeyid",
+      "target": "apps_web_src_components_pageheading_pageheading",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/routes/lessons.$lessonId.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_routes_lessons_lessonid",
+      "target": "apps_web_src_components_pageheading_pageheading",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/routes/login.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_routes_login",
+      "target": "apps_web_src_components_pageheading_pageheading",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/routes/onboarding.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_routes_onboarding",
+      "target": "apps_web_src_components_pageheading_pageheading",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/routes/signup.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_routes_signup",
+      "target": "apps_web_src_components_pageheading_pageheading",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/routes/subjects.$subjectId.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_routes_subjects_subjectid",
+      "target": "apps_web_src_components_pageheading_pageheading",
       "confidence_score": 1.0
     },
     {
@@ -12258,7 +12640,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/web/src/routes/journeys.$journeyId.tsx",
-      "source_location": "L45",
+      "source_location": "L42",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_routes_journeys_journeyid_journeypage",
@@ -12282,7 +12664,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/web/src/routes/subjects.$subjectId.tsx",
-      "source_location": "L52",
+      "source_location": "L50",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_routes_subjects_subjectid_subjectpage",
@@ -12306,7 +12688,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/web/src/routes/journeys.$journeyId.tsx",
-      "source_location": "L41",
+      "source_location": "L38",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_routes_journeys_journeyid_journeypage",
@@ -12330,7 +12712,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/web/src/routes/subjects.$subjectId.tsx",
-      "source_location": "L51",
+      "source_location": "L49",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_routes_subjects_subjectid_subjectpage",
@@ -12713,7 +13095,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/routes/signup.tsx",
-      "source_location": "L24",
+      "source_location": "L26",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_routes_signup_signuppage",
@@ -12737,7 +13119,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/routes/login.tsx",
-      "source_location": "L34",
+      "source_location": "L36",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_routes_login_loginpage",
@@ -13079,7 +13461,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/web/src/routes/journeys.$journeyId.tsx",
-      "source_location": "L51",
+      "source_location": "L48",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_routes_journeys_journeyid_journeypage",
@@ -13103,7 +13485,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "apps/web/src/routes/subjects.$subjectId.tsx",
-      "source_location": "L40",
+      "source_location": "L38",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_routes_subjects_subjectid_subjectpage",
@@ -13544,6 +13926,90 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/routes/home.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_routes_home",
+      "target": "apps_web_src_lib_pagestyles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/routes/index.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_routes_index",
+      "target": "apps_web_src_lib_pagestyles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/routes/journeys.$journeyId.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_routes_journeys_journeyid",
+      "target": "apps_web_src_lib_pagestyles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/routes/lessons.$lessonId.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_routes_lessons_lessonid",
+      "target": "apps_web_src_lib_pagestyles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/routes/login.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_routes_login",
+      "target": "apps_web_src_lib_pagestyles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/routes/signup.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_routes_signup",
+      "target": "apps_web_src_lib_pagestyles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "apps/web/src/routes/subjects.$subjectId.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "apps_web_src_routes_subjects_subjectid",
+      "target": "apps_web_src_lib_pagestyles",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/lib/routeGuards.ts",
@@ -13720,7 +14186,7 @@
       "relation": "indirect_call",
       "confidence": "INFERRED",
       "source_file": "apps/web/src/routes/home.tsx",
-      "source_location": "L13",
+      "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast",
       "context": "collection",
@@ -13732,7 +14198,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/routes/home.tsx",
-      "source_location": "L11",
+      "source_location": "L13",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_routes_home",
@@ -13743,7 +14209,7 @@
       "relation": "indirect_call",
       "confidence": "INFERRED",
       "source_file": "apps/web/src/routes/index.tsx",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
       "context": "collection",
@@ -13755,7 +14221,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/routes/index.tsx",
-      "source_location": "L5",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_routes_index",
@@ -13766,7 +14232,7 @@
       "relation": "indirect_call",
       "confidence": "INFERRED",
       "source_file": "apps/web/src/routes/journeys.$journeyId.tsx",
-      "source_location": "L12",
+      "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast",
       "context": "collection",
@@ -13778,7 +14244,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/routes/journeys.$journeyId.tsx",
-      "source_location": "L10",
+      "source_location": "L12",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_routes_journeys_journeyid",
@@ -13789,7 +14255,7 @@
       "relation": "indirect_call",
       "confidence": "INFERRED",
       "source_file": "apps/web/src/routes/lessons.$lessonId.tsx",
-      "source_location": "L9",
+      "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
       "context": "collection",
@@ -13801,7 +14267,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/routes/lessons.$lessonId.tsx",
-      "source_location": "L7",
+      "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_routes_lessons_lessonid",
@@ -13812,7 +14278,7 @@
       "relation": "indirect_call",
       "confidence": "INFERRED",
       "source_file": "apps/web/src/routes/login.tsx",
-      "source_location": "L17",
+      "source_location": "L19",
       "weight": 1.0,
       "_origin": "ast",
       "context": "collection",
@@ -13824,7 +14290,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/routes/login.tsx",
-      "source_location": "L9",
+      "source_location": "L11",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_routes_login",
@@ -13835,7 +14301,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/routes/login.tsx",
-      "source_location": "L13",
+      "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_routes_login",
@@ -13846,7 +14312,7 @@
       "relation": "indirect_call",
       "confidence": "INFERRED",
       "source_file": "apps/web/src/routes/onboarding.tsx",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
       "context": "collection",
@@ -13858,7 +14324,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/routes/onboarding.tsx",
-      "source_location": "L5",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_routes_onboarding",
@@ -13869,7 +14335,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/routes/onboarding.tsx",
-      "source_location": "L9",
+      "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_routes_onboarding",
@@ -13880,7 +14346,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/routes/signup.tsx",
-      "source_location": "L7",
+      "source_location": "L9",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_routes_signup",
@@ -13891,7 +14357,7 @@
       "relation": "indirect_call",
       "confidence": "INFERRED",
       "source_file": "apps/web/src/routes/signup.tsx",
-      "source_location": "L8",
+      "source_location": "L10",
       "weight": 1.0,
       "_origin": "ast",
       "context": "collection",
@@ -13903,7 +14369,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "apps/web/src/routes/subjects.$subjectId.tsx",
-      "source_location": "L12",
+      "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast",
       "source": "apps_web_src_routes_subjects_subjectid",
@@ -13914,7 +14380,7 @@
       "relation": "indirect_call",
       "confidence": "INFERRED",
       "source_file": "apps/web/src/routes/subjects.$subjectId.tsx",
-      "source_location": "L14",
+      "source_location": "L16",
       "weight": 1.0,
       "_origin": "ast",
       "context": "collection",
@@ -16383,5 +16849,5 @@
       "source_file": "docs/adr/0005-solid-queue-for-background-jobs.md"
     }
   ],
-  "built_at_commit": "5688a45d811fead41b1be5018b3853cdb00adf8c"
+  "built_at_commit": "dcc44470d9da4e337ef615c410db5bfa9fc0e6e5"
 }

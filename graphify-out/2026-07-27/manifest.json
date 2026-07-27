@@ -150,8 +150,8 @@
     "semantic_hash": ""
   },
   "CONTRIBUTING.md": {
-    "mtime": 1785093110.1312845,
-    "ast_hash": "b5629dff2408d72eae2c135aaf9dd605",
+    "mtime": 1785150744.5987768,
+    "ast_hash": "9bd0be312863a4d12432e2c5cc905180",
     "semantic_hash": ""
   },
   "docs/adr/0011-lefthook-post-checkout-hook-for-worktree-setup.md": {
@@ -375,8 +375,8 @@
     "semantic_hash": ""
   },
   "apps/web/package.json": {
-    "mtime": 1785138657.6943536,
-    "ast_hash": "6ac330fc0eb7ee09fdc9f236e2310622",
+    "mtime": 1785151025.4076447,
+    "ast_hash": "5ad50e65ffc18b2503dae10cb1c065d4",
     "semantic_hash": ""
   },
   "apps/web/src/__tests__/routes/index.test.tsx": {
@@ -395,8 +395,8 @@
     "semantic_hash": ""
   },
   "apps/web/src/routes/index.tsx": {
-    "mtime": 1785096447.0148704,
-    "ast_hash": "1ba5c33480fe9a57c2a274b32f519ec2",
+    "mtime": 1785151133.2775135,
+    "ast_hash": "04461be6e371c2f6fc44549485b03426",
     "semantic_hash": ""
   },
   "apps/web/src/setupTests.ts": {
@@ -420,8 +420,8 @@
     "semantic_hash": ""
   },
   "apps/web/vite.config.ts": {
-    "mtime": 1785093110.1352847,
-    "ast_hash": "c7829f67c104df109fafe5ec6d66e724",
+    "mtime": 1785151031.1837447,
+    "ast_hash": "de19104d5aa64c156a6c91066f589333",
     "semantic_hash": ""
   },
   "script/graphify-post-checkout.sh": {
@@ -790,18 +790,18 @@
     "semantic_hash": ""
   },
   "apps/web/src/__tests__/routes/subjects.$subjectId.test.tsx": {
-    "mtime": 1785148698.6751862,
-    "ast_hash": "ede7d8a4330769a6f6f32f9bc63fcdd3",
+    "mtime": 1785151276.439993,
+    "ast_hash": "13bc74845f894ad19532bb1ab4ff8deb",
     "semantic_hash": ""
   },
   "apps/web/src/components/LockTooltip.tsx": {
-    "mtime": 1785095848.3245406,
-    "ast_hash": "dd92408443eb949a1f564fc84a7b9246",
+    "mtime": 1785151122.4813263,
+    "ast_hash": "5c45dec1015e375df8fcd8a9b51d1bd2",
     "semantic_hash": ""
   },
   "apps/web/src/components/UnitCard.tsx": {
-    "mtime": 1785095765.2513607,
-    "ast_hash": "139e0efc46d4419a0af330ea3625f164",
+    "mtime": 1785151117.4052386,
+    "ast_hash": "9b4e9d2b98758744be258ffc423c4b33",
     "semantic_hash": ""
   },
   "apps/web/src/components/icons.tsx": {
@@ -825,43 +825,38 @@
     "semantic_hash": ""
   },
   "apps/web/src/routes/home.tsx": {
-    "mtime": 1785138515.2118976,
-    "ast_hash": "4e1e4ebcc5f9d5587567c9fd3d9da497",
+    "mtime": 1785151183.2383788,
+    "ast_hash": "ccd69d2f9510a9f4935a79273e9c8b8f",
     "semantic_hash": ""
   },
   "apps/web/src/routes/journeys.$journeyId.tsx": {
-    "mtime": 1785096941.135514,
-    "ast_hash": "e94f875a4b0f54f38a667b065f3ed171",
+    "mtime": 1785151198.4586425,
+    "ast_hash": "a27f76f07b7cf09ac36db5b247aa426a",
     "semantic_hash": ""
   },
   "apps/web/src/routes/lessons.$lessonId.tsx": {
-    "mtime": 1785138530.7481654,
-    "ast_hash": "52e33a34e4197cfc4f21adcf4bcaee08",
+    "mtime": 1785151216.3749528,
+    "ast_hash": "0c575d7565b53d9a0da92a8ab2004540",
     "semantic_hash": ""
   },
   "apps/web/src/routes/login.tsx": {
-    "mtime": 1785138497.36759,
-    "ast_hash": "6295126f41260efecaba8ab86cef92cb",
+    "mtime": 1785151157.9939415,
+    "ast_hash": "2032b749875a70dda9d5abc0082997c1",
     "semantic_hash": ""
   },
   "apps/web/src/routes/onboarding.tsx": {
-    "mtime": 1785095872.8368852,
-    "ast_hash": "56b9c6a9ed20f94c7cea14dd25314bf0",
+    "mtime": 1785151143.9256978,
+    "ast_hash": "6b0ec3c853c8db6264f4d27a34a5dc46",
     "semantic_hash": ""
   },
   "apps/web/src/routes/signup.tsx": {
-    "mtime": 1785138507.343762,
-    "ast_hash": "90ca719feb76f444c2f8c7d4291239ce",
+    "mtime": 1785151167.418105,
+    "ast_hash": "1e21039db664d1f98f1859bcf8837ef2",
     "semantic_hash": ""
   },
   "apps/web/src/routes/subjects.$subjectId.tsx": {
-    "mtime": 1785148675.4507875,
-    "ast_hash": "eb71363595ed4b5804dfad87e63ab0d2",
-    "semantic_hash": ""
-  },
-  "HANDOFF.md": {
-    "mtime": 1785136312.4419138,
-    "ast_hash": "bb35f773c68feec9a35628e65fc4d916",
+    "mtime": 1785151208.7308204,
+    "ast_hash": "bb2db5df9ffe202fa2acf93007549af2",
     "semantic_hash": ""
   },
   "apps/api/app/controllers/concerns/lockable.rb": {
@@ -895,8 +890,8 @@
     "semantic_hash": ""
   },
   "apps/web/src/components/Badge.tsx": {
-    "mtime": 1785138465.991049,
-    "ast_hash": "f3d2756fa41bd4ce4702e2a757e50319",
+    "mtime": 1785151105.141026,
+    "ast_hash": "df6a081b6ab4fae7f06d024d9860211b",
     "semantic_hash": ""
   },
   "apps/web/src/components/Banner.stories.tsx": {
@@ -905,8 +900,8 @@
     "semantic_hash": ""
   },
   "apps/web/src/components/Banner.tsx": {
-    "mtime": 1785138464.947031,
-    "ast_hash": "f5b0862cceff42d9235cbc17df2bbf48",
+    "mtime": 1785151101.2329583,
+    "ast_hash": "33e174a154176cb01d2094aad8c26e0b",
     "semantic_hash": ""
   },
   "apps/web/src/components/Button.stories.tsx": {
@@ -915,8 +910,8 @@
     "semantic_hash": ""
   },
   "apps/web/src/components/Button.tsx": {
-    "mtime": 1785138461.2629676,
-    "ast_hash": "eb75acc8428a56a336ebbe625a87b7f1",
+    "mtime": 1785151090.6687753,
+    "ast_hash": "68c678e7f4bf795e9ac275390e251d91",
     "semantic_hash": ""
   },
   "apps/web/src/components/Field.stories.tsx": {
@@ -925,8 +920,8 @@
     "semantic_hash": ""
   },
   "apps/web/src/components/Field.tsx": {
-    "mtime": 1785138463.1069994,
-    "ast_hash": "4e1a8e24b0de85abf355b5ec9a5fc5cc",
+    "mtime": 1785151096.5288768,
+    "ast_hash": "7c73635169770ba159f95b558ea2fd22",
     "semantic_hash": ""
   },
   "apps/web/src/components/LockTooltip.stories.tsx": {
@@ -940,8 +935,8 @@
     "semantic_hash": ""
   },
   "apps/web/src/components/SearchField.tsx": {
-    "mtime": 1785138487.5874214,
-    "ast_hash": "ce7261d4ca86d5df7593d92dfa77b7a5",
+    "mtime": 1785151109.8651078,
+    "ast_hash": "01881493302e30ffc3fa8745f64350e1",
     "semantic_hash": ""
   },
   "apps/web/src/components/UnitCard.stories.tsx": {
@@ -962,6 +957,11 @@
   "apps/web/src/lib/routeGuards.ts": {
     "mtime": 1785096914.499079,
     "ast_hash": "6437d83a05786fbdf4cd42b93036406f",
+    "semantic_hash": ""
+  },
+  "docs/adr/0012-tailwind-css-for-apps-web.md": {
+    "mtime": 1785150696.2299376,
+    "ast_hash": "94e0fe4636b7af77445d4e04ad730962",
     "semantic_hash": ""
   }
 }
