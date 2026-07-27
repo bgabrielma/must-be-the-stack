@@ -16,7 +16,7 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       RAILS_MASTER_KEY: ${RAILS_MASTER_KEY}
-      FRONTEND_ORIGIN: ${FRONTEND_ORIGIN}
+      FRONTEND_ORIGIN: ${FRONTEND_ORIGIN:?Set FRONTEND_ORIGIN in .env — see docs/deploy.md}
     depends_on:
       postgres:
         condition: service_healthy
