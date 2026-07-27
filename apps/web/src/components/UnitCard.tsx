@@ -9,10 +9,11 @@ interface UnitCardProps {
   meta: string;
   icon: ReactNode;
   onClick?: () => void;
+  testId?: string;
 }
 
 const base =
-  "flex w-full items-center gap-3 rounded-[10px] border border-border bg-bg px-4 py-3.5 text-left cursor-pointer disabled:cursor-not-allowed disabled:opacity-60";
+  "flex w-full items-center gap-3 rounded-card border border-border bg-bg px-4 py-3.5 text-left cursor-pointer disabled:cursor-not-allowed disabled:opacity-60";
 
 const stateClasses: Record<UnitCardStatus, string> = {
   active: "border-accent-border bg-accent-bg",
@@ -35,13 +36,14 @@ const titleStateClasses: Record<UnitCardStatus, string> = {
   not_started: "text-text-h",
 };
 
-export function UnitCard({ status, title, meta, icon, onClick }: UnitCardProps) {
+export function UnitCard({ status, title, meta, icon, onClick, testId = "unit-card" }: UnitCardProps) {
   return (
     <button
       type="button"
       className={`${base} ${stateClasses[status]}`}
       onClick={onClick}
       disabled={status === "locked"}
+      data-testid={testId}
     >
       <span className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full ${iconStateClasses[status]}`}>
         {icon}

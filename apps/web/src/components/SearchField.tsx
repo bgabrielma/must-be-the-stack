@@ -3,13 +3,14 @@ import { SearchIcon } from "./icons";
 
 interface SearchFieldProps extends InputHTMLAttributes<HTMLInputElement> {
   wrapperClassName?: string;
+  testId?: string;
 }
 
-export function SearchField({ wrapperClassName, ...props }: SearchFieldProps) {
+export function SearchField({ wrapperClassName, testId = "search-field", ...props }: SearchFieldProps) {
   const wrapperClasses = ["relative mb-3", wrapperClassName ?? ""].filter(Boolean).join(" ");
 
   return (
-    <div className={wrapperClasses}>
+    <div className={wrapperClasses} data-testid={testId}>
       <span className="pointer-events-none absolute top-1/2 left-3 -translate-y-1/2 text-text-muted">
         <SearchIcon size={15} />
       </span>
