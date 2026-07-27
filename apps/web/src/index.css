@@ -56,14 +56,14 @@ body {
 body {
   margin: 0;
   font-family: var(--font-sans);
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 145%;
   color: var(--color-text);
 }
 
 #root {
   min-height: 100svh;
-  max-width: 480px;
+  max-width: 30rem;
   margin: 0 auto;
 }
 

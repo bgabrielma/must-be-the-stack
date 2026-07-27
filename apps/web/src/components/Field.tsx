@@ -20,7 +20,7 @@ export function Field({ label, error, id, className, testId, ...props }: FieldPr
         className={`rounded-lg border ${inputBorder} bg-bg px-3 py-2.5 text-sm text-text-h`}
         {...props}
       />
-      {error && <span className="text-[11px] text-danger">{error}</span>}
+      {error && <span className="text-[0.6875rem] text-danger">{error}</span>}
     </div>
   );
 }

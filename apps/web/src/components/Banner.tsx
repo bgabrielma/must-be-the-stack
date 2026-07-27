@@ -22,7 +22,7 @@ export function Banner({ variant, icon, title, description, testId = "banner" }:
     >
       {icon}
       <div>
-        <p className="mb-0.5 text-[12.5px] leading-[1.2] font-semibold text-text-h">{title}</p>
+        <p className="mb-0.5 text-[0.78125rem] leading-[1.2] font-semibold text-text-h">{title}</p>
         <p className="text-xs leading-[1.35] text-text-h opacity-85">{description}</p>
       </div>
     </div>
