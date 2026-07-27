@@ -72,9 +72,10 @@ describe("Subject route (/subjects/:subjectId)", () => {
 
     // Regression: the active Lesson's icon slot must render an icon, not the
     // bare position number (`lockStatusIcon` was once called with
-    // `lesson.position` instead of a `PlayIcon` for the active case).
+    // `lesson.position` instead of a `PlayIcon` for the active case). If that
+    // regressed, only the trailing chevron svg would remain (count 1).
     const activeCard = screen.getByRole("button", { name: /Replication & Failover/ });
-    expect(activeCard.querySelector(".icon svg")).toBeInTheDocument();
+    expect(activeCard.querySelectorAll("svg").length).toBeGreaterThanOrEqual(2);
   });
 
   it("shows a not-available message when the Subject itself is locked", async () => {

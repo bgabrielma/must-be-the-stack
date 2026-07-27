@@ -11,24 +11,49 @@ interface UnitCardProps {
   onClick?: () => void;
 }
 
-export function UnitCard({ status, title, meta, icon, onClick }: UnitCardProps) {
-  const stateClass =
-    status === "completed" ? "is-completed" : status === "active" ? "is-active" : status === "locked" ? "is-locked" : "";
+const base =
+  "flex w-full items-center gap-3 rounded-[10px] border border-border bg-bg px-4 py-3.5 text-left cursor-pointer disabled:cursor-not-allowed disabled:opacity-60";
 
+const stateClasses: Record<UnitCardStatus, string> = {
+  active: "border-accent-border bg-accent-bg",
+  completed: "",
+  locked: "",
+  not_started: "",
+};
+
+const iconStateClasses: Record<UnitCardStatus, string> = {
+  active: "bg-accent text-white",
+  completed: "bg-success-bg text-success",
+  locked: "bg-surface-muted text-text-muted",
+  not_started: "bg-surface-muted text-text-muted",
+};
+
+const titleStateClasses: Record<UnitCardStatus, string> = {
+  active: "text-text-h",
+  completed: "text-text-h",
+  locked: "text-text-muted",
+  not_started: "text-text-h",
+};
+
+export function UnitCard({ status, title, meta, icon, onClick }: UnitCardProps) {
   return (
     <button
       type="button"
-      className={`unit-card ${stateClass}`.trim()}
+      className={`${base} ${stateClasses[status]}`}
       onClick={onClick}
       disabled={status === "locked"}
     >
-      <span className="icon">{icon}</span>
-      <span className="body">
-        <span className="title">{title}</span>
-        <span className="meta">{meta}</span>
+      <span className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full ${iconStateClasses[status]}`}>
+        {icon}
+      </span>
+      <span className="min-w-0 flex-1">
+        <span className={`mb-0.5 block font-heading text-sm font-semibold ${titleStateClasses[status]}`}>
+          {title}
+        </span>
+        <span className="block text-xs text-text">{meta}</span>
       </span>
       {status !== "locked" && (
-        <span className="chevron">
+        <span className="text-text opacity-40">
           <ChevronRightIcon size={13} />
         </span>
       )}

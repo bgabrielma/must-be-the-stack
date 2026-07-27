@@ -41,7 +41,7 @@ function LoginPage() {
   }
 
   return (
-    <div className="page">
+    <div className="flex min-h-[100svh] flex-col px-5 pt-6 pb-5">
       {created && (
         <Banner
           variant="success"
@@ -50,8 +50,8 @@ function LoginPage() {
           description="Log in to continue your Journey."
         />
       )}
-      <h1 className="h1">Log in</h1>
-      <form className="form-stack" onSubmit={handleSubmit}>
+      <h1 className="font-heading text-2xl leading-[1.15] font-bold tracking-[-0.3px] text-text-h">Log in</h1>
+      <form className="mt-3 flex flex-col gap-4" onSubmit={handleSubmit}>
         <Field
           label="Email"
           id="login-email"
@@ -73,7 +73,7 @@ function LoginPage() {
           Log in
         </Button>
       </form>
-      <Link to="/signup" className="link-muted">
+      <Link to="/signup" className="mt-4 block text-center text-[13px] text-accent no-underline">
         Need an account? Sign up
       </Link>
     </div>

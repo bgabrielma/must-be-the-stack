@@ -31,11 +31,15 @@ function SignupPage() {
   }
 
   return (
-    <div className="page">
-      <p className="eyebrow">Get started</p>
-      <h1 className="h1">Create your account</h1>
-      <p className="sub">Start mastering one concept at a time.</p>
-      <form className="form-stack" onSubmit={handleSubmit}>
+    <div className="flex min-h-[100svh] flex-col px-5 pt-6 pb-5">
+      <p className="mb-1 font-heading text-[11px] font-semibold tracking-[0.06em] text-accent uppercase">
+        Get started
+      </p>
+      <h1 className="font-heading text-2xl leading-[1.15] font-bold tracking-[-0.3px] text-text-h">
+        Create your account
+      </h1>
+      <p className="mt-1.5 text-[13px]">Start mastering one concept at a time.</p>
+      <form className="mt-3 flex flex-col gap-4" onSubmit={handleSubmit}>
         <Field
           label="Email"
           id="signup-email"
@@ -57,7 +61,7 @@ function SignupPage() {
           Create account
         </Button>
       </form>
-      <Link to="/login" className="link-muted">
+      <Link to="/login" className="mt-4 block text-center text-[13px] text-accent no-underline">
         Already have an account? Log in
       </Link>
     </div>
