@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
-import { LockedStackMark } from "../components/icons";
+import { LockedStackMark, EntryIllustration } from "../components/icons";
 import { buttonClasses } from "../components/Button";
 import { MutedLink } from "../components/MutedLink";
 
@@ -16,6 +16,9 @@ function Entry() {
       <div className="mx-auto mb-4 flex flex-col items-center gap-2">
         <LockedStackMark size={44} />
         <span className="font-heading text-sm font-bold text-text-h">must-be-the-stack</span>
+      </div>
+      <div className="mb-3 flex justify-center">
+        <EntryIllustration />
       </div>
       <h1 className="my-2 text-center font-heading text-[28px] leading-[1.2] font-bold tracking-[-0.4px] text-text-h">
         {t("entry.title")}

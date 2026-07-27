@@ -29,6 +29,8 @@ function JourneyPage() {
 
     case "ready": {
       const { journey, activeSubject, onSelectSubject } = state;
+      // Only the Subject right after the active one needs the unlock explanation.
+      const nextLockedSubjectId = journey.subjects.find((subject) => subject.status === "locked")?.id;
 
       return (
         <div className="flex min-h-[100svh] flex-col px-5 pt-6 pb-5">
@@ -52,7 +54,7 @@ function JourneyPage() {
 
               return (
                 <div key={subject.id}>
-                  {subject.status === "locked" && activeSubject && (
+                  {subject.id === nextLockedSubjectId && activeSubject && (
                     <LockTooltip
                       message={t("journeyDetail.lockMessage", {
                         count: activeSubject.lessonsCount,

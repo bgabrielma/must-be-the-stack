@@ -31,6 +31,8 @@ function SubjectPage() {
 
     case "ready": {
       const { subject, activeLesson, onSelectLesson } = state;
+      // Only the Lesson right after the active one needs the unlock explanation.
+      const nextLockedLessonId = subject.lessons.find((lesson) => lesson.status === "locked")?.id;
 
       return (
         <div className="flex min-h-[100svh] flex-col px-5 pt-6 pb-5">
@@ -56,7 +58,7 @@ function SubjectPage() {
 
               return (
                 <div key={lesson.id}>
-                  {lesson.status === "locked" && activeLesson && (
+                  {lesson.id === nextLockedLessonId && activeLesson && (
                     <LockTooltip message={t("subjectDetail.lockMessage", { lesson: activeLesson.title })} />
                   )}
                   <UnitCard
