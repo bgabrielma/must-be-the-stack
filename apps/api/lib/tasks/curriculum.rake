@@ -70,47 +70,17 @@ namespace :curriculum do
     puts "Seeded #{Journey.count} Journey(s), #{Subject.count} Subject(s), #{Lesson.count} Lesson(s)."
   end
 
-  # Fixture emails/passwords here are matched by literal string in the
-  # apps/e2e Playwright specs — see ADR-0013. Exercise/grading (issue #6)
-  # doesn't exist yet, so a real user has no in-app way to pass a Lesson;
-  # these Submission rows are the only way to reach the completed/in-progress
-  # screens until that ships.
-  desc "Seed curriculum content + fixture users/progress for Playwright E2E (test only)"
+  # Content only — no users, no progress. Users in the Playwright specs are
+  # created by the specs themselves via real signup/interaction, not seeded;
+  # see ADR-0013. (States no real interaction can reach yet, like a completed
+  # Journey, simply aren't covered until issue #6 ships a real way to pass a
+  # Lesson's Exercise — faking that via seeded Submission rows would test a
+  # state a real user can't actually be in.)
+  desc "Seed curriculum content for Playwright E2E (test only)"
   task seed_e2e: :environment do
     abort "curriculum:seed_e2e only runs in the test environment." unless Rails.env.test?
 
-    journey = CurriculumSeeder.seed!
-    subjects = journey.subjects.order(:position).to_a
-    completed_subject, in_progress_subject = subjects[0], subjects[1]
-
-    progress_user = User.find_or_create_by!(email: "e2e-in-progress@example.com") do |u|
-      u.password = "e2e-fixture-password"
-    end
-    UserJourney.find_or_create_by!(user: progress_user, journey: journey)
-    completed_subject.lessons.each do |lesson|
-      FactoryBot.create(:submission, user: progress_user, lesson: lesson, score: completed_subject.minimum_passing_score)
-    end
-    in_progress_subject.lessons.first(2).each do |lesson|
-      FactoryBot.create(:submission, user: progress_user, lesson: lesson, score: in_progress_subject.minimum_passing_score)
-    end
-
-    completed_user = User.find_or_create_by!(email: "e2e-completed@example.com") do |u|
-      u.password = "e2e-fixture-password"
-    end
-    UserJourney.find_or_create_by!(user: completed_user, journey: journey)
-    subjects.each do |subject|
-      subject.lessons.each do |lesson|
-        FactoryBot.create(:submission, user: completed_user, lesson: lesson, score: subject.minimum_passing_score)
-      end
-    end
-
-    # No progress needed — exists purely so the signup E2E test can provoke
-    # "Email has already been taken" against a real, live backend.
-    User.find_or_create_by!(email: "e2e-existing@example.com") do |u|
-      u.password = "e2e-fixture-password"
-    end
-
-    puts "Seeded E2E fixtures: #{Journey.count} Journey(s), #{Subject.count} Subject(s), " \
-         "#{Lesson.count} Lesson(s), #{User.count} User(s), #{Submission.count} Submission(s)."
+    CurriculumSeeder.seed!
+    puts "Seeded #{Journey.count} Journey(s), #{Subject.count} Subject(s), #{Lesson.count} Lesson(s)."
   end
 end
