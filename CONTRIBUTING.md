@@ -28,6 +28,14 @@ Within a test file, the `describe` block(s) come first; any local helper/mock fu
 
 This convention is enforced by code review, not CI.
 
+## Testing (apps/e2e)
+
+Playwright E2E tests are a PR-review artifact, not a regression gate — see [ADR-0013](docs/adr/0013-playwright-e2e-for-pr-review.md) for the full rationale. One spec file per flow in `flows.html` (e.g. `auth.spec.ts`, `curriculum.spec.ts`), each running its error-state tests before its happy-path test, real-stack throughout (no `page.route` stubbing). Assertions stay thin — enough to prove a screen loaded or an error message appeared, not a re-check of lock-state logic already covered by `apps/api`'s request specs and `apps/web`'s render-boundary tests.
+
+Every happy-path step takes an explicit `page.screenshot()` named for its position in the flow, matching `flows.html`'s own numbering, e.g. `01-entry.png`, `02-onboarding.png` — so a reviewer can jump straight to "the Subject list screen" in the uploaded CI artifact instead of scrubbing through video. Video capture is `on` (not `retain-on-failure`) for every spec, since the point is letting a reviewer see the real thing, not just diagnosing a failure.
+
+States with no in-app UI path yet (Home's in-progress/completed, `is-completed`/`is-active` Subject and Lesson cards) depend on the `curriculum:seed_e2e` rake task (`apps/api`) to seed real `Submission` rows for a fixture user before the suite runs — see the task's own comments for what it seeds.
+
 ## Controllers (apps/api)
 
 Never read `params[...]` directly inside an action body. Extract every param a controller uses through a private method at the bottom of the class — `params.require(:id)` for a required route param, `params.permit(...)` for a request body — even when the value isn't used for mass assignment. `SignupsController#user_params` is the reference example; `JourneysController#journey_id`/`#pagination_params` and `SessionsController#login_params` follow the same shape. This keeps what a controller accepts legible from one place and testable in isolation, and matches Rails' own strong-parameters convention rather than special-casing "just an id."

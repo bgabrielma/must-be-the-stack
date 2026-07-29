@@ -67,6 +67,7 @@ function SubjectPage() {
                     meta={meta}
                     icon={icon}
                     onClick={lesson.status === "locked" ? undefined : () => onSelectLesson(lesson)}
+                    testId={`lesson-${lesson.id}`}
                   />
                 </div>
               );

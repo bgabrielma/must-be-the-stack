@@ -56,7 +56,11 @@ function Onboarding() {
         ))}
       </div>
       <div className="mt-auto pt-6">
-        <Link to="/signup" className={buttonClasses({ variant: "primary", block: true })}>
+        <Link
+          to="/signup"
+          className={buttonClasses({ variant: "primary", block: true })}
+          data-testid="onboarding-continue"
+        >
           {t("onboarding.continue")}
         </Link>
       </div>
