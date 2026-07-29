@@ -27,7 +27,11 @@ function Entry() {
       </h1>
       <p className="mb-6 text-center text-[0.78125rem]">{t("entry.subtitle")}</p>
       <div className="mt-auto pt-6">
-        <Link to="/onboarding" className={buttonClasses({ variant: "primary", block: true })}>
+        <Link
+          to="/onboarding"
+          className={buttonClasses({ variant: "primary", block: true })}
+          data-testid="entry-start-journey"
+        >
           {t("entry.startJourney")}
         </Link>
         <MutedLink to="/login">{t("entry.haveAccount")}</MutedLink>

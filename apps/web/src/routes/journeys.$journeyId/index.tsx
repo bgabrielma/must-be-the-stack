@@ -69,6 +69,7 @@ function JourneyPage() {
                     meta={meta}
                     icon={icon}
                     onClick={subject.status === "locked" ? undefined : () => onSelectSubject(subject)}
+                    testId={`subject-${subject.id}`}
                   />
                 </div>
               );
