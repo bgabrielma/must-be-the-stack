@@ -86,6 +86,7 @@ namespace :curriculum do
     progress_user = User.find_or_create_by!(email: "e2e-in-progress@example.com") do |u|
       u.password = "e2e-fixture-password"
     end
+    UserJourney.find_or_create_by!(user: progress_user, journey: journey)
     completed_subject.lessons.each do |lesson|
       FactoryBot.create(:submission, user: progress_user, lesson: lesson, score: completed_subject.minimum_passing_score)
     end
@@ -96,6 +97,7 @@ namespace :curriculum do
     completed_user = User.find_or_create_by!(email: "e2e-completed@example.com") do |u|
       u.password = "e2e-fixture-password"
     end
+    UserJourney.find_or_create_by!(user: completed_user, journey: journey)
     subjects.each do |subject|
       subject.lessons.each do |lesson|
         FactoryBot.create(:submission, user: completed_user, lesson: lesson, score: subject.minimum_passing_score)
