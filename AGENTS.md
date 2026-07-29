@@ -39,6 +39,16 @@ Each ticket is implemented on its own branch and merged via its own PR — never
 
 Every ticket is implemented in its own git worktree, not the main checkout — see [CONTRIBUTING.md's "Parallel agent work"](CONTRIBUTING.md#parallel-agent-work) for the worktree location/naming and setup convention.
 
+## Addressing code review feedback
+
+When resolving PR review comments, don't stop at fixing the flagged instance. For each comment, ask whether it names a *pattern* (a naming convention, a structural rule, a "do this everywhere" ask) rather than a one-off mistake. If it does:
+
+1. Fix the flagged instance.
+2. Sweep the rest of the touched app for the same violation and fix those too (scoped to what the ticket/PR actually touches — don't rewrite unrelated pre-existing code beyond a small, safe, same-convention fix).
+3. Encode the rule in `CONTRIBUTING.md` (code-level standards) or here in `AGENTS.md` (process), whichever already hosts that kind of rule, so the same comment never has to be made twice.
+
+Skip step 3 for genuinely one-off feedback (a typo, a single wrong value) that doesn't generalize.
+
 ## Design
 
 Any ticket with user-facing UI is designed in the **Claude Design** system project (`must-be-the-stack`, via `/design-sync`/`DesignSync`) before `/implement` starts on it — step 4 in the Feature workflow above, between `/to-tickets` and `/implement`.

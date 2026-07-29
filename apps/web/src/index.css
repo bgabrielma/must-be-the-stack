@@ -1,111 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", system-ui, "Segoe UI", Roboto, sans-serif;
+  --font-heading: "DM Sans", sans-serif;
+
+  /* Card-style containers (Banner, UnitCard, the onboarding step list) share
+     this radius — not part of Tailwind's default scale, so it's tokenized
+     here instead of repeating the arbitrary `rounded-[10px]` in each one. */
+  --radius-card: 0.625rem;
+
+  --color-bg: #fff;
+  --color-text: #6b6375;
+  --color-text-h: #08060d;
+  --color-text-muted: #a8a5ad;
+  --color-border: #e5e4e7;
+  --color-surface-muted: #f4f3ec;
+  --color-surface-inverse: #3a3542;
+
+  --color-accent: #2563eb;
+  --color-accent-bg: rgb(37 99 235 / 0.1);
+  --color-accent-border: rgb(37 99 235 / 0.5);
+
+  --color-success: #1a9c6b;
+  --color-success-bg: rgb(26 156 107 / 0.1);
+
+  --color-danger: #dc2626;
+  --color-danger-bg: rgb(220 38 38 / 0.08);
+  --color-danger-border: rgb(220 38 38 / 0.4);
+}
+
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
-
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
   color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
+    --color-bg: #16171d;
+    --color-text: #a8a5ad;
+    --color-text-h: #f4f3ec;
+    --color-border: #33313a;
+    --color-surface-muted: #201f26;
+    --color-surface-inverse: #f4f3ec;
+    --color-accent: #6ea1ff;
+    --color-accent-bg: rgb(110 161 255 / 0.15);
+    --color-accent-border: rgb(110 161 255 / 0.5);
   }
 }
 
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
+html,
+body {
+  background: var(--color-bg);
 }
 
 body {
   margin: 0;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 145%;
+  color: var(--color-text);
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+#root {
+  min-height: 100svh;
+  max-width: 30rem;
+  margin: 0 auto;
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
+/* Layered explicitly so Tailwind's `@layer utilities` (e.g. `text-white` on a
+   buttonClasses-styled `<Link>`) can still override this — an unlayered rule
+   here would beat any utility class regardless of specificity. */
+@layer base {
+  a {
+    color: inherit;
   }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
-}
-
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
-}
-
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
 }

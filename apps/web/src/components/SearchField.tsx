@@ -1,0 +1,24 @@
+import type { InputHTMLAttributes } from "react";
+import { SearchIcon } from "./icons";
+
+interface SearchFieldProps extends InputHTMLAttributes<HTMLInputElement> {
+  wrapperClassName?: string;
+  testId?: string;
+}
+
+export function SearchField({ wrapperClassName, testId = "search-field", ...props }: SearchFieldProps) {
+  const wrapperClasses = ["relative mb-3", wrapperClassName ?? ""].filter(Boolean).join(" ");
+
+  return (
+    <div className={wrapperClasses} data-testid={testId}>
+      <span className="pointer-events-none absolute top-1/2 left-3 -translate-y-1/2 text-text-muted">
+        <SearchIcon size={15} />
+      </span>
+      <input
+        type="text"
+        className="w-full rounded-lg border border-border bg-bg py-2.5 pr-3 pl-9 text-sm text-text-h focus:border-accent focus:ring-[3px] focus:ring-accent-bg focus:outline-none"
+        {...props}
+      />
+    </div>
+  );
+}
