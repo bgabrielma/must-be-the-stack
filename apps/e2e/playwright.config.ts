@@ -34,11 +34,16 @@ export default defineConfig({
       },
     },
     {
-      command: "pnpm dev",
+      // A production build + `vite preview`, not the dev server: dev mode's
+      // on-demand per-route transform pipeline adds real, avoidable latency
+      // under CI's constrained CPU (shared with Rails + Postgres + Chromium),
+      // and a built bundle is also more faithful to what a real user gets
+      // (this suite's whole point per ADR-0013 is reviewing the real thing).
+      command: "pnpm exec vite build && pnpm exec vite preview --port 5173 --strictPort",
       cwd: "../web",
       url: "http://localhost:5173",
       reuseExistingServer: !process.env.CI,
-      timeout: 30_000,
+      timeout: 60_000,
       env: {
         VITE_API_URL: "http://localhost:3000",
       },
