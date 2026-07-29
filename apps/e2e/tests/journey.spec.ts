@@ -51,7 +51,10 @@ test.describe("Journey", () => {
 
     await page.getByTestId("unit-card").first().click();
     await expect(page).toHaveURL(/\/journeys\//);
-    await expect(page.getByText("Caching Fundamentals")).toBeVisible();
+    // Not "Caching Fundamentals": the next locked Subject's LockTooltip names
+    // the currently-active one in its unlock message ("Finish all 2 lessons
+    // in Caching Fundamentals..."), so that text matches twice on this page.
+    await expect(page.getByRole("heading", { name: "Software Design" })).toBeVisible();
     await page.screenshot({ path: "screenshots/journey/02-subject-list.png" });
 
     await page.locator('[data-testid^="subject-"]:not(:disabled)').first().click();
