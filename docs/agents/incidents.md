@@ -2,9 +2,11 @@
 
 Every bug investigation produces a write-up in `docs/incident/`, committed alongside the fix.
 
+Bugs are diagnosed with the `diagnosing-bugs` skill (one of the Matt Pocock skills; invoked by asking to "diagnose"). This document covers what it leaves behind, not how to run it.
+
 ## Why
 
-`/diagnosing-bugs`'s Phase 6 post-mortem puts the winning hypothesis in the commit message and then asks "what would have prevented this?". Neither answer survives in a findable place. A commit message is only found by someone who already knows which commit to look at, and the discarded hypotheses — often the most expensive part of the investigation — are lost entirely.
+The skill's Phase 6 post-mortem puts the winning hypothesis in the commit message and then asks "what would have prevented this?". Neither answer survives in a findable place. A commit message is only found by someone who already knows which commit to look at, and the discarded hypotheses — often the most expensive part of the investigation — are lost entirely.
 
 The write-up exists so the next person hitting the same symptom finds the previous investigation instead of repeating it, including the paths that turned out to be wrong.
 

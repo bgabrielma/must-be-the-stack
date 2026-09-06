@@ -18,9 +18,11 @@ Default five canonical triage labels (`needs-triage`, `needs-info`, `ready-for-a
 
 Single-context layout — `CONTEXT.md` + `docs/adr/` at the repo root. See `docs/agents/domain.md`.
 
-### Incident write-ups
+### Bug investigations
 
-Every bug investigation that took real diagnostic work produces `docs/incident/<issue-number>-<kebab-case-issue-title>.md`, committed with the fix — recording the symptom, what was ruled out, the root cause, **every option considered including the rejected ones and why**, the outcome, and what would have prevented it. This extends `/diagnosing-bugs`'s Phase 6 post-mortem, which otherwise leaves the winning hypothesis in a commit message and discards the rest of the investigation. See `docs/agents/incidents.md`; `docs/incident/5-curriculum-browse-gating.md` is the reference example.
+Bugs are diagnosed with the `diagnosing-bugs` skill (invoked by asking to "diagnose" — it is one of the Matt Pocock skills, alongside the feature-workflow ones below), never by guessing at a fix. Its phases are mandatory: build a reproduction loop first, minimise, hypothesise, instrument, then fix with a regression test.
+
+Every investigation that took real diagnostic work then produces `docs/incident/<issue-number>-<kebab-case-issue-title>.md`, committed with the fix — recording the symptom, what was ruled out, the root cause, **every option considered including the rejected ones and why**, the outcome, and what would have prevented it. This extends the skill's Phase 6 post-mortem, which otherwise leaves the winning hypothesis in a commit message and discards the rest of the investigation. See `docs/agents/incidents.md`; `docs/incident/5-curriculum-browse-gating.md` is the reference example.
 
 ## Dev environment
 
