@@ -1,69 +1,67 @@
+import { z } from "zod";
 import { apiFetch } from "./httpClient";
 import {
   camelizeAttributes,
   findManyIncluded,
+  logParseIssues,
+  parseJsonApiDocument,
+  JsonApiParseError,
   type JsonApiDocument,
   type JsonApiResource,
 } from "../helpers/jsonApi";
 
-export type JourneyStatus = "not_started" | "in_progress" | "completed";
-export type LockStatus = "locked" | "active" | "completed";
+export const journeyStatusSchema = z.enum(["not_started", "in_progress", "completed"]);
+export type JourneyStatus = z.infer<typeof journeyStatusSchema>;
 
-interface JourneyAttributes {
-  title: string;
-  description: string | null;
-  status: JourneyStatus;
-  subjectsCount: number;
-  completedSubjectsCount: number;
-}
+export const lockStatusSchema = z.enum(["locked", "active", "completed"]);
+export type LockStatus = z.infer<typeof lockStatusSchema>;
 
-interface SubjectAttributes {
-  title: string;
-  position: number;
-  minimumPassingScore: number;
-  status: LockStatus;
-  lessonsCount: number;
-  completedLessonsCount: number;
-  journeyTitle: string;
-}
+const journeyAttributesSchema = z.object({
+  title: z.string(),
+  description: z.string().nullable(),
+  status: journeyStatusSchema,
+  subjectsCount: z.number(),
+  completedSubjectsCount: z.number(),
+});
 
-interface LessonAttributes {
-  title: string;
-  position: number;
-  status: LockStatus;
+const subjectAttributesSchema = z.object({
+  title: z.string(),
+  position: z.number(),
+  minimumPassingScore: z.number(),
+  status: lockStatusSchema,
+  lessonsCount: z.number(),
+  completedLessonsCount: z.number(),
+  journeyTitle: z.string(),
+});
+
+const lessonAttributesSchema = z.object({
+  title: z.string(),
+  position: z.number(),
+  status: lockStatusSchema,
   // The passing Submission's score (0-10), only present once the Lesson is
-  // completed — see LessonSerializer#score. null otherwise.
-  score: number | null;
-}
+  // completed — see LessonSerializer#score. Absent or null otherwise.
+  score: z.number().nullable().optional(),
+});
 
-interface LessonDetailAttributes extends LessonAttributes {
-  content: string;
-  subjectTitle: string;
-}
+const lessonDetailAttributesSchema = lessonAttributesSchema.extend({
+  content: z.string(),
+  subjectTitle: z.string(),
+});
 
-export interface Journey extends JourneyAttributes {
-  id: string;
-}
+const journeySchema = journeyAttributesSchema.extend({ id: z.string() });
+export type Journey = z.infer<typeof journeySchema>;
 
-export interface Subject extends SubjectAttributes {
-  id: string;
-}
+const subjectSchema = subjectAttributesSchema.extend({ id: z.string() });
+export type Subject = z.infer<typeof subjectSchema>;
 
-export interface Lesson extends LessonAttributes {
-  id: string;
-}
+const lessonSchema = lessonAttributesSchema.extend({ id: z.string() });
+export type Lesson = z.infer<typeof lessonSchema>;
 
-export interface JourneyDetail extends Journey {
-  subjects: Subject[];
-}
+export type JourneyDetail = Journey & { subjects: Subject[] };
+export type SubjectDetail = Subject & { lessons: Lesson[] };
 
-export interface SubjectDetail extends Subject {
-  lessons: Lesson[];
-}
-
-export interface LessonDetail extends LessonDetailAttributes {
-  id: string;
-}
+const lessonDetailSchema = lessonDetailAttributesSchema.extend({ id: z.string() });
+export type LessonDetail = z.infer<typeof lessonDetailSchema>;
 
 // Subject.minimumPassingScore (and a Submission's score) are on a 0-10 scale;
 // screens display it as a percentage.
@@ -71,49 +69,59 @@ export function toPercent(scoreOutOfTen: number): number {
   return scoreOutOfTen * 10;
 }
 
-// `resource.attributes` is deliberately typed as `unknown` here rather than
-// `T`: JSON:API attribute payloads are only known-shaped by our own say-so
-// (they're parsed network JSON), and TS won't structurally assign a concrete
-// interface to/from a generic bag without an index signature. This is the one
-// place that trust is asserted, via `camelizeAttributes`'s internal cast.
-function toResource<T>(resource: { id: string; attributes: unknown }): T & { id: string } {
-  return { id: resource.id, ...camelizeAttributes<T>(resource.attributes as Record<string, unknown>) };
+function toResource<Attributes>(
+  resource: JsonApiResource,
+  schema: z.ZodType<Attributes>,
+): Attributes & { id: string } {
+  const result = schema.safeParse(camelizeAttributes(resource.attributes));
+  if (!result.success) {
+    logParseIssues(`${resource.type} attributes`, result.error);
+    throw new JsonApiParseError(`Malformed ${resource.type} payload from the API`);
+  }
+  return { id: resource.id, ...result.data };
+}
+
+function singleResource(document: JsonApiDocument): JsonApiResource {
+  if (Array.isArray(document.data)) {
+    throw new JsonApiParseError("Expected a single JSON:API resource, got a collection");
+  }
+  return document.data;
 }
 
 export async function fetchJourneys(): Promise<Journey[]> {
-  const document = await apiFetch<JsonApiDocument<JourneyAttributes>>("/journeys");
+  const document = parseJsonApiDocument(await apiFetch<unknown>("/journeys"));
   const resources = Array.isArray(document.data) ? document.data : [ document.data ];
-  return resources.map((resource) => toResource<JourneyAttributes>(resource));
+  return resources.map((resource) => toResource(resource, journeyAttributesSchema));
 }
 
 export async function startJourney(id: string): Promise<Journey> {
-  const document = await apiFetch<JsonApiDocument<JourneyAttributes>>(`/journeys/${id}/start`, {
-    method: "POST",
-  });
-  return toResource<JourneyAttributes>(document.data as JsonApiResource<JourneyAttributes>);
+  const document = parseJsonApiDocument(
+    await apiFetch<unknown>(`/journeys/${id}/start`, { method: "POST" }),
+  );
+  return toResource(singleResource(document), journeyAttributesSchema);
 }
 
 export async function fetchJourney(id: string): Promise<JourneyDetail> {
-  const document = await apiFetch<JsonApiDocument<JourneyAttributes>>(`/journeys/${id}`);
-  const resource = document.data as JsonApiResource<JourneyAttributes>;
+  const document = parseJsonApiDocument(await apiFetch<unknown>(`/journeys/${id}`));
+  const resource = singleResource(document);
   const subjects = findManyIncluded(document, resource, "subjects")
-    .map((included) => toResource<SubjectAttributes>(included))
+    .map((included) => toResource(included, subjectAttributesSchema))
     .sort((a, b) => a.position - b.position);
 
-  return { ...toResource<JourneyAttributes>(resource), subjects };
+  return { ...toResource(resource, journeyAttributesSchema), subjects };
 }
 
 export async function fetchSubject(id: string): Promise<SubjectDetail> {
-  const document = await apiFetch<JsonApiDocument<SubjectAttributes>>(`/subjects/${id}`);
-  const resource = document.data as JsonApiResource<SubjectAttributes>;
+  const document = parseJsonApiDocument(await apiFetch<unknown>(`/subjects/${id}`));
+  const resource = singleResource(document);
   const lessons = findManyIncluded(document, resource, "lessons")
-    .map((included) => toResource<LessonAttributes>(included))
+    .map((included) => toResource(included, lessonAttributesSchema))
     .sort((a, b) => a.position - b.position);
 
-  return { ...toResource<SubjectAttributes>(resource), lessons };
+  return { ...toResource(resource, subjectAttributesSchema), lessons };
 }
 
 export async function fetchLesson(id: string): Promise<LessonDetail> {
-  const document = await apiFetch<JsonApiDocument<LessonDetailAttributes>>(`/lessons/${id}`);
-  return toResource<LessonDetailAttributes>(document.data as JsonApiResource<LessonDetailAttributes>);
+  const document = parseJsonApiDocument(await apiFetch<unknown>(`/lessons/${id}`));
+  return toResource(singleResource(document), lessonDetailAttributesSchema);
 }

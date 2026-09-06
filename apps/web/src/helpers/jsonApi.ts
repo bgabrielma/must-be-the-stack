@@ -3,49 +3,71 @@
 // (ADR-0008's consequences call out arbitrary client-driven includes as an N+1
 // risk), so these helpers only ever resolve `included` — they never request it.
 
-export interface JsonApiResourceIdentifier {
-  id: string;
-  type: string;
+import { z } from "zod";
+
+export const jsonApiResourceIdentifierSchema = z.object({
+  id: z.string(),
+  type: z.string(),
+});
+
+const jsonApiRelationshipsSchema = z.record(
+  z.string(),
+  z.object({
+    data: z.union([
+      jsonApiResourceIdentifierSchema,
+      z.array(jsonApiResourceIdentifierSchema),
+      z.null(),
+    ]),
+  }),
+).optional();
+
+export const jsonApiResourceSchema = z.object({
+  id: z.string(),
+  type: z.string(),
+  attributes: z.record(z.string(), z.unknown()),
+  relationships: jsonApiRelationshipsSchema,
+});
+
+export const jsonApiDocumentSchema = z.object({
+  data: z.union([jsonApiResourceSchema, z.array(jsonApiResourceSchema)]),
+  included: z.array(jsonApiResourceSchema).optional(),
+});
+
+export type JsonApiResourceIdentifier = z.infer<typeof jsonApiResourceIdentifierSchema>;
+export type JsonApiResource = z.infer<typeof jsonApiResourceSchema>;
+export type JsonApiDocument = z.infer<typeof jsonApiDocumentSchema>;
+
+export class JsonApiParseError extends Error {}
+
+export function parseJsonApiDocument(payload: unknown): JsonApiDocument {
+  const result = jsonApiDocumentSchema.safeParse(payload);
+  if (!result.success) {
+    logParseIssues("JSON:API envelope", result.error);
+    throw new JsonApiParseError("Malformed API response envelope");
+  }
+  return result.data;
 }
 
-export interface JsonApiResource<Attributes = Record<string, unknown>> {
-  id: string;
-  type: string;
-  attributes: Attributes;
-  relationships?: Record<
-    string,
-    { data: JsonApiResourceIdentifier | JsonApiResourceIdentifier[] | null }
-  >;
-}
-
-export interface JsonApiDocument<Attributes = Record<string, unknown>> {
-  data: JsonApiResource<Attributes> | JsonApiResource<Attributes>[];
-  included?: JsonApiResource[];
-}
-
-// Only ever needs `included`, so it's typed structurally rather than against
-// the full generic JsonApiDocument<Attributes> — that generic doesn't vary
-// covariantly against Record<string, unknown> for concrete Attributes shapes.
-interface HasIncluded {
-  included?: JsonApiResource[];
-}
-
-interface HasRelationships {
-  relationships?: JsonApiResource["relationships"];
+export function logParseIssues(label: string, error: z.ZodError): void {
+  if (!import.meta.env.DEV) return;
+  console.error(
+    `[${label}] failed validation:`,
+    error.issues.map((issue) => `${issue.path.join(".") || "(root)"}: ${issue.message}`),
+  );
 }
 
 function camelize(key: string): string {
   return key.replace(/-([a-z0-9])/g, (_, char: string) => char.toUpperCase());
 }
 
-export function camelizeAttributes<T>(attributes: Record<string, unknown>): T {
+export function camelizeAttributes(attributes: Record<string, unknown>): Record<string, unknown> {
   return Object.fromEntries(
     Object.entries(attributes).map(([key, value]) => [camelize(key), value]),
-  ) as T;
+  );
 }
 
 export function findIncluded(
-  document: HasIncluded,
+  document: JsonApiDocument,
   ref: JsonApiResourceIdentifier | null | undefined,
 ): JsonApiResource | undefined {
   if (!ref) return undefined;
@@ -55,8 +77,8 @@ export function findIncluded(
 }
 
 export function findManyIncluded(
-  document: HasIncluded,
-  resource: HasRelationships,
+  document: JsonApiDocument,
+  resource: JsonApiResource,
   relationshipName: string,
 ): JsonApiResource[] {
   const data = resource.relationships?.[relationshipName]?.data;

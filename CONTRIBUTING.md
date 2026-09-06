@@ -104,6 +104,16 @@ Styling uses [Tailwind CSS v4](https://tailwindcss.com) (CSS-first config via `@
 
 This convention is enforced by code review, not CI.
 
+## API response parsing (apps/web)
+
+API responses are parsed through a [zod](https://zod.dev) schema; never cast network JSON straight into a TS interface — see [ADR-0014](docs/adr/0014-zod-for-api-response-validation-in-apps-web.md). `src/helpers/jsonApi.ts` validates the JSON:API envelope itself (`jsonApiDocumentSchema`); `src/lib/curriculum.ts` validates each resource's business attributes with its own schema (e.g. `journeyAttributesSchema`) after `camelizeAttributes` converts the API's dasherized keys to camelCase. Derive the exported TS type from the schema via `z.infer` (see `Journey`, `Subject`, `Lesson`, etc. in `curriculum.ts`) rather than maintaining a hand-written interface alongside it. A parse failure throws `JsonApiParseError`, which the route's existing `loading`/`error`/`ready` state (via TanStack Query's `error`) already surfaces as a clean error screen; in development, the failing field's path and reason are logged via `logParseIssues`, never the raw response body.
+
+This convention is enforced by code review, not CI.
+
+## Dev container services
+
+`apps/api` (Rails, port 3000) and `apps/web` (Vite, port 5173) start automatically — `.devcontainer/start-services.sh` runs on container start and on every dev-tool attach (`postStartCommand`/`postAttachCommand` in `devcontainer.json`), skipping the start if a service is already running (pidfiles in `/tmp/dev-services`). Logs land in `/tmp/dev-services/api.log` and `/tmp/dev-services/web.log`. To restart one after a crash or a dependency change, kill its pid (`kill $(cat /tmp/dev-services/api.pid)`) and re-run `.devcontainer/start-services.sh`, or just run `bin/dev` / `pnpm dev` by hand in that app's directory.
+
 ## Parallel agent work
 
 Every ticket — solo or parallel — is implemented in its own git worktree, not in the main checkout. This applies even when only one agent is working: it keeps the main checkout clean and means running a second ticket in parallel later needs no special-casing.
