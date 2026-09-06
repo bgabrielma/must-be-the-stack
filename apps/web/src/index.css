@@ -31,21 +31,7 @@
 }
 
 :root {
-  color-scheme: light dark;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #16171d;
-    --color-text: #a8a5ad;
-    --color-text-h: #f4f3ec;
-    --color-border: #33313a;
-    --color-surface-muted: #201f26;
-    --color-surface-inverse: #f4f3ec;
-    --color-accent: #6ea1ff;
-    --color-accent-bg: rgb(110 161 255 / 0.15);
-    --color-accent-border: rgb(110 161 255 / 0.5);
-  }
+  color-scheme: light;
 }
 
 html,
