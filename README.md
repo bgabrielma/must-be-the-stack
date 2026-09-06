@@ -21,6 +21,8 @@ Architectural decisions and their rationale live in [docs/adr](docs/adr).
 
 All development runs inside the project's dev container (`.devcontainer/`) — never on the host directly. Open/rebuild via "Dev Containers: Reopen in Container," then run `claude` from the container's integrated terminal. Services: `app` (Ruby, Node, gh CLI) and `postgres`, orchestrated by `.devcontainer/docker-compose.yml`.
 
+`apps/api` (port 3000) and `apps/web` (port 5173) start automatically on container start — see [CONTRIBUTING.md's "Dev container services"](CONTRIBUTING.md#dev-container-services) for log locations and how to restart one by hand.
+
 ## Working with this repo
 
 See [AGENTS.md](AGENTS.md) for the agent/contributor workflow: issue tracking, triage labels, domain docs, and the feature workflow (`/grill-with-docs` → `/to-spec` → `/to-tickets` → `/implement` → `/code-review`).

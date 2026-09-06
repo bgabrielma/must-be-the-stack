@@ -112,7 +112,7 @@ This convention is enforced by code review, not CI.
 
 ## Dev container services
 
-`apps/api` (Rails, port 3000) and `apps/web` (Vite, port 5173) start automatically — `.devcontainer/start-services.sh` runs on container start and on every dev-tool attach (`postStartCommand`/`postAttachCommand` in `devcontainer.json`), skipping the start if a service is already running (pidfiles in `/tmp/dev-services`). Logs land in `/tmp/dev-services/api.log` and `/tmp/dev-services/web.log`. To restart one after a crash or a dependency change, kill its pid (`kill $(cat /tmp/dev-services/api.pid)`) and re-run `.devcontainer/start-services.sh`, or just run `bin/dev` / `pnpm dev` by hand in that app's directory.
+`apps/api` (Rails, port 3000) and `apps/web` (Vite, port 5173) start automatically — `.devcontainer/start-services.sh` runs on container start and on every dev-tool attach (`postStartCommand`/`postAttachCommand` in `devcontainer.json`), skipping the start if a service is already running (checked by pidfile in `/tmp/dev-services` and by whether the port is already served, so it's also safe against a server started some other way). The API start also waits for Postgres to accept connections, runs `bin/setup --skip-server` (bundle install, `db:prepare`), and seeds curriculum content (`curriculum:seed`, idempotent) before booting `bin/dev`. Logs land in `/tmp/dev-services/api.log` and `/tmp/dev-services/web.log`. To restart one after a crash or a dependency change, kill its pid (`kill $(cat /tmp/dev-services/api.pid)`) and re-run `.devcontainer/start-services.sh`, or just run `bin/dev` / `pnpm dev` by hand in that app's directory.
 
 ## Parallel agent work
 
