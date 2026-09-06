@@ -2,6 +2,7 @@ import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { useTranslation } from "react-i18next";
 import { signup } from "../lib/auth";
+import { requireGuest } from "../lib/routeGuards";
 import { ApiError } from "../lib/ApiError";
 import { Field } from "../components/Field";
 import { Button } from "../components/Button";
@@ -9,6 +10,7 @@ import { PageHeading } from "../components/PageHeading";
 import { MutedLink } from "../components/MutedLink";
 
 export const Route = createFileRoute("/signup")({
+  beforeLoad: requireGuest,
   component: SignupPage,
 });
 

@@ -88,5 +88,8 @@
   },
   "lockTooltip": {
     "label": "Locked"
+  },
+  "pageHeading": {
+    "back": "Back"
   }
 }

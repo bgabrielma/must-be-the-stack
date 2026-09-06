@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, useRouter } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
 import { useJourney } from "./useJourney";
 import { requireAuth } from "../../lib/routeGuards";
@@ -18,6 +18,7 @@ export const Route = createFileRoute("/journeys/$journeyId/")({
 
 function JourneyPage() {
   const { t } = useTranslation();
+  const router = useRouter();
   const { journeyId } = Route.useParams();
   const state = useJourney(journeyId);
 
@@ -34,7 +35,11 @@ function JourneyPage() {
 
       return (
         <div className="flex min-h-[100svh] flex-col px-5 pt-6 pb-5">
-          <PageHeading eyebrow={t("journeyDetail.eyebrow")} title={journey.title} />
+          <PageHeading
+            eyebrow={t("journeyDetail.eyebrow")}
+            title={journey.title}
+            onBack={() => router.history.back()}
+          />
           <p className="mb-3 text-xs">
             {t("journeyDetail.subjectsCompleted", {
               completed: journey.completedSubjectsCount,

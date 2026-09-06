@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, useRouter } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
 import { useLesson } from "./useLesson";
 import { requireAuth } from "../../lib/routeGuards";
@@ -14,6 +14,7 @@ export const Route = createFileRoute("/lessons/$lessonId/")({
 
 function LessonPage() {
   const { t } = useTranslation();
+  const router = useRouter();
   const { lessonId } = Route.useParams();
   const state = useLesson(lessonId);
 
@@ -32,7 +33,7 @@ function LessonPage() {
           <p className="mb-2 text-xs opacity-70">
             {t("lessonDetail.breadcrumb", { subjectTitle: lesson.subjectTitle, position: lesson.position })}
           </p>
-          <PageHeading title={lesson.title} />
+          <PageHeading title={lesson.title} onBack={() => router.history.back()} />
           <div className="text-sm leading-[1.6]">
             {lesson.content.split("\n\n").map((paragraph) => (
               <p key={paragraph} className="mb-4">

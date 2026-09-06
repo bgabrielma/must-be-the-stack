@@ -40,6 +40,20 @@ describe("Login route (/login)", () => {
     );
   });
 
+  it("redirects an already-authenticated visitor to /home", async () => {
+    setAccessToken("test-token");
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async () => ({ ok: true, status: 200, json: async () => ({ data: [] }) })),
+    );
+
+    renderRouteTree("/login?created=true");
+
+    await waitFor(() =>
+      expect(screen.getByText("No Journeys are available yet.")).toBeInTheDocument(),
+    );
+  });
+
   it("shows an error on invalid credentials", async () => {
     vi.stubGlobal(
       "fetch",

@@ -2,6 +2,7 @@ import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { useTranslation } from "react-i18next";
 import { login } from "../lib/auth";
+import { requireGuest } from "../lib/routeGuards";
 import { ApiError } from "../lib/ApiError";
 import { CheckIcon, BrandMark } from "../components/icons";
 import { Banner } from "../components/Banner";
@@ -18,6 +19,7 @@ export const Route = createFileRoute("/login")({
   validateSearch: (search: Record<string, unknown>): LoginSearch => ({
     created: search.created === true || search.created === "true" ? true : undefined,
   }),
+  beforeLoad: requireGuest,
   component: LoginPage,
 });
 

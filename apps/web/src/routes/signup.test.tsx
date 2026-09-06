@@ -1,9 +1,12 @@
-import { describe, it, expect, vi, beforeEach } from "vitest";
+import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { renderRouteTree } from "../test/renderRoute";
+import { setAccessToken } from "../lib/accessToken";
 
 describe("Signup route (/signup)", () => {
+  afterEach(() => setAccessToken(null));
+
   beforeEach(() => {
     vi.stubGlobal(
       "fetch",
@@ -53,6 +56,20 @@ describe("Signup route (/signup)", () => {
       expect(screen.getByText("Passwords do not match")).toBeInTheDocument(),
     );
     expect(fetchMock).not.toHaveBeenCalled();
+  });
+
+  it("redirects an already-authenticated visitor to /home", async () => {
+    setAccessToken("test-token");
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async () => ({ ok: true, status: 200, json: async () => ({ data: [] }) })),
+    );
+
+    renderRouteTree("/signup");
+
+    await waitFor(() =>
+      expect(screen.getByText("No Journeys are available yet.")).toBeInTheDocument(),
+    );
   });
 
   it("shows an error when signup fails", async () => {

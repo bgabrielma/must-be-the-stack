@@ -26,7 +26,8 @@ test.describe("Journey", () => {
     await expect(page).toHaveURL(/\/journeys\//);
 
     await expect(page.locator('[data-testid^="subject-"]:disabled').first()).toBeVisible();
-    await expect(page.getByTestId("lock-tooltip")).toBeVisible();
+    await page.getByTestId("lock-tooltip").hover();
+    await expect(page.getByRole("tooltip")).toBeVisible();
     await page.screenshot({ path: "screenshots/journey/locked-subject.png" });
   });
 
@@ -37,7 +38,8 @@ test.describe("Journey", () => {
     await expect(page).toHaveURL(/\/subjects\//);
 
     await expect(page.locator('[data-testid^="lesson-"]:disabled').first()).toBeVisible();
-    await expect(page.getByTestId("lock-tooltip")).toBeVisible();
+    await page.getByTestId("lock-tooltip").hover();
+    await expect(page.getByRole("tooltip")).toBeVisible();
     await page.screenshot({ path: "screenshots/journey/locked-lesson.png" });
   });
 

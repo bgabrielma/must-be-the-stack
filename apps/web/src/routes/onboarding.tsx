@@ -3,8 +3,10 @@ import { useTranslation } from "react-i18next";
 import { CompassIcon, PlayIcon, CheckIcon, BrandMark } from "../components/icons";
 import { buttonClasses } from "../components/Button";
 import { PageHeading } from "../components/PageHeading";
+import { requireGuest } from "../lib/routeGuards";
 
 export const Route = createFileRoute("/onboarding")({
+  beforeLoad: requireGuest,
   component: Onboarding,
 });
 

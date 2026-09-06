@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, useRouter } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
 import { useSubject } from "./useSubject";
 import { requireAuth } from "../../lib/routeGuards";
@@ -20,6 +20,7 @@ export const Route = createFileRoute("/subjects/$subjectId/")({
 
 function SubjectPage() {
   const { t } = useTranslation();
+  const router = useRouter();
   const { subjectId } = Route.useParams();
   const state = useSubject(subjectId);
 
@@ -39,7 +40,7 @@ function SubjectPage() {
           <p className="mb-2 text-xs opacity-70">
             {t("subjectDetail.breadcrumb", { journeyTitle: subject.journeyTitle })}
           </p>
-          <PageHeading title={subject.title} />
+          <PageHeading title={subject.title} onBack={() => router.history.back()} />
           <p className="mb-3">
             <Badge icon={<InfoIcon size={12} />}>
               {t("subjectDetail.minPassingScore", { score: toPercent(subject.minimumPassingScore) })}

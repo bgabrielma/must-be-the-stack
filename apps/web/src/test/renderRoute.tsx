@@ -9,10 +9,12 @@ import { routeTree } from "../routeTree.gen";
 // with plain `@testing-library/react` `render()` isn't enough — it needs a
 // real (in-memory) router and a query client above it, which is what this
 // wraps up so every route test doesn't repeat this boilerplate.
-export function renderRouteTree(initialEntry: string) {
+export function renderRouteTree(initialEntries: string | string[]) {
   const router = createRouter({
     routeTree,
-    history: createMemoryHistory({ initialEntries: [ initialEntry ] }),
+    history: createMemoryHistory({
+      initialEntries: Array.isArray(initialEntries) ? initialEntries : [ initialEntries ],
+    }),
   });
   const queryClient = new QueryClient({
     defaultOptions: { queries: { retry: false } },

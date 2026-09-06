@@ -3,8 +3,10 @@ import { useTranslation } from "react-i18next";
 import { BrandMark, EntryIllustration } from "../components/icons";
 import { buttonClasses } from "../components/Button";
 import { MutedLink } from "../components/MutedLink";
+import { requireGuest } from "../lib/routeGuards";
 
 export const Route = createFileRoute("/")({
+  beforeLoad: requireGuest,
   component: Entry,
 });
 
