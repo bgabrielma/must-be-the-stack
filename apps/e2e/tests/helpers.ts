@@ -7,8 +7,13 @@ export function uniqueEmail(prefix: string): string {
 }
 
 export async function fillCredentials(page: Page, email: string, password: string): Promise<void> {
-  await page.locator('input[type="email"]').fill(email);
-  await page.locator('input[type="password"]').fill(password);
+  await page.locator("#signup-email, #login-email").fill(email);
+  await page.locator("#signup-password, #login-password").fill(password);
+
+  const confirmPassword = page.locator("#signup-confirm-password");
+  if ((await confirmPassword.count()) > 0) {
+    await confirmPassword.fill(password);
+  }
 }
 
 export async function submitForm(page: Page): Promise<void> {
