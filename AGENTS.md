@@ -71,3 +71,5 @@ Rules:
 - Read graphify-out/GRAPH_REPORT.md only for broad architecture review or when query/path/explain do not surface enough context.
 - After modifying code, run `graphify update .` to keep the graph current (AST-only, no API cost).
 - The post-commit hook rebuilds `graphify-out/` in the background. Check `git status --short` after committing (wait on `~/.cache/graphify-rebuild.log` if the rebuild is still running) and commit/push the result as its own `chore: rebuild graphify graph after <change>` commit — don't leave it dangling.
+- Only `graph.json`, `graph.html`, `GRAPH_REPORT.md`, `manifest.json`, `.graphify_labels.json(.sig)` and `cache/semantic/` are tracked. Everything else under `graphify-out/` is gitignored as machine-specific, pure churn, or free to regenerate — never `git add -f` it back. `cache/semantic/` stays tracked because regenerating it costs LLM calls, unlike the AST cache.
+- The `merge=graphify` driver declared in `.gitattributes` only works if that clone has run `graphify hook install` — git does not clone `.git/config`. Without it, `graph.json` conflicts resolve as a plain 3-way merge with conflict markers.
