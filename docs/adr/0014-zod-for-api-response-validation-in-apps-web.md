@@ -1,0 +1,28 @@
+---
+status: accepted
+date: 2026-09-06
+decision-makers: Bruno Martins
+---
+
+# Zod for API response validation in apps/web
+
+`apps/web` parses every `apps/api` JSON:API response through a [zod](https://zod.dev) schema before it becomes typed data, rather than casting unvalidated `fetch` JSON straight into a TS interface. `src/helpers/jsonApi.ts` validates the JSON:API envelope shape itself (`data`/`type`/`id`/`attributes`/`relationships`/`included`) with `jsonApiDocumentSchema`; `src/lib/curriculum.ts` then validates each resource's business attributes (`journeyAttributesSchema`, `subjectAttributesSchema`, `lessonAttributesSchema`, `lessonDetailAttributesSchema`) after `camelizeAttributes` converts the API's dasherized keys to camelCase. The exported types consumed by components (`Journey`, `Subject`, `Lesson`, `JourneyDetail`, `SubjectDetail`, `LessonDetail`, `JourneyStatus`, `LockStatus`) are `z.infer` results of these schemas, not hand-written interfaces kept in step by hand.
+
+This is a frontend-only guard, not a shared contract: [ADR-0004](0004-polyglot-stack-rails-react-split-monorepo.md) already rules out sharing types between Rails and React, so a zod schema on the `apps/web` side cannot itself detect drift in `apps/api`'s serializers ([ADR-0008](0008-rest-json-api-with-active-model-serializers.md) is still the actual contract) — it only catches drift once a real response arrives that violates the frontend's assumption about that contract, surfacing it as a clean, diagnosable failure instead of `undefined` reaching a component.
+
+Validation happens at this one boundary — the `fetchJourneys`/`fetchJourney`/`fetchSubject`/`fetchLesson`/`startJourney` functions in `curriculum.ts` — and deliberately not in `login.tsx`/`signup.tsx`'s form state. Those two forms are small, their fields don't nest or vary per endpoint the way API resources do, and Rails already owns validation of what a user types in; introducing a schema-driven form layer (e.g. `react-hook-form` + a zod resolver) for two `useState` fields would be solving a problem the app doesn't have. Network JSON, by contrast, is untrusted by construction the moment it leaves `fetch` — there's no equivalent "the server already validated this" argument for a response body.
+
+## Considered Options
+
+- **Keep the existing `unknown`-cast-via-generic pattern** (`camelizeAttributes<T>`'s internal cast) — rejected: this is the status quo the task exists to fix; a shape drift between a serializer and the hand-written TS interface surfaces as `undefined` at render time, not a diagnosable failure.
+- **Zod schemas replacing `camelizeAttributes` entirely** (e.g. schemas keyed on the dasherized field names with a `.transform` per field) — rejected: `camelizeAttributes` already does the key-casing conversion generically for any attribute bag in six lines; re-deriving that per schema via zod transforms would mean hand-writing the dasherized-to-camelCase mapping once per endpoint instead of once, total. Kept as a small, separate concern from shape/type validation, which zod owns.
+- **A generic `JsonApiResource<Attributes>`/`JsonApiDocument<Attributes>` zod schema parameterized by a per-endpoint attributes schema** (mirroring the old TS generics) — rejected in favor of a single non-generic envelope schema. The envelope's own shape (`id`/`type`/`attributes`-bag/`relationships`) doesn't vary by resource type; only the *business* shape of `attributes` does, and that's validated one level down in `curriculum.ts` once the resource's `type` is known. Dropping the generic simplified both files.
+- **Shared Rails↔React schema generation** (e.g. a Ruby gem emitting a TS/zod schema from each serializer) — not attempted: contradicts [ADR-0004](0004-polyglot-stack-rails-react-split-monorepo.md)'s explicit acceptance that the two ecosystems don't share types; would also be premature machinery for four endpoints.
+
+## Consequences
+
+Every current and future endpoint added to `curriculum.ts` needs its own attributes schema kept in step with the corresponding `active_model_serializers` class by hand — the same "no shared types, contracts kept in sync deliberately" cost ADR-0004 already accepted, now with an enforcement point on the frontend instead of silence. When a serializer changes a field's name or type without the frontend schema being updated to match, the failure moves from "a component silently renders `undefined`" to "the route's `error` state fires and, in development, `console.error` logs which field and why (via zod's issue `path`/`message`) without dumping the response body itself" — `JsonApiParseError` is what `fetchJourneys` et al. throw, and TanStack Query's existing `error` state (already wired through `useHome`/`useJourney`/`useSubject`/`useLesson` into `StatusScreen`) is what surfaces it; no new error-handling path was needed.
+
+A missing/wrong-typed field that the *old* code tolerated silently (e.g. a Lesson's `score`, genuinely absent until a submission passes) has to be spelled out in the schema as optional/nullable rather than just not crashing by accident — this is by design, but it does mean writing the schema requires knowing which fields the serializer omits versus nulls versus always sends, information the old cast-based code never needed anyone to think about.
+
+`zod` is pinned to an exact version (`4.5.4`) in `apps/web/package.json`, unlike every other `apps/web` dependency (all on `^` ranges) — a deliberate exception, since a minor/patch bump changing zod's validation or error-message behavior would change what counts as a "malformed response" without any corresponding code change to review.
