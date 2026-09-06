@@ -1,7 +1,11 @@
+import { z } from "zod";
 import { getAccessToken, setAccessToken } from "./accessToken";
 import { ApiError } from "./ApiError";
+import { logParseIssues } from "../helpers/jsonApi";
 
 const API_URL = import.meta.env.VITE_API_URL ?? "http://localhost:3000";
+
+export const accessTokenResponseSchema = z.object({ access_token: z.string() });
 
 async function errorDetail(response: Response): Promise<string> {
   const body = await response.json().catch(() => null);
@@ -9,6 +13,8 @@ async function errorDetail(response: Response): Promise<string> {
 }
 
 // Refreshes the access token using the refresh cookie. Returns whether it succeeded.
+// Runs at app boot for logged-out users too, so it must never throw/reject on a
+// network failure or a malformed body — a failed refresh just means "not logged in".
 export async function refreshAccessToken(): Promise<boolean> {
   let response: Response;
   try {
@@ -26,8 +32,14 @@ export async function refreshAccessToken(): Promise<boolean> {
     return false;
   }
 
-  const body = await response.json();
-  setAccessToken(body.access_token);
+  const result = accessTokenResponseSchema.safeParse(await response.json().catch(() => null));
+  if (!result.success) {
+    logParseIssues("refresh response", result.error);
+    setAccessToken(null);
+    return false;
+  }
+
+  setAccessToken(result.data.access_token);
   return true;
 }
 

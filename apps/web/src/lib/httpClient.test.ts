@@ -45,4 +45,36 @@ describe("refreshAccessToken", () => {
     await expect(refreshAccessToken()).resolves.toBe(true);
     expect(getAccessToken()).toBe("fresh-token");
   });
+
+  it("resolves false and clears the access token when the refresh body is malformed", async () => {
+    setAccessToken("stale-token");
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async () => ({
+        ok: true,
+        status: 200,
+        json: async () => ({ access_token: 42 }),
+      })),
+    );
+
+    await expect(refreshAccessToken()).resolves.toBe(false);
+    expect(getAccessToken()).toBeNull();
+  });
+
+  it("resolves false and clears the access token when the refresh body isn't JSON", async () => {
+    setAccessToken("stale-token");
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async () => ({
+        ok: true,
+        status: 200,
+        json: async () => {
+          throw new SyntaxError("Unexpected end of JSON input");
+        },
+      })),
+    );
+
+    await expect(refreshAccessToken()).resolves.toBe(false);
+    expect(getAccessToken()).toBeNull();
+  });
 });
