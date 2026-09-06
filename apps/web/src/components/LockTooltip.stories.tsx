@@ -4,6 +4,15 @@ import { LockTooltip } from "./LockTooltip";
 const meta = {
   title: "Components/LockTooltip",
   component: LockTooltip,
+  // LockTooltip positions itself via `absolute bottom-full` against a
+  // `relative` ancestor — without one here it'd float off-canvas.
+  decorators: [
+    (Story) => (
+      <div className="relative mt-12 w-64">
+        <Story />
+      </div>
+    ),
+  ],
 } satisfies Meta<typeof LockTooltip>;
 
 export default meta;

@@ -7,6 +7,7 @@ import { UnitCard } from "../../components/UnitCard";
 import { LockTooltip } from "../../components/LockTooltip";
 import { PlayIcon } from "../../components/icons";
 import { lockStatusIcon, lockStatusMeta } from "../../components/lockStatus";
+import { firstLockedId } from "../../helpers/curriculumGating";
 import { PageHeading } from "../../components/PageHeading";
 import { StatusScreen } from "../../components/StatusScreen";
 
@@ -29,8 +30,7 @@ function JourneyPage() {
 
     case "ready": {
       const { journey, activeSubject, onSelectSubject } = state;
-      // Only the Subject right after the active one needs the unlock explanation.
-      const nextLockedSubjectId = journey.subjects.find((subject) => subject.status === "locked")?.id;
+      const nextLockedSubjectId = firstLockedId(journey.subjects);
 
       return (
         <div className="flex min-h-[100svh] flex-col px-5 pt-6 pb-5">
@@ -53,7 +53,7 @@ function JourneyPage() {
               const icon = lockStatusIcon(subject.status, <PlayIcon size={14} />);
 
               return (
-                <div key={subject.id}>
+                <div key={subject.id} className="relative">
                   {subject.id === nextLockedSubjectId && activeSubject && (
                     <LockTooltip
                       message={t("journeyDetail.lockMessage", {
