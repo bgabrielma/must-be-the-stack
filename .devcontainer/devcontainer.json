@@ -9,7 +9,7 @@
     "ghcr.io/devcontainers/features/github-cli:1": {},
     "ghcr.io/anthropics/devcontainer-features/claude-code:1.0": {}
   },
-  "postCreateCommand": "gem install bundler && npm install -g pnpm lefthook && sudo ln -sf $(npm config get prefix)/bin/pnpm /usr/local/bin/pnpm && sudo ln -sf $(npm config get prefix)/bin/lefthook /usr/local/bin/lefthook && sudo apt-get update -qq && sudo apt-get install -y -qq pipx libpq-dev && pipx install graphifyy && sudo mkdir -p /home/vscode/.config/gh && sudo chown -R vscode:vscode /home/vscode/.config/gh && lefthook install",
+  "postCreateCommand": "gem install bundler && npm install -g pnpm lefthook && sudo ln -sf $(npm config get prefix)/bin/pnpm /usr/local/bin/pnpm && sudo ln -sf $(npm config get prefix)/bin/lefthook /usr/local/bin/lefthook && sudo apt-get update -qq && sudo apt-get install -y -qq pipx libpq-dev && pipx install graphifyy && sudo mkdir -p /home/vscode/.config/gh && sudo chown -R vscode:vscode /home/vscode/.config/gh && lefthook install && pnpm install --frozen-lockfile && (cd apps/e2e && pnpm exec playwright install --with-deps chromium)",
   "postStartCommand": ".devcontainer/start-services.sh",
   "postAttachCommand": ".devcontainer/start-services.sh",
   "forwardPorts": [ 3000, 5173 ],

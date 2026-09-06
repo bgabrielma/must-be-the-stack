@@ -38,6 +38,12 @@ Every screenshot needs a real content assertion (e.g. `getByText(...)`) immediat
 
 States with no in-app UI path yet (Home's in-progress/completed, `is-completed`/`is-active` Subject and Lesson cards) depend on the `curriculum:seed_e2e` rake task (`apps/api`) to seed real `Submission` rows for a fixture user before the suite runs — see the task's own comments for what it seeds.
 
+### Running the suite locally
+
+The dev container's `postCreateCommand` installs Chromium (and its OS-level shared libraries) via `pnpm exec playwright install --with-deps chromium` in `apps/e2e`, so a fresh container can run the suite immediately — matching what `.github/workflows/e2e.yml` installs in CI (Chromium only; `playwright.config.ts` only configures a `chromium` project). If a container predates this, run that same command by hand in `apps/e2e`.
+
+With `apps/api` and `apps/web` already running (`.devcontainer/start-services.sh`), `pnpm test` in `apps/e2e` reuses them (`reuseExistingServer: !process.env.CI`) instead of starting competing ones — those already-running dev-mode servers, not a separate `RAILS_ENV=test` boot, are what the suite talks to locally, so `curriculum:seed_e2e` (test-env only) isn't needed here; `curriculum:seed` (run against the dev database by `start-services.sh`) already seeds the same content.
+
 ## Controllers (apps/api)
 
 Never read `params[...]` directly inside an action body. Extract every param a controller uses through a private method at the bottom of the class — `params.require(:id)` for a required route param, `params.permit(...)` for a request body — even when the value isn't used for mass assignment. `SignupsController#user_params` is the reference example; `JourneysController#journey_id`/`#pagination_params` and `SessionsController#login_params` follow the same shape. This keeps what a controller accepts legible from one place and testable in isolation, and matches Rails' own strong-parameters convention rather than special-casing "just an id."
