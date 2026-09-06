@@ -40,6 +40,38 @@ describe("Lesson route (/lessons/:lessonId)", () => {
     expect(screen.getByText("Databases · Lesson 2")).toBeInTheDocument();
   });
 
+  it("renders a `**bold**` lead-in as <strong>", async () => {
+    setAccessToken("test-token");
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async () => ({
+        ok: true,
+        status: 200,
+        json: async () => ({
+          data: {
+            id: "2",
+            type: "lessons",
+            attributes: {
+              title: "Replication & Failover",
+              position: 2,
+              status: "active",
+              content: "**Leader-follower:** writes go to a leader, which streams changes to followers.",
+              "subject-title": "Databases",
+            },
+          },
+        }),
+      })),
+    );
+
+    renderRouteTree("/lessons/2");
+
+    await waitFor(() =>
+      expect(screen.getByRole("heading", { name: "Replication & Failover" })).toBeInTheDocument(),
+    );
+    const strong = screen.getByText("Leader-follower:");
+    expect(strong.tagName).toBe("STRONG");
+  });
+
   it("renders a completed Lesson's content for review", async () => {
     setAccessToken("test-token");
     vi.stubGlobal(

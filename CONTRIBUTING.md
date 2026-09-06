@@ -94,6 +94,10 @@ Every user-facing string outside `.stories.tsx` files (Storybook's component gal
 
 This convention is enforced by code review, not CI.
 
+## Lesson content markup (apps/web)
+
+`Lesson#content` supports exactly one inline markup convention: `**text**` renders as `<strong>text</strong>` (see `src/helpers/renderInlineBold.tsx`, used by `src/routes/lessons.$lessonId/index.tsx`). This is not Markdown and isn't meant to grow into it — it exists only for the bold lead-in `flows.html`'s Lesson-content screen calls for (e.g. "**Leader-follower:** ..."). Never render Lesson content via `dangerouslySetInnerHTML`; `renderInlineBold` parses the `**...**` spans into real React elements. A second markup need (italics, links, lists, ...) should prompt reaching for a real Markdown renderer instead of extending this convention piecemeal.
+
 ## Styling (apps/web)
 
 Styling uses [Tailwind CSS v4](https://tailwindcss.com) (CSS-first config via `@tailwindcss/vite`) — see [ADR-0012](docs/adr/0012-tailwind-css-for-apps-web.md). Components style via inline utility classes in JSX, not `@apply`; the React component (`src/components/`) is the reuse boundary, not a CSS class. The current design tokens (colors, spacing, DM Sans) live in a `@theme` block in `src/index.css` — reuse those (`bg-accent`, `text-danger`, etc.) instead of hardcoding hex values or arbitrary Tailwind values. `flows.html`/`foundations.html` (the Claude Design mockups) are exempt — they stay hand-rolled CSS.

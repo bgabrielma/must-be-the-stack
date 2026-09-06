@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
 import { useLesson } from "./useLesson";
 import { requireAuth } from "../../lib/routeGuards";
+import { renderInlineBold } from "../../helpers/renderInlineBold";
 import { Button } from "../../components/Button";
 import { PageHeading } from "../../components/PageHeading";
 import { StatusScreen } from "../../components/StatusScreen";
@@ -35,7 +36,7 @@ function LessonPage() {
           <div className="text-sm leading-[1.6]">
             {lesson.content.split("\n\n").map((paragraph) => (
               <p key={paragraph} className="mb-4">
-                {paragraph}
+                {renderInlineBold(paragraph)}
               </p>
             ))}
           </div>

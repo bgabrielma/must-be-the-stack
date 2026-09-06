@@ -18,7 +18,7 @@ module CurriculumSeeder
       lessons: [
         { title: "What a Database Does", content: "A database's job is durable, concurrent, queryable storage — guarantees a plain file on disk doesn't give you for free." },
         { title: "Indexing & Query Plans", content: "An index trades write speed and storage for read speed, letting the query planner skip a full table scan for a targeted lookup." },
-        { title: "Replication & Failover", content: "Replication keeps copies of your data on multiple nodes so a single machine failing doesn't take your database down. Leader-follower: writes go to a leader, which streams changes to followers." },
+        { title: "Replication & Failover", content: "Replication keeps copies of your data on multiple nodes so a single machine failing doesn't take your database down. **Leader-follower:** writes go to a leader, which streams changes to followers." },
         { title: "Sharding Strategies", content: "Sharding splits a dataset across multiple database instances by some key (e.g. user id) so no single node has to hold or serve all the data." }
       ]
     },
