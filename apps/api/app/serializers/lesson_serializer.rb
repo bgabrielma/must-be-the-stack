@@ -6,9 +6,15 @@
 # LessonDetailSerializer's own comment) rather than conditionally hiding
 # one attribute within a shared serializer.
 class LessonSerializer < ActiveModel::Serializer
-  attributes :title, :position, :status
+  attributes :title, :position, :status, :score
 
   def status
     object.status_for(scope)
+  end
+
+  # nil for anything not completed yet; see Lesson#passing_submission_for for
+  # which Submission is shown when there are several passing attempts.
+  def score
+    object.passing_submission_for(scope)&.score
   end
 end

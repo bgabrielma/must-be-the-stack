@@ -18,6 +18,15 @@ class Lesson < ApplicationRecord
     self.class.passed_by(user).exists?(id: id)
   end
 
+  # Most recent passing Submission, filtered in Ruby off the loaded
+  # `submissions` association rather than `Lesson.passed_by`'s SQL scope, so
+  # preloading `lessons: :submissions` avoids a query per Lesson.
+  def passing_submission_for(user)
+    submissions
+      .select { |submission| submission.user_id == user.id && submission.score >= subject.minimum_passing_score }
+      .max_by(&:created_at)
+  end
+
   # :locked, :active, or :completed. Locked whenever the parent Subject isn't
   # active yet; otherwise the first not-yet-passed Lesson (by position) is
   # :active, earlier ones :completed, later ones :locked.

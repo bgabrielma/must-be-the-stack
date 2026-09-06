@@ -52,4 +52,35 @@ RSpec.describe Lesson, type: :model do
       expect(lesson.passed_by?(user)).to be(false)
     end
   end
+
+  describe "#passing_submission_for" do
+    it "is nil when no Submission passes" do
+      curriculum_subject = create(:subject, minimum_passing_score: 8)
+      lesson = create(:lesson, subject: curriculum_subject, position: 1)
+      user = create(:user)
+      create(:submission, lesson: lesson, user: user, score: 7)
+
+      expect(lesson.passing_submission_for(user)).to be_nil
+    end
+
+    it "is the most recent passing Submission when there are several" do
+      curriculum_subject = create(:subject, minimum_passing_score: 8)
+      lesson = create(:lesson, subject: curriculum_subject, position: 1)
+      user = create(:user)
+      create(:submission, lesson: lesson, user: user, score: 8, created_at: 2.days.ago)
+      latest = create(:submission, lesson: lesson, user: user, score: 9, created_at: 1.day.ago)
+
+      expect(lesson.passing_submission_for(user)).to eq(latest)
+    end
+
+    it "ignores another user's passing Submission" do
+      curriculum_subject = create(:subject, minimum_passing_score: 8)
+      lesson = create(:lesson, subject: curriculum_subject, position: 1)
+      user = create(:user)
+      other_user = create(:user)
+      create(:submission, lesson: lesson, user: other_user, score: 9)
+
+      expect(lesson.passing_submission_for(user)).to be_nil
+    end
+  end
 end

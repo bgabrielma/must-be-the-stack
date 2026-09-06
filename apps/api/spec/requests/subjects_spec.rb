@@ -35,6 +35,23 @@ RSpec.describe "Subjects", type: :request do
       expect(statuses[completed_lesson.id.to_s]).to eq("completed")
     end
 
+    it "exposes the passing Submission's score for a completed Lesson, and no score otherwise" do
+      subject = create(:subject, minimum_passing_score: 8)
+      completed_lesson = create(:lesson, subject: subject, position: 1)
+      active_lesson = create(:lesson, subject: subject, position: 2)
+      create(:submission, lesson: completed_lesson, user: user, score: 7) # below the bar, not the one shown
+      create(:submission, lesson: completed_lesson, user: user, score: 9)
+
+      get "/subjects/#{subject.id}", headers: headers
+
+      expect(response).to have_http_status(:ok)
+      body = JSON.parse(response.body)
+      lessons = body["included"].select { |resource| resource["type"] == "lessons" }
+      scores = lessons.to_h { |resource| [ resource["id"], resource["attributes"]["score"] ] }
+      expect(scores[completed_lesson.id.to_s]).to eq(9)
+      expect(scores[active_lesson.id.to_s]).to be_nil
+    end
+
     it "forbids a locked Subject" do
       journey = create(:journey)
       create(:subject, journey: journey, position: 1) # unfinished -> stays active
