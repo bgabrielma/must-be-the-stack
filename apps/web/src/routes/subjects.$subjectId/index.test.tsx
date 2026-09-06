@@ -40,7 +40,7 @@ describe("Subject route (/subjects/:subjectId)", () => {
             {
               id: "1",
               type: "lessons",
-              attributes: { title: "What a Database Does", position: 1, status: "completed" },
+              attributes: { title: "What a Database Does", position: 1, status: "completed", score: 9 },
             },
             {
               id: "2",
@@ -63,19 +63,16 @@ describe("Subject route (/subjects/:subjectId)", () => {
       expect(screen.getByRole("heading", { name: "Databases" })).toBeInTheDocument(),
     );
 
-    expect(screen.getByText("Completed")).toBeInTheDocument();
+    expect(screen.getByText("Completed · 9/10")).toBeInTheDocument();
     expect(screen.getByText("Unlocked")).toBeInTheDocument();
     expect(screen.getAllByText("Locked").length).toBeGreaterThan(0);
     expect(
       screen.getByText('Pass the Exercise for "Replication & Failover" to unlock this Lesson.'),
     ).toBeInTheDocument();
 
-    // Regression: the active Lesson's icon slot must render an icon, not the
-    // bare position number (`lockStatusIcon` was once called with
-    // `lesson.position` instead of a `PlayIcon` for the active case). If that
-    // regressed, only the trailing chevron svg would remain (count 1).
     const activeCard = screen.getByRole("button", { name: /Replication & Failover/ });
-    expect(activeCard.querySelectorAll("svg").length).toBeGreaterThanOrEqual(2);
+    expect(activeCard.querySelectorAll("svg").length).toBe(1);
+    expect(screen.getByText("2", { selector: "span" })).toBeInTheDocument();
   });
 
   it("shows a not-available message when the Subject itself is locked", async () => {

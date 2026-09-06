@@ -31,6 +31,9 @@ interface LessonAttributes {
   title: string;
   position: number;
   status: LockStatus;
+  // The passing Submission's score (0-10), only present once the Lesson is
+  // completed — see LessonSerializer#score. null otherwise.
+  score: number | null;
 }
 
 interface LessonDetailAttributes extends LessonAttributes {

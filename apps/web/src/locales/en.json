@@ -81,6 +81,7 @@
   },
   "unitCard": {
     "completed": "Completed",
+    "completedWithScore": "Completed · {{score}}/10",
     "locked": "Locked"
   },
   "lockTooltip": {

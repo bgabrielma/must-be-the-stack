@@ -13,8 +13,13 @@ export function lockStatusIcon(status: LockStatus, activeIcon: ReactNode): React
   return activeIcon;
 }
 
-export function lockStatusMeta(status: LockStatus, activeMeta: string): string {
-  if (status === "completed") return i18n.t("unitCard.completed");
+// `completedScore` applies to Lessons only; omit it for a plain "Completed".
+export function lockStatusMeta(status: LockStatus, activeMeta: string, completedScore?: number): string {
+  if (status === "completed") {
+    return completedScore === undefined
+      ? i18n.t("unitCard.completed")
+      : i18n.t("unitCard.completedWithScore", { score: completedScore });
+  }
   if (status === "locked") return i18n.t("unitCard.locked");
   return activeMeta;
 }
