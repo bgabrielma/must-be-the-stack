@@ -1,8 +1,15 @@
 import { apiFetch } from "./httpClient";
 import { setAccessToken } from "./accessToken";
 
-export async function signup(email: string, password: string): Promise<void> {
-  await apiFetch("/signup", { method: "POST", body: JSON.stringify({ email, password }) });
+export async function signup(
+  email: string,
+  password: string,
+  passwordConfirmation: string,
+): Promise<void> {
+  await apiFetch("/signup", {
+    method: "POST",
+    body: JSON.stringify({ email, password, password_confirmation: passwordConfirmation }),
+  });
 }
 
 export async function login(email: string, password: string): Promise<void> {

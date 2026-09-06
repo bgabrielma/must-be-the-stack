@@ -23,4 +23,19 @@ RSpec.describe "POST /signup", type: :request do
 
     expect(response).to have_http_status(:unprocessable_content)
   end
+
+  it "rejects a mismatched password confirmation" do
+    post "/signup", params: {
+      email: "ada@example.com",
+      password: "correct-horse-battery-staple",
+      password_confirmation: "wrong-password"
+    }
+
+    expect(response).to have_http_status(:unprocessable_content)
+
+    body = JSON.parse(response.body)
+    expect(body["errors"]).to include(a_hash_including("detail" => a_string_matching(/password confirmation/i)))
+
+    expect(User.find_by(email: "ada@example.com")).to be_nil
+  end
 end

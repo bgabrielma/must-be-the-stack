@@ -17,16 +17,25 @@ function SignupPage() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
+  const [confirmError, setConfirmError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
 
   async function handleSubmit(event: FormEvent) {
     event.preventDefault();
-    setSubmitting(true);
     setError(null);
+    setConfirmError(null);
+
+    if (password !== confirmPassword) {
+      setConfirmError(t("signup.passwordMismatchError"));
+      return;
+    }
+
+    setSubmitting(true);
 
     try {
-      await signup(email, password);
+      await signup(email, password, confirmPassword);
       navigate({ to: "/login", search: { created: true } });
     } catch (err) {
       setError(err instanceof ApiError ? err.message : t("signup.genericError"));
@@ -56,6 +65,15 @@ function SignupPage() {
           value={password}
           onChange={(event) => setPassword(event.target.value)}
           required
+        />
+        <Field
+          label={t("signup.confirmPasswordLabel")}
+          id="signup-confirm-password"
+          type="password"
+          value={confirmPassword}
+          onChange={(event) => setConfirmPassword(event.target.value)}
+          required
+          error={confirmError ?? undefined}
         />
         <Button type="submit" block disabled={submitting}>
           {t("signup.submit")}

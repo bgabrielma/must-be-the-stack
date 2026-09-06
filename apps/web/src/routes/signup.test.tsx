@@ -28,12 +28,31 @@ describe("Signup route (/signup)", () => {
 
     await user.type(screen.getByLabelText("Email"), "ada@example.com");
     await user.type(screen.getByLabelText("Password"), "correct-horse-battery-staple");
+    await user.type(screen.getByLabelText("Confirm password"), "correct-horse-battery-staple");
     await user.click(screen.getByRole("button", { name: "Create account" }));
 
     await waitFor(() =>
       expect(screen.getByRole("heading", { name: "Log in" })).toBeInTheDocument(),
     );
     expect(screen.getByText("Account created")).toBeInTheDocument();
+  });
+
+  it("shows an error and does not submit when the passwords do not match", async () => {
+    const fetchMock = vi.fn();
+    vi.stubGlobal("fetch", fetchMock);
+    const user = userEvent.setup();
+    renderRouteTree("/signup");
+
+    await waitFor(() => screen.getByRole("heading", { name: "Create your account" }));
+    await user.type(screen.getByLabelText("Email"), "ada@example.com");
+    await user.type(screen.getByLabelText("Password"), "correct-horse-battery-staple");
+    await user.type(screen.getByLabelText("Confirm password"), "different-password");
+    await user.click(screen.getByRole("button", { name: "Create account" }));
+
+    await waitFor(() =>
+      expect(screen.getByText("Passwords do not match")).toBeInTheDocument(),
+    );
+    expect(fetchMock).not.toHaveBeenCalled();
   });
 
   it("shows an error when signup fails", async () => {
@@ -51,6 +70,7 @@ describe("Signup route (/signup)", () => {
     await waitFor(() => screen.getByRole("heading", { name: "Create your account" }));
     await user.type(screen.getByLabelText("Email"), "ada@example.com");
     await user.type(screen.getByLabelText("Password"), "pw");
+    await user.type(screen.getByLabelText("Confirm password"), "pw");
     await user.click(screen.getByRole("button", { name: "Create account" }));
 
     await waitFor(() =>
