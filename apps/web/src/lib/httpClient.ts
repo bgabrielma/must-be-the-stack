@@ -10,10 +10,16 @@ async function errorDetail(response: Response): Promise<string> {
 
 // Refreshes the access token using the refresh cookie. Returns whether it succeeded.
 export async function refreshAccessToken(): Promise<boolean> {
-  const response = await fetch(`${API_URL}/refresh`, {
-    method: "POST",
-    credentials: "include",
-  });
+  let response: Response;
+  try {
+    response = await fetch(`${API_URL}/refresh`, {
+      method: "POST",
+      credentials: "include",
+    });
+  } catch {
+    setAccessToken(null);
+    return false;
+  }
 
   if (!response.ok) {
     setAccessToken(null);
