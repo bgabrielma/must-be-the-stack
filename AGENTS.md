@@ -18,6 +18,10 @@ Default five canonical triage labels (`needs-triage`, `needs-info`, `ready-for-a
 
 Single-context layout — `CONTEXT.md` + `docs/adr/` at the repo root. See `docs/agents/domain.md`.
 
+### Incident write-ups
+
+Every bug investigation that took real diagnostic work produces `docs/incident/<issue-number>-<kebab-case-issue-title>.md`, committed with the fix — recording the symptom, what was ruled out, the root cause, **every option considered including the rejected ones and why**, the outcome, and what would have prevented it. This extends `/diagnosing-bugs`'s Phase 6 post-mortem, which otherwise leaves the winning hypothesis in a commit message and discards the rest of the investigation. See `docs/agents/incidents.md`; `docs/incident/5-curriculum-browse-gating.md` is the reference example.
+
 ## Dev environment
 
 All development, including Claude Code itself, runs inside the project's dev container (`.devcontainer/`) — never on the host directly. Open/rebuild via "Dev Containers: Reopen in Container," then run `claude` from the container's integrated terminal. Services: `app` (Ruby, Node, gh CLI, Claude Code via the official [devcontainer feature](https://github.com/anthropics/devcontainer-features)) and `postgres`, orchestrated by `.devcontainer/docker-compose.yml`.
