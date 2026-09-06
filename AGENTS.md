@@ -18,6 +18,12 @@ Default five canonical triage labels (`needs-triage`, `needs-info`, `ready-for-a
 
 Single-context layout — `CONTEXT.md` + `docs/adr/` at the repo root. See `docs/agents/domain.md`.
 
+### Bug investigations
+
+Bugs are diagnosed with the `diagnosing-bugs` skill (invoked by asking to "diagnose" — it is one of the Matt Pocock skills, alongside the feature-workflow ones below), never by guessing at a fix. Its phases are mandatory: build a reproduction loop first, minimise, hypothesise, instrument, then fix with a regression test.
+
+Every investigation that took real diagnostic work then produces `docs/incident/<issue-number>-<kebab-case-issue-title>.md`, committed with the fix — recording the symptom, what was ruled out, the root cause, **every option considered including the rejected ones and why**, the outcome, and what would have prevented it. This extends the skill's Phase 6 post-mortem, which otherwise leaves the winning hypothesis in a commit message and discards the rest of the investigation. See `docs/agents/incidents.md`; `docs/incident/5-curriculum-browse-gating.md` is the reference example.
+
 ## Dev environment
 
 All development, including Claude Code itself, runs inside the project's dev container (`.devcontainer/`) — never on the host directly. Open/rebuild via "Dev Containers: Reopen in Container," then run `claude` from the container's integrated terminal. Services: `app` (Ruby, Node, gh CLI, Claude Code via the official [devcontainer feature](https://github.com/anthropics/devcontainer-features)) and `postgres`, orchestrated by `.devcontainer/docker-compose.yml`.
@@ -38,6 +44,16 @@ Keep steps 1–3 in one unbroken context window (don't compact/clear until after
 Each ticket is implemented on its own branch and merged via its own PR — never bundle multiple tickets into one PR. Branch name: `<issue-number>-<kebab-case-issue-title>` (e.g. `42-add-jwt-refresh-tokens`), matching the ticket's GitHub issue.
 
 Every ticket is implemented in its own git worktree, not the main checkout — see [CONTRIBUTING.md's "Parallel agent work"](CONTRIBUTING.md#parallel-agent-work) for the worktree location/naming and setup convention.
+
+## Addressing code review feedback
+
+When resolving PR review comments, don't stop at fixing the flagged instance. For each comment, ask whether it names a *pattern* (a naming convention, a structural rule, a "do this everywhere" ask) rather than a one-off mistake. If it does:
+
+1. Fix the flagged instance.
+2. Sweep the rest of the touched app for the same violation and fix those too (scoped to what the ticket/PR actually touches — don't rewrite unrelated pre-existing code beyond a small, safe, same-convention fix).
+3. Encode the rule in `CONTRIBUTING.md` (code-level standards) or here in `AGENTS.md` (process), whichever already hosts that kind of rule, so the same comment never has to be made twice.
+
+Skip step 3 for genuinely one-off feedback (a typo, a single wrong value) that doesn't generalize.
 
 ## Design
 
@@ -61,3 +77,5 @@ Rules:
 - Read graphify-out/GRAPH_REPORT.md only for broad architecture review or when query/path/explain do not surface enough context.
 - After modifying code, run `graphify update .` to keep the graph current (AST-only, no API cost).
 - The post-commit hook rebuilds `graphify-out/` in the background. Check `git status --short` after committing (wait on `~/.cache/graphify-rebuild.log` if the rebuild is still running) and commit/push the result as its own `chore: rebuild graphify graph after <change>` commit — don't leave it dangling.
+- Only `graph.json`, `graph.html`, `GRAPH_REPORT.md`, `manifest.json`, `.graphify_labels.json(.sig)` and `cache/semantic/` are tracked. Everything else under `graphify-out/` is gitignored as machine-specific, pure churn, or free to regenerate — never `git add -f` it back. `cache/semantic/` stays tracked because regenerating it costs LLM calls, unlike the AST cache.
+- The `merge=graphify` driver declared in `.gitattributes` only works if that clone has run `graphify hook install` — git does not clone `.git/config`. Without it, `graph.json` conflicts resolve as a plain 3-way merge with conflict markers.

@@ -1,0 +1,97 @@
+import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
+import { screen, waitFor } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import { renderRouteTree } from "../test/renderRoute";
+import { setAccessToken } from "../lib/accessToken";
+
+describe("Signup route (/signup)", () => {
+  afterEach(() => setAccessToken(null));
+
+  beforeEach(() => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async (url: string) => {
+        if (url.endsWith("/signup")) {
+          return {
+            ok: true,
+            status: 201,
+            json: async () => ({ data: { id: "1", type: "users", attributes: {} } }),
+          };
+        }
+        throw new Error(`Unexpected fetch: ${url}`);
+      }),
+    );
+  });
+
+  it("creates an account and redirects to login with a success banner", async () => {
+    const user = userEvent.setup();
+    renderRouteTree("/signup");
+
+    await waitFor(() => screen.getByRole("heading", { name: "Create your account" }));
+
+    await user.type(screen.getByLabelText("Email"), "ada@example.com");
+    await user.type(screen.getByLabelText("Password"), "correct-horse-battery-staple");
+    await user.type(screen.getByLabelText("Confirm password"), "correct-horse-battery-staple");
+    await user.click(screen.getByRole("button", { name: "Create account" }));
+
+    await waitFor(() =>
+      expect(screen.getByRole("heading", { name: "Log in" })).toBeInTheDocument(),
+    );
+    expect(screen.getByText("Account created")).toBeInTheDocument();
+  });
+
+  it("shows an error and does not submit when the passwords do not match", async () => {
+    const fetchMock = vi.fn();
+    vi.stubGlobal("fetch", fetchMock);
+    const user = userEvent.setup();
+    renderRouteTree("/signup");
+
+    await waitFor(() => screen.getByRole("heading", { name: "Create your account" }));
+    await user.type(screen.getByLabelText("Email"), "ada@example.com");
+    await user.type(screen.getByLabelText("Password"), "correct-horse-battery-staple");
+    await user.type(screen.getByLabelText("Confirm password"), "different-password");
+    await user.click(screen.getByRole("button", { name: "Create account" }));
+
+    await waitFor(() =>
+      expect(screen.getByText("Passwords do not match")).toBeInTheDocument(),
+    );
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
+
+  it("redirects an already-authenticated visitor to /home", async () => {
+    setAccessToken("test-token");
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async () => ({ ok: true, status: 200, json: async () => ({ data: [] }) })),
+    );
+
+    renderRouteTree("/signup");
+
+    await waitFor(() =>
+      expect(screen.getByText("No Journeys are available yet.")).toBeInTheDocument(),
+    );
+  });
+
+  it("shows an error when signup fails", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async () => ({
+        ok: false,
+        status: 422,
+        json: async () => ({ errors: [ { detail: "Email has already been taken" } ] }),
+      })),
+    );
+    const user = userEvent.setup();
+    renderRouteTree("/signup");
+
+    await waitFor(() => screen.getByRole("heading", { name: "Create your account" }));
+    await user.type(screen.getByLabelText("Email"), "ada@example.com");
+    await user.type(screen.getByLabelText("Password"), "pw");
+    await user.type(screen.getByLabelText("Confirm password"), "pw");
+    await user.click(screen.getByRole("button", { name: "Create account" }));
+
+    await waitFor(() =>
+      expect(screen.getByText("Email has already been taken")).toBeInTheDocument(),
+    );
+  });
+});
