@@ -1,81 +1,117 @@
 # AGENTS.md
 
-Instructions for AI coding agents (Claude Code, Codex, etc.) working in this repo.
+**must-be-the-stack** — a mastery-gated developer-learning PWA: it delivers one concept at a time toward a study goal (e.g. Software Design), grades the learner's understanding, and keeps the next Lesson locked until they pass. Not gamified — there are no points, badges, levels or scoreboards; the unlock *is* the reward.
+
+Rails API + React (Vite) in a split-ecosystem pnpm monorepo. Domain language lives in [CONTEXT.md](CONTEXT.md), decisions in [docs/adr/](docs/adr/), code-level standards in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 `CLAUDE.md` is a symlink to this file, per the [agents.md](https://agents.md/) convention — edit this file, both tools read it.
 
-## Agent skills
+## Project map
 
-### Issue tracker
+- `packages/api/` — Rails API (Bundler), Postgres, Solid Queue jobs, Gemini as LLM provider
+- `apps/web/` — React SPA (pnpm): TanStack Query/Router, Tailwind v4, zod, i18next, Vitest, Storybook
+- `packages/e2e/` — Playwright suite (pnpm), a PR-review artifact rather than a regression gate
+- `docs/adr/` — architecture decisions · `docs/agents/` — agent workflow docs · `docs/incident/` — bug post-mortems
+- `graphify-out/` — knowledge graph of this repo
 
-Issues live in this repo's GitHub Issues, managed via the `gh` CLI. See `docs/agents/issue-tracker.md`.
+<important if="you need to run, build, test, lint, or seed anything">
 
-### Triage labels
+All development runs **inside the dev container** (`.devcontainer/`), never on the host: "Dev Containers: Reopen in Container," then run `claude` from the container's integrated terminal.
 
-Default five canonical triage labels (`needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`). See `docs/agents/triage-labels.md`.
+`packages/api` (port 3000) and `apps/web` (port 5173) start automatically on container start/attach. Logs: `/tmp/dev-services/{api,web}.log`. To restart one: `kill $(cat /tmp/dev-services/api.pid)` then re-run `.devcontainer/start-services.sh`.
 
-### Domain docs
+| Command | What it does | Where |
+|---|---|---|
+| `bin/dev` | Start the Rails API by hand | `packages/api` |
+| `bin/setup --skip-server` | Bundle install + `db:prepare` | `packages/api` |
+| `bin/rails` / `bin/rake` | Rails and Rake entrypoints | `packages/api` |
+| `bundle exec rspec` | Run the API test suite | `packages/api` |
+| `bin/ci` | Full local CI: setup, RuboCop, gem audit, Brakeman | `packages/api` |
+| `bin/rubocop` | Ruby style | `packages/api` |
+| `bin/brakeman` / `bin/bundler-audit` | Security scans | `packages/api` |
+| `bin/rails curriculum:seed` | Seed static curriculum (development only) | `packages/api` |
+| `bin/rails curriculum:seed_e2e` | Seed curriculum + fixture progress for Playwright (test only) | `packages/api` |
+| `pnpm dev` | Vite dev server | `apps/web` |
+| `pnpm build` | `vite build && tsc -b` | `apps/web` |
+| `pnpm test` | Vitest | `apps/web` |
+| `pnpm lint` | oxlint | `apps/web` |
+| `pnpm storybook` / `pnpm build-storybook` | Component gallery | `apps/web` |
+| `pnpm preview` | Preview a production build | `apps/web` |
+| `pnpm test` | Playwright E2E (reuses the running dev servers) | `packages/e2e` |
+| `pnpm exec playwright install --with-deps chromium` | One-off browser install if the container predates it | `packages/e2e` |
+</important>
 
-Single-context layout — `CONTEXT.md` + `docs/adr/` at the repo root. See `docs/agents/domain.md`.
+<important if="you are answering a question about this codebase, its architecture, or how files relate">
 
-### Bug investigations
+Query the knowledge graph before grepping or broad file reading: `graphify query "<question>"`, `graphify path "<A>" "<B>"`, `graphify explain "<concept>"`. Use `graphify-out/wiki/index.md` for broad navigation and `graphify-out/GRAPH_REPORT.md` only when those don't surface enough.
+</important>
 
-Bugs are diagnosed with the `diagnosing-bugs` skill (invoked by asking to "diagnose" — it is one of the Matt Pocock skills, alongside the feature-workflow ones below), never by guessing at a fix. Its phases are mandatory: build a reproduction loop first, minimise, hypothesise, instrument, then fix with a regression test.
+<important if="you have just modified code or just committed">
 
-Every investigation that took real diagnostic work then produces `docs/incident/<issue-number>-<kebab-case-issue-title>.md`, committed with the fix — recording the symptom, what was ruled out, the root cause, **every option considered including the rejected ones and why**, the outcome, and what would have prevented it. This extends the skill's Phase 6 post-mortem, which otherwise leaves the winning hypothesis in a commit message and discards the rest of the investigation. See `docs/agents/incidents.md`; `docs/incident/5-curriculum-browse-gating.md` is the reference example.
+Run `graphify update .` after modifying code (AST-only, no API cost). The post-commit hook rebuilds `graphify-out/` in the background — after committing, check `git status --short` (waiting on `~/.cache/graphify-rebuild.log` if the rebuild is still running) and commit the result as its own `chore: rebuild graphify graph after <change>` commit rather than leaving it dangling.
 
-## Dev environment
+Only `graph.json`, `graph.html`, `GRAPH_REPORT.md`, `manifest.json`, `.graphify_labels.json(.sig)` and `cache/semantic/` are tracked; everything else under `graphify-out/` is gitignored — never `git add -f` it back.
+</important>
 
-All development, including Claude Code itself, runs inside the project's dev container (`.devcontainer/`) — never on the host directly. Open/rebuild via "Dev Containers: Reopen in Container," then run `claude` from the container's integrated terminal. Services: `app` (Ruby, Node, gh CLI, Claude Code via the official [devcontainer feature](https://github.com/anthropics/devcontainer-features)) and `postgres`, orchestrated by `.devcontainer/docker-compose.yml`.
+<important if="a graph.json merge conflict appears, or you are setting up a fresh clone">
 
-## Feature workflow
+The `merge=graphify` driver in `.gitattributes` only works once that clone has run `graphify hook install` — git does not clone `.git/config`. Without it, `graph.json` conflicts resolve as a plain 3-way merge with conflict markers.
+</important>
 
-For any new feature or idea, always run the Matt Pocock skills main flow, in order:
+<important if="you are starting work on a new feature or idea">
 
-1. `/grill-with-docs` — sharpen the idea by interview, retaining decisions in `CONTEXT.md` / ADRs.
-2. `/to-spec` — collapse the grilled thread into a buildable spec.
-3. `/to-tickets` — split the spec into tracer-bullet tickets with blocking edges.
-4. **Design** — for any ticket with user-facing UI, design it in Claude Design (`/design-sync`) before implementing. See "Design" below.
-5. `/implement` — build each ticket (drives `/tdd` internally, then `/code-review` before committing).
-6. `/code-review` — review the diff (Standards + Spec) before merging, if not already run by `/implement`.
+Run the main flow in order, keeping steps 1–3 in one unbroken context window (don't compact or clear until after `/to-tickets`):
 
-Keep steps 1–3 in one unbroken context window (don't compact/clear until after `/to-tickets`); `/implement` starts fresh per ticket.
+1. `/grill-with-docs` — sharpen the idea by interview, retaining decisions in `CONTEXT.md` / ADRs
+2. `/to-spec` — collapse the grilled thread into a buildable spec
+3. `/to-tickets` — split the spec into tracer-bullet tickets with blocking edges
+4. **Design** — any ticket with user-facing UI is designed in Claude Design (`/design-sync`) before implementing
+5. `/implement` — build each ticket (drives `/tdd`, then `/code-review`); starts fresh per ticket
+6. `/code-review` — review the diff (Standards + Spec) before merging, if `/implement` didn't already
+</important>
 
-Each ticket is implemented on its own branch and merged via its own PR — never bundle multiple tickets into one PR. Branch name: `<issue-number>-<kebab-case-issue-title>` (e.g. `42-add-jwt-refresh-tokens`), matching the ticket's GitHub issue.
+<important if="you are implementing a ticket, branching, or opening a PR">
 
-Every ticket is implemented in its own git worktree, not the main checkout — see [CONTRIBUTING.md's "Parallel agent work"](CONTRIBUTING.md#parallel-agent-work) for the worktree location/naming and setup convention.
+One ticket per branch per PR — never bundle tickets. Branch name: `<issue-number>-<kebab-case-issue-title>` (e.g. `42-add-jwt-refresh-tokens`), matching the ticket's GitHub issue.
 
-## Addressing code review feedback
+Every ticket is implemented in its own git worktree, not the main checkout — see [CONTRIBUTING.md's "Parallel agent work"](CONTRIBUTING.md#parallel-agent-work).
 
-When resolving PR review comments, don't stop at fixing the flagged instance. For each comment, ask whether it names a *pattern* (a naming convention, a structural rule, a "do this everywhere" ask) rather than a one-off mistake. If it does:
+Issues live in this repo's GitHub Issues, managed via `gh` — see `docs/agents/issue-tracker.md` and `docs/agents/triage-labels.md` for the five canonical triage labels.
+</important>
+
+<important if="you are writing code in packages/api or apps/web">
+
+Code-level conventions live in [CONTRIBUTING.md](CONTRIBUTING.md) — read the section for the area you're touching before writing: testing layout per package, controller param extraction, model guard clauses and scopes, explicit `up`/`down` migrations, TypeScript file structure, component `testId` props, route-component hooks, i18n, Tailwind tokens, and zod response parsing. Domain terms (Journey, Subject, Lesson, Exercise, …) come from [CONTEXT.md](CONTEXT.md) — use them, and their _Avoid_ synonyms never.
+</important>
+
+<important if="you are designing or changing user-facing UI">
+
+UI is designed in the **Claude Design** system project (`must-be-the-stack`, via `/design-sync`/`DesignSync`) before `/implement` starts.
+
+- Deliverables are **visual canvas files, never prose** — real rendered HTML/SVG in the iPhone-mockup/Figma-board style of `flows.html` (device-frame screens) and `foundations.html` (component gallery). Rationale goes in a short caption inside the canvas, not a separate markdown spec.
+- Any new component or state introduced in a flow screen is added to `foundations.html`'s gallery in the same pass.
+- `DesignSync` ordering: `list_files`/`get_file` → `finalize_plan` → `write_files`. `finalize_plan` only reserves the write; always follow through with `write_files` and confirm via `list_files` before reporting design work as done.
+</important>
+
+<important if="something is broken, throwing, failing, or slow">
+
+Diagnose with the `diagnosing-bugs` skill, never by guessing at a fix. Its phases are mandatory: reproduction loop first, minimise, hypothesise, instrument, then fix with a regression test.
+
+Every investigation that took real diagnostic work then produces `docs/incident/<issue-number>-<kebab-case-issue-title>.md`, committed with the fix — symptom, what was ruled out, root cause, **every option considered including the rejected ones and why**, outcome, and what would have prevented it. See `docs/agents/incidents.md`; `docs/incident/5-curriculum-browse-gating.md` is the reference example.
+</important>
+
+<important if="you are resolving PR review comments">
+
+Don't stop at the flagged instance. If a comment names a *pattern* (a naming convention, a structural rule, a "do this everywhere" ask):
 
 1. Fix the flagged instance.
-2. Sweep the rest of the touched app for the same violation and fix those too (scoped to what the ticket/PR actually touches — don't rewrite unrelated pre-existing code beyond a small, safe, same-convention fix).
-3. Encode the rule in `CONTRIBUTING.md` (code-level standards) or here in `AGENTS.md` (process), whichever already hosts that kind of rule, so the same comment never has to be made twice.
+2. Sweep the rest of the touched app for the same violation (scoped to what the ticket/PR touches — don't rewrite unrelated pre-existing code beyond a small, safe, same-convention fix).
+3. Encode the rule in `CONTRIBUTING.md` (code-level) or here in `AGENTS.md` (process), whichever already hosts that kind of rule.
 
-Skip step 3 for genuinely one-off feedback (a typo, a single wrong value) that doesn't generalize.
+Skip step 3 for genuinely one-off feedback (a typo, a single wrong value).
+</important>
 
-## Design
+<important if="you are writing a commit message">
 
-Any ticket with user-facing UI is designed in the **Claude Design** system project (`must-be-the-stack`, via `/design-sync`/`DesignSync`) before `/implement` starts on it — step 4 in the Feature workflow above, between `/to-tickets` and `/implement`.
-
-- **Deliverables are visual canvas files, never prose.** Follow the iPhone-mockup/Figma-board style already established by `flows.html` (device-frame screens) and `foundations.html` (component gallery): real rendered HTML/SVG a person looks at, not an explanatory markdown document describing what a design would look like. If a concept needs rationale (e.g. why a direction was chosen), keep it as a short caption inside the canvas itself — don't let a written spec substitute for the actual visual.
-- **Keep `flows.html` and `foundations.html` in sync.** Any new reusable component or state introduced in a flow screen (a new input type, icon, card variant, etc.) is added to `foundations.html`'s component gallery in the same pass — not left for someone to notice missing later.
-- **`DesignSync` operation ordering**: `list_files`/`get_file` → `finalize_plan` → `write_files`. `finalize_plan` only reserves the write, it does not persist content. Always follow through with `write_files`, and confirm via `list_files` that the file actually exists in the project before reporting design work as done.
-
-## Commit style
-
-All commits follow [Commitizen](https://commitizen-tools.github.io/commitizen/)/[Conventional Commits](https://www.conventionalcommits.org/): `<type>(<optional scope>): <description>`, imperative mood, description lowercase and no trailing period. Common types: `feat`, `fix`, `docs`, `chore`, `refactor`, `test`, `ci`, `build`. Add a body when the *why* isn't obvious from the subject alone.
-
-## graphify
-
-This project has a knowledge graph at graphify-out/ with god nodes, community structure, and cross-file relationships.
-
-Rules:
-- For codebase questions, first run `graphify query "<question>"` when graphify-out/graph.json exists. Use `graphify path "<A>" "<B>"` for relationships and `graphify explain "<concept>"` for focused concepts. These return a scoped subgraph, usually much smaller than GRAPH_REPORT.md or raw grep output.
-- If graphify-out/wiki/index.md exists, use it for broad navigation instead of raw source browsing.
-- Read graphify-out/GRAPH_REPORT.md only for broad architecture review or when query/path/explain do not surface enough context.
-- After modifying code, run `graphify update .` to keep the graph current (AST-only, no API cost).
-- The post-commit hook rebuilds `graphify-out/` in the background. Check `git status --short` after committing (wait on `~/.cache/graphify-rebuild.log` if the rebuild is still running) and commit/push the result as its own `chore: rebuild graphify graph after <change>` commit — don't leave it dangling.
-- Only `graph.json`, `graph.html`, `GRAPH_REPORT.md`, `manifest.json`, `.graphify_labels.json(.sig)` and `cache/semantic/` are tracked. Everything else under `graphify-out/` is gitignored as machine-specific, pure churn, or free to regenerate — never `git add -f` it back. `cache/semantic/` stays tracked because regenerating it costs LLM calls, unlike the AST cache.
-- The `merge=graphify` driver declared in `.gitattributes` only works if that clone has run `graphify hook install` — git does not clone `.git/config`. Without it, `graph.json` conflicts resolve as a plain 3-way merge with conflict markers.
+[Conventional Commits](https://www.conventionalcommits.org/): `<type>(<optional scope>): <description>`, imperative mood, description lowercase and no trailing period. Types: `feat`, `fix`, `docs`, `chore`, `refactor`, `test`, `ci`, `build`. Add a body when the *why* isn't obvious from the subject.
+</important>
