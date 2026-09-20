@@ -21,24 +21,14 @@ Two kinds of issue, and the title says which:
 
 | Kind | Title | Label | What it is |
 | --- | --- | --- | --- |
-| Spec | `[S<n>] <feature>` | `spec` | A grilled, buildable feature. The parent of its tickets — there is no separate "epic". |
-| Ticket | `[S<n>.<m>] <imperative phrase>` | `ticket` | One tracer bullet: one branch, one PR. |
+| Spec | `Spec: <feature>` | `spec` | A grilled, buildable feature. The parent of its tickets — there is no separate "epic". |
+| Ticket | an imperative phrase, no prefix | `ticket` | One tracer bullet: one branch, one PR. |
 
-Every title carries a bracketed tag, and the tag says where the issue sits:
+**The hierarchy lives in GitHub's sub-issue links, never in the titles.** Titles carry no index, no `[S2.1]`, no parent issue number. An index typed into a title is a second copy of a structure GitHub already stores, and a second copy is a thing that can disagree with the first — which is how this repo briefly ended up with `[S1.8] [S1.8] Socratic Guide chat`. GitHub's own guidance is the same: group with sub-issues, and treat a title convention as decoration rather than as the relationship.
 
-```
-[S2]   Profile — capture, gate, account capsule          #17
-[S2.1] Capture a Profile after first log in              #26
-[S2.2] Show the signed-in user and let them sign out     #27
-```
+The spec's own issue page is where you read that structure back: it lists its sub-issues with a progress bar, and each ticket shows its parent in the sidebar. From the CLI, `gh issue view <n> --json parent,subIssues,subIssuesSummary`.
 
-`<n>` is the spec's index in creation order — `S1` is the platform spec, `S2` the second spec written, and so on. It is *not* the issue number: `#17` tells you nothing about which spec in reading order this is, which is the whole reason the index exists. `<m>` is the ticket's position within its spec, which also carries the intended build order (`S2.1` blocks `S2.2` blocks `S2.3`).
-
-There is no registry file to keep in step: the next spec index is one higher than the highest already in use, which `gh issue list --label spec` shows at a glance. A ticket's `S<n>` must match its parent spec's tag; if they disagree, one of them is wrong.
-
-Renaming a spec never renumbers it — the index is assigned once, at grilling, and outlives any title change.
-
-Branch names are unaffected — still `<issue-number>-<kebab-case-title>` with the bracket stripped, e.g. #26 → `26-capture-a-profile-after-first-log-in`.
+Branch names are unchanged: `<issue-number>-<kebab-case-title>`, e.g. #26 → `26-capture-a-profile-after-first-log-in`.
 
 Label names are flat and unprefixed, matching `needs-triage` / `ready-for-agent` / `bug` — never `type:spec` or any other namespaced form.
 
