@@ -2,15 +2,28 @@
 # Starts packages/api (Rails) and apps/web (Vite) in the background, once per
 # container lifetime. Wired to postStartCommand and postAttachCommand in
 # devcontainer.json; the pidfile check makes it safe to run from both.
+#
+# Each service is launched via `setsid` (re-executing this script with
+# run-api / run-web) so it leaves the lifecycle command's process group and
+# survives that command exiting.
 set -euo pipefail
 
 WORKSPACE="/workspace"
 RUN_DIR="/tmp/dev-services"
+SELF="$(readlink -f "${BASH_SOURCE[0]}")"
 mkdir -p "$RUN_DIR"
 
+# A pid that is a zombie counts as not running: `kill -0` succeeds on one, and
+# the container's init never reaps orphans, so a killed service would otherwise
+# look alive forever and never be restarted.
 is_running() {
-  local pidfile="$1"
-  [ -f "$pidfile" ] && kill -0 "$(cat "$pidfile")" 2>/dev/null
+  local pidfile="$1" pid state
+  [ -f "$pidfile" ] || return 1
+  pid="$(cat "$pidfile")"
+  state="$(ps -o stat= -p "$pid" 2>/dev/null)" || return 1
+  case "$state" in
+    "" | Z*) return 1 ;;
+  esac
 }
 
 port_in_use() {
@@ -29,6 +42,20 @@ wait_for_postgres() {
   echo "start-services: postgres not reachable at ${host}:${port} after 30s, starting api anyway" >&2
 }
 
+run_api() {
+  cd "$WORKSPACE/packages/api"
+  wait_for_postgres
+  bin/setup --skip-server
+  bin/rails curriculum:seed
+  exec bin/dev
+}
+
+run_web() {
+  cd "$WORKSPACE/apps/web"
+  [ -d node_modules ] || pnpm install
+  exec pnpm dev
+}
+
 start_api() {
   local pidfile="$RUN_DIR/api.pid"
   local logfile="$RUN_DIR/api.log"
@@ -37,13 +64,7 @@ start_api() {
     return 0
   fi
 
-  (
-    cd "$WORKSPACE/packages/api"
-    wait_for_postgres
-    bin/setup --skip-server
-    bin/rails curriculum:seed
-    exec bin/dev
-  ) >"$logfile" 2>&1 &
+  setsid nohup "$SELF" run-api >"$logfile" 2>&1 </dev/null &
   echo $! >"$pidfile"
   echo "start-services: api starting (pid $(cat "$pidfile"), log $logfile)"
 }
@@ -56,14 +77,16 @@ start_web() {
     return 0
   fi
 
-  (
-    cd "$WORKSPACE/apps/web"
-    [ -d node_modules ] || pnpm install
-    exec pnpm dev
-  ) >"$logfile" 2>&1 &
+  setsid nohup "$SELF" run-web >"$logfile" 2>&1 </dev/null &
   echo $! >"$pidfile"
   echo "start-services: web starting (pid $(cat "$pidfile"), log $logfile)"
 }
 
-start_api
-start_web
+case "${1:-}" in
+  run-api) run_api ;;
+  run-web) run_web ;;
+  *)
+    start_api
+    start_web
+    ;;
+esac
