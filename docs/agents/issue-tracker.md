@@ -42,14 +42,16 @@ Say exactly what is being built or fixed, and stop. Each layer holds one thing, 
 
 | | Sections | Holds |
 | --- | --- | --- |
-| Spec | Problem Statement · Solution · Out of Scope | **Why** the work exists and **what** it is, in a few lines each |
+| Spec | Problem Statement · Solution · Decisions · Out of Scope | **Why** the work exists and **what** it is, in a few lines each, plus links to the ADRs it rests on |
 | Ticket | What to build · Acceptance criteria · Blocked by | **How** — the acceptance criteria are the requirements |
 | ADR | see `docs/adr/` | **Why this way**, for a choice that is hard to reverse |
 | PR | What changed · Why it looks like this · Testing | What a reviewer can't read off the diff |
 
 **No user stories.** They restate the acceptance criteria in a longer form and nothing acts on them.
 
-**No "Implementation Decisions" or "Testing Decisions" in a spec.** Once `/to-tickets` has run, every one of those is a ticket's acceptance criterion; keeping a copy in the spec means two records of one decision, which drift. A decision that is genuinely hard to reverse goes in an ADR, which the ticket links.
+**No "Implementation Decisions" or "Testing Decisions" in a spec.** Once `/to-tickets` has run, every one of those is a ticket's acceptance criterion; keeping a copy in the spec means two records of one decision, which drift.
+
+**A spec's `## Decisions` section is links, not prose** — the ADRs the work rests on, plus the existing ADRs that constrain it. Those ADRs are written and merged to `main` during `/to-spec`, before any ticket exists, because the tickets are cut against them. An ADR that arrives as the output of a ticket arrived too late: ADR-0015 was written while implementing #26 and sat unmerged on that branch, so #17 and its four tickets had nothing to link while they were being written.
 
 Then:
 
