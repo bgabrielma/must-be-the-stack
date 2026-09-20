@@ -1,7 +1,7 @@
 import { createFileRoute, useRouter } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
 import { useJourney } from "./useJourney";
-import { requireAuth } from "../../lib/routeGuards";
+import { requireCompleteProfile } from "../../lib/routeGuards";
 import { toPercent } from "../../lib/curriculum";
 import { UnitCard } from "../../components/UnitCard";
 import { LockTooltip } from "../../components/LockTooltip";
@@ -12,7 +12,7 @@ import { PageHeading } from "../../components/PageHeading";
 import { StatusScreen } from "../../components/StatusScreen";
 
 export const Route = createFileRoute("/journeys/$journeyId/")({
-  beforeLoad: requireAuth,
+  beforeLoad: requireCompleteProfile,
   component: JourneyPage,
 });
 

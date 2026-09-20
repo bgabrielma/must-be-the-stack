@@ -39,6 +39,17 @@
     "haveAccount": "Already have an account? Log in",
     "genericError": "Something went wrong. Please try again."
   },
+  "profile": {
+    "eyebrow": "Last step",
+    "title": "Tell us about you",
+    "firstNameLabel": "First name",
+    "lastNameLabel": "Last name",
+    "jobRoleLabel": "Job role",
+    "aboutLabel": "About",
+    "submit": "Save and continue",
+    "errorTitle": "Could not save your profile",
+    "genericError": "Something went wrong. Please try again."
+  },
   "home": {
     "loading": "Loading...",
     "error": "Could not reach the API.",

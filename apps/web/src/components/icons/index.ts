@@ -9,3 +9,4 @@ export { InfoIcon } from "./InfoIcon";
 export { LockedStackMark } from "./LockedStackMark";
 export { BrandMark } from "./BrandMark";
 export { EntryIllustration } from "./EntryIllustration";
+export { ProfileIllustration } from "./ProfileIllustration";

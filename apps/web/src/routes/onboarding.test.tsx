@@ -1,7 +1,8 @@
-import { describe, it, expect, vi, afterEach } from "vitest";
+import { describe, it, expect, afterEach } from "vitest";
 import { screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { renderRouteTree } from "../test/renderRoute";
+import { mockApi } from "../test/mockApi";
 import { setAccessToken } from "../lib/accessToken";
 
 describe("Onboarding route (/onboarding)", () => {
@@ -9,10 +10,7 @@ describe("Onboarding route (/onboarding)", () => {
 
   it("redirects an already-authenticated visitor to /home", async () => {
     setAccessToken("test-token");
-    vi.stubGlobal(
-      "fetch",
-      vi.fn(async () => ({ ok: true, status: 200, json: async () => ({ data: [] }) })),
-    );
+    mockApi();
 
     renderRouteTree("/onboarding");
 

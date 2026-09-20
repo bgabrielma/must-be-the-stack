@@ -59,3 +59,11 @@ _Avoid_: Combo, Chain.
 **Gating** / **Unlock**:
 The constraint that a user must pass a Lesson's Exercise to unlock the next Lesson, and complete a Subject (one at a time) to unlock the next Subject.
 _Avoid_: Progression (too vague — Gating is the mechanism, not the outcome).
+
+**Profile**:
+The personal information a user gives about themselves — first name, last name, Job role, and a short "about" line — as distinct from the credentials they authenticate with. Captured during sign-up, and required: no Journey, Subject or Lesson is reachable until a Profile is complete.
+_Avoid_: Account (that's the credentials — email and password), Bio, User details.
+
+**Job role**:
+The user's own description of what they do, shown on their Profile (e.g. "Backend Engineer"). Free text written by the user, never a permission level.
+_Avoid_: Role (on a user that means permissions/authorization), Title, Position.

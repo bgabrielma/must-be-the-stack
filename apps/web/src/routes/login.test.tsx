@@ -2,6 +2,8 @@ import { describe, it, expect, vi, afterEach } from "vitest";
 import { screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { renderRouteTree } from "../test/renderRoute";
+import { currentUserResponse } from "../test/currentUserResponse";
+import { mockApi } from "../test/mockApi";
 import { getAccessToken, setAccessToken } from "../lib/accessToken";
 
 describe("Login route (/login)", () => {
@@ -13,12 +15,24 @@ describe("Login route (/login)", () => {
     await waitFor(() => expect(screen.getByText("Account created")).toBeInTheDocument());
   });
 
+  it("marks each required field with an asterisk", async () => {
+    renderRouteTree("/login");
+
+    await waitFor(() => screen.getByRole("heading", { name: "Log in" }));
+
+    expect(screen.getByTestId("login-email")).toHaveTextContent("Email*");
+    expect(screen.getByTestId("login-password")).toHaveTextContent("Password*");
+  });
+
   it("logs in, stores the access token, and redirects to /home", async () => {
     vi.stubGlobal(
       "fetch",
       vi.fn(async (url: string) => {
         if (url.endsWith("/login")) {
           return { ok: true, status: 200, json: async () => ({ access_token: "test-token" }) };
+        }
+        if (url.endsWith("/user")) {
+          return { ok: true, status: 200, json: async () => currentUserResponse() };
         }
         if (url.endsWith("/journeys")) {
           return { ok: true, status: 200, json: async () => ({ data: [] }) };
@@ -30,8 +44,8 @@ describe("Login route (/login)", () => {
     renderRouteTree("/login");
 
     await waitFor(() => screen.getByRole("heading", { name: "Log in" }));
-    await user.type(screen.getByLabelText("Email"), "ada@example.com");
-    await user.type(screen.getByLabelText("Password"), "correct-horse-battery-staple");
+    await user.type(screen.getByLabelText(/^Email/), "ada@example.com");
+    await user.type(screen.getByLabelText(/^Password/), "correct-horse-battery-staple");
     await user.click(screen.getByRole("button", { name: "Log in" }));
 
     await waitFor(() => expect(getAccessToken()).toBe("test-token"));
@@ -42,10 +56,7 @@ describe("Login route (/login)", () => {
 
   it("redirects an already-authenticated visitor to /home", async () => {
     setAccessToken("test-token");
-    vi.stubGlobal(
-      "fetch",
-      vi.fn(async () => ({ ok: true, status: 200, json: async () => ({ data: [] }) })),
-    );
+    mockApi();
 
     renderRouteTree("/login?created=true");
 
@@ -67,8 +78,8 @@ describe("Login route (/login)", () => {
     renderRouteTree("/login");
 
     await waitFor(() => screen.getByRole("heading", { name: "Log in" }));
-    await user.type(screen.getByLabelText("Email"), "ada@example.com");
-    await user.type(screen.getByLabelText("Password"), "wrong");
+    await user.type(screen.getByLabelText(/^Email/), "ada@example.com");
+    await user.type(screen.getByLabelText(/^Password/), "wrong");
     await user.click(screen.getByRole("button", { name: "Log in" }));
 
     await waitFor(() =>

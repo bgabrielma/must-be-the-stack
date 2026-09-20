@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
-import { uniqueEmail, fillCredentials, submitForm, E2E_PASSWORD } from "./helpers";
+import { uniqueEmail, fillCredentials, fillProfile, submitForm, E2E_PASSWORD } from "./helpers";
 
-// Flow: Entry -> Onboarding -> Signup -> Login -> Home. Errors run before the
+// Flow: Entry -> Onboarding -> Signup -> Login -> Your profile -> Home. Errors run before the
 // happy path (ADR-0013): thin assertions only, screenshot per screen matching
 // flows.html's numbering, real stack throughout. Form fields/buttons are
 // located by input type / role, not by their copy, so wording changes don't
@@ -39,7 +39,7 @@ test.describe("Register", () => {
     await expect(page).toHaveURL(/\/login$/);
   });
 
-  test("happy path: Entry -> Onboarding -> Signup -> Login -> Home", async ({ page }) => {
+  test("happy path: Entry -> Onboarding -> Signup -> Login -> Your profile -> Home", async ({ page }) => {
     const email = uniqueEmail("e2e-register-happy");
 
     await page.goto("/");
@@ -64,6 +64,12 @@ test.describe("Register", () => {
     await page.screenshot({ path: "screenshots/register/04-login.png" });
 
     await fillCredentials(page, email, E2E_PASSWORD);
+    await submitForm(page);
+
+    await fillProfile(page);
+    await expect(page.getByText("Tell us about you")).toBeVisible();
+    await page.screenshot({ path: "screenshots/register/05-profile.png" });
+
     await submitForm(page);
 
     await expect(page).toHaveURL(/\/home/);
