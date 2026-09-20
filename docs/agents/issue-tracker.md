@@ -2,7 +2,7 @@
 
 Issues and PRDs for this repo live as GitHub issues. Use the `gh` CLI for all operations.
 
-Note: this repo does not yet have a GitHub remote configured. Once one is added, `gh` will infer the repo automatically from `git remote -v`.
+This repo's remote is `bgabrielma/must-be-the-stack`; `gh` infers it automatically from `git remote -v` when run inside the clone.
 
 ## Conventions
 
