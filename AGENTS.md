@@ -63,7 +63,7 @@ The `merge=graphify` driver in `.gitattributes` only works once that clone has r
 Run the main flow in order, keeping steps 1–3 in one unbroken context window (don't compact or clear until after `/to-tickets`):
 
 1. `/grill-with-docs` — sharpen the idea by interview, retaining decisions in `CONTEXT.md` / ADRs
-2. `/to-spec` — collapse the grilled thread into a buildable spec, **rewriting the original issue in place** (retitled `Spec: <feature>`, labelled `spec`) rather than opening a second issue for the same feature. **Every ADR the spec rests on is written and merged to `main` in this step**, and the spec links it under `## Decisions` — the ADRs are what the tickets get cut against, so an ADR can never be a deliverable of one of them
+2. `/to-spec` — collapse the grilled thread into a buildable spec, **rewriting the original issue in place** (retitled `Spec: <feature>`, labelled `spec`) rather than opening a second issue for the same feature. **Every ADR the spec rests on lands on `main` through its own PR in this step**, and the spec links it under `## Decisions` — the ADRs are what the tickets get cut against, so an ADR can never be a deliverable of one of them
 3. `/to-tickets` — split the spec into tracer-bullet tickets with blocking edges, each created as a GitHub sub-issue of that spec and labelled `ticket`. A ticket cites the ADRs that constrain it; "write an ADR" is never an acceptance criterion
 4. **Design** — any ticket with user-facing UI is designed in Claude Design (`/design-sync`) before implementing
 5. `/implement` — build each ticket (drives `/tdd`, then `/code-review`); starts fresh per ticket
@@ -72,7 +72,9 @@ Run the main flow in order, keeping steps 1–3 in one unbroken context window (
 
 <important if="you are implementing a ticket, branching, or opening a PR">
 
-One ticket per branch per PR — never bundle tickets. Branch name: `<issue-number>-<kebab-case-issue-title>` (e.g. `42-add-jwt-refresh-tokens`), matching the ticket's GitHub issue.
+**Everything reaches `main` through a PR** — no direct commits, and no exception for docs-only or ADR-only changes. A decision that will constrain four tickets deserves a review surface at least as much as the code does.
+
+One ticket per branch per PR — never bundle tickets. Branch name: `<issue-number>-<kebab-case-issue-title>` (e.g. `42-add-jwt-refresh-tokens`), matching the ticket's GitHub issue. A change with no ticket behind it (a docs fix, an ADR from `/to-spec`) uses a short kebab-case description instead.
 
 Every ticket is implemented in its own git worktree, not the main checkout — see [CONTRIBUTING.md's "Parallel agent work"](CONTRIBUTING.md#parallel-agent-work).
 
