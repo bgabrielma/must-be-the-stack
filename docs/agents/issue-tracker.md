@@ -51,7 +51,7 @@ Say exactly what is being built or fixed, and stop. Each layer holds one thing, 
 
 **No "Implementation Decisions" or "Testing Decisions" in a spec.** Once `/to-tickets` has run, every one of those is a ticket's acceptance criterion; keeping a copy in the spec means two records of one decision, which drift.
 
-**A spec's `## Decisions` section is links, not prose** — the ADRs the work rests on, plus the existing ADRs that constrain it. Those ADRs are written and merged to `main` during `/to-spec`, before any ticket exists, because the tickets are cut against them. An ADR that arrives as the output of a ticket arrived too late: ADR-0015 was written while implementing #26 and sat unmerged on that branch, so #17 and its four tickets had nothing to link while they were being written.
+**A spec's `## Decisions` section is links, not prose** — the ADRs the work rests on, plus the existing ADRs that constrain it. Those ADRs land on `main` through their own PR during `/to-spec`, before any ticket exists, because the tickets are cut against them. An ADR that arrives as the output of a ticket arrived too late: ADR-0015 was written while implementing #26 and sat unmerged on that branch, so #17 and its four tickets had nothing to link while they were being written.
 
 Then:
 
