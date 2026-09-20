@@ -34,7 +34,7 @@ Label names are flat and unprefixed, matching `needs-triage` / `ready-for-agent`
 
 `spec`/`ticket` say what an issue **is**; the triage labels say what **state** it's in, and the two are orthogonal. A freshly raised feature carries `needs-triage` and no kind label at all, because it isn't a spec until it's been grilled.
 
-**Grilling converts an issue in place.** `/grill-with-docs` → `/to-spec` rewrites the issue it started from — retitle to `[S<n>] <feature>` with the next free index, swap `needs-triage` for `ready-for-agent`, add `spec`, replace the body with the spec. It never opens a second issue for the same feature. One feature keeps one number for its whole life, so every inbound reference stays valid.
+**Grilling converts an issue in place.** `/grill-with-docs` → `/to-spec` rewrites the issue it started from — retitle to `Spec: <feature>`, swap `needs-triage` for `ready-for-agent`, add `spec`, replace the body with the spec. It never opens a second issue for the same feature. One feature keeps one number for its whole life, so every inbound reference stays valid.
 
 ## Writing descriptions
 
