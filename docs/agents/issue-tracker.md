@@ -22,7 +22,13 @@ Two kinds of issue, and the title says which:
 | Kind | Title | Label | What it is |
 | --- | --- | --- | --- |
 | Spec | starts with `Spec: ` | `spec` | A grilled, buildable feature. The parent of its tickets — there is no separate "epic". |
-| Ticket | imperative phrase, no prefix | `ticket` | One tracer bullet: one branch, one PR. |
+| Ticket | `[#<spec>] ` then an imperative phrase | `ticket` | One tracer bullet: one branch, one PR. |
+
+So `Spec: Profile — capture, gate, account capsule` (#17) parents `[#17] Capture a Profile after first log in` (#26).
+
+A ticket names its spec by that spec's **issue number**, because that number is already unique, already permanent, and survives the spec being renamed. Specs get no separate index of their own — their issue number is the index, and a parallel `Spec 3:` scheme would be a second numbering that can drift out of agreement with `#17`. The bracket is what makes the grouping visible in `gh issue list`, which prints a flat list of titles and is where the hierarchy is otherwise invisible. A ticket's `[#N]` must equal its `parent.number`; if they disagree, one of them is wrong.
+
+Branch names are unaffected — still `<ticket-number>-<kebab-case-title>` with the bracket stripped, e.g. #26 → `26-capture-a-profile-after-first-log-in`.
 
 Label names are flat and unprefixed, matching `needs-triage` / `ready-for-agent` / `bug` — never `type:spec` or any other namespaced form.
 
