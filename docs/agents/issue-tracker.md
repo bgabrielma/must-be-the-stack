@@ -34,7 +34,7 @@ Label names are flat and unprefixed, matching `needs-triage` / `ready-for-agent`
 
 `spec`/`ticket` say what an issue **is**; the triage labels say what **state** it's in, and the two are orthogonal. A freshly raised feature carries `needs-triage` and no kind label at all, because it isn't a spec until it's been grilled.
 
-**Grilling converts an issue in place.** `/grill-with-docs` → `/to-spec` rewrites the issue it started from — retitle to `[S<n>] <feature>` with the next free index, swap `needs-triage` for `ready-for-agent`, add `spec`, replace the body with the spec. It never opens a second issue for the same feature. One feature keeps one number for its whole life, so every inbound reference stays valid.
+**Grilling converts an issue in place.** `/grill-with-docs` → `/to-spec` rewrites the issue it started from — retitle to `Spec: <feature>`, swap `needs-triage` for `ready-for-agent`, add `spec`, replace the body with the spec. It never opens a second issue for the same feature. One feature keeps one number for its whole life, so every inbound reference stays valid.
 
 ## Writing descriptions
 
@@ -51,7 +51,7 @@ Say exactly what is being built or fixed, and stop. Each layer holds one thing, 
 
 **No "Implementation Decisions" or "Testing Decisions" in a spec.** Once `/to-tickets` has run, every one of those is a ticket's acceptance criterion; keeping a copy in the spec means two records of one decision, which drift.
 
-**A spec's `## Decisions` section is links, not prose** — the ADRs the work rests on, plus the existing ADRs that constrain it. Those ADRs are written and merged to `main` during `/to-spec`, before any ticket exists, because the tickets are cut against them. An ADR that arrives as the output of a ticket arrived too late: ADR-0015 was written while implementing #26 and sat unmerged on that branch, so #17 and its four tickets had nothing to link while they were being written.
+**A spec's `## Decisions` section is links, not prose** — the ADRs the work rests on, plus the existing ADRs that constrain it. Those ADRs land on `main` through their own PR during `/to-spec`, before any ticket exists, because the tickets are cut against them. An ADR that arrives as the output of a ticket arrived too late: ADR-0015 was written while implementing #26 and sat unmerged on that branch, so #17 and its four tickets had nothing to link while they were being written.
 
 Then:
 
