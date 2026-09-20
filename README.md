@@ -1,6 +1,6 @@
 # must-be-the-stack
 
-A gamified developer-learning app: delivers one concept at a time toward a study goal (e.g. system design), evaluates the learner's understanding, and gates progress until they demonstrate it.
+A mastery-gated developer-learning app: delivers one concept at a time toward a study goal (e.g. system design), evaluates the learner's understanding, and gates progress until they demonstrate it. Not gamified — there are no points, badges, levels or scoreboards; the unlock is the reward.
 
 ## Domain
 
