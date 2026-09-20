@@ -63,8 +63,8 @@ The `merge=graphify` driver in `.gitattributes` only works once that clone has r
 Run the main flow in order, keeping steps 1–3 in one unbroken context window (don't compact or clear until after `/to-tickets`):
 
 1. `/grill-with-docs` — sharpen the idea by interview, retaining decisions in `CONTEXT.md` / ADRs
-2. `/to-spec` — collapse the grilled thread into a buildable spec
-3. `/to-tickets` — split the spec into tracer-bullet tickets with blocking edges
+2. `/to-spec` — collapse the grilled thread into a buildable spec, **rewriting the original issue in place** (retitled `Spec: <feature>`, labelled `spec`) rather than opening a second issue for the same feature
+3. `/to-tickets` — split the spec into tracer-bullet tickets with blocking edges, each created as a GitHub sub-issue of that spec and labelled `ticket`
 4. **Design** — any ticket with user-facing UI is designed in Claude Design (`/design-sync`) before implementing
 5. `/implement` — build each ticket (drives `/tdd`, then `/code-review`); starts fresh per ticket
 6. `/code-review` — review the diff (Standards + Spec) before merging, if `/implement` didn't already
@@ -76,7 +76,7 @@ One ticket per branch per PR — never bundle tickets. Branch name: `<issue-numb
 
 Every ticket is implemented in its own git worktree, not the main checkout — see [CONTRIBUTING.md's "Parallel agent work"](CONTRIBUTING.md#parallel-agent-work).
 
-Issues live in this repo's GitHub Issues, managed via `gh` — see `docs/agents/issue-tracker.md` and `docs/agents/triage-labels.md` for the five canonical triage labels.
+Issues live in this repo's GitHub Issues, managed via `gh` — see `docs/agents/issue-tracker.md` for the spec-vs-ticket title/label convention, and `docs/agents/triage-labels.md` for the five canonical triage labels.
 </important>
 
 <important if="you are writing code in packages/api or apps/web">

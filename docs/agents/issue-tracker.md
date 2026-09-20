@@ -15,6 +15,29 @@ This repo's remote is `bgabrielma/must-be-the-stack`; `gh` infers it automatical
 
 Infer the repo from `git remote -v` — `gh` does this automatically when run inside a clone.
 
+## Specs and tickets
+
+Two kinds of issue, and the title says which:
+
+| Kind | Title | Label | What it is |
+| --- | --- | --- | --- |
+| Spec | starts with `Spec: ` | `spec` | A grilled, buildable feature. The parent of its tickets — there is no separate "epic". |
+| Ticket | imperative phrase, no prefix | `ticket` | One tracer bullet: one branch, one PR. |
+
+Label names are flat and unprefixed, matching `needs-triage` / `ready-for-agent` / `bug` — never `type:spec` or any other namespaced form.
+
+`spec`/`ticket` say what an issue **is**; the triage labels say what **state** it's in, and the two are orthogonal. A freshly raised feature carries `needs-triage` and no kind label at all, because it isn't a spec until it's been grilled.
+
+**Grilling converts an issue in place.** `/grill-with-docs` → `/to-spec` rewrites the issue it started from — retitle to `Spec: <feature>`, swap `needs-triage` for `ready-for-agent`, add `spec`, replace the body with the spec. It never opens a second issue for the same feature. One feature keeps one number for its whole life, so every inbound reference stays valid.
+
+**`/to-tickets` creates each ticket as a real GitHub sub-issue of that spec**, not as a `Parent:` sentence in the body. The link belongs in GitHub's own hierarchy so it shows in the UI and in `gh issue view`'s `parent`/`sub-issues` fields:
+
+```
+gh api --method POST repos/<owner>/<repo>/issues/<spec>/sub_issues -F sub_issue_id=<ticket-db-id>
+```
+
+`<ticket-db-id>` is the numeric **database id** (`gh api repos/<owner>/<repo>/issues/<n> --jq .id`), not the `#number`.
+
 ## Pull requests as a triage surface
 
 **PRs as a request surface: no.** _(Set to `yes` if this repo treats external PRs as feature requests; `/triage` reads this flag.)_
