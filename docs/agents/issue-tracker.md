@@ -21,20 +21,32 @@ Two kinds of issue, and the title says which:
 
 | Kind | Title | Label | What it is |
 | --- | --- | --- | --- |
-| Spec | starts with `Spec: ` | `spec` | A grilled, buildable feature. The parent of its tickets — there is no separate "epic". |
-| Ticket | `[#<spec>] ` then an imperative phrase | `ticket` | One tracer bullet: one branch, one PR. |
+| Spec | `[S<n>] <feature>` | `spec` | A grilled, buildable feature. The parent of its tickets — there is no separate "epic". |
+| Ticket | `[S<n>.<m>] <imperative phrase>` | `ticket` | One tracer bullet: one branch, one PR. |
 
-So `Spec: Profile — capture, gate, account capsule` (#17) parents `[#17] Capture a Profile after first log in` (#26).
+Every title carries a bracketed tag, and the tag says where the issue sits:
 
-A ticket names its spec by that spec's **issue number**, because that number is already unique, already permanent, and survives the spec being renamed. Specs get no separate index of their own — their issue number is the index, and a parallel `Spec 3:` scheme would be a second numbering that can drift out of agreement with `#17`. The bracket is what makes the grouping visible in `gh issue list`, which prints a flat list of titles and is where the hierarchy is otherwise invisible. A ticket's `[#N]` must equal its `parent.number`; if they disagree, one of them is wrong.
+```
+[S2]   Profile — capture, gate, account capsule          #17
+[S2.1] Capture a Profile after first log in              #26
+[S2.2] Show the signed-in user and let them sign out     #27
+```
 
-Branch names are unaffected — still `<ticket-number>-<kebab-case-title>` with the bracket stripped, e.g. #26 → `26-capture-a-profile-after-first-log-in`.
+`<n>` is the spec's index in creation order — `S1` is the platform spec, `S2` the second spec written, and so on. It is *not* the issue number: `#17` tells you nothing about which spec in reading order this is, which is the whole reason the index exists. `<m>` is the ticket's position within its spec, which also carries the intended build order (`S2.1` blocks `S2.2` blocks `S2.3`).
+
+There is no registry file to keep in step: the next spec index is one higher than the highest already in use, which `gh issue list --label spec` shows at a glance. A ticket's `S<n>` must match its parent spec's tag; if they disagree, one of them is wrong.
+
+Renaming a spec never renumbers it — the index is assigned once, at grilling, and outlives any title change.
+
+Branch names are unaffected — still `<issue-number>-<kebab-case-title>` with the bracket stripped, e.g. #26 → `26-capture-a-profile-after-first-log-in`.
 
 Label names are flat and unprefixed, matching `needs-triage` / `ready-for-agent` / `bug` — never `type:spec` or any other namespaced form.
 
 `spec`/`ticket` say what an issue **is**; the triage labels say what **state** it's in, and the two are orthogonal. A freshly raised feature carries `needs-triage` and no kind label at all, because it isn't a spec until it's been grilled.
 
-**Grilling converts an issue in place.** `/grill-with-docs` → `/to-spec` rewrites the issue it started from — retitle to `Spec: <feature>`, swap `needs-triage` for `ready-for-agent`, add `spec`, replace the body with the spec. It never opens a second issue for the same feature. One feature keeps one number for its whole life, so every inbound reference stays valid.
+**Grilling converts an issue in place.** `/grill-with-docs` → `/to-spec` rewrites the issue it started from — retitle to `[S<n>] <feature>` with the next free index, swap `needs-triage` for `ready-for-agent`, add `spec`, replace the body with the spec. It never opens a second issue for the same feature. One feature keeps one number for its whole life, so every inbound reference stays valid.
+
+**Each ticket lists the spec's user stories it closes**, by the spec's own numbering, so the ticket is readable without the spec open and every story is accounted for exactly once across the set.
 
 **`/to-tickets` creates each ticket as a real GitHub sub-issue of that spec**, not as a `Parent:` sentence in the body. The link belongs in GitHub's own hierarchy so it shows in the UI and in `gh issue view`'s `parent`/`sub-issues` fields:
 

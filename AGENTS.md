@@ -63,7 +63,7 @@ The `merge=graphify` driver in `.gitattributes` only works once that clone has r
 Run the main flow in order, keeping steps 1–3 in one unbroken context window (don't compact or clear until after `/to-tickets`):
 
 1. `/grill-with-docs` — sharpen the idea by interview, retaining decisions in `CONTEXT.md` / ADRs
-2. `/to-spec` — collapse the grilled thread into a buildable spec, **rewriting the original issue in place** (retitled `Spec: <feature>`, labelled `spec`) rather than opening a second issue for the same feature
+2. `/to-spec` — collapse the grilled thread into a buildable spec, **rewriting the original issue in place** (retitled `[S<n>] <feature>`, labelled `spec`) rather than opening a second issue for the same feature
 3. `/to-tickets` — split the spec into tracer-bullet tickets with blocking edges, each created as a GitHub sub-issue of that spec and labelled `ticket`
 4. **Design** — any ticket with user-facing UI is designed in Claude Design (`/design-sync`) before implementing
 5. `/implement` — build each ticket (drives `/tdd`, then `/code-review`); starts fresh per ticket
