@@ -12,6 +12,24 @@ Code-level standards for this repo. For process (issue tracking, triage, the fea
 
 **YAGNI** (You Aren't Gonna Need It): don't build for a requirement that doesn't exist yet. Anti-pattern this rules out: adding a strategy pattern for "future" Exercise types before a second type actually exists, or a config flag for a second LLM provider before ADR-0006's Gemini choice is revisited.
 
+## Testing principles
+
+A test asserts what a user or a client can observe — a status code, a response body, a redirect, a rendered string — never an internal call or a private method. Prefer the highest seam that can prove the behaviour, and an existing seam over a new one. There are two:
+
+- **Backend seam**: the Rails HTTP API boundary — request specs against real routes and a real test database.
+- **Frontend seam**: the React render boundary — render the route tree, interact, assert the DOM. Not internal hooks or state.
+
+Exactly two external clients are stubbed, because they are I/O we don't own:
+
+- **GitHub API** — for Evaluator-triggering and webhook-handling tests.
+- **Gemini API** — for Quiz grading, Project scoring, Socratic Guide chat and voice input.
+
+Everything else runs for real. Beyond those seams:
+
+- **Unit tests** cover isolated Ruby objects/services (the Evaluator's workflow-diff check, streak calculation) and isolated React components/hooks.
+- **Integration tests** are the request specs and render-boundary tests above.
+- **Characterization tests** are written against behaviour as a ticket implements it, before a later ticket extends or refactors it, so the later change has a documented baseline to protect rather than relying on memory of intent.
+
 ## Testing (packages/api)
 
 RSpec files under `spec/` mirror the path of the `app/` file they cover, e.g. `app/models/ping.rb` -> `spec/models/ping_spec.rb`, `app/jobs/foo_job.rb` -> `spec/jobs/foo_job_spec.rb`. **Exception**: controllers are covered by request specs, not controller specs — `app/controllers/pings_controller.rb` is tested via `spec/requests/pings_spec.rb`, matching Rails' own convention rather than a literal path mirror.
