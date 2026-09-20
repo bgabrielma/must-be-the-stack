@@ -36,7 +36,28 @@ Label names are flat and unprefixed, matching `needs-triage` / `ready-for-agent`
 
 **Grilling converts an issue in place.** `/grill-with-docs` → `/to-spec` rewrites the issue it started from — retitle to `[S<n>] <feature>` with the next free index, swap `needs-triage` for `ready-for-agent`, add `spec`, replace the body with the spec. It never opens a second issue for the same feature. One feature keeps one number for its whole life, so every inbound reference stays valid.
 
-**Each ticket lists the spec's user stories it closes**, by the spec's own numbering, so the ticket is readable without the spec open and every story is accounted for exactly once across the set.
+## Writing descriptions
+
+Say exactly what is being built or fixed, and stop. Each layer holds one thing, and nothing is restated in the layer above or below it:
+
+| | Sections | Holds |
+| --- | --- | --- |
+| Spec | Problem Statement · Solution · Out of Scope | **Why** the work exists and **what** it is, in a few lines each |
+| Ticket | What to build · Acceptance criteria · Blocked by | **How** — the acceptance criteria are the requirements |
+| ADR | see `docs/adr/` | **Why this way**, for a choice that is hard to reverse |
+| PR | What changed · Why it looks like this · Testing | What a reviewer can't read off the diff |
+
+**No user stories.** They restate the acceptance criteria in a longer form and nothing acts on them.
+
+**No "Implementation Decisions" or "Testing Decisions" in a spec.** Once `/to-tickets` has run, every one of those is a ticket's acceptance criterion; keeping a copy in the spec means two records of one decision, which drift. A decision that is genuinely hard to reverse goes in an ADR, which the ticket links.
+
+Then:
+
+- **Bullets over prose.** Acceptance criteria are a list. So is a PR's "what changed". Use a diagram in a spec where one earns its place.
+- **Plain sentences where they suffice.** If one line tells a developer what they need, that is the better version — don't restate it for emphasis.
+- **No padding.** Background the reader already has, an argument for why the work matters, a summary of what the bullets just said — cut all of it.
+
+There is no word count. Length follows from content; what isn't acceptable is the same content said at length, or said twice.
 
 **`/to-tickets` creates each ticket as a real GitHub sub-issue of that spec**, not as a `Parent:` sentence in the body. The link belongs in GitHub's own hierarchy so it shows in the UI and in `gh issue view`'s `parent`/`sub-issues` fields:
 
