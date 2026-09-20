@@ -1,10 +1,10 @@
 # Standalone Rails+Postgres shape mirroring .devcontainer/docker-compose.yml
-# [ADR-0009], for running apps/api outside the devcontainer (e.g. the VPS).
+# [ADR-0009], for running packages/api outside the devcontainer (e.g. the VPS).
 # The frontend (apps/web) deploys separately to Cloudflare Pages, so it has
 # no service here.
 services:
   app:
-    build: apps/api
+    build: packages/api
     ports:
       - "3000:3000"
     environment:

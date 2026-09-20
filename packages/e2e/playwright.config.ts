@@ -40,7 +40,7 @@ export default defineConfig({
       // and a built bundle is also more faithful to what a real user gets
       // (this suite's whole point per ADR-0013 is reviewing the real thing).
       command: "pnpm exec vite build && pnpm exec vite preview --port 5173 --strictPort",
-      cwd: "../web",
+      cwd: "../../apps/web",
       url: "http://localhost:5173",
       reuseExistingServer: !process.env.CI,
       timeout: 60_000,

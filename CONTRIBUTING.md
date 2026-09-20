@@ -4,7 +4,7 @@ Code-level standards for this repo. For process (issue tracking, triage, the fea
 
 ## Principles
 
-**DRY** (Don't Repeat Yourself): don't duplicate the same *decision* in two places. Anti-pattern this rules out: copy-pasting a validation rule or an API shape into both `apps/api` and `apps/web` instead of deriving one from the other (e.g. generated types) — the two ecosystems already can't share code directly (ADR-0004), so duplicated decisions drift silently.
+**DRY** (Don't Repeat Yourself): don't duplicate the same *decision* in two places. Anti-pattern this rules out: copy-pasting a validation rule or an API shape into both `packages/api` and `apps/web` instead of deriving one from the other (e.g. generated types) — the two ecosystems already can't share code directly (ADR-0004), so duplicated decisions drift silently.
 
 **SOLID**: classes/modules should have one reason to change, and depend on abstractions where the concrete implementation genuinely varies. Anti-pattern this rules out: a single service object or React hook that both fetches data and decides how a Lesson gets graded — decompose along those two reasons to change, not preemptively into any other shape.
 
@@ -12,7 +12,7 @@ Code-level standards for this repo. For process (issue tracking, triage, the fea
 
 **YAGNI** (You Aren't Gonna Need It): don't build for a requirement that doesn't exist yet. Anti-pattern this rules out: adding a strategy pattern for "future" Exercise types before a second type actually exists, or a config flag for a second LLM provider before ADR-0006's Gemini choice is revisited.
 
-## Testing (apps/api)
+## Testing (packages/api)
 
 RSpec files under `spec/` mirror the path of the `app/` file they cover, e.g. `app/models/ping.rb` -> `spec/models/ping_spec.rb`, `app/jobs/foo_job.rb` -> `spec/jobs/foo_job_spec.rb`. **Exception**: controllers are covered by request specs, not controller specs — `app/controllers/pings_controller.rb` is tested via `spec/requests/pings_spec.rb`, matching Rails' own convention rather than a literal path mirror.
 
@@ -28,23 +28,23 @@ Within a test file, the `describe` block(s) come first; any local helper/mock fu
 
 This convention is enforced by code review, not CI.
 
-## Testing (apps/e2e)
+## Testing (packages/e2e)
 
-Playwright E2E tests are a PR-review artifact, not a regression gate — see [ADR-0013](docs/adr/0013-playwright-e2e-for-pr-review.md) for the full rationale. One spec file per user-facing flow, not per app area (e.g. `register.spec.ts`, `journey.spec.ts`) — flows that share the same navigation shape at different data states share one file and a common helper rather than duplicating the click/assert/screenshot sequence. Each spec runs its error-state tests before its happy-path test, real-stack throughout (no `page.route` stubbing). Assertions stay thin — enough to prove a screen loaded or an error message appeared, not a re-check of lock-state logic already covered by `apps/api`'s request specs and `apps/web`'s render-boundary tests.
+Playwright E2E tests are a PR-review artifact, not a regression gate — see [ADR-0013](docs/adr/0013-playwright-e2e-for-pr-review.md) for the full rationale. One spec file per user-facing flow, not per app area (e.g. `register.spec.ts`, `journey.spec.ts`) — flows that share the same navigation shape at different data states share one file and a common helper rather than duplicating the click/assert/screenshot sequence. Each spec runs its error-state tests before its happy-path test, real-stack throughout (no `page.route` stubbing). Assertions stay thin — enough to prove a screen loaded or an error message appeared, not a re-check of lock-state logic already covered by `packages/api`'s request specs and `apps/web`'s render-boundary tests.
 
-Every user in the suite is created by the spec itself via real signup, never seeded — `curriculum:seed_e2e` (`apps/api`) only seeds Journey/Subject/Lesson content, nothing user-shaped. A state no real user can reach yet (e.g. a completed Journey, which needs Exercise/grading from issue #6) stays uncovered rather than being faked with seeded progress rows.
+Every user in the suite is created by the spec itself via real signup, never seeded — `curriculum:seed_e2e` (`packages/api`) only seeds Journey/Subject/Lesson content, nothing user-shaped. A state no real user can reach yet (e.g. a completed Journey, which needs Exercise/grading from issue #6) stays uncovered rather than being faked with seeded progress rows.
 
 Every screenshot needs a real content assertion (e.g. `getByText(...)`) immediately before it, not just a URL check — `expect(page).toHaveURL(...)` resolves as soon as the client-side route changes, which can be before the new screen has actually painted, silently capturing the previous screen's content instead. Each happy-path step's screenshot is named for its position in the flow, matching `flows.html`'s own numbering, e.g. `01-entry.png`, `02-onboarding.png` — so a reviewer can jump straight to "the Subject list screen" in the uploaded CI artifact instead of scrubbing through video. Video capture is `on` (not `retain-on-failure`) for every spec, since the point is letting a reviewer see the real thing, not just diagnosing a failure.
 
-States with no in-app UI path yet (Home's in-progress/completed, `is-completed`/`is-active` Subject and Lesson cards) depend on the `curriculum:seed_e2e` rake task (`apps/api`) to seed real `Submission` rows for a fixture user before the suite runs — see the task's own comments for what it seeds.
+States with no in-app UI path yet (Home's in-progress/completed, `is-completed`/`is-active` Subject and Lesson cards) depend on the `curriculum:seed_e2e` rake task (`packages/api`) to seed real `Submission` rows for a fixture user before the suite runs — see the task's own comments for what it seeds.
 
 ### Running the suite locally
 
-The dev container's `postCreateCommand` installs Chromium (and its OS-level shared libraries) via `pnpm exec playwright install --with-deps chromium` in `apps/e2e`, so a fresh container can run the suite immediately — matching what `.github/workflows/e2e.yml` installs in CI (Chromium only; `playwright.config.ts` only configures a `chromium` project). If a container predates this, run that same command by hand in `apps/e2e`.
+The dev container's `postCreateCommand` installs Chromium (and its OS-level shared libraries) via `pnpm exec playwright install --with-deps chromium` in `packages/e2e`, so a fresh container can run the suite immediately — matching what `.github/workflows/e2e.yml` installs in CI (Chromium only; `playwright.config.ts` only configures a `chromium` project). If a container predates this, run that same command by hand in `packages/e2e`.
 
-With `apps/api` and `apps/web` already running (`.devcontainer/start-services.sh`), `pnpm test` in `apps/e2e` reuses them (`reuseExistingServer: !process.env.CI`) instead of starting competing ones — those already-running dev-mode servers, not a separate `RAILS_ENV=test` boot, are what the suite talks to locally, so `curriculum:seed_e2e` (test-env only) isn't needed here; `curriculum:seed` (run against the dev database by `start-services.sh`) already seeds the same content.
+With `packages/api` and `apps/web` already running (`.devcontainer/start-services.sh`), `pnpm test` in `packages/e2e` reuses them (`reuseExistingServer: !process.env.CI`) instead of starting competing ones — those already-running dev-mode servers, not a separate `RAILS_ENV=test` boot, are what the suite talks to locally, so `curriculum:seed_e2e` (test-env only) isn't needed here; `curriculum:seed` (run against the dev database by `start-services.sh`) already seeds the same content.
 
-## Controllers (apps/api)
+## Controllers (packages/api)
 
 Never read `params[...]` directly inside an action body. Extract every param a controller uses through a private method at the bottom of the class — `params.require(:id)` for a required route param, `params.permit(...)` for a request body — even when the value isn't used for mass assignment. `SignupsController#user_params` is the reference example; `JourneysController#journey_id`/`#pagination_params` and `SessionsController#login_params` follow the same shape. This keeps what a controller accepts legible from one place and testable in isolation, and matches Rails' own strong-parameters convention rather than special-casing "just an id."
 
@@ -54,7 +54,7 @@ API responses use `Content-Type: application/json`, not `application/vnd.api+jso
 
 This convention is enforced by code review, not CI.
 
-## Models (apps/api)
+## Models (packages/api)
 
 Prefer a guard clause over combining conditions with `&&`/`||` in a boolean-returning method, e.g. `return false if children.none?` followed by the real check, rather than `children.any? && children.all? { ... }` on one line. See `Journey#completed_for?`/`Subject#completed_for?` for the reference shape.
 
@@ -62,7 +62,7 @@ Where a per-record predicate can be expressed as a query, back it with an Active
 
 This convention is enforced by code review, not CI.
 
-## Migrations (apps/api)
+## Migrations (packages/api)
 
 New migrations define explicit `up`/`down` methods, not `change` — even for migrations `change` could auto-reverse (like a plain `create_table`) — so a revert never depends on Rails successfully inferring the inverse. See `db/migrate/20260726180001_create_journeys.rb` for the reference shape. Pre-existing migrations already on `main` are not retrofitted.
 
@@ -118,7 +118,7 @@ This convention is enforced by code review, not CI.
 
 ## Dev container services
 
-`apps/api` (Rails, port 3000) and `apps/web` (Vite, port 5173) start automatically — `.devcontainer/start-services.sh` runs on container start and on every dev-tool attach (`postStartCommand`/`postAttachCommand` in `devcontainer.json`), skipping the start if a service is already running (checked by pidfile in `/tmp/dev-services` and by whether the port is already served, so it's also safe against a server started some other way). The API start also waits for Postgres to accept connections, runs `bin/setup --skip-server` (bundle install, `db:prepare`), and seeds curriculum content (`curriculum:seed`, idempotent) before booting `bin/dev`. Logs land in `/tmp/dev-services/api.log` and `/tmp/dev-services/web.log`. To restart one after a crash or a dependency change, kill its pid (`kill $(cat /tmp/dev-services/api.pid)`) and re-run `.devcontainer/start-services.sh`, or just run `bin/dev` / `pnpm dev` by hand in that app's directory.
+`packages/api` (Rails, port 3000) and `apps/web` (Vite, port 5173) start automatically — `.devcontainer/start-services.sh` runs on container start and on every dev-tool attach (`postStartCommand`/`postAttachCommand` in `devcontainer.json`), skipping the start if a service is already running (checked by pidfile in `/tmp/dev-services` and by whether the port is already served, so it's also safe against a server started some other way). The API start also waits for Postgres to accept connections, runs `bin/setup --skip-server` (bundle install, `db:prepare`), and seeds curriculum content (`curriculum:seed`, idempotent) before booting `bin/dev`. Logs land in `/tmp/dev-services/api.log` and `/tmp/dev-services/web.log`. To restart one after a crash or a dependency change, kill its pid (`kill $(cat /tmp/dev-services/api.pid)`) and re-run `.devcontainer/start-services.sh`, or just run `bin/dev` / `pnpm dev` by hand in that app's directory.
 
 ## Parallel agent work
 

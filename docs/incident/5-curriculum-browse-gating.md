@@ -172,3 +172,5 @@ The trade-off: the panel is genuinely transient now — it only exists in the DO
 #### Prevention
 
 For bug 3 specifically: the original component's own comment claimed the always-rendered behavior was intentional ("Always rendered, not hover-triggered: touch has no hover, and this keeps it in reading order for screen readers") — a reasonable-sounding justification for what was actually just a missing interaction model. A comment asserting *why* a component works a given way is only as good as the trade-off it records; this one recorded half the trade-off (touch can't hover) without addressing the other half (an always-visible floating panel isn't dismissible and can overlap unrelated content). Skepticism toward "intentional" comments that don't cite the alternative they were weighed against would have caught this earlier.
+
+> Note: `apps/api` and `apps/e2e` cited above were later moved to `packages/api` and `packages/e2e`; paths in this record are as they were at the time.

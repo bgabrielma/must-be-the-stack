@@ -10,7 +10,7 @@ Users pursue a **Journey** (e.g. "Software Design"), made up of **Subjects** (e.
 
 - **Backend**: Ruby on Rails
 - **Frontend**: React (Vite, TanStack Query, TanStack Router, Vitest)
-- **Monorepo**: pnpm-managed, `apps/api` (Bundler) + `apps/web` (pnpm) as a split-ecosystem monorepo
+- **Monorepo**: pnpm-managed, `apps/web` (pnpm), `packages/api` (Bundler) and `packages/e2e` (Playwright, pnpm) as a split-ecosystem monorepo
 - **Background jobs**: Solid Queue (Postgres-backed)
 - **Project grading**: GitHub Actions as the Evaluator's execution sandbox
 - **Delivery**: PWA (not native)
@@ -21,7 +21,7 @@ Architectural decisions and their rationale live in [docs/adr](docs/adr).
 
 All development runs inside the project's dev container (`.devcontainer/`) — never on the host directly. Open/rebuild via "Dev Containers: Reopen in Container," then run `claude` from the container's integrated terminal. Services: `app` (Ruby, Node, gh CLI) and `postgres`, orchestrated by `.devcontainer/docker-compose.yml`.
 
-`apps/api` (port 3000) and `apps/web` (port 5173) start automatically on container start — see [CONTRIBUTING.md's "Dev container services"](CONTRIBUTING.md#dev-container-services) for log locations and how to restart one by hand.
+`packages/api` (port 3000) and `apps/web` (port 5173) start automatically on container start — see [CONTRIBUTING.md's "Dev container services"](CONTRIBUTING.md#dev-container-services) for log locations and how to restart one by hand.
 
 ## Working with this repo
 

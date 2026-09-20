@@ -15,9 +15,9 @@ if [ "$repo_root" = "$main_worktree" ]; then
   exit 0
 fi
 
-if [ ! -d apps/api/vendor/bundle ]; then
-  echo "setup-worktree: installing apps/api gems into vendor/bundle"
-  (cd apps/api && bundle config set --local path vendor/bundle && bundle install)
+if [ ! -d packages/api/vendor/bundle ]; then
+  echo "setup-worktree: installing packages/api gems into vendor/bundle"
+  (cd packages/api && bundle config set --local path vendor/bundle && bundle install)
 fi
 
 if [ ! -d apps/web/node_modules ]; then
@@ -28,7 +28,7 @@ fi
 # Glob against the main worktree (source of truth for what to copy), not this
 # worktree (where these files are, by definition, missing).
 shopt -s nullglob
-for src in "$main_worktree"/apps/api/config/master.key "$main_worktree"/apps/api/.env* "$main_worktree"/apps/web/.env*; do
+for src in "$main_worktree"/packages/api/config/master.key "$main_worktree"/packages/api/.env* "$main_worktree"/apps/web/.env*; do
   f="${src#"$main_worktree"/}"
   if [ ! -f "$f" ]; then
     echo "setup-worktree: copying $f from main worktree"

@@ -1,16 +1,16 @@
-# Gates both apps/api (Bundler) and apps/web (pnpm) from one config
+# Gates both packages/api (Bundler) and apps/web (pnpm) from one config
 # [ADR-0010]. post-checkout auto-provisions fresh worktrees [ADR-0011].
 
 pre-commit:
   parallel: true
   jobs:
     - name: rubocop
-      root: "apps/api/"
+      root: "packages/api/"
       glob: "*.rb"
       run: bundle exec rubocop --force-exclusion {staged_files}
 
     - name: rspec
-      root: "apps/api/"
+      root: "packages/api/"
       glob: "*.rb"
       run: bundle exec rspec
 
@@ -28,7 +28,7 @@ pre-push:
   parallel: true
   jobs:
     - name: rspec (full suite)
-      root: "apps/api/"
+      root: "packages/api/"
       run: bundle exec rspec
 
     - name: vitest (full suite)

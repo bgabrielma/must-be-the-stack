@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Starts apps/api (Rails) and apps/web (Vite) in the background, once per
+# Starts packages/api (Rails) and apps/web (Vite) in the background, once per
 # container lifetime. Wired to postStartCommand and postAttachCommand in
 # devcontainer.json; the pidfile check makes it safe to run from both.
 set -euo pipefail
@@ -38,7 +38,7 @@ start_api() {
   fi
 
   (
-    cd "$WORKSPACE/apps/api"
+    cd "$WORKSPACE/packages/api"
     wait_for_postgres
     bin/setup --skip-server
     bin/rails curriculum:seed

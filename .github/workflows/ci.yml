@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: apps/api
+        working-directory: packages/api
     services:
       postgres:
         image: postgres:16
@@ -33,7 +33,7 @@ jobs:
         with:
           ruby-version: "3.3"
           bundler-cache: true
-          working-directory: apps/api
+          working-directory: packages/api
 
       - name: Set up database
         run: bin/rails db:create db:schema:load
