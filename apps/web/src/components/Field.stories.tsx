@@ -16,6 +16,14 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
 
+// Required fields carry an asterisk after the label; unmarked means optional,
+// and no field is ever labelled "(optional)".
+export const Required: Story = {
+  args: {
+    required: true,
+  },
+};
+
 export const WithError: Story = {
   args: {
     error: "Email has already been taken",

@@ -1,14 +1,14 @@
 import { createFileRoute, useRouter } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
 import { useLesson } from "./useLesson";
-import { requireAuth } from "../../lib/routeGuards";
+import { requireCompleteProfile } from "../../lib/routeGuards";
 import { renderInlineBold } from "../../helpers/renderInlineBold";
 import { Button } from "../../components/Button";
 import { PageHeading } from "../../components/PageHeading";
 import { StatusScreen } from "../../components/StatusScreen";
 
 export const Route = createFileRoute("/lessons/$lessonId/")({
-  beforeLoad: requireAuth,
+  beforeLoad: requireCompleteProfile,
   component: LessonPage,
 });
 

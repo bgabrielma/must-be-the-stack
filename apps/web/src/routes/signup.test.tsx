@@ -2,6 +2,7 @@ import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { renderRouteTree } from "../test/renderRoute";
+import { mockApi } from "../test/mockApi";
 import { setAccessToken } from "../lib/accessToken";
 
 describe("Signup route (/signup)", () => {
@@ -23,15 +24,25 @@ describe("Signup route (/signup)", () => {
     );
   });
 
+  it("marks each required field with an asterisk", async () => {
+    renderRouteTree("/signup");
+
+    await waitFor(() => screen.getByRole("heading", { name: "Create your account" }));
+
+    expect(screen.getByTestId("signup-email")).toHaveTextContent("Email*");
+    expect(screen.getByTestId("signup-password")).toHaveTextContent("Password*");
+    expect(screen.getByTestId("signup-confirm-password")).toHaveTextContent("Confirm password*");
+  });
+
   it("creates an account and redirects to login with a success banner", async () => {
     const user = userEvent.setup();
     renderRouteTree("/signup");
 
     await waitFor(() => screen.getByRole("heading", { name: "Create your account" }));
 
-    await user.type(screen.getByLabelText("Email"), "ada@example.com");
-    await user.type(screen.getByLabelText("Password"), "correct-horse-battery-staple");
-    await user.type(screen.getByLabelText("Confirm password"), "correct-horse-battery-staple");
+    await user.type(screen.getByLabelText(/^Email/), "ada@example.com");
+    await user.type(screen.getByLabelText(/^Password/), "correct-horse-battery-staple");
+    await user.type(screen.getByLabelText(/^Confirm password/), "correct-horse-battery-staple");
     await user.click(screen.getByRole("button", { name: "Create account" }));
 
     await waitFor(() =>
@@ -47,9 +58,9 @@ describe("Signup route (/signup)", () => {
     renderRouteTree("/signup");
 
     await waitFor(() => screen.getByRole("heading", { name: "Create your account" }));
-    await user.type(screen.getByLabelText("Email"), "ada@example.com");
-    await user.type(screen.getByLabelText("Password"), "correct-horse-battery-staple");
-    await user.type(screen.getByLabelText("Confirm password"), "different-password");
+    await user.type(screen.getByLabelText(/^Email/), "ada@example.com");
+    await user.type(screen.getByLabelText(/^Password/), "correct-horse-battery-staple");
+    await user.type(screen.getByLabelText(/^Confirm password/), "different-password");
     await user.click(screen.getByRole("button", { name: "Create account" }));
 
     await waitFor(() =>
@@ -60,10 +71,7 @@ describe("Signup route (/signup)", () => {
 
   it("redirects an already-authenticated visitor to /home", async () => {
     setAccessToken("test-token");
-    vi.stubGlobal(
-      "fetch",
-      vi.fn(async () => ({ ok: true, status: 200, json: async () => ({ data: [] }) })),
-    );
+    mockApi();
 
     renderRouteTree("/signup");
 
@@ -85,9 +93,9 @@ describe("Signup route (/signup)", () => {
     renderRouteTree("/signup");
 
     await waitFor(() => screen.getByRole("heading", { name: "Create your account" }));
-    await user.type(screen.getByLabelText("Email"), "ada@example.com");
-    await user.type(screen.getByLabelText("Password"), "pw");
-    await user.type(screen.getByLabelText("Confirm password"), "pw");
+    await user.type(screen.getByLabelText(/^Email/), "ada@example.com");
+    await user.type(screen.getByLabelText(/^Password/), "pw");
+    await user.type(screen.getByLabelText(/^Confirm password/), "pw");
     await user.click(screen.getByRole("button", { name: "Create account" }));
 
     await waitFor(() =>

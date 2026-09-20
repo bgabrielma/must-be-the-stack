@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
 import { useHome } from "./useHome";
-import { requireAuth } from "../../lib/routeGuards";
+import { requireCompleteProfile } from "../../lib/routeGuards";
 import { UnitCard } from "../../components/UnitCard";
 import { CompassIcon, CheckIcon } from "../../components/icons";
 import { SearchField } from "../../components/SearchField";
@@ -10,7 +10,7 @@ import { PageHeading } from "../../components/PageHeading";
 import { StatusScreen } from "../../components/StatusScreen";
 
 export const Route = createFileRoute("/home/")({
-  beforeLoad: requireAuth,
+  beforeLoad: requireCompleteProfile,
   component: Home,
 });
 

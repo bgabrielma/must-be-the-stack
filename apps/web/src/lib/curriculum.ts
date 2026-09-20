@@ -1,13 +1,10 @@
 import { z } from "zod";
 import { apiFetch } from "./httpClient";
 import {
-  camelizeAttributes,
   findManyIncluded,
-  logParseIssues,
   parseJsonApiDocument,
-  JsonApiParseError,
-  type JsonApiDocument,
-  type JsonApiResource,
+  singleResource,
+  toResource,
 } from "../helpers/jsonApi";
 
 export const journeyStatusSchema = z.enum(["not_started", "in_progress", "completed"]);
@@ -67,25 +64,6 @@ export type LessonDetail = z.infer<typeof lessonDetailSchema>;
 // screens display it as a percentage.
 export function toPercent(scoreOutOfTen: number): number {
   return scoreOutOfTen * 10;
-}
-
-function toResource<Attributes>(
-  resource: JsonApiResource,
-  schema: z.ZodType<Attributes>,
-): Attributes & { id: string } {
-  const result = schema.safeParse(camelizeAttributes(resource.attributes));
-  if (!result.success) {
-    logParseIssues(`${resource.type} attributes`, result.error);
-    throw new JsonApiParseError(`Malformed ${resource.type} payload from the API`);
-  }
-  return { id: resource.id, ...result.data };
-}
-
-function singleResource(document: JsonApiDocument): JsonApiResource {
-  if (Array.isArray(document.data)) {
-    throw new JsonApiParseError("Expected a single JSON:API resource, got a collection");
-  }
-  return document.data;
 }
 
 export async function fetchJourneys(): Promise<Journey[]> {

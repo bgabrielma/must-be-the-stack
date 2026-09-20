@@ -1,6 +1,7 @@
 import { describe, it, expect, vi, afterEach } from "vitest";
 import { screen, waitFor } from "@testing-library/react";
 import { renderRouteTree } from "../../test/renderRoute";
+import { currentUserResponse } from "../../test/currentUserResponse";
 import { setAccessToken } from "../../lib/accessToken";
 
 describe("Home route (/home)", () => {
@@ -86,13 +87,15 @@ describe("Home route (/home)", () => {
   });
 });
 
+// Home sits behind the profile gate, which fetches GET /user in `beforeLoad`
+// before the screen's own journeys query runs — so both are mocked here.
 function mockJourneysResponse(journeys: unknown[]) {
   vi.stubGlobal(
     "fetch",
-    vi.fn(async () => ({
+    vi.fn(async (url: string) => ({
       ok: true,
       status: 200,
-      json: async () => ({ data: journeys }),
+      json: async () => (url.endsWith("/user") ? currentUserResponse() : { data: journeys }),
     })),
   );
 }

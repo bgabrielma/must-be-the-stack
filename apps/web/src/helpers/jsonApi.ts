@@ -66,6 +66,29 @@ export function camelizeAttributes(attributes: Record<string, unknown>): Record<
   );
 }
 
+// Turns one JSON:API resource into a typed object, validating its business
+// attributes with the caller's schema (ADR-0014). Shared by every resource
+// module (`lib/curriculum.ts`, `lib/user.ts`) so the camelize-then-parse
+// decision lives in one place.
+export function toResource<Attributes>(
+  resource: JsonApiResource,
+  schema: z.ZodType<Attributes>,
+): Attributes & { id: string } {
+  const result = schema.safeParse(camelizeAttributes(resource.attributes));
+  if (!result.success) {
+    logParseIssues(`${resource.type} attributes`, result.error);
+    throw new JsonApiParseError(`Malformed ${resource.type} payload from the API`);
+  }
+  return { id: resource.id, ...result.data };
+}
+
+export function singleResource(document: JsonApiDocument): JsonApiResource {
+  if (Array.isArray(document.data)) {
+    throw new JsonApiParseError("Expected a single JSON:API resource, got a collection");
+  }
+  return document.data;
+}
+
 export function findIncluded(
   document: JsonApiDocument,
   ref: JsonApiResourceIdentifier | null | undefined,

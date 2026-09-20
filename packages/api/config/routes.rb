@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   post "refresh" => "sessions#refresh"
   delete "logout" => "sessions#destroy"
 
+  # Singular: the user comes from the access token, never from an id.
+  get "user" => "users#show"
+  post "user" => "users#update"
+
   resources :journeys, only: [ :index, :show ] do
     # POST /journeys/:id/start — marks a Journey as started for the current user.
     post :start, on: :member

@@ -20,6 +20,13 @@ export async function submitForm(page: Page): Promise<void> {
   await page.locator('button[type="submit"]').click();
 }
 
+export async function fillProfile(page: Page): Promise<void> {
+  await page.locator("#profile-first-name").fill("Charles");
+  await page.locator("#profile-last-name").fill("Leclerc");
+  await page.locator("#profile-job-role").fill("Backend Engineer");
+  await page.locator("#profile-about").fill("Learning system design one concept at a time.");
+}
+
 export async function signUpAndLogIn(page: Page, email: string, password = E2E_PASSWORD): Promise<void> {
   await page.goto("/signup");
   await fillCredentials(page, email, password);
@@ -27,6 +34,12 @@ export async function signUpAndLogIn(page: Page, email: string, password = E2E_P
   await page.waitForURL(/\/login/);
 
   await fillCredentials(page, email, password);
+  await submitForm(page);
+
+  // A brand-new account has no Profile, so the gate lands every signup on the
+  // profile step before Home is reachable at all.
+  await page.waitForURL(/\/profile/);
+  await fillProfile(page);
   await submitForm(page);
   await page.waitForURL(/\/home/);
 }
